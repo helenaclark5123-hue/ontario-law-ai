@@ -1,3 +1,5 @@
 huggingface_hub
 pandas
 pyarrow
+chromadb
+sentence-transformers
