@@ -113,6 +113,11 @@ def write_log(report, source, laws):
     status["last_checked"] = now.isoformat(timespec="seconds")
     if n_changes:
         status["last_changed"] = now.isoformat(timespec="seconds")
+        status["last_changes"] = (
+            [f"Changed: {c['where']}" for c in report["changed"]]
+            + [f"Added: {a}" for a in report["added"]]
+            + [f"Removed: {r}" for r in report["removed"]]
+        )
     status["laws"] = {law["name"]: law["scraped_timestamp"] for law in laws}
     STATUS_FILE.write_text(json.dumps(status, indent=2))
 

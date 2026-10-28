@@ -14,6 +14,7 @@ import streamlit as st
 
 from answer import MissingKeyError, answer
 from get_laws import LAWS, load_saved_laws
+from make_chunks import CHUNKS_FILE
 from search import search
 from update_laws import STATUS_FILE, update
 
@@ -39,9 +40,13 @@ def safe(text):
 
 
 @st.cache_data
-def section_lookup(_version):
-    """Full saved text and heading of every section, by (law, section number)."""
-    chunks = json.loads((STATUS_FILE.parent.parent / "data" / "chunks.json").read_text())
+def section_lookup(version):
+    """Full saved text and heading of every section, by (law, section number).
+
+    `version` is when chunks.json last changed, so the cache refreshes
+    whenever the stored laws change (an update or a fake amendment).
+    """
+    chunks = json.loads(CHUNKS_FILE.read_text())
     headings = {(c["law"], c["section"]): c["heading"] for c in chunks}
     lookup = {}
     for law in load_saved_laws():
@@ -58,7 +63,7 @@ def status_line():
     names = " · ".join(laws)
     collected = nice_date(max(laws.values()))
     checked = nice_time(status["last_checked"]) if "last_checked" in status else "never"
-    return names, collected, checked, status.get("last_checked", "")
+    return names, collected, checked
 
 
 def show_section(law, number, lookup, expanded=False):
@@ -73,7 +78,7 @@ def show_section(law, number, lookup, expanded=False):
 
 # ---- Header -----------------------------------------------------------------
 st.title("⚖️ Ontario Law Assistant")
-names, collected, checked, version = status_line()
+names, collected, checked = status_line()
 st.caption(
     f"**Laws loaded:** {names}  \n"
     f"**Law text collected by A2AJ:** {collected} · **Last checked for updates:** {checked}"
@@ -105,7 +110,14 @@ with st.sidebar:
                 st.write(f"• Added: {a}")
             for r in report["removed"]:
                 st.write(f"• Removed: {r}")
-        st.caption("Full details in logs/update_log.md")
+
+    # Always show the most recent change, even if a later check found nothing new.
+    status = json.loads(STATUS_FILE.read_text()) if STATUS_FILE.exists() else {}
+    if status.get("last_changes"):
+        st.caption(f"**Last change found:** {nice_time(status['last_changed'])}")
+        for change in status["last_changes"][:10]:
+            st.caption(f"• {change}")
+    st.caption("Full details in logs/update_log.md")
 
     st.divider()
     st.caption(
@@ -122,7 +134,7 @@ with st.form("ask"):
     asked = st.form_submit_button("Ask")
 
 if asked and question.strip():
-    lookup = section_lookup(version)
+    lookup = section_lookup(CHUNKS_FILE.stat().st_mtime)
     with st.spinner("Searching the laws and writing an answer..."):
         error = None
         try:
