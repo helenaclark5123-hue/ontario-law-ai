@@ -3,3 +3,5 @@ pandas
 pyarrow
 chromadb
 sentence-transformers
+anthropic
+python-dotenv
