@@ -1,0 +1,13 @@
+# Python virtual environment (re-creatable, large)
+.venv/
+
+# Secret API key - never upload
+.env
+
+# Vector database (rebuilt from data)
+db/
+
+# Python/Mac clutter
+__pycache__/
+*.pyc
+.DS_Store
