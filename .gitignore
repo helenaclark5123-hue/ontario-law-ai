@@ -11,3 +11,6 @@ db/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Backups made by fake_amendment.py
+backups/

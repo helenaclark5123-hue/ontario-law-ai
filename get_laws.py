@@ -5,6 +5,8 @@ jurisdiction. We only download the Ontario statutes file, pick out our laws,
 and save each one as a JSON file.
 """
 
+import quiet  # noqa: F401  (must come before the AI libraries)
+
 import json
 from pathlib import Path
 
@@ -49,18 +51,17 @@ def file_name(law_name):
     return law_name.lower().replace(",", "").replace(" ", "_") + ".json"
 
 
-def main():
-    DATA_DIR.mkdir(exist_ok=True)
+def fetch_laws():
+    """Download the dataset and return our laws as a list of dicts."""
     df = download_ontario_laws()
-
+    laws = []
     for name in LAWS:
         rows = df[df["name_en"] == name]
         if rows.empty:
             print(f"!! Could not find '{name}' in the dataset")
             continue
         row = rows.iloc[0]
-
-        law = {
+        laws.append({
             "name": row["name_en"],
             "citation": row["citation_en"],
             "url": public_url(row["source_url_en"]),
@@ -71,10 +72,26 @@ def main():
             # The dataset also gives the law already split by section number,
             # e.g. {"1": "...", "2": "..."}. We'll use this in Stage 2.
             "sections": json.loads(row["unofficial_sections_en"]),
-        }
+        })
+    return laws
 
-        out = DATA_DIR / file_name(name)
-        out.write_text(json.dumps(law, indent=2, ensure_ascii=False))
+
+def save_law(law):
+    """Save one law to data/<law name>.json and return the file path."""
+    DATA_DIR.mkdir(exist_ok=True)
+    out = DATA_DIR / file_name(law["name"])
+    out.write_text(json.dumps(law, indent=2, ensure_ascii=False))
+    return out
+
+
+def load_saved_laws():
+    """Read back the laws currently saved in data/."""
+    return [json.loads((DATA_DIR / file_name(name)).read_text()) for name in LAWS]
+
+
+def main():
+    for law in fetch_laws():
+        out = save_law(law)
 
         print("=" * 70)
         print(f"{law['name']}  ({law['citation']})")

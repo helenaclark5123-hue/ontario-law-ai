@@ -143,16 +143,20 @@ def chunk_law(law):
     return chunks
 
 
-def main():
-    all_chunks = []
-    for path in sorted(DATA_DIR.glob("*.json")):
-        if path == CHUNKS_FILE:
-            continue
-        law = json.loads(path.read_text())
-        chunks = chunk_law(law)
-        all_chunks.extend(chunks)
+def chunk_laws(laws):
+    """Chunk several laws and return all their chunks in one list."""
+    return [chunk for law in laws for chunk in chunk_law(law)]
 
-    CHUNKS_FILE.write_text(json.dumps(all_chunks, indent=2, ensure_ascii=False))
+
+def save_chunks(chunks):
+    CHUNKS_FILE.write_text(json.dumps(chunks, indent=2, ensure_ascii=False))
+
+
+def main():
+    from get_laws import load_saved_laws
+
+    all_chunks = chunk_laws(load_saved_laws())
+    save_chunks(all_chunks)
 
     print(f"Saved {len(all_chunks)} chunks to {CHUNKS_FILE.name}\n")
     print(f"{'Law':<36}{'Sections':>9}{'Chunks':>8}{'No heading':>12}")

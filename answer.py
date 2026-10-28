@@ -6,6 +6,7 @@ them to Claude with strict rules, and return the answer plus the sections used.
     python answer.py "your question"
 """
 
+import os
 import sys
 
 import anthropic
@@ -35,6 +36,10 @@ You will be given numbered law sections inside <sections> tags, then a question.
 Write in plain language a non-lawyer can follow. Keep answers short: a direct answer first, then the key conditions or exceptions."""
 
 
+class MissingKeyError(Exception):
+    """Raised when there is no API key in the .env file."""
+
+
 def format_sections(chunks):
     """Put the retrieved sections into the message, one numbered block each."""
     blocks = []
@@ -51,6 +56,10 @@ def answer(question, k=5):
 
     Returns a dict with the answer text and the sections that were used.
     """
+    load_dotenv(override=True)  # re-read .env, so a newly pasted key works without a restart
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        raise MissingKeyError("There's no API key in the .env file yet.")
+
     chunks = search(question, k)
     client = anthropic.Anthropic()
 
@@ -81,6 +90,9 @@ def main():
 
     try:
         result = answer(question)
+    except MissingKeyError:
+        print("No API key yet: paste your key after ANTHROPIC_API_KEY= in the .env file and save it.")
+        return
     except anthropic.AuthenticationError:
         print("API key problem: check that your key is pasted correctly in the .env file.")
         return

@@ -10,18 +10,11 @@ sections even without the same words.
     python search.py "your question"    # show the 5 best matching sections
 """
 
+import quiet  # noqa: F401  (must come before the AI libraries)
+
 import json
-import logging
-import os
 import sys
 from pathlib import Path
-
-# Hide technical warnings and progress bars from the AI libraries.
-os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
-os.environ.setdefault("TRANSFORMERS_VERBOSITY", "error")
-os.environ.setdefault("HF_HUB_VERBOSITY", "error")
-os.environ.setdefault("TQDM_DISABLE", "1")
-logging.getLogger("torch.distributed.elastic.multiprocessing.redirects").setLevel(logging.ERROR)
 
 import chromadb
 from sentence_transformers import SentenceTransformer
