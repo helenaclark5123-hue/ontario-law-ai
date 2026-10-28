@@ -6,6 +6,9 @@ they are set before the libraries load.
 
 import logging
 import os
+import warnings
+
+warnings.filterwarnings("ignore", message="Cannot enable progress bars")
 
 os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
 os.environ.setdefault("HF_HUB_VERBOSITY", "error")

@@ -6,6 +6,7 @@
 import quiet  # noqa: F401  (must come before the AI libraries)
 
 import json
+import os
 import re
 from datetime import datetime
 
@@ -15,10 +16,41 @@ import streamlit as st
 from answer import MissingKeyError, answer
 from get_laws import LAWS, load_saved_laws
 from make_chunks import CHUNKS_FILE
-from search import search
+from search import build, get_collection, search
 from update_laws import STATUS_FILE, update
 
 st.set_page_config(page_title="Ontario Law Assistant", page_icon="⚖️")
+
+
+def load_api_key():
+    """Online, the key comes from Streamlit secrets; on my computer, from .env.
+
+    Streamlit secrets are set in the app's settings on Streamlit Community
+    Cloud, so the key never has to be in the code or uploaded to GitHub.
+    If there are no secrets (on my computer), answer.py reads .env instead.
+    """
+    try:
+        key = st.secrets.get("ANTHROPIC_API_KEY")
+    except Exception:  # no secrets file exists on my computer
+        key = None
+    if key:
+        os.environ["ANTHROPIC_API_KEY"] = key
+
+
+@st.cache_resource(show_spinner=False)
+def ensure_database():
+    """Build the search database from data/chunks.json if it's missing.
+
+    The prebuilt db/ folder is uploaded with the app, because building it
+    takes several minutes. This is only a backup in case db/ is missing.
+    """
+    if get_collection().count() == 0:
+        with st.spinner("Building the law search database (this can take several minutes)..."):
+            build()
+
+
+load_api_key()
+ensure_database()
 
 # Matches citations like "Residential Tenancies Act, 2006, s. 116" in an answer.
 CITATION = re.compile(
@@ -141,9 +173,15 @@ if asked and question.strip():
             result = answer(question)
             retrieved = result["sections"]
         except MissingKeyError:
-            error = "The AI answer isn't available yet: there's no API key in the .env file."
+            error = (
+                "The AI answer isn't available yet: no API key is set "
+                "(.env on my computer, or the app's Secrets settings online)."
+            )
         except anthropic.AuthenticationError:
-            error = "The AI answer isn't available: the API key in .env isn't working. Check it was pasted correctly."
+            error = (
+                "The AI answer isn't available: the API key isn't working. Check it was pasted "
+                "correctly (.env on my computer, or the app's Secrets settings online)."
+            )
         except anthropic.AnthropicError as e:
             error = f"The AI answer isn't available: {e}"
         if error:

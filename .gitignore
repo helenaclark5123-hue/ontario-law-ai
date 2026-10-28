@@ -1,16 +1,19 @@
-# Python virtual environment (re-creatable, large)
+# Python virtual environment (re-creatable, large). .venv is a shortcut to
+# ~/.venvs/ontario-law-ai, outside iCloud-synced Documents.
+.venv
 .venv/
+.venv.nosync/
 
-# Secret API key - never upload
+# Secrets - never upload. Covers .env, .env.local, etc. and Streamlit's
+# local secrets file.
 .env
+.env.*
+.streamlit/secrets.toml
 
-# Vector database (rebuilt from data)
-db/
+# Backups made by fake_amendment.py
+backups/
 
 # Python/Mac clutter
 __pycache__/
 *.pyc
 .DS_Store
-
-# Backups made by fake_amendment.py
-backups/

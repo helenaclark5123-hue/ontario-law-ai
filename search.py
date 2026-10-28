@@ -17,7 +17,8 @@ import sys
 from pathlib import Path
 
 import chromadb
-from sentence_transformers import SentenceTransformer
+import numpy as np
+from fastembed import TextEmbedding
 
 ROOT = Path(__file__).parent
 CHUNKS_FILE = ROOT / "data" / "chunks.json"
@@ -36,13 +37,17 @@ def get_model():
     """Load the embedding model once and reuse it."""
     global _model
     if _model is None:
-        _model = SentenceTransformer(MODEL_NAME)
+        # FastEmbed runs the same model as sentence-transformers, but without
+        # PyTorch (600+ MB), so it also fits on Streamlit Community Cloud.
+        _model = TextEmbedding(MODEL_NAME)
     return _model
 
 
 def embed(texts):
     """Turn a list of texts into embeddings (lists of numbers)."""
-    return get_model().encode(texts, normalize_embeddings=True).tolist()
+    vectors = np.array(list(get_model().embed(texts)))
+    vectors /= np.linalg.norm(vectors, axis=1, keepdims=True)
+    return vectors.tolist()
 
 
 def get_collection():

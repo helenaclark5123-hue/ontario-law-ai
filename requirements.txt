@@ -1,8 +1,11 @@
-huggingface_hub
-pandas
-pyarrow
-chromadb
-sentence-transformers
-anthropic
-python-dotenv
-streamlit
+# Everything the app needs. Versions are pinned to the ones tested on my
+# computer, so Streamlit Community Cloud installs exactly the same setup.
+anthropic==2.3.0
+chromadb==1.5.9
+fastembed==0.9.1
+huggingface_hub==1.33.0
+numpy==2.5.4
+pandas==3.1.0
+pyarrow==26.0.0
+python-dotenv==1.2.4
+streamlit==1.66.1

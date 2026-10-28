@@ -1,6 +1,2 @@
 [browser]
 gatherUsageStats = false
-
-[server]
-# Only reachable from this computer, not other devices on the network.
-address = "localhost"

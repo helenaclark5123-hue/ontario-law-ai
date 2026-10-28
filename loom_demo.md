@@ -7,7 +7,7 @@ Tested on Oct 28, 2026. Each step below worked in a full rehearsal.
 1. Start the app in Terminal (leave this window open while recording):
 
    ```
-   cd ~/Documents/ontario-law-ai && .venv/bin/streamlit run app.py
+   cd ~/Documents/ontario-law-ai && .venv/bin/streamlit run app.py --server.address localhost
    ```
 
 2. Open http://localhost:8501 in your browser. Wait until the question box appears (about 15 seconds the first time).
