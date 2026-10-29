@@ -1,5 +1,7 @@
 # Ontario Law Assistant
 
+**Try it:** https://ontario-law-ai-hairmdjbph7rmavchjbpbd.streamlit.app/
+
 A legal Q&A assistant that answers questions about Ontario law using only the
 real text of the law, cites the exact section, and updates itself when the law
 changes. Built as a school project by vibe coding with Claude Code.
