@@ -16,7 +16,7 @@ import streamlit as st
 from answer import MissingKeyError, answer
 from get_laws import LAWS, load_saved_laws
 from make_chunks import CHUNKS_FILE
-from search import build, get_collection, search
+from search import build, get_collection, retrieve
 from update_laws import STATUS_FILE, update
 
 st.set_page_config(page_title="Ontario Law Assistant", page_icon="⚖️")
@@ -185,9 +185,11 @@ if asked and question.strip():
         except anthropic.AnthropicError as e:
             error = f"The AI answer isn't available: {e}"
         if error:
-            result, retrieved = None, search(question)
+            result, retrieved = None, retrieve([question])
 
     if result:
+        if result.get("rewrite"):
+            st.caption(f"Also searched the laws for: *{safe(result['rewrite'])}*")
         st.markdown(safe(result["answer"]))
         cited = list(dict.fromkeys(CITATION.findall(result["answer"])))
         if cited:

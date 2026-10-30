@@ -69,6 +69,7 @@ def main():
             "correct_sections": test["correct_sections"],
             "my_app_answer": result["answer"],
             "sections_cited": "; ".join(cited),
+            "search_rewrite": result.get("rewrite", ""),
             "sections_found_by_search": "; ".join(found),
             # Automatic checks
             "said_couldnt_find": "yes" if NOT_FOUND.rstrip(".") in result["answer"] else "no",

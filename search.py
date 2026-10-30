@@ -98,6 +98,90 @@ def search(question, k=5):
     ]
 
 
+# Sections up to this long are given to the AI whole. Longer ones (like the
+# 22-part regulations section) are trimmed to the matching parts + neighbours.
+MAX_SECTION_CHARS = 6000
+
+_laws_cache = {}
+
+
+def saved_sections():
+    """Full text of every section in data/, by (law, section number).
+
+    Re-read whenever the law files change (e.g. after an update).
+    """
+    from get_laws import DATA_DIR, load_saved_laws
+
+    version = tuple(p.stat().st_mtime for p in sorted(DATA_DIR.glob("*_*.json")))
+    if _laws_cache.get("version") != version:
+        _laws_cache["version"] = version
+        _laws_cache["sections"] = {
+            (law["name"], number): text
+            for law in load_saved_laws()
+            for number, text in law["sections"].items()
+        }
+    return _laws_cache["sections"]
+
+
+def expand(hit, matched_parts):
+    """Turn a matching chunk into its whole section, so subsections that
+    depend on each other (like ESA s. 13(3) and 13(5)) always arrive together.
+
+    matched_parts maps each part number that matched to its score.
+    """
+    from make_chunks import split_long
+
+    full = saved_sections().get((hit["law"], hit["section"]), "").strip()
+    label = f"{hit['law']}, s. {hit['section']}" + (f" – {hit['heading']}" if hit["heading"] else "")
+
+    if len(full) <= MAX_SECTION_CHARS:
+        text = f"{label}\n{full}"
+    else:
+        # Too long to send whole: starting from the best-matching part, keep
+        # each matching part with the parts right before and after it, until
+        # we reach MAX_SECTION_CHARS.
+        parts = split_long(full)
+        keep, size = set(), 0
+        for p in sorted(matched_parts, key=matched_parts.get, reverse=True):
+            for n in (p, p - 1, p + 1):
+                if 1 <= n <= len(parts) and n not in keep:
+                    if keep and size + len(parts[n - 1]) > MAX_SECTION_CHARS:
+                        break
+                    keep.add(n)
+                    size += len(parts[n - 1])
+        keep = sorted(keep)
+        pieces, previous = [], 0
+        for n in keep:
+            if n != previous + 1:
+                pieces.append("[...]")
+            pieces.append(parts[n - 1])
+            previous = n
+        if previous != len(parts):
+            pieces.append("[...]")
+        text = f"{label} (excerpt)\n" + "\n".join(pieces)
+
+    return {**hit, "text": text, "part": 1, "total_parts": 1}
+
+
+def retrieve(queries, k=8):
+    """Return the k best *sections* for one or more search queries.
+
+    Searches each query for many chunks, keeps each section's best score
+    (so two parts of one section don't take two places), then returns the
+    top k sections in full.
+    """
+    best, matched = {}, {}
+    for query in queries:
+        for hit in search(query, k * 4):
+            key = (hit["law"], hit["section"])
+            parts = matched.setdefault(key, {})
+            parts[hit["part"]] = max(parts.get(hit["part"], 0), hit["score"])
+            if key not in best or hit["score"] > best[key]["score"]:
+                best[key] = hit
+    top = sorted(best.values(), key=lambda h: h["score"], reverse=True)[:k]
+    return [expand(h, matched[(h["law"], h["section"])]) for h in top]
+
+
 def show(question, k=5):
     """Print the top results for a question in a readable way."""
     print(f"\nQ: {question}")

@@ -1,7 +1,8 @@
 """Stage 4: Answer a question using only the retrieved Ontario law sections.
 
-This is the RAG step: retrieve the 5 most relevant sections (Stage 3), send
-them to Claude with strict rules, and return the answer plus the sections used.
+This is the RAG step: rewrite the question into legal terms, retrieve the 8
+most relevant sections using both versions (Stage 3), send them to Claude with
+strict rules, and return the answer plus the sections used.
 
     python answer.py "your question"
 """
@@ -12,7 +13,7 @@ import sys
 import anthropic
 from dotenv import load_dotenv
 
-from search import search
+from search import retrieve
 
 load_dotenv()  # reads ANTHROPIC_API_KEY from the .env file
 
@@ -35,6 +36,15 @@ You will be given numbered law sections inside <sections> tags, then a question.
 
 Write in plain language a non-lawyer can follow. Keep answers short: a direct answer first, then the key conditions or exceptions."""
 
+# Instructions for rewriting a question before searching. The rewrite is only
+# used to search; the answer still comes only from the retrieved sections.
+REWRITE_PROMPT = """You turn everyday questions about Ontario law into search queries for a database of three statutes: the Residential Tenancies Act, 2006, the Employment Standards Act, 2000, and the Consumer Protection Act, 2002.
+
+Rewrite the question using the words these statutes themselves would use. For example, "door-to-door sale" becomes "direct agreement", "damage deposit" becomes "security deposit", "fired" becomes "termination of employment", and "pay" becomes "wages".
+
+Use legal terms only. Do not add section numbers, amounts, time periods or anything else that would answer the question, because the answer must come from the law text that the search finds.
+
+Reply with only the rewritten query on one line. Do not answer the question or explain."""
 
 class MissingKeyError(Exception):
     """Raised when there is no API key in the .env file."""
@@ -51,17 +61,34 @@ def format_sections(chunks):
     return "<sections>\n" + "\n\n".join(blocks) + "\n</sections>"
 
 
-def answer(question, k=5):
-    """Retrieve the top k sections and ask Claude to answer from them only.
+def rewrite_question(client, question):
+    """Ask Claude to restate the question in the statutes' own legal terms."""
+    response = client.messages.create(
+        model=MODEL,
+        max_tokens=1000,
+        output_config={"effort": "low"},
+        system=REWRITE_PROMPT,
+        messages=[{"role": "user", "content": question}],
+    )
+    text = "".join(b.text for b in response.content if b.type == "text").strip()
+    return text.splitlines()[0].strip() if text else ""
 
-    Returns a dict with the answer text and the sections that were used.
+
+def answer(question, k=8):
+    """Rewrite the question, retrieve the top k sections, and ask Claude to
+    answer from them only.
+
+    Returns a dict with the answer text, the rewritten search, and the
+    sections that were used.
     """
     load_dotenv(override=True)  # re-read .env, so a newly pasted key works without a restart
     if not os.environ.get("ANTHROPIC_API_KEY"):
         raise MissingKeyError("There's no API key in the .env file yet.")
 
-    chunks = search(question, k)
     client = anthropic.Anthropic()
+    rewrite = rewrite_question(client, question)
+    # Search with both the person's own words and the legal-terms version.
+    chunks = retrieve([question, rewrite] if rewrite else [question], k)
 
     response = client.messages.create(
         model=MODEL,
@@ -79,7 +106,7 @@ def answer(question, k=5):
     else:
         text = "".join(b.text for b in response.content if b.type == "text").strip()
 
-    return {"question": question, "answer": text, "sections": chunks}
+    return {"question": question, "rewrite": rewrite, "answer": text, "sections": chunks}
 
 
 def main():
@@ -107,7 +134,8 @@ def main():
         print("Couldn't reach Anthropic. Check your internet connection.")
         return
 
-    print(f"\nQ: {question}\n")
+    print(f"\nQ: {question}")
+    print(f"Searched for: {result['rewrite']}\n")
     print(result["answer"])
     print("\nSections retrieved:")
     for c in result["sections"]:
