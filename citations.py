@@ -8,7 +8,8 @@ For each answer:
      the citation is "not_found".
   3. For sections that exist, an AI judge reads the real section text and the
      sentence(s) where the answer cites it, and decides whether the text
-     supports what the answer says: "verified" or "unsupported".
+     supports what the answer says: "verified" or "unsupported". The judge is
+     asked 3 times and the majority wins ("unclear" if the votes tie).
 
 An answer is flagged if any citation is unsupported or not_found.
 
@@ -21,6 +22,8 @@ import quiet  # noqa: F401  (must come before the AI libraries)
 
 import re
 import sys
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 
 import anthropic
 from dotenv import load_dotenv
@@ -30,6 +33,8 @@ from search import saved_sections
 # The cheapest model, same one the assistant uses.
 JUDGE_MODEL = "claude-haiku-5-5"
 MAX_SECTION_CHARS = 6000
+# How many times the judge is asked; the majority verdict wins.
+VOTES = 3
 
 LAWS = [
     "Residential Tenancies Act, 2006",
@@ -143,17 +148,39 @@ def judge_support(client, citations):
             f"CLAIM(S) IN THE ANSWER:\n{claims}\n"
             f"OFFICIAL SECTION TEXT:\n{text}"
         )
-    response = client.messages.create(
-        model=JUDGE_MODEL,
-        max_tokens=4000,
-        system=JUDGE_PROMPT,
-        messages=[{"role": "user", "content": "\n\n".join(blocks)}],
-    )
-    reply = "".join(b.text for b in response.content if b.type == "text")
-    for i, c in enumerate(citations, 1):
-        m = re.search(rf"\[{i}\]\s*(verified|unsupported)\s*[-–:]?\s*(.*)", reply, re.I)
-        c["status"] = m.group(1).lower() if m else "unclear"
-        c["reason"] = m.group(2).strip() if m else "(judge didn't answer for this one)"
+    content = "\n\n".join(blocks)
+
+    def one_vote(_):
+        response = client.messages.create(
+            model=JUDGE_MODEL,
+            max_tokens=4000,
+            system=JUDGE_PROMPT,
+            messages=[{"role": "user", "content": content}],
+        )
+        reply = "".join(b.text for b in response.content if b.type == "text")
+        votes = []
+        for i in range(1, len(citations) + 1):
+            m = re.search(rf"\[{i}\]\s*(verified|unsupported)\s*[-–:]?\s*(.*)", reply, re.I)
+            votes.append((m.group(1).lower(), m.group(2).strip()) if m else ("unclear", ""))
+        return votes
+
+    # Ask the same judge VOTES times at once and keep the majority verdict,
+    # because a single judge can read a subtle section differently each time.
+    with ThreadPoolExecutor(max_workers=VOTES) as pool:
+        ballots = list(pool.map(one_vote, range(VOTES)))
+    for i, c in enumerate(citations):
+        votes = [ballot[i] for ballot in ballots]
+        counts = Counter(status for status, _ in votes if status != "unclear")
+        verified, unsupported = counts["verified"], counts["unsupported"]
+        if verified > unsupported:
+            c["status"] = "verified"
+        elif unsupported > verified:
+            c["status"] = "unsupported"
+        else:
+            c["status"] = "unclear"
+        c["votes"] = f"{verified} verified / {unsupported} unsupported"
+        reasons = [reason for status, reason in votes if status == c["status"] and reason]
+        c["reason"] = (reasons[0] if reasons else "(judges split)") + f"  [votes: {c['votes']}]"
 
 
 def check_citations(client, answer_text, sections_used=()):

@@ -62,3 +62,24 @@ in the 2-question test of the fix, then missed in the full re-check a minute
 later: given the same input, the judge read s. 83(1)(a) correctly once and
 incorrectly once. A fix would be to ask the judge 3 times and take the
 majority, at about 3 times the cost.
+
+## After adding a 3-vote majority (re-check of the same saved answers)
+
+Re-checked file: `results/eval_2026-11-15_105527_citations-majority-vote.json`.
+The citation judge is now asked 3 times at once; the majority verdict wins.
+
+| | One judge (after bug fixes) | 3-vote majority |
+|---|---|---|
+| Answers flagged | 1 | 2 |
+| Real errors caught | 1 of 2 (s. 120) | **2 of 2** (s. 120 by 3-0, s. 83 by 2-1) |
+| Pure false alarms | 0 | **0** |
+
+The judges split on only 2 of 71 citations, and the majority got both right:
+- RTA s. 83 (no pets): 2 unsupported vs 1 verified. Correct: the answer
+  reversed the test in s. 83(1)(a).
+- ESA s. 13 (cash register): 2 verified vs 1 unsupported. Correct: the claim
+  was fine. One judge alone would have raised a false alarm.
+
+compare_checks.py lists the 2 flags as "false alarms (2/21)" only because the
+answer-level judge graded both answers "correct" overall. Both contain a real
+misstatement of the law.
