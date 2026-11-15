@@ -39,3 +39,26 @@ answers were flagged only by false alarms.
   includes fitness). Search results vary between runs.
 - The son question was wrong in both runs for the same reason: search never
   found RTA s. 48.1 (one month's rent compensation).
+
+## After fixing the 2 bugs (re-check of the same saved answers)
+
+Re-checked file: `results/eval_2026-11-15_104642_citations-rechecked.json`.
+Fixes: the checker is told which sections the assistant was given, and long
+sections show the parts most related to the claim instead of the first
+6,000 characters.
+
+| | Before fix | After fix |
+|---|---|---|
+| Answers flagged | 7 | 1 |
+| Pure false alarms (no real error) | 5 | **0** |
+| Real errors caught | 2 (#1 s. 120, #4 s. 83) | 1 (#1 s. 120) |
+
+The one remaining flag is real: "above the guideline only if the Board
+orders it" misstates s. 120(1). compare_checks.py counts it as a false alarm
+only because the answer-level judge graded that answer "correct".
+
+**New finding: the judge is not consistent.** The s. 83 error (#4) was caught
+in the 2-question test of the fix, then missed in the full re-check a minute
+later: given the same input, the judge read s. 83(1)(a) correctly once and
+incorrectly once. A fix would be to ask the judge 3 times and take the
+majority, at about 3 times the cost.

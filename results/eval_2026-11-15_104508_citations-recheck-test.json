@@ -1,0 +1,523 @@
+[
+  {
+    "question": "My lease says no pets. Can my landlord evict me for having a cat?",
+    "type": "tricky",
+    "correct_answer": "A lease term banning animals in the residential complex is void, so the 'no pets' clause itself can't be enforced.",
+    "source_section": "RTA 14",
+    "assistant_answer": "**Short answer: probably not just for having a cat.** The sections provided say a \"no pets\" clause in a lease is void (Residential Tenancies Act, 2006, s. 14). The Board also cannot order you evicted because of an animal unless it is satisfied that you keep the animal and that one of three things applies (s. 76(1)):\n\n- **Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants (s. 76(1)(a)). This does not apply if the Board is satisfied your cat did not cause or contribute to the interference (s. 76(2)).\n- **Serious allergic reaction:** the cat has caused the landlord or another tenant to suffer a serious allergic reaction (s. 76(1)(b)). This does not apply if the Board is satisfied your cat did not cause or contribute to the reaction (s. 76(3)).\n- **Inherent danger:** the species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n\nEven where one of these applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)). It must also refuse if the landlord is in serious breach of its responsibilities, or if the eviction is really retaliation for you asserting your legal rights (s. 83(3)(a), (c)).\n\nA landlord also generally has to apply within 30 days after the termination date in its notice (s. 69(2)).\n\n**What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid. If you have received a notice, a community legal clinic or the Landlord and Tenant Board can help you check it.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "tenant's obligation not to keep animals under tenancy agreement; eviction for breach of tenancy agreement; landlord application for termination of tenancy for tenant's breach",
+    "sections_retrieved": "RTA 76; RTA 29; RTA 14; RTA 83; RTA 137; RTA 37; RTA 23; RTA 69",
+    "source_section_retrieved": "yes",
+    "grade": "correct",
+    "judge_reason": "The assistant states the answer key's main point: the \"no pets\" clause is void under s. 14. Its added detail on the s. 76 grounds for eviction and the s. 83 limits is supported by the provided texts and does not contradict the key.",
+    "citations_total": 6,
+    "citations_verified": 5,
+    "citations_unsupported": 1,
+    "citations_not_found": 0,
+    "citation_flag": "FLAG",
+    "citation_details": "VERIFIED: Residential Tenancies Act, 2006, s. 14 - s.14 states that a provision prohibiting animals in the residential complex is void, which matches the claim that a \"no pets\" clause is void.\nVERIFIED: Residential Tenancies Act, 2006, s. 76 - s.76(1)(a)-(c) and (2)-(3) match the three grounds, the carve-outs for the cat not causing or contributing, and the requirement that the tenant keep an animal. The claim's \"the cat has caused\" is a minor paraphrase of \"the presence of an animal of that species has caused.\"\nUNSUPPORTED: Residential Tenancies Act, 2006, s. 83 - s.83(1)(a) says the Board may refuse unless satisfied it would be unfair to refuse. The answer reverses this into refusing if it finds it would be unfair to grant. The (3)(a) serious-breach and (3)(c) retaliation points are accurate.\nVERIFIED: Residential Tenancies Act, 2006, s. 69 - s.69(2) says an application may not be made later than 30 days after the termination date in the notice, and s.69(3) excludes rent-arrears applications. The word \"generally\" accounts for that exclusion.\nVERIFIED: Residential Tenancies Act, 2006, s. 64 - The assistant was not given s.64, and the answer only says it could not find these notice rules, which is a true statement about what it had.\nVERIFIED: Residential Tenancies Act, 2006, s. 66 - The assistant was not given s.66, and the answer only says it could not find these notice rules, which is a true statement about what it had.",
+    "_citations": [
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "14",
+        "cited_as": [
+          "s. 14"
+        ],
+        "claims": [
+          "Short answer: probably not just for having a cat.** The sections provided say a \"no pets\" clause in a lease is void (Residential Tenancies Act, 2006, s. 14)."
+        ],
+        "given": true,
+        "status": "verified",
+        "reason": "s.14 states that a provision prohibiting animals in the residential complex is void, which matches the claim that a \"no pets\" clause is void."
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "76",
+        "cited_as": [
+          "s. 76(1)",
+          "s. 76(1)(a)",
+          "s. 76(2)",
+          "s. 76(1)(b)",
+          "s. 76(3)",
+          "s. 76(1)(c)"
+        ],
+        "claims": [
+          "The Board also cannot order you evicted because of an animal unless it is satisfied that you keep the animal and that one of three things applies (s. 76(1)):",
+          "Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants (s. 76(1)(a)).",
+          "This does not apply if the Board is satisfied your cat did not cause or contribute to the interference (s. 76(2)).",
+          "Serious allergic reaction:** the cat has caused the landlord or another tenant to suffer a serious allergic reaction (s. 76(1)(b)).",
+          "This does not apply if the Board is satisfied your cat did not cause or contribute to the reaction (s. 76(3)).",
+          "Inherent danger:** the species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c))."
+        ],
+        "given": true,
+        "status": "verified",
+        "reason": "s.76(1)(a)-(c) and (2)-(3) match the three grounds, the carve-outs for the cat not causing or contributing, and the requirement that the tenant keep an animal. The claim's \"the cat has caused\" is a minor paraphrase of \"the presence of an animal of that species has caused.\""
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "83",
+        "cited_as": [
+          "s. 83(1)(a)",
+          "s. 83(3)(a)"
+        ],
+        "claims": [
+          "Even where one of these applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)).",
+          "It must also refuse if the landlord is in serious breach of its responsibilities, or if the eviction is really retaliation for you asserting your legal rights (s. 83(3)(a), (c))."
+        ],
+        "given": true,
+        "status": "unsupported",
+        "reason": "s.83(1)(a) says the Board may refuse unless satisfied it would be unfair to refuse. The answer reverses this into refusing if it finds it would be unfair to grant. The (3)(a) serious-breach and (3)(c) retaliation points are accurate."
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "69",
+        "cited_as": [
+          "s. 69(2)"
+        ],
+        "claims": [
+          "A landlord also generally has to apply within 30 days after the termination date in its notice (s. 69(2))."
+        ],
+        "given": true,
+        "status": "verified",
+        "reason": "s.69(2) says an application may not be made later than 30 days after the termination date in the notice, and s.69(3) excludes rent-arrears applications. The word \"generally\" accounts for that exclusion."
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "64",
+        "cited_as": [
+          "ss. 64–66"
+        ],
+        "claims": [
+          "What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid."
+        ],
+        "given": false,
+        "status": "verified",
+        "reason": "The assistant was not given s.64, and the answer only says it could not find these notice rules, which is a true statement about what it had."
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "66",
+        "cited_as": [
+          "ss. 64–66"
+        ],
+        "claims": [
+          "What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid."
+        ],
+        "given": false,
+        "status": "verified",
+        "reason": "The assistant was not given s.66, and the answer only says it could not find these notice rules, which is a true statement about what it had."
+      }
+    ],
+    "entropy": 1.609,
+    "n_clusters": 5,
+    "cluster_sizes": "1-1-1-1-1",
+    "confidence": "low",
+    "entropy_loose": 0.0,
+    "n_clusters_loose": 1,
+    "cluster_sizes_loose": "5",
+    "confidence_loose": "high",
+    "_entropy": {
+      "samples": [
+        "No, not just because your lease says \"no pets.\" The no-pet clause is void (Residential Tenancies Act, 2006, s. 14). Also, if the landlord applies to evict based on an animal, the Board cannot order eviction unless it is satisfied that you are keeping an animal and that one of these is true (Residential Tenancies Act, 2006, s. 76(1)):\n\n- **Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex by the landlord or other tenants (s. 76(1)(a)). Even then, the Board cannot evict on this ground if it is satisfied your animal did not cause or contribute to the interference (s. 76(2)).\n- **Serious allergic reaction:** the animal's presence has caused the landlord or another tenant a serious allergic reaction (s. 76(1)(b)). The Board cannot evict on this ground if your animal did not cause or contribute to the reaction (s. 76(3)).\n- **Inherent danger:** the species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n\nOther protections also apply. The Board can refuse an eviction if it would be unfair to grant it in all the circumstances (s. 83(1)(a)). It must refuse if the landlord is in serious breach of its duties, or if the eviction is because you complained to a government authority about a health, safety, housing or maintenance violation, or because you tried to enforce your legal rights (s. 83(3)(a)–(c)). A landlord also cannot harass, threaten or interfere with you (s. 23), and you can apply to the Board about that (s. 29(1), paragraphs 3–4). A tenancy can only be ended in accordance with the Act (s. 37(1)).\n\nThe sections I have do not define \"substantially interfered,\" \"serious allergic reaction,\" or \"inherently dangerous,\" so I can't say how those would apply to a cat. Those are questions for the Board or a lawyer.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**Short answer:** Probably not just for having a cat. Your lease's \"no pets\" clause is void, and a landlord who wants to evict over an animal must meet strict conditions.\n\n- **The no-pet clause doesn't count.** A tenancy agreement provision that prohibits animals in the residential complex is void (Residential Tenancies Act, 2006, s. 14).\n- **Eviction over an animal has limits.** If an eviction application is based on an animal's presence, control or behaviour, the Board (the tribunal that hears these cases) cannot evict you unless it is satisfied that you keep an animal and that one of these applies (Residential Tenancies Act, 2006, s. 76(1)):\n  - (a) the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the residential complex by the landlord or other tenants;\n  - (b) the animal's presence has caused the landlord or another tenant a serious allergic reaction; or\n  - (c) the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants.\n- **Your cat may be a defence.** The Board cannot evict based on substantial interference if it is satisfied your animal did not cause or contribute to it (s. 76(2)). The same applies to an allergic reaction (s. 76(3)).\n- **Eviction needs a proper process.** A tenancy can be ended only in accordance with the Act (s. 37(1)). A landlord applying to evict must have given a notice to terminate under the Act (s. 69(1)).\n- **Harassment is not allowed.** A landlord must not harass, obstruct, coerce, threaten or interfere with a tenant (s. 23). A tenant can apply for an order about this within one year of the conduct (s. 29(1), 29(2)).\n\nI couldn't find in the sections provided what the specific notice rules are, or how the Board weighs \"substantial interference\" in practice. Your situation may depend on those details, so contact a lawyer, paralegal or community legal clinic (or the Landlord and Tenant Board) if your landlord gives you a notice.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**Short answer:** Probably not just because the lease says \"no pets.\" Under Ontario law, a no-pet clause is void (Residential Tenancies Act, 2006, s. 14). A landlord who wants to evict you over an animal must also meet stricter conditions.\n\n**What the law says:**\n\n- **The no-pet clause doesn't count.** A tenancy agreement term that prohibits animals in or about the residential complex is void (s. 14).\n- **The Board can't evict over an animal unless certain conditions are met.** If the eviction is based on an animal's presence, control or behaviour, the Board cannot order eviction unless it is satisfied that you are keeping an animal and one of these applies (s. 76(1)):\n  - **Substantial interference:** the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the complex for the landlord or other tenants. The Board cannot evict on this basis if it finds your animal did not cause or contribute to the interference (s. 76(1)(a), 76(2)).\n  - **Serious allergic reaction:** the animal's presence has caused the landlord or another tenant a serious allergic reaction. The Board cannot evict on this basis if it finds your animal did not cause or contribute to the reaction (s. 76(1)(b), 76(3)).\n  - **Inherent danger:** the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n- **The Board can refuse eviction on fairness grounds.** Even if a ground exists, the Board may refuse eviction unless it is satisfied that, considering all the circumstances, it would be unfair to refuse (s. 83(1)(a)).\n- **Notice must be valid.** A tenancy can only be ended in accordance with the Act (s. 37(1)), and a landlord generally needs to apply to the Board for an eviction order (s. 69(1)).\n\n**What I couldn't find:** The sections don't say whether cats fall under the \"inherently dangerous\" category in s. 76(1)(c), and they don't cover how much past interference or what kind of allergy is needed. If your landlord has given you a notice or started an application, a community legal clinic or a paralegal who handles tenancy matters can help you check the details.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**Probably not, just for having a cat.** Your lease's \"no pets\" clause is void, and a landlord generally can't evict you for keeping an animal unless one of the specific grounds below applies.\n\n- **The no-pet clause doesn't count.** A tenancy agreement provision prohibiting animals in or about the residential complex is void (Residential Tenancies Act, 2006, s. 14).\n- **Eviction over an animal has limits.** If a landlord's application is based on an animal, the Board cannot order an eviction unless it is satisfied that the tenant keeps an animal and that one of these applies (Residential Tenancies Act, 2006, s. 76(1)):\n  - (a) the past behaviour of an animal of that species has substantially interfered with others' reasonable enjoyment of the residential complex, though the Board won't evict if your animal didn't cause or contribute to that interference (s. 76(1)(a), s. 76(2));\n  - (b) the animal's presence has caused the landlord or another tenant a serious allergic reaction, though the Board won't evict if your animal didn't cause or contribute to the reaction (s. 76(1)(b), s. 76(3)); or\n  - (c) the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n- **Eviction must go through the Board.** A landlord must apply to the Board for an order terminating the tenancy and evicting you, after giving a notice to terminate (Residential Tenancies Act, 2006, s. 69(1)). A landlord can't simply remove you (see s. 37(1), which says a tenancy may be terminated only in accordance with the Act).\n- **Harassment is not allowed.** A landlord shall not harass, obstruct, coerce, threaten or interfere with a tenant (Residential Tenancies Act, 2006, s. 23). You can apply to the Board for an order if this happens, generally within one year of the conduct (s. 29(1), para. 4, s. 29(2)).\n- **The Board can refuse an eviction.** Even where grounds exist, the Board may refuse if it would be unfair to grant it, having regard to all the circumstances (s. 83(1)(a)).\n\nI couldn't find in the provided laws what notice periods apply to a cat-related termination, so check with a paralegal, lawyer, or community legal clinic about your specific notice and timelines.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "A \"no pets\" clause in your lease does not, by itself, let your landlord evict you for having a cat. Under the Residential Tenancies Act, 2006, a clause prohibiting animals in the residential complex is void (s. 14). Your tenancy can also only be ended in accordance with the Act (s. 37(1)).\n\nIf your landlord applies to evict you based on your cat, the Board cannot end the tenancy unless it is satisfied that you keep an animal and that one of these applies (s. 76(1)):\n\n- **(a) Substantial interference:** the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants. The Board cannot rely on this if it is satisfied your animal did not cause or contribute to the interference (s. 76(1)(a), (2)).\n- **(b) Serious allergic reaction:** the animal's presence has caused the landlord or another tenant a serious allergic reaction. The Board cannot rely on this if it is satisfied your animal did not cause or contribute to the reaction (s. 76(1)(b), (3)).\n- **(c) Inherent danger:** the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n\nEven where a ground applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)). The Board must also refuse an eviction if it is satisfied the landlord is in serious breach of the Act or the tenancy agreement, or if the application is because you attempted to enforce your legal rights (s. 83(3)(a), (c)). A landlord also cannot harass, obstruct, coerce, threaten or interfere with you (s. 23).\n\nI couldn't find in the sections whether a cat is an animal of a species that is \"inherently dangerous\" under s. 76(1)(c), so I can't say whether that ground could apply to a cat.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic."
+      ],
+      "strict": {
+        "clusters": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: different - Answer B adds facts absent from A, such as the s.69(1) notice requirement and the one-year limit for harassment applications (s.29(2)), while Answer A adds facts absent from B, such as the s.83 grounds on which the Board can or must refuse eviction.",
+          "answer 1 vs 3: different - Answer B says the landlord generally must apply to the Board (s. 69(1)), which Answer A does not state, and Answer A includes mandatory refusal grounds under s. 83(3) and harassment protection under s. 23, which Answer B omits.",
+          "answer 2 vs 3: different - Answer B says the Board may refuse eviction on fairness grounds under s. 83(1)(a), which Answer A never mentions, while Answer A says the landlord must not harass the tenant (s. 23) and that a tenant has one year to apply (s. 29), which Answer B omits.",
+          "answer 1 vs 4: different - Answer B adds claims A lacks (the s. 69(1) notice-then-Board-application requirement and the one-year limit for harassment applications), while Answer A adds claims B lacks (the mandatory refusal grounds in s. 83(3) and the s. 29(1) paragraph 3 application).",
+          "answer 2 vs 4: different - Answer B includes an extra legal point, that the Board may refuse an eviction as unfair under s. 83(1)(a), which Answer A never mentions, while every substantive point in Answer A (the void no-pet clause, the s. 76 grounds and defences, the notice requirement, the s. 23 harassment bar and one-year limit) also appears in Answer B.",
+          "answer 3 vs 4: different - Answer B adds substantive points absent from A, namely the harassment prohibition (s. 23) and the one-year deadline to apply to the Board (s. 29), while A adds that the sections don't settle whether cats are \"inherently dangerous\" under s. 76(1)(c), which B doesn't state.",
+          "answer 1 vs 5: different - Answer A contains everything in Answer B plus extra points that B lacks (the complaint-to-authority refusal ground in s. 83(3)(b) and the tenant's right to apply to the Board under s. 29), so B does not cover A's content.",
+          "answer 2 vs 5: different - Answer B adds the s. 83 unfairness and serious-breach refusal grounds, which Answer A omits, while Answer A adds the s. 69(1) notice requirement and the one-year harassment application deadline, which Answer B omits.",
+          "answer 3 vs 5: different - Answer B adds claims absent from A (the mandatory refusal grounds in s. 83(3) and the harassment protection in s. 23), while Answer A adds a claim absent from B (that a landlord generally must apply to the Board under s. 69(1)).",
+          "answer 4 vs 5: different - Answer B adds the mandatory refusal grounds in s. 83(3) (landlord's serious breach, or the tenant enforcing rights), which Answer A omits, while Answer A adds the notice-to-terminate requirement in s. 69(1) and the one-year limit for harassment applications, which Answer B omits."
+        ]
+      },
+      "loose": {
+        "clusters": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: SAME - Both answers conclude the eviction is probably not allowed just for having a cat, both say the no-pet clause is void under s. 14, and both list the same s. 76(1) grounds and s. 76(2)–(3) defences; the differences are only extra details (notice rules, the one-year limit, s. 83 protections) that do not contradict each other.",
+          "answer 1 vs 3: SAME - Both answers conclude that a no-pet clause is void under s. 14 and that the Board cannot evict over an animal unless one of the s. 76(1) grounds is met, with the same exceptions and fairness rule, and neither contradicts the other on any key fact.",
+          "answer 1 vs 4: SAME - Both answers conclude that the no-pet clause is void and that a cat alone is not grounds for eviction, and both list the same s. 76(1) grounds with the same s. 76(2)–(3) exceptions and the s. 83(1)(a) unfairness discretion, with no conflicting legal facts; they differ only in which extra provisions they add.",
+          "answer 1 vs 5: SAME - Both say the \"no pets\" clause is void under s. 14, that eviction for an animal requires one of the s. 76(1) grounds with the same exceptions, and that the Board can refuse eviction as unfair, with each answer adding only minor protections the other omits, which does not conflict."
+        ]
+      }
+    },
+    "_sections": [
+      {
+        "total_parts": 1,
+        "section": "76",
+        "heading": "Application based on animals",
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "hash": "3a0cec285bdf0b71",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "text": "Residential Tenancies Act, 2006, s. 76 – Application based on animals\n(1) If an application based on a notice of termination under section 64, 65 or 66 is grounded on the presence, control or behaviour of an animal in or about the residential complex, the Board shall not make an order terminating the tenancy and evicting the tenant without being satisfied that the tenant is keeping an animal and that,\n(a) subject to subsection (2), the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the residential complex for all usual purposes by the landlord or other tenants;\n(b) subject to subsection (3), the presence of an animal of that species has caused the landlord or another tenant to suffer a serious allergic reaction; or\n(c) the presence of an animal of that species or breed is inherently dangerous to the safety of the landlord or the other tenants.\n(2) The Board shall not make an order terminating the tenancy and evicting the tenant relying on clause (1) (a) if it is satisfied that the animal kept by the tenant did not cause or contribute to the substantial interference.\n(3) The Board shall not make an order terminating the tenancy and evicting the tenant relying on clause (1) (b) if it is satisfied that the animal kept by the tenant did not cause or contribute to the allergic reaction.",
+        "score": 0.83
+      },
+      {
+        "section": "29",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "citation": "SO 2006, c 17",
+        "hash": "92e2c363db76cb82",
+        "part": 1,
+        "law_part": "Part Iii Responsibilities Of Landlords",
+        "total_parts": 1,
+        "heading": "Tenant applications",
+        "text": "Residential Tenancies Act, 2006, s. 29 – Tenant applications\n(1) A tenant or former tenant of a rental unit may apply to the Board for any of the following orders:\n1. An order determining that the landlord has breached an obligation under subsection 20 (1) or section 161.\n2. An order determining that the landlord, superintendent or agent of the landlord has withheld the reasonable supply of any vital service, care service or food that it is the landlord’s obligation to supply under the tenancy agreement or deliberately interfered with the reasonable supply of any vital service, care service or food.\n3. An order determining that the landlord, superintendent or agent of the landlord has substantially interfered with the reasonable enjoyment of the rental unit or residential complex for all usual purposes by the tenant or a member of his or her household.\n4. An order determining that the landlord, superintendent or agent of the landlord has harassed, obstructed, coerced, threatened or interfered with the tenant during the tenant’s occupancy of the rental unit.\n5. An order determining that the landlord, superintendent or agent of the landlord has altered the locking system on a door giving entry to the rental unit or the residential complex or caused the locking system to be altered during the tenant’s occupancy of the rental unit without giving the tenant replacement keys.\n6. An order determining that the landlord, superintendent or agent of the landlord has illegally entered the rental unit.\n(2) No application may be made under subsection (1) more than one year after the day the alleged conduct giving rise to the application occurred.",
+        "score": 0.807
+      },
+      {
+        "part": 1,
+        "section": "14",
+        "law": "Residential Tenancies Act, 2006",
+        "law_part": "Part Ii Tenancy Agreements",
+        "heading": "“No pet” provisions void",
+        "hash": "13b6088a8e836b8c",
+        "citation": "SO 2006, c 17",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 14 – “No pet” provisions void\nA provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+        "score": 0.801
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "part": 1,
+        "section": "83",
+        "citation": "SO 2006, c 17",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "hash": "08321cf16bbc5e49",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "total_parts": 1,
+        "heading": "Power of Board, eviction",
+        "text": "Residential Tenancies Act, 2006, s. 83 – Power of Board, eviction\n(1) Upon an application for an order evicting a tenant, the Board may, despite any other provision of this Act or the tenancy agreement,\n(a) refuse to grant the application unless satisfied, having regard to all the circumstances, that it would be unfair to refuse; or\n(b) subject to any prescribed limitations or conditions, order that the enforcement of the eviction order be postponed for a period of time.\n(2) If a hearing is held, the Board shall not grant the application unless it has reviewed the circumstances and considered whether or not it should exercise its powers under subsection (1).\n(3) Without restricting the generality of subsection (1), the Board shall refuse to grant the application where satisfied that,\n(a) the landlord is in serious breach of the landlord’s responsibilities under this Act or of any material covenant in the tenancy agreement;\n(b) the reason for the application being brought is that the tenant has complained to a governmental authority of the landlord’s violation of a law dealing with health, safety, housing or maintenance standards;\n(c) the reason for the application being brought is that the tenant has attempted to secure or enforce his or her legal rights;\n(d) the reason for the application being brought is that the tenant is a member of a tenants’ association or is attempting to organize such an association; or\n(e) the reason for the application being brought is that the rental unit is occupied by children and the occupation by the children does not constitute overcrowding.\n(4) The Board shall not issue an eviction order in a proceeding regarding termination of a tenancy for the purposes of residential occupation, demolition, conversion to non-residential rental use, renovations or repairs until the landlord has complied with section 48.1, 49.1, 52, 54 or 55, as the case may be.\n(5) If a tenant has given a landlord notice under subsection 53 (2) and subsection 54 (2) or (4) applies, the Board shall not issue an eviction order in a proceeding regarding termination of the tenancy until the landlord has compensated the tenant in accordance with subsection 54 (2) or (4), as applicable.\n(6) Without restricting the generality of subsections (1) and (2), if a hearing is held in respect of an application under section 69 for an order evicting a tenant based on arrears of rent arising in whole or in part during the period beginning on March 17, 2020 and ending on the prescribed date, in determining whether to exercise its powers under subsection (1) the Board shall consider whether the landlord has attempted to negotiate an agreement with the tenant including terms of payment for the tenant’s arrears.\n(7) Subsection (6) applies with respect to any application described in that subsection that,\n(a) is made on or after the day subsection 17 (3) of Schedule 4 to the Protecting Tenants and Strengthening Community Housing Act, 2020 comes into force; or\n(b) was made before that day and was not finally determined before that day.\n(8) For greater certainty, subsection (6) applies whether or not a date has been prescribed for the purposes of that subsection.",
+        "score": 0.793
+      },
+      {
+        "law_part": "Part Viii Suite Meters And Apportionment Of Utility Costs",
+        "hash": "b823d957355d33c6",
+        "part": 1,
+        "heading": "Suite meters",
+        "total_parts": 1,
+        "citation": "SO 2006, c 17",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "section": "137",
+        "text": "Residential Tenancies Act, 2006, s. 137 – Suite meters (excerpt)\n[...]\n(10) If a meter or a suite meter is installed in respect of a rental unit, a landlord shall comply with the electricity conservation and efficiency obligations referred to in subsection (9) in such other circumstances as are prescribed.\n(11) A tenant or a former tenant of a rental unit may apply to the Board in the prescribed circumstances for an order determining whether the landlord has breached an obligation under this section.\n(12) If the Board determines in an application under subsection (11) that a landlord has breached an obligation under subsection (2), (6), (9) or (10), the Board may do one or more of the following:\n1. Order an abatement of rent.\n2. Authorize a repair or replacement that has been or is to be made, or work that has been or is to be done, and order its cost to be paid by the landlord to the tenant.\n3. Order the landlord to do specified repairs or replacements or other work within a specified time.\n4. Order that the rent charged be reduced by a specified amount and order the appropriate rebate.\n5. Make any other order that it considers appropriate.\n(13) If the Board determines in an application under subsection (11) that a landlord has breached an obligation under subsection (3), (4) or (5), the Board may, in addition to the remedies set out in subsection (12), do one or more of the following:\n1. Terminate the tenancy.\n2. Order that the landlord assume the obligation to supply electricity to the rental unit and set the new rent that can be charged.\n(14) If the Board makes an order terminating a tenancy under paragraph 1 of subsection (13), the Board may order that the tenant be evicted, effective not earlier than the termination date specified in the order.\n(15) Except under the prescribed circumstances, for the purpose of section 126, a capital expenditure is not an eligible capital expenditure if,\n(a) a meter or a suite meter was installed in respect of a residential complex before the capital expenditure was made;\n(b) the capital expenditure failed to promote the conservation of electricity or the more efficient use of electricity; and\n(c) the purpose for which the capital expenditure was made could reasonably have been achieved by making a capital expenditure that promoted the conservation of electricity or the more efficient use of electricity.\n(16) Where a meter or suite meter is installed in respect of a rental unit and the tenant is responsible for the payment for the supply of electricity, sections 134 and 135 have no application to charges, fees or security deposits that are required to be paid for the supply of electricity and any amount paid for the supply of electricity shall not be considered to be an amount of consideration or a service that falls within the definition of “rent” in subsection 2 (1).\n[...]",
+        "score": 0.791
+      },
+      {
+        "total_parts": 1,
+        "law": "Residential Tenancies Act, 2006",
+        "heading": "Termination only in accordance with Act",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "hash": "3385a4864a75595f",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "section": "37",
+        "citation": "SO 2006, c 17",
+        "text": "Residential Tenancies Act, 2006, s. 37 – Termination only in accordance with Act\n(1) A tenancy may be terminated only in accordance with this Act.\n(2) If a notice of termination is given in accordance with this Act and the tenant vacates the rental unit in accordance with the notice, the tenancy is terminated on the termination date set out in the notice.\n(3) A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.\n(4) A tenant’s notice to terminate a tenancy is void if it is given,\n(a) at the time the tenancy agreement is entered into; or\n(b) as a condition of entering into the tenancy agreement.\n(5) An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into,\n(a) at the time the tenancy agreement is entered into; or\n(b) as a condition of entering into the tenancy agreement.\n(6) Subsections (4) and (5) do not apply to rental units occupied by students of one or more post-secondary educational institutions,\n(a) in a residential complex owned, operated or administered by or on behalf of the post-secondary educational institutions; or\n(b) in a residential complex where a non-profit housing co-operative provides housing units primarily for post-secondary students.\n(7) Subsections (4) and (5) do not apply to rental units in a residential complex with respect to which the landlord has entered into an agreement with one or more post-secondary educational institutions providing,\n(a) that the landlord, as of the date the agreement is entered into and for the duration of the agreement, rents the rental units which are the subject of the agreement only to students of the institution or institutions;\n(b) that the landlord will comply with the maintenance standards set out in the agreement with respect to the rental units which are the subject of the agreement; and\n(c) that the landlord will not charge a new tenant of a rental unit which is a subject of the agreement a rent which is greater than the lawful rent being charged to the former tenant plus the guideline.\n(8) The maintenance standards set out in the agreement and referred to in clause (7) (b) shall not provide for a lower maintenance standard than that required by law.\n(9) If the landlord breaches any of clauses (7) (a), (b) and (c), the agreement referred to in subsection (7) is terminated and the exemption provided by subsection (7) no longer applies.\n(10) The landlord shall be deemed to have not breached the condition in clause (7) (a) if,\n(a) upon a tenant ceasing to be a student of a post-secondary educational institution that is a party to the agreement with the landlord, the landlord takes action to terminate the tenancy in accordance with an agreement with the tenant to terminate the tenancy or a notice of termination given by the tenant; or\n(b) a tenant sublets the rental unit to a person who is not a student of a post-secondary educational institution that is a party to the agreement with the landlord.\n(11) Either party to an agreement referred to in subsection (7) may terminate the agreement on at least 90 days written notice to the other party and, upon the termination of the agreement, the exemption provided by subsection (7) no longer applies.",
+        "score": 0.786
+      },
+      {
+        "part": 1,
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "hash": "3fbbbfb8d0876378",
+        "heading": "Landlord not to harass, etc.",
+        "section": "23",
+        "law_part": "Part Iii Responsibilities Of Landlords",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 23 – Landlord not to harass, etc.\nA landlord shall not harass, obstruct, coerce, threaten or interfere with a tenant.",
+        "score": 0.778
+      },
+      {
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "heading": "Application by landlord",
+        "section": "69",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "total_parts": 1,
+        "hash": "3df7682c47779dd7",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "part": 1,
+        "text": "Residential Tenancies Act, 2006, s. 69 – Application by landlord\n(1) A landlord may apply to the Board for an order terminating a tenancy and evicting the tenant if the landlord has given notice to terminate the tenancy under this Act or the Tenant Protection Act, 1997.\n(2) An application under subsection (1) may not be made later than 30 days after the termination date specified in the notice.\n(3) Subsection (2) does not apply with respect to an application based on the tenant’s failure to pay rent.",
+        "score": 0.777
+      }
+    ]
+  },
+  {
+    "question": "When do I get paid overtime?",
+    "type": "easy",
+    "correct_answer": "For each hour worked over 44 hours in a work week, at least one and a half times the regular rate.",
+    "source_section": "ESA 22",
+    "assistant_answer": "You are generally owed overtime pay for each hour you work beyond 44 hours in a work week. The rate is at least one and one-half times your regular rate (Employment Standards Act, 2000, s. 22(1)).\n\n**Key points:**\n\n- **Work week:** This is a recurring seven-day period your employer chooses to schedule work. If your employer hasn't chosen one, it runs Sunday to Saturday (s. 1).\n- **Higher threshold in your contract or another law:** If your employment contract or another Act gives a greater overtime benefit, such as a lower hour threshold, that provision applies instead (s. 1, \"overtime hour\").\n- **Two pay rates:** If you have two or more regular rates with the same employer in one week, overtime starts once your total hours reach the threshold. Each overtime hour is paid at one and one-half times the rate for the work you did in that hour (s. 22(1.1)).\n- **Averaging hours:** Hours can be averaged over two to four weeks, but only under a written agreement with your employer. The agreement must set a start date and an expiry date. If you are not unionized, it can't run more than two years (s. 22(2), (3), (3.1), (3.2)). An averaging agreement can't be revoked early unless you and your employer both agree (s. 22(6)).\n- **Time off instead of pay:** You can choose to take 1.5 hours of paid time off for each overtime hour, but only if you and your employer agree. The time off must be taken within three months of the overtime week, or within 12 months if you agree (s. 22(7)).\n- **Public holidays:** Hours you work on a public holiday for premium pay don't count toward overtime (s. 31).\n\n**What I could not find:** The sections don't say whether a different overtime threshold has been set by regulation for your type of work. Section 22(1) mentions that possibility, but I don't have the regulations. Your employer or the Ministry of Labour can tell you whether one applies to you.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "overtime pay eligibility; hours of work exceeding eight in a day or forty-four in a week; overtime pay rate; wages for overtime hours",
+    "sections_retrieved": "ESA 31; ESA 22; ESA 17; ESA 1; ESA 141; ESA 21.2; ESA 81; ESA 49.7",
+    "source_section_retrieved": "yes",
+    "grade": "correct",
+    "judge_reason": "The answer gives the key's main rule: overtime at one and one-half times the regular rate for hours over 44 in a work week (s. 22(1)). The extra points on work weeks, contract thresholds, averaging, time off, and public holidays all come from the provided sections.",
+    "citations_total": 3,
+    "citations_verified": 3,
+    "citations_unsupported": 0,
+    "citations_not_found": 0,
+    "citation_flag": "ok",
+    "citation_details": "VERIFIED: Employment Standards Act, 2000, s. 22 - s. 22(1) sets overtime at at least 1.5 times the regular rate past 44 hours; s. 22(1.1) pays 1.5 times the rate for the work done in each overtime hour; s. 22(3.1) caps non-union averaging agreements at two years; s. 22(6) bars early revocation without mutual agreement; s. 22(7) allows paid time off within three months, or 12 months with the employee's agreement.\nVERIFIED: Employment Standards Act, 2000, s. 1 - The definition of \"work week\" in s. 1(1)(b) defaults to Sunday to Saturday when the employer hasn't selected a period, and the \"overtime hour\" definition in s. 1(1)(a) gives effect to a greater overtime benefit in a contract or other Act.\nVERIFIED: Employment Standards Act, 2000, s. 31 - s. 31 says hours worked on a public holiday for which premium pay is received are not counted in calculating overtime pay.",
+    "_citations": [
+      {
+        "law": "Employment Standards Act, 2000",
+        "section": "22",
+        "cited_as": [
+          "s. 22(1)",
+          "s. 22(1.1)",
+          "s. 22(2)",
+          "s. 22(6)",
+          "s. 22(7)"
+        ],
+        "claims": [
+          "The rate is at least one and one-half times your regular rate (Employment Standards Act, 2000, s. 22(1)).",
+          "Each overtime hour is paid at one and one-half times the rate for the work you did in that hour (s. 22(1.1)).",
+          "If you are not unionized, it can't run more than two years (s. 22(2), (3), (3.1), (3.2)).",
+          "An averaging agreement can't be revoked early unless you and your employer both agree (s. 22(6)).",
+          "The time off must be taken within three months of the overtime week, or within 12 months if you agree (s. 22(7))."
+        ],
+        "given": true,
+        "status": "verified",
+        "reason": "s. 22(1) sets overtime at at least 1.5 times the regular rate past 44 hours; s. 22(1.1) pays 1.5 times the rate for the work done in each overtime hour; s. 22(3.1) caps non-union averaging agreements at two years; s. 22(6) bars early revocation without mutual agreement; s. 22(7) allows paid time off within three months, or 12 months with the employee's agreement."
+      },
+      {
+        "law": "Employment Standards Act, 2000",
+        "section": "1",
+        "cited_as": [
+          "s. 1",
+          "s. 1"
+        ],
+        "claims": [
+          "If your employer hasn't chosen one, it runs Sunday to Saturday (s. 1).",
+          "Higher threshold in your contract or another law:** If your employment contract or another Act gives a greater overtime benefit, such as a lower hour threshold, that provision applies instead (s. 1, \"overtime hour\")."
+        ],
+        "given": true,
+        "status": "verified",
+        "reason": "The definition of \"work week\" in s. 1(1)(b) defaults to Sunday to Saturday when the employer hasn't selected a period, and the \"overtime hour\" definition in s. 1(1)(a) gives effect to a greater overtime benefit in a contract or other Act."
+      },
+      {
+        "law": "Employment Standards Act, 2000",
+        "section": "31",
+        "cited_as": [
+          "s. 31"
+        ],
+        "claims": [
+          "Public holidays:** Hours you work on a public holiday for premium pay don't count toward overtime (s. 31)."
+        ],
+        "given": true,
+        "status": "verified",
+        "reason": "s. 31 says hours worked on a public holiday for which premium pay is received are not counted in calculating overtime pay."
+      }
+    ],
+    "entropy": 1.609,
+    "n_clusters": 5,
+    "cluster_sizes": "1-1-1-1-1",
+    "confidence": "low",
+    "entropy_loose": 0.0,
+    "n_clusters_loose": 1,
+    "cluster_sizes_loose": "5",
+    "confidence_loose": "high",
+    "_entropy": {
+      "samples": [
+        "Under the general rule, you are owed overtime pay for hours worked over 44 in a work week. Your employer must pay at least one and one-half times your regular rate for each of those hours (Employment Standards Act, 2000, s. 22(1)).\n\nKey points:\n\n- **Work week:** This is a recurring seven-day period your employer chooses to schedule work. If the employer hasn't chosen one, it runs Sunday to Saturday (Employment Standards Act, 2000, s. 1).\n- **Higher threshold in your contract or another law:** If your employment contract or another Act gives you a better overtime benefit than the standard rule, the lower threshold in that provision applies to you (Employment Standards Act, 2000, s. 1, \"overtime hour\").\n- **Averaging:** Hours can be averaged over two to four weeks only if you have a written agreement with your employer. The agreement must set a start date and an expiry date. If you are not in a union, it cannot run longer than two years (Employment Standards Act, 2000, s. 22(2), (3), (3.1), (3.2)). You generally cannot cancel an averaging agreement before it expires unless you and your employer both agree (Employment Standards Act, 2000, s. 22(6)).\n- **Time off instead of pay:** You can take one and one-half hours of paid time off for each overtime hour, but only if you and your employer agree. The time off must be taken within three months of the work week (or within 12 months with your agreement). If your employment ends before you take it, you must be paid overtime pay (Employment Standards Act, 2000, s. 22(7), (8)).\n- **Public holidays:** Hours worked on a public holiday that earn premium pay do not count toward your overtime hours (Employment Standards Act, 2000, s. 31).\n- **Multiple pay rates:** If you have two or more regular rates with the same employer in one week, overtime is calculated on the rate that applies to each hour after you reach the threshold (Employment Standards Act, 2000, s. 22(1.1)).\n- **Daily and weekly limits:** Your employer generally cannot require or permit more than 8 hours in a day or 48 hours in a week, unless you have a written agreement allowing more (Employment Standards Act, 2000, s. 17(1)–(3)).\n\nI couldn't find in the laws I have the details of any prescribed different overtime threshold for specific jobs or industries, or any overtime exemptions in the regulations. Those would be in the Employment Standards regulations under the Employment Standards Act, 2000.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "You get overtime pay when you work more than 44 hours in a work week. The employer must pay at least one and one-half times your regular rate for each hour over that limit (Employment Standards Act, 2000, s. 22(1)).\n\nKey points:\n\n- **Work week:** This is a recurring seven-day period that the employer selects for scheduling. If the employer hasn't selected one, it runs from Sunday to Saturday (Employment Standards Act, 2000, s. 1, \"work week\").\n- **Higher threshold:** If your employment contract or another Act gives you a greater overtime benefit, such as a lower threshold, that provision applies instead (Employment Standards Act, 2000, s. 1, \"overtime hour\").\n- **Two or more rates:** If you have two or more regular rates with the same employer in one week, overtime starts after your total hours reach the threshold. Each overtime hour is paid at 1.5 times the rate for the work done in that hour (Employment Standards Act, 2000, s. 22(1.1)).\n- **Averaging:** Hours can be averaged over two to four weeks only if you have a written agreement with your employer. The agreement must set a start date and an expiry date. For non-union employees, it cannot run more than two years (Employment Standards Act, 2000, s. 22(2), (3), (3.1), (3.2)). Such an agreement generally cannot be revoked early unless you and your employer both agree (Employment Standards Act, 2000, s. 22(6)).\n- **Time off instead of pay:** You can take one and one-half hours of paid time off for each overtime hour, but only if you and your employer agree. The time off must be taken within three months of the work week, or within 12 months if you agree. If your employment ends before you take it, you must be paid overtime for those hours (Employment Standards Act, 2000, s. 22(7), (8)).\n- **Public holidays:** Hours for which you receive premium pay for working a public holiday do not count toward overtime (Employment Standards Act, 2000, s. 31).\n- **Daily and weekly limits:** Your employer generally cannot require or permit more than eight hours in a day or 48 hours in a week, unless you have a written agreement that allows more (Employment Standards Act, 2000, s. 17(1)–(3)).\n\nI couldn't find in the sections provided which types of work or employees, if any, are exempt from these overtime rules. Regulations may set exemptions (Employment Standards Act, 2000, s. 22(9)), but those regulations aren't included here.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "You are generally owed overtime pay when you work more than 44 hours in a work week. The rate is at least one and one-half times your regular rate for each hour over 44 (Employment Standards Act, 2000, s. 22(1)). A \"work week\" is a recurring seven-day period your employer selects for scheduling work, or if none is selected, Sunday to Saturday (s. 1).\n\nKey conditions and exceptions:\n\n- **Different threshold:** The law allows for a different prescribed overtime threshold, so check whether one applies to your job (s. 22(1)). I can't tell from these sections what that threshold would be.\n- **Better terms:** If your employment contract or another Act gives a greater overtime benefit than the Act, the better benefit counts as your overtime threshold (s. 1, \"overtime hour\").\n- **Two pay rates:** If you have two or more regular rates with the same employer in one week, overtime is owed after your total hours reach the threshold, at one and one-half times the rate for the work done in each overtime hour (s. 22(1.1)).\n- **Averaging:** Hours can be averaged over two or more weeks, up to four weeks, but only under a written agreement with your employer that meets the requirements in s. 22(2) to (3.2).\n- **Time off instead of pay:** You can choose to take paid time off instead of overtime pay, at one and one-half hours off for each overtime hour, if you and your employer agree. The time off must generally be taken within three months of the work week, or within 12 months with your agreement (s. 22(7)). If your employment ends before you take it, you must be paid overtime for those hours (s. 22(8)).\n- **Public holidays:** Hours for which you receive premium pay for working a public holiday do not count toward overtime (s. 31).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "You generally get overtime pay for each hour you work over 44 hours in a work week. The pay must be at least one and one-half times your regular rate (Employment Standards Act, 2000, s. 22(1)).\n\n**Key points:**\n\n- **Work week:** This is a recurring period of seven consecutive days that your employer chooses to schedule work. If your employer hasn't chosen one, it runs from Sunday to Saturday (ESA, s. 1, \"work week\").\n- **Higher threshold in your contract:** If your employment contract or another law gives you a better overtime benefit, the lower threshold in that provision applies (ESA, s. 1, \"overtime hour\").\n- **Two pay rates:** If you have two or more regular rates with the same employer in one week, overtime starts once your total hours reach the threshold. Each overtime hour is paid at one and one-half times the rate for the work done in that hour (ESA, s. 22(1.1)).\n- **Averaging:** Your hours can be averaged over two to four weeks only if you have a written agreement with your employer. The agreement must include a start and expiry date, and it cannot run more than two years if you are not in a union (ESA, s. 22(2), (3), (3.1), (3.2)).\n- **Time off instead of pay:** You can choose time off instead of overtime pay if you and your employer agree. You get one and one-half hours of paid time off for each overtime hour. The time off must be taken within three months of the work week, or within 12 months with your agreement (ESA, s. 22(7)).\n- **Public holidays:** Hours you work on a public holiday that earn premium pay do not count toward the 44-hour overtime threshold (ESA, s. 31).\n\nI couldn't find in these sections whether any specific jobs are exempt from overtime, or the details of the daily and weekly hour limits that apply to your work. Those are covered by regulations and other parts of the Act that weren't provided.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "You get overtime pay when you work more than **44 hours in a work week**. For each hour over that, your employer must pay at least **one and one-half times your regular rate** (Employment Standards Act, 2000, s. 22(1)). The law also allows for a different threshold if one has been prescribed, but the sections I have don't list any.\n\nKey conditions and exceptions:\n\n- **Work week:** This is a recurring seven-day period. Your employer may pick it for scheduling. If not, it runs Sunday to Saturday (Employment Standards Act, 2000, s. 1).\n- **Two or more rates:** If you earn two or more regular rates from the same employer in one week, overtime starts once your total hours reach the threshold. Each overtime hour is paid at one and one-half times the rate that applies to the work done in that hour (s. 22(1.1)).\n- **Averaging agreements:** Your hours can be averaged over two to four weeks, but only if you have a written agreement with your employer. The agreement must set a start date and an expiry date. If you are not in a union, it cannot run more than two years (s. 22(2), (3), (3.1), (3.2)).\n- **Time off instead of pay:** You can agree in writing to take 1.5 hours of paid time off for each overtime hour. The time off must be taken within three months of the work week, or within 12 months if you agree (s. 22(7)). If your employment ends before you take it, you must be paid overtime for those hours (s. 22(8)).\n- **Public holidays:** Hours worked on a public holiday for which you receive premium pay do not count toward overtime (s. 31).\n- **Contract or other law:** If your employment contract or another Act gives you a better overtime benefit, that benefit applies instead (s. 1, definition of \"overtime hour\").\n\nI couldn't find in the sections I have any details on prescribed industry-specific thresholds or exemptions from overtime.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic."
+      ],
+      "strict": {
+        "clusters": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: different - Both answers share the same overtime rules, but only Answer A says regulations may prescribe different overtime thresholds for specific jobs or industries, which Answer B does not mention, while Answer B's mention of exemptions under s. 22(9) is covered by Answer A's note that regulations contain exemptions.",
+          "answer 1 vs 3: different - Answer A includes extra specifics absent from B (the two-year cap on non-union averaging agreements, the no-early-cancellation rule, and the 8-hour/48-hour daily and weekly limits), so B does not entail A, while A's implicit acknowledgment that prescribed different thresholds may exist covers B's main points.",
+          "answer 2 vs 3: different - Answer B says the law allows a different prescribed overtime threshold, which Answer A never mentions, while Answer A includes the 8-hour daily and 48-hour weekly limits, the two-year cap on non-union averaging agreements, and the revocation rule, none of which Answer B states.",
+          "answer 1 vs 4: different - Every substantive point in B (the 44-hour threshold, work week, two-rate calculation, averaging limits, time-off rules, public holiday exclusion) also appears in A, but A adds facts B lacks, such as the 8-hour daily and 48-hour weekly limits, the rule that averaging can't be cancelled early, and the requirement to pay out unused time off on termination.",
+          "answer 2 vs 4: different - Answer A contains everything in Answer B plus extra rules B omits (no early revocation of averaging agreements, payout if employment ends before time off is taken, and the 8-hour daily and 48-hour weekly limits), so B does not contain A's additional content.",
+          "answer 3 vs 4: different - Answer B adds that averaging agreements need start and expiry dates and cannot exceed two years for non-union employees, which Answer A does not state, while Answer A adds the possible different prescribed threshold and the rule requiring overtime pay if employment ends before time off is taken, which Answer B omits.",
+          "answer 1 vs 5: different - Answer A contains everything Answer B states, but Answer B omits A's points on cancelling averaging agreements and the 8-hour daily and 48-hour weekly limits, so B does not cover A's content.",
+          "answer 2 vs 5: different - Answer B says the law allows for a prescribed different threshold, which Answer A never mentions, while Answer A adds points B lacks, including the 8-hour daily and 48-hour weekly limits, the rule that averaging agreements can't be revoked early, and the possibility of regulatory exemptions.",
+          "answer 3 vs 5: different - Answer B adds specifics absent from Answer A, such as the averaging agreement needing start and expiry dates and the two-year cap for non-union employees, while every point in Answer A (including the written agreement requirement and the prescribed-threshold caveat) is also covered by Answer B.",
+          "answer 4 vs 5: different - Answer B adds that overtime owed for unused time off must be paid if employment ends before the time is taken (s. 22(8)), which Answer A does not mention, while every point in Answer A (including its looser \"agree\" wording for time off) is also covered by Answer B."
+        ]
+      },
+      "loose": {
+        "clusters": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: SAME - Both answers give the same core rules (overtime after 44 hours a week at 1.5 times the regular rate, the same work week default, averaging, time-off, public holiday, and daily/weekly limit rules), and neither contradicts the other on any key legal fact; they differ only in wording and in how they describe the regulations.",
+          "answer 1 vs 3: SAME - Both answers state the same core rules: overtime at 1.5 times the regular rate over 44 hours a week, the work-week definition, the same better-terms override, the same two-rate and public-holiday treatment, the same averaging limits, and the same time-off rules, with Answer A adding extra details that don't conflict.",
+          "answer 1 vs 4: SAME - Both answers give the same core rule (overtime after 44 hours in a work week at one and one-half times the regular rate), with matching details on the work week, averaging, time off, public holidays, and the higher-threshold provision, and differ only in what extra detail they include, such as A's daily and weekly limits.",
+          "answer 1 vs 5: SAME - Both answers state the same core rules (overtime after 44 hours in a work week at one and one-half times the regular rate, the same averaging, time-off, public holiday, multiple-rate, and better-contract-benefit rules), and any differences are only omissions or extra detail, such as Answer A's daily and weekly limits, with no contradictions."
+        ]
+      }
+    },
+    "_sections": [
+      {
+        "section": "31",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "heading": "Premium pay hours not overtime hours",
+        "hash": "07ae393db13f8003",
+        "part": 1,
+        "law": "Employment Standards Act, 2000",
+        "law_part": "Part X Public Holidays",
+        "total_parts": 1,
+        "text": "Employment Standards Act, 2000, s. 31 – Premium pay hours not overtime hours\nIf an employee receives premium pay for working on a public holiday, the hours worked shall not be taken into consideration in calculating overtime pay to which the employee may be entitled.",
+        "score": 0.781
+      },
+      {
+        "heading": "Overtime threshold",
+        "total_parts": 1,
+        "hash": "8a56b27c73152410",
+        "section": "22",
+        "law_part": "Part Viii Overtime Pay",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "part": 1,
+        "law": "Employment Standards Act, 2000",
+        "text": "Employment Standards Act, 2000, s. 22 – Overtime threshold\n(1) Subject to subsection (1.1), an employer shall pay an employee overtime pay of at least one and one-half times his or her regular rate for each hour of work in excess of 44 hours in each work week or, if another threshold is prescribed, that prescribed threshold.\n(1.1) If an employee has two or more regular rates for work performed for the same employer in a work week,\n(a) the employee is entitled to be paid overtime pay for each hour of work performed in the week after the total number of hours performed for the employer reaches the overtime threshold; and\n(b) the overtime pay for each hour referred to in clause (a) is one and one-half times the regular rate that applies to the work performed in that hour.\n(2) An employee’s hours of work may be averaged over separate, non-overlapping, contiguous periods of two or more consecutive weeks for the purpose of determining the employee’s entitlement, if any, to overtime pay if,\n(a) the employee has made an agreement with the employer that his or her hours of work may be averaged over periods of a specified number of weeks; and\n(b) the averaging period does not exceed four weeks or the number of weeks specified in the agreement, whichever is lower.\n(2.1) Repealed: 2019, c. 4, Sched. 9, s. 8 (1).\n(2.2) For the purposes of this section, each of the following agreements shall be treated as if it were an agreement described in clause (2) (a):\n1. An agreement to average hours of work made under a predecessor to this Act.\n2. An agreement to average hours of work made under this section as it read on February 28, 2005.\n3. An agreement to average hours of work that complies with the conditions prescribed by the regulations made under paragraph 7 of subsection 141 (1) as it read on February 28, 2005.\n(3) Subject to subsections (3.1) and (3.2), an averaging agreement is not valid unless it provides for a start date and an expiry date.\n(3.1) If the employee is not represented by a trade union, the averaging agreement’s expiry date shall not be more than two years after the start date.\n(3.2) If the employee is represented by a trade union and a collective agreement applies to the employee, an averaging agreement shall expire no later than the day a subsequent collective agreement that applies to the employee comes into operation.\n(4) For greater certainty, an averaging agreement may be renewed or replaced if the requirements set out in this section are met.\n(5) Any averaging agreement that was made before the day the Restoring Ontario’s Competitiveness Act, 2019 received Royal Assent in accordance with this section, as it read at the time, and that was approved by the Director under section 22.1, as it read at the time, is deemed to have met the requirements set out in subsections (2), (3), (3.1) and (3.2) and continues to be valid until the earlier of,\n(a) the day the agreement is revoked under subsection (6);\n(b) the day the Director’s approval expires; or\n(c) the day the Director’s approval is revoked.\n(5.1) Repealed: 2019, c. 4, Sched. 9, s. 8 (4).\n(6) No averaging agreement referred to in this section may be revoked before it expires unless the employer and the employee agree to revoke it.\n(7) The employee may be compensated for overtime hours by receiving one and one-half hours of paid time off work for each hour of overtime worked instead of overtime pay if,\n(a) the employee and the employer agree to do so; and\n(b) the paid time off work is taken within three months of the work week in which the overtime was earned or, with the employee’s agreement, within 12 months of that work week.\n(8) If the employment of an employee ends before the paid time off is taken under subsection (7), the employer shall pay the employee overtime pay for the overtime hours that were worked in accordance with subsection 11 (5).\n(9) If an employee who performs work of a particular kind or character is exempted from the application of this section by the regulations or the regulations prescribe an overtime threshold of other than 44 hours for an employee who performs such work, and the duties of an employee’s position require him or her to perform both that work and work of another kind or character, this Part shall apply to the employee in respect of all work performed by him or her in a work week unless the time spent by the employee performing that other work constitutes less than half the time that the employee spent fulfilling the duties of his or her position in that work week.",
+        "score": 0.77
+      },
+      {
+        "section": "17",
+        "law": "Employment Standards Act, 2000",
+        "heading": "Limit on hours of work",
+        "law_part": "Part Vii Hours Of Work And Eating Periods",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "hash": "d633bd99cbe56dd7",
+        "part": 1,
+        "total_parts": 1,
+        "text": "Employment Standards Act, 2000, s. 17 – Limit on hours of work\n(1) Subject to subsections (2) and (3), no employer shall require or permit an employee to work more than,\n(a) eight hours in a day or, if the employer establishes a regular work day of more than eight hours for the employee, the number of hours in his or her regular work day; and\n(b) 48 hours in a work week.\n(2) An employee’s hours of work may exceed the limit set out in clause (1) (a) if the employee has made an agreement with the employer that he or she will work up to a specified number of hours in a day in excess of the limit and his or her hours of work in a day do not exceed the number specified in the agreement.\n(3) An employee’s hours of work may exceed the limit set out in clause (1) (b) if the employee has made an agreement with the employer that he or she will work up to a specified number of hours in a work week in excess of the limit and his or her hours of work in a work week do not exceed the number of hours specified in the agreement.\n(4) Repealed: 2019, c. 4, Sched. 9, s. 3 (1).\n(5) An agreement described in subsection (2) or (3) is not valid unless,\n(a) the employer has, before the agreement is made, provided the employee with a copy of the most recent document published by the Director under section 21.1; and\n(b) the agreement contains a statement in which the employee acknowledges that he or she has received a document that the employer has represented is the most recent document published by the Director under section 21.1.\n(6) An employee may revoke an agreement described in subsection (2) or (3) two weeks after giving written notice to the employer.\n(7) An employer may revoke an agreement described in subsection (2) or (3) after giving reasonable notice to the employee.\n(8) For the purposes of this section,\n(a) an agreement to exceed the limit on hours of work in a day set out in clause (1) (a) of this section as it read on February 28, 2005 shall be treated as if it were an agreement described in subsection (2);\n(b) an agreement to exceed the limit on hours of work in a work week set out in clause (1) (b) of this section as it read on February 28, 2005 shall be treated as if it were an agreement described in subsection (3); and\n(c) an agreement to exceed the limit on hours of work in a work week set out in clause (2) (b) of this section as it read on February 28, 2005 shall be treated as if it were an agreement described in subsection (3).\n(9) Subsection (5) does not apply in respect of,\n(a) an agreement described in subsection (8); or\n(b) an agreement described in subsection (2) or (3) in respect of an employee who is represented by a trade union.\n(10), (11) Repealed: 2019, c. 4, Sched. 9, s. 3 (4).",
+        "score": 0.745
+      },
+      {
+        "hash": "a49d0e52aa93d83a",
+        "citation": "SO 2000, c 41",
+        "law": "Employment Standards Act, 2000",
+        "law_part": "Part I Definitions",
+        "section": "1",
+        "part": 1,
+        "total_parts": 1,
+        "heading": "Definitions",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "text": "Employment Standards Act, 2000, s. 1 – Definitions (excerpt)\n[...]\n“foreign national” has the same meaning as in the Employment Protection for Foreign Nationals Act, 2009; (“étranger”)\n“homeworker” means an individual who performs work for compensation in premises occupied by the individual primarily as residential quarters but does not include an independent contractor; (“travailleur à domicile”)\n“hospital” means a hospital as defined in the Hospital Labour Disputes Arbitration Act; (“hôpital”)\n“infectious disease emergency leave pay” means pay for any paid days of leave taken under subsection 50.1 (1.2); (“indemnité de congé spécial en raison d’une maladie infectieuse”)\n“information technology consultant” means an individual who provides advice or services to a business or organization in respect of its information technology systems, including advice about or services in respect of planning, designing, analyzing, documenting, configuring, developing, testing and installing the business’s or organization’s information technology systems; (“conseiller en technologie de l’information”)\n“labour relations officer” means a labour relations officer appointed under the Labour Relations Act, 1995; (“agent des relations de travail”)\n“licence” means a licence issued under Part XVIII.1; (“permis”)\n“Minister” means the Minister of Labour; (“ministre”)\n“Ministry” means the Ministry of Labour; (“ministère”)\n“overtime hour”, with respect to an employee, means,\n(a) if one or more provisions in the employee’s employment contract or in another Act that applies to the employee’s employment provides a greater benefit for overtime than Part VIII (Overtime Pay), an hour of work in excess of the overtime threshold set out in that provision, and\n(b) otherwise, an hour of work in excess of the overtime threshold under this Act that applies to the employee’s employment; (“heure supplémentaire”)\n“person” includes a trade union; (“personne”)\n“premium pay” means an employee’s entitlement for working on a public holiday as described in subsection 24 (2); (“salaire majoré”)\n“prescribed” means prescribed by the regulations; (“prescrit”)\n“public holiday” means any of the following:\n1. New Year’s Day.\n1.1 Family Day, being the third Monday in February.\n2. Good Friday.\n3. Victoria Day.\n4. Canada Day.\n5. Labour Day.\n6. Thanksgiving Day.\n7. Christmas Day.\n8. December 26.\n9. Any day prescribed as a public holiday; (“jour férié”)\n“public holiday pay” means an employee’s entitlement with respect to a public holiday as determined under subsection 24 (1); (“salaire pour jour férié”)\n“recruiter” has the meaning set out in the regulations; (“recruteur”)\n“regular rate” means, subject to any regulation made under paragraph 10 of subsection 141 (1),\n(a) for an employee who is paid by the hour, the amount earned for an hour of work in the employee’s usual work week, not counting overtime hours,\n(b) otherwise, the amount earned in a given work week divided by the number of non-overtime hours actually worked in that week; (“taux horaire normal”)\n“regular wages” means wages other than overtime pay, public holiday pay, premium pay, vacation pay, domestic or sexual violence leave pay, infectious disease emergency leave pay, termination pay, severance pay and termination of assignment pay and entitlements under a provision of an employee’s contract of employment that under subsection 5 (2) prevail over Part VIII, Part X, Part XI, section 49.7, subsection 50.1 (1.2), Part XV or section 74.10.1; (“salaire normal”)\n[...]\n“trade union” means an organization that represents employees in collective bargaining under any of the following:\n1. The Labour Relations Act, 1995.\n2. The Crown Employees Collective Bargaining Act, 1993.\n3. The School Boards Collective Bargaining Act, 2014.\n4. Part IX of the Fire Protection and Prevention Act, 1997.\n5. The Colleges Collective Bargaining Act, 2008.\n6. Any prescribed Acts or provisions of Acts; (“syndicat”)\n“vacation entitlement year” means an alternative vacation entitlement year or a standard vacation entitlement year; (“année de référence”)\n“wages” means,\n(a) monetary remuneration payable by an employer to an employee under the terms of an employment contract, oral or written, express or implied,\n(b) any payment required to be made by an employer to an employee under this Act, and\n(c) any allowances for room or board under an employment contract or prescribed allowances,\nbut does not include,\n(d) tips or other gratuities,\n(e) any sums paid as gifts or bonuses that are dependent on the discretion of the employer and that are not related to hours, production or efficiency,\n(f) expenses and travelling allowances, or\n(g) subject to subsections 60 (3) or 62 (2), employer contributions to a benefit plan and payments to which an employee is entitled from a benefit plan; (“salaire”)\n“work week” means,\n(a) a recurring period of seven consecutive days selected by the employer for the purpose of scheduling work, or\n(b) if the employer has not selected such a period, a recurring period of seven consecutive days beginning on Sunday and ending on Saturday. (“semaine de travail”)\n(2) For greater certainty, being assigned to perform work for a client of a temporary help agency includes being assigned to the client to receive training for the purpose of performing work for the client.\n(2.1) For the purposes of clause (c) of the definition of “employee” in subsection (1), training includes work performed during a trial period.\n(3) Unless otherwise provided, a reference in this Act to an agreement between an employer and an employee or to an employer and an employee agreeing to something shall be deemed to be a reference to an agreement in writing or to their agreeing in writing to do something.\n(3.1) The requirement in subsection (3) for an agreement to be in writing is satisfied if the agreement is in electronic form.\n(4) Nothing in subsection (3) requires an employment contract that is not a collective agreement to be in writing.",
+        "score": 0.742
+      },
+      {
+        "law_part": "Part Xxvii Regulations",
+        "part": 1,
+        "citation": "SO 2000, c 41",
+        "law": "Employment Standards Act, 2000",
+        "hash": "3e0fa3cd345fdd77",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "section": "141",
+        "heading": "Regulations",
+        "text": "Employment Standards Act, 2000, s. 141 – Regulations (excerpt)\n[...]\n12.1 Establishing rules for determining whether an employee who does not have a regular work week is laid off for a period longer than the period of a temporary lay-off for the purposes of clauses 56 (1) (c), 56 (2) (d), and 63 (1) (c).\n13. Prescribing what constitutes a constructive dismissal.\n14. Providing that the common law doctrine of frustration does not apply to an employment contract and that an employer is not relieved of any obligation under Part XV because of the occurrence of an event that would frustrate an employment contract at common law except as prescribed.\n14.1 Providing that payments to an employee by way of pension benefits, insurance benefits, workplace safety and insurance benefits, bonus, employment insurance benefits, supplementary employment insurance benefits or similar arrangements shall or shall not be taken into account in determining the amount that an employer is required to pay to an employee under clause 60 (1) (b), section 61 or section 64.\n15. Providing for and governing the consolidation of hearings under this Act.\n16. Prescribing the minimum number of hours in a day or week for which an employee is entitled to be paid the minimum wage or a contractual wage rate and imposing conditions in respect of that entitlement.\n16.1 Governing penalties for contraventions for the purposes of subsection 113 (1).\n17. Defining any word or expression used in this Act that is not defined in it.\n17.1 Defining what constitutes an interview for the purposes of Part III.1.\n17.2 Defining what constitutes compensation for the purposes of Part III.1.\n17.3 Prescribing the manner in which information provided under section 8.6 must be provided.\n18. Prescribing the manner in which the information required by subsection 58 (2) shall be provided.\n19. Respecting any matter necessary or advisable to carry out effectively the intent and purpose of this Act.\n(1.1) A regulation made under paragraph 11.1 or 11.2 of subsection (1) may be restricted in its application to one or more of the following:\n1. Specified benefit plans.\n2. Employees who are members of prescribed classes.\n3. Employers who are members of prescribed classes.\n4. Part of a leave under section 50.2.\n(1.1.1) A regulation made under paragraph 12.1 of subsection (1) is, if it so provides, effective with reference to a period before it is filed.\n(2) The Lieutenant Governor in Council may make regulations respecting any matter or thing necessary or advisable to carry out the intent and purpose of Part XIII (Benefit Plans), and without restricting the generality of the foregoing, may make regulations,\n(a) exempting a benefit plan, part of a benefit plan or the benefits under such a plan or part from the application of Part XIII;\n(b) permitting a differentiation in a benefit plan between employees or their beneficiaries, survivors or dependants because of the age, sex or marital status of the employees;\n(c) suspending the application of Part XIII to a benefit plan, part of a benefit plan or benefits under such a plan or part for the periods of time specified in the regulation;\n[...]\n(4) If the Lieutenant Governor in Council is satisfied that laws are or will be in effect in the state for the enforcement of orders made under this Act on a basis substantially similar to that set out in section 126, the Lieutenant Governor in Council may by regulation,\n(a) declare a state to be a reciprocating state for the purposes of section 130; and\n(b) designate an authority of that state as the authority who may make applications under section 130.\n(5) A regulation made under this section may be restricted in its application to any class of employee or employer and may treat different classes of employee or employer in different ways.\n(5.1) A regulation made under this section may provide that it applies only if one or more conditions specified in it are met.\n(6) Without restricting the generality of paragraphs 6 and 7 of subsection (1), a regulation made under paragraph 6 or 7 may establish requirements for the industry respecting such matters as a minimum wage, the scheduling of work, maximum hours of work, eating periods and other breaks from work, posting of work schedules, conditions under which the maximum hours of work set out in the regulation may be exceeded, overtime thresholds and overtime pay, vacations, vacation pay, working on public holidays and public holiday pay and treating some public holidays differently than others for those purposes.\n(7) Repealed: 2004, c. 21, s. 10 (5).\n(8) A regulation made under paragraph 9 of subsection (1) may authorize the Director to impose conditions in granting an approval and may authorize the Director to rescind an approval.\n(9) An employer may not require an employee who has made an agreement approved by the Director under a regulation made under paragraph 9 of subsection (1) to work more than 10 hours in a day, except in the circumstances described in section 19.\n(10) If an employee has agreed to work hours in excess of those referred to in clause 17 (1) (a) and hours in excess of those referred to in clause 17 (1) (b), the fact that the Director has approved the agreement in accordance with a regulation made under paragraph 9 of subsection (1) does not prevent the employee from revoking, in accordance with subsection 17 (6), that part of the agreement dealing with the hours in excess of those referred to in clause 17 (1) (b).",
+        "score": 0.729
+      },
+      {
+        "heading": "Three hour rule",
+        "citation": "SO 2000, c 41",
+        "law_part": "Part Vii.1 Three Hour Rule",
+        "total_parts": 1,
+        "section": "21.2",
+        "law": "Employment Standards Act, 2000",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "part": 1,
+        "hash": "144675c188299058",
+        "text": "Employment Standards Act, 2000, s. 21.2 – Three hour rule\n(1) If an employee who regularly works more than three hours a day is required to present himself or herself for work but works less than three hours, despite being available to work longer, the employer shall pay the employee wages for three hours, equal to the greater of the following:\n1. The sum of,\ni. the amount the employee earned for the time worked, and\nii. wages equal to the employee’s regular rate for the remainder of the time.\n2. Wages equal to the employee’s regular rate for three hours of work.\n(2) Subsection (1) does not apply if the employer is unable to provide work for the employee because of fire, lightning, power failure, storms or similar causes beyond the employer’s control that result in the stopping of work.",
+        "score": 0.721
+      },
+      {
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "law": "Employment Standards Act, 2000",
+        "hash": "7c0ca20abb99c107",
+        "part": 1,
+        "citation": "SO 2000, c 41",
+        "section": "81",
+        "law_part": "Part Xx Liability Of Directors",
+        "total_parts": 1,
+        "heading": "Directors’ liability for wages",
+        "text": "Employment Standards Act, 2000, s. 81 – Directors’ liability for wages\n(1) The directors of an employer are jointly and severally liable for wages as provided in this Part if,\n(a) the employer is insolvent, the employee has caused a claim for unpaid wages to be filed with the receiver appointed by a court with respect to the employer or with the employer’s trustee in bankruptcy and the claim has not been paid;\n(b) an employment standards officer has made an order that the employer is liable for wages, unless the amount set out in the order has been paid or the employer has applied to have it reviewed;\n(c) an employment standards officer has made an order that a director is liable for wages, unless the amount set out in the order has been paid or the employer or the director has applied to have it reviewed; or\n(d) the Board has issued, amended or affirmed an order under section 119, the order, as issued, amended or affirmed, requires the employer or the directors to pay wages and the amount set out in the order has not been paid.\n(2) Despite subsection (1), the employer is primarily responsible for an employee’s wages but proceedings against the employer under this Act do not have to be exhausted before proceedings may be commenced to collect wages from directors under this Part.\n(3) The wages that directors are liable for under this Part are wages, not including termination pay and severance pay as they are provided for under this Act or an employment contract and not including amounts that are deemed to be wages under this Act.\n(4) The vacation pay that directors are liable for is the greater of the minimum vacation pay provided in Part XI (Vacation With Pay) and the amount contractually agreed to by the employer and the employee.\n(5) The amount of holiday pay that directors are liable for is the greater of the amount payable for holidays at the rate as determined under this Act and the regulations and the amount for the holidays at the rate as contractually agreed to by the employer and the employee.\n(6) The overtime wages that directors are liable for are the greater of the amount of overtime pay provided in Part VIII (Overtime Pay) and the amount contractually agreed to by the employer and the employee.\n(7) The directors of an employer corporation are jointly and severally liable to the employees of the corporation for all debts not exceeding six months’ wages, as described in subsection (3), that become payable while they are directors for services performed for the corporation and for the vacation pay accrued while they are directors for not more than 12 months under this Act and the regulations made under it or under any collective agreement made by the corporation.\n(8) Repealed: 2017, c. 22, Sched. 1, s. 50.\n(9) A director who has satisfied a claim for wages is entitled to contribution in relation to the wages from other directors who are liable for the claim.\n(10) A limitation period set out in section 114 prevails over a limitation period in any other Act, unless the other Act states that it is to prevail over this Act.",
+        "score": 0.72
+      },
+      {
+        "law": "Employment Standards Act, 2000",
+        "hash": "277fd43da0bf7953",
+        "heading": "Definitions",
+        "total_parts": 1,
+        "part": 1,
+        "section": "49.7",
+        "law_part": "Part Xiv Leaves Of Absence",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "text": "Employment Standards Act, 2000, s. 49.7 – Definitions\n(1) In this section,\n“child” means a child, step-child, foster child or child who is under legal guardianship, and who is under 18 years of age; (“enfant”)\n“week” means a period of seven consecutive days beginning on Sunday and ending on Saturday. (“semaine”)\n(2) An employee who has been employed by an employer for at least 13 consecutive weeks is entitled to a leave of absence if the employee or a child of the employee experiences domestic or sexual violence, or the threat of domestic or sexual violence, and the leave of absence is taken for any of the following purposes:\n1. To seek medical attention for the employee or the child of the employee in respect of a physical or psychological injury or disability caused by the domestic or sexual violence.\n2. To obtain services from a victim services organization for the employee or the child of the employee.\n3. To obtain psychological or other professional counselling for the employee or the child of the employee.\n4. To relocate temporarily or permanently.\n5. To seek legal or law enforcement assistance, including preparing for or participating in any civil or criminal legal proceeding related to or resulting from the domestic or sexual violence.\n6. Such other purposes as may be prescribed.\n(3) Subsection (2) does not apply if the domestic or sexual violence is committed by the employee.\n(4) An employee is entitled to take, in each calendar year,\n(a) up to 10 days of leave under this section; and\n(b) up to 15 weeks of leave under this section.\n(5) If an employee takes a leave under this section, the employee is entitled to take the first five such days as paid days of leave in each calendar year and the balance of his or her entitlement under this section as unpaid leave.\n(6) Subject to subsections (7) and (8), if an employee takes a paid day of leave under this section, the employer shall pay the employee,\n(a) either,\n(i) the wages the employee would have earned had they not taken the leave, or\n(ii) if the employee receives performance-related wages, including commissions or a piece work rate, the greater of the employee’s hourly rate, if any, and the minimum wage that would have applied to the employee for the number of hours the employee would have worked had they not taken the leave; or\n(b) if some other manner of calculation is prescribed, the amount determined using that manner of calculation.\n(7) If a paid day of leave under this section falls on a day or at a time of day when overtime pay, a shift premium, or both would be payable by the employer,\n(a) the employee is not entitled to more than his or her regular rate for any leave taken under this section; and\n(b) the employee is not entitled to the shift premium for any leave taken under this section.\n(8) If a paid day of leave under this section falls on a public holiday, the employee is not entitled to premium pay for any leave taken under this section.\n(9) For the purposes of an employee’s entitlement under clause (4) (a), if an employee takes any part of a day as leave, the employer may deem the employee to have taken one day of leave on that day.\n(10) An employee who wishes to take leave under clause (4) (a) shall advise the employer that the employee will be doing so.\n(11) If an employee must begin a leave under clause (4) (a) before advising the employer, the employee shall advise the employer of the leave as soon as possible after beginning it.\n(12) For the purposes of an employee’s entitlement under clause (4) (b), if an employee takes any part of a week as leave, the employer may deem the employee to have taken one week of leave.\n(13) An employee who wishes to take a leave under clause (4) (b) shall advise the employer in writing that the employee will be doing so.\n(14) If an employee must begin a leave under clause (4) (b) before advising the employer, the employee shall advise the employer of the leave in writing as soon as possible after beginning it.\n(15) An employer may require an employee who takes a leave under this section to provide evidence reasonable in the circumstances of the employee’s entitlement to the leave.\n(16) Repealed: 2018, c. 14, Sched. 1, s. 18.\n(17) An employer shall ensure that mechanisms are in place to protect the confidentiality of records given to or produced by the employer that relate to an employee taking a leave under this section.\n(18) Nothing in subsection (17) prevents an employer from disclosing a record where,\n(a) the employee has consented to the disclosure of the record;\n(b) disclosure is made to an officer, employee, consultant or agent of the employer who needs the record in the performance of their duties;\n(c) the disclosure is authorized or required by law; or\n(d) the disclosure is prescribed as a permitted disclosure.",
+        "score": 0.71
+      }
+    ]
+  }
+]

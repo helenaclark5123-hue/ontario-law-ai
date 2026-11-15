@@ -13,6 +13,8 @@ For each answer:
 An answer is flagged if any citation is unsupported or not_found.
 
     python citations.py --demo     # check a made-up answer with planted mistakes
+    python citations.py --recheck results/eval_..._full-checks.json
+                                   # re-check the saved answers of an earlier run
 """
 
 import quiet  # noqa: F401  (must come before the AI libraries)
@@ -44,12 +46,16 @@ SECTION_NUMBER = re.compile(r"(?<![(\w.])(\d+(?:\.\d+)*)")
 
 JUDGE_PROMPT = """You check citations in answers from an Ontario law assistant.
 
-For each numbered citation you get the claim(s) the answer makes while citing it, and the official text of the cited section. Decide whether the section text supports the claim:
+For each numbered citation you get the claim(s) the answer makes while citing it, the official text of the cited section, and whether the assistant was GIVEN that section when it wrote the answer. Decide whether the claim is supported:
 
 verified - The section text says what the claim says (wording can differ).
 unsupported - The section text does not say it, says something different, or says the opposite. Also use this if the claim gets a number, deadline, amount or condition wrong.
 
-Judge only from the section text given. Do NOT use your own memory of Ontario law. If a claim also cites other sections, only judge the part this section could support; don't mark it unsupported just because part of the claim comes from another cited section.
+Rules:
+- Judge only from the section text given. Do NOT use your own memory of Ontario law.
+- If a claim also cites other sections, only judge the part this section could support; don't mark it unsupported just because part of the claim comes from another cited section.
+- The assistant only sees some sections. If the claim just says the assistant doesn't have this section, couldn't find it, or can't say what it requires, and the assistant was NOT given it, that statement is true: mark it verified. Only judge the legal content of the claim.
+- Long sections are shown as excerpts (the parts most related to the claim), with [...] for skipped parts.
 
 Reply with one line per citation, in exactly this format:
 [1] verified - <short reason>
@@ -90,15 +96,50 @@ def extract_citations(text, default_law=None):
     return list(found.values())
 
 
+def relevant_text(text, claims):
+    """The section text to show the judge.
+
+    Short sections are shown whole. For long ones (like ESA s. 1, the
+    13,000-character definitions section), the parts most similar in meaning
+    to the claims are kept, in their original order, up to MAX_SECTION_CHARS.
+    """
+    if len(text) <= MAX_SECTION_CHARS:
+        return text
+    from make_chunks import split_long
+    from search import embed
+
+    parts = split_long(text)
+    vectors = embed(parts + [" ".join(claims)])
+    claim_vector = vectors[-1]
+    similarity = [sum(a * b for a, b in zip(v, claim_vector)) for v in vectors[:-1]]
+    keep, size = set(), 0
+    for i in sorted(range(len(parts)), key=lambda i: similarity[i], reverse=True):
+        if keep and size + len(parts[i]) > MAX_SECTION_CHARS:
+            continue
+        keep.add(i)
+        size += len(parts[i])
+    pieces, previous = [], -1
+    for i in sorted(keep):
+        if i != previous + 1:
+            pieces.append("[...]")
+        pieces.append(parts[i])
+        previous = i
+    if previous != len(parts) - 1:
+        pieces.append("[...]")
+    return "\n".join(pieces)
+
+
 def judge_support(client, citations):
     """Ask the judge whether each section's text supports its claims."""
     sections = saved_sections()
     blocks = []
     for i, c in enumerate(citations, 1):
         claims = "\n".join(f"- {claim}" for claim in c["claims"])
-        text = sections[(c["law"], c["section"])][:MAX_SECTION_CHARS]
+        text = relevant_text(sections[(c["law"], c["section"])], c["claims"])
+        given = "yes" if c["given"] else "NO"
         blocks.append(
             f"[{i}] {c['law']}, s. {c['section']}\n"
+            f"WAS THE ASSISTANT GIVEN THIS SECTION? {given}\n"
             f"CLAIM(S) IN THE ANSWER:\n{claims}\n"
             f"OFFICIAL SECTION TEXT:\n{text}"
         )
@@ -122,8 +163,10 @@ def check_citations(client, answer_text, sections_used=()):
     citations = extract_citations(answer_text, default_law)
 
     sections = saved_sections()
+    given = {(s["law"], s["section"]) for s in sections_used}
     to_judge = []
     for c in citations:
+        c["given"] = (c["law"], c["section"]) in given
         if (c["law"], c["section"]) in sections:
             to_judge.append(c)
         else:
@@ -164,11 +207,49 @@ DEMO_ANSWER = """Your landlord must give you at least 30 days' written notice be
 This is legal information, not legal advice."""
 
 
+def recheck(path, match=(), label="citations-rechecked"):
+    """Re-run only the citation checker on the answers saved in a results
+    file. Grades, entropy scores and everything else are kept as they were,
+    so the old and new citation results can be compared fairly."""
+    import json
+    from datetime import datetime
+    from pathlib import Path
+
+    rows = json.loads(Path(path).read_text())
+    if match:
+        rows = [r for r in rows if r["question"].startswith(tuple(match))]
+    client = anthropic.Anthropic()
+    for i, r in enumerate(rows, 1):
+        print(f"[{i}/{len(rows)}] {r['question']}", flush=True)
+        before = r.get("citation_flag", "-")
+        found, summary = check_citations(client, r["assistant_answer"], r["_sections"])
+        r.update(summary)
+        r["_citations"] = found
+        print(f"         citations: {before} -> {r['citation_flag']}  ({r['grade']})", flush=True)
+        for c in found:
+            if c["status"] != "verified":
+                print(f"           {c['status'].upper()}: {c['law']}, s. {c['section']} - {c['reason']}")
+
+    stamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+    out = Path(path).parent / f"eval_{stamp}_{label}.json"
+    out.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
+    print(f"\nSaved: {out}")
+    return out
+
+
 if __name__ == "__main__":
-    if "--demo" not in sys.argv:
-        print(__doc__)
-        sys.exit()
     load_dotenv(".env")
-    print("Demo answer (planted mistakes: 30 days, and s. 999):\n")
-    print(DEMO_ANSWER, "\n")
-    print_report(*check_citations(anthropic.Anthropic(), DEMO_ANSWER))
+    if "--demo" in sys.argv:
+        print("Demo answer (planted mistakes: 30 days, and s. 999):\n")
+        print(DEMO_ANSWER, "\n")
+        print_report(*check_citations(anthropic.Anthropic(), DEMO_ANSWER))
+    elif "--recheck" in sys.argv:
+        # python citations.py --recheck results/x.json [--label NAME] [question starts...]
+        args = sys.argv[sys.argv.index("--recheck") + 1:]
+        label = "citations-rechecked"
+        if "--label" in args:
+            label = args[args.index("--label") + 1]
+            args = args[:args.index("--label")] + args[args.index("--label") + 2:]
+        recheck(args[0], args[1:], label)
+    else:
+        print(__doc__)
