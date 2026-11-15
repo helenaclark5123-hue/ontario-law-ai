@@ -114,3 +114,13 @@ No changes: the database already matches.
 
 Database now holds 1189 chunks.
 
+## 2026-11-15 09:54 EST (A2AJ)
+
+- Residential Tenancies Act, 2006: A2AJ copy collected 2026-11-14
+- Employment Standards Act, 2000: A2AJ copy collected 2026-11-14
+- Consumer Protection Act, 2002: A2AJ copy collected 2026-11-14
+
+No changes: the database already matches.
+
+Database now holds 1189 chunks.
+
