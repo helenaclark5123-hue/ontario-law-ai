@@ -41,6 +41,7 @@ import anthropic
 
 from answer import MissingKeyError, answer
 from citations import check_citations
+from entropy import semantic_entropy
 from search import saved_sections
 
 ROOT = Path(__file__).parent
@@ -133,7 +134,7 @@ def source_found(expected, retrieved):
     return "yes" if found == set(expected) else "partial" if found else "NO"
 
 
-def run_question(client, row, result=None, citations=False):
+def run_question(client, row, result=None, citations=False, entropy=False):
     """Run one test question through the assistant (unless a saved result is
     given, when re-grading), the judge, and any checks that are switched on."""
     if result is None:
@@ -146,6 +147,11 @@ def run_question(client, row, result=None, citations=False):
         found, summary = check_citations(client, result["answer"], result["sections"])
         checks.update(summary)
         checks["_citations"] = found
+    if entropy:
+        # Uses the same law sections the assistant was given for its answer.
+        summary, details = semantic_entropy(client, row["question"], result["sections"])
+        checks.update(summary)
+        checks["_entropy"] = details
     return {
         "question": row["question"],
         "type": row["type"],
@@ -203,9 +209,17 @@ def summarize(rows):
             if group:
                 hit = sum(r["citation_flag"] == "FLAG" for r in group)
                 lines.append(f"    flagged among {g:<8} answers: {hit}/{len(group)}")
+    if "confidence" in rows[0]:
+        lines += ["", "Semantic entropy confidence:"]
+        for label in ("high", "medium", "low"):
+            group = [r for r in rows if r["confidence"] == label]
+            grades = ", ".join(f"{sum(r['grade'] == g for r in group)} {g}" for g in GRADES)
+            lines.append(f"  {label:<6} {len(group):>2} answers ({grades})")
     lines += ["", "Per question:"]
     for i, r in enumerate(rows, 1):
         flag = f"citations: {r['citation_flag']:<4}  " if "citation_flag" in r else ""
+        if "confidence" in r:
+            flag += f"confidence: {r['confidence']:<6} ({r['entropy']:.2f})  "
         lines.append(
             f"  {i:>2}. [{r['grade']:<7}] search found source: {r['source_section_retrieved']:<7}  {flag}{r['question']}"
         )
@@ -221,6 +235,7 @@ def main():
         help="re-judge the answers saved in an earlier run instead of asking the assistant again",
     )
     parser.add_argument("--citations", action="store_true", help="also run the citation checker")
+    parser.add_argument("--entropy", action="store_true", help="also compute the semantic entropy confidence")
     args = parser.parse_args()
 
     with TEST_SET.open() as f:
@@ -242,10 +257,13 @@ def main():
     for i, row in enumerate(tests, 1):
         print(f"[{i}/{len(tests)}] {row['question']}", flush=True)
         try:
-            rows.append(run_question(client, row, saved.get(row["question"]), citations=args.citations))
+            rows.append(run_question(
+                client, row, saved.get(row["question"]), citations=args.citations, entropy=args.entropy,
+            ))
         except MissingKeyError as e:
             sys.exit(f"Stopping: {e}")
         flag = f", citations: {rows[-1]['citation_flag']}" if args.citations else ""
+        flag += f", confidence: {rows[-1]['confidence']}" if args.entropy else ""
         print(f"         -> {rows[-1]['grade']}{flag}", flush=True)
 
     # Save everything, named by date and time so nothing gets overwritten.

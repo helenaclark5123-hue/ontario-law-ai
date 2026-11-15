@@ -1,0 +1,17 @@
+Questions: 2
+Accuracy:           1/2 = 50%
+Hallucination rate: 0/2 = 0%  (graded made_up)
+Wrong (not made up): 1/2
+
+By type:
+  easy           1/1 correct, 0 made up
+  tricky         0/1 correct, 0 made up
+
+Semantic entropy confidence:
+  high    0 answers (0 correct, 0 wrong, 0 made_up)
+  medium  1 answers (1 correct, 0 wrong, 0 made_up)
+  low     1 answers (0 correct, 1 wrong, 0 made_up)
+
+Per question:
+   1. [wrong  ] search found source: partial  confidence: low    (1.61)  My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?
+   2. [correct] search found source: yes      confidence: medium (0.50)  How long of a break do I get for lunch?

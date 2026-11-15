@@ -1,0 +1,27 @@
+question,type,correct_answer,source_section,assistant_answer,search_rewrite,sections_retrieved,source_section_retrieved,grade,judge_reason,entropy,n_clusters,cluster_sizes,confidence
+"My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?",tricky,"A landlord can end the tenancy if they in good faith need the unit for at least one year for themselves, their spouse, or a child or parent. The termination date must be at least 60 days after notice and at the end of a rental period or fixed term. The landlord must also pay the tenant one month's rent as compensation or offer another acceptable unit.",RTA 48; RTA 48.1,"**Short answer:** Not right away. Your landlord must give you a proper written notice, and you don't have to leave just because they say so. Whether you must leave depends on whether the notice meets the rules below.
+
+**What the landlord must do:**
+- The landlord must give notice, and it must be in good faith. The person moving in must be the landlord's child, and they must need the unit to live in for at least one year (Residential Tenancies Act, 2006, s. 48(1)(c)).
+- The landlord must be an individual, and the unit must be owned in whole or in part by an individual (s. 48(5)).
+- The termination date must be at least 60 days after the notice is given, and it must fall on the last day of a rental period or, for a fixed-term lease, the end of the term (s. 48(2)).
+- If the landlord wants an eviction order, the Landlord and Tenant Board can only make one if the landlord files an affidavit (a sworn statement) from the person who personally needs the unit, saying they need it in good faith for at least one year (s. 72(1)(a)).
+- The Board generally cannot evict based on this kind of notice where the landlord's claim relies on a tenancy agreement that lets the landlord live in the unit, unless the building has four or fewer units or someone in the listed family group was previously a genuine occupant (s. 72(2)).
+- The Board may look at whether the landlord has used these notices before, including on other units (s. 72(3)).
+
+**Your options:**
+- You can end the tenancy earlier than the landlord's date by giving your own notice. It must give at least 10 days' notice and can be effective on any earlier date you choose, as long as you give it before the landlord's date (s. 48(3), s. 48(4)).
+
+**Compensation:**
+- I couldn't find in these sections any right for you to receive money from the landlord when they end a tenancy for a family member moving in. The only money rule here, s. 86, lets a landlord claim compensation from a tenant who stays after the tenancy has ended. It doesn't give tenants compensation.
+
+**What I couldn't find:** Whether you are owed moving costs or other payments under other sections of the Act, and what the notice must look like. A community legal clinic or the Landlord and Tenant Board can help with those questions.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","landlord's own use of rental unit, notice of termination, family member occupancy, compensation to tenant, Residential Tenancies Act, 2006",RTA 48; RTA 60; RTA 58; RTA 49; RTA 72; RTA 61; RTA 66; RTA 86,partial,wrong,"The answer key's main point is that the landlord must pay one month's rent compensation or offer another unit (s. 48.1), but the assistant said it found no compensation right and didn't cite s. 48.1. It flagged this as something it couldn't find rather than asserting a false rule, so it misses the point without inventing law.",1.609,5,1-1-1-1-1,low
+How long of a break do I get for lunch?,easy,"At least a 30-minute eating period, so you never work more than five hours in a row without one. You and your employer can agree to split it into two breaks that add up to at least 30 minutes in each five-hour period.",ESA 20,"You are entitled to an eating period of at least 30 minutes. Your employer must give it so that you don't work more than five consecutive hours without one (Employment Standards Act, 2000, s. 20(1)).
+
+There is one exception. You and your employer can agree to two shorter eating periods that together total at least 30 minutes in each five-hour stretch (Employment Standards Act, 2000, s. 20(2)).
+
+The eating period doesn't have to be paid unless your employment contract says it must be. Your employer doesn't have to pay you for time you are not working during the break (Employment Standards Act, 2000, s. 21).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","meal periods for employees under the Employment Standards Act, 2000",ESA 20; ESA 21; ESA 34; ESA 141; ESA 23; ESA 25; ESA 60; ESA 49.7,yes,correct,"The assistant gives the core rule from s. 20(1) (at least 30 minutes, no more than five consecutive hours without one) and the s. 20(2) exception allowing two periods totaling at least 30 minutes per five-hour stretch, both matching the answer key. The extra point about s. 21 (unpaid unless the contract requires otherwise) is supported by the provided text.",0.5,2,4-1,medium
