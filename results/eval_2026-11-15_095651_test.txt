@@ -1,0 +1,12 @@
+Questions: 2
+Accuracy:           2/2 = 100%
+Hallucination rate: 0/2 = 0%  (graded made_up)
+Wrong (not made up): 0/2
+
+By type:
+  easy           1/1 correct, 0 made up
+  tricky         1/1 correct, 0 made up
+
+Per question:
+   1. [correct] search found source: yes  How much notice does my landlord need to give before raising my rent?
+   2. [correct] search found source: yes  Can my boss take money out of my pay because my cash register was short?

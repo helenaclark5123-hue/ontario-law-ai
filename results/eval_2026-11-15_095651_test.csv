@@ -1,0 +1,24 @@
+question,type,correct_answer,source_section,assistant_answer,search_rewrite,sections_retrieved,source_section_retrieved,grade,judge_reason
+How much notice does my landlord need to give before raising my rent?,easy,"At least 90 days' written notice, in the form approved by the Landlord and Tenant Board. An increase without proper notice is void.",RTA 116,"At least 90 days' written notice. A landlord cannot increase the rent without first giving the tenant at least 90 days written notice of the intention to do so (Residential Tenancies Act, 2006, s. 116(1)). The notice must be in a form approved by the Board and must set out the intended increase and the amount of the new rent (Residential Tenancies Act, 2006, s. 116(3)).
+
+Key points:
+- If the landlord did not give this notice, the increase is void, and the landlord must give a new notice before taking the increase (Residential Tenancies Act, 2006, s. 116(4)).
+- The 90-day notice requirement still applies even when the increase is under a Board order for an above-guideline increase (Residential Tenancies Act, 2006, s. 116(2)).
+- Rent increases are only allowed in accordance with Part of the Act (Residential Tenancies Act, 2006, s. 110).
+- Exceptions exist where the increase comes from a rent agreement made under section 121, which is exempt from the notice requirement (Residential Tenancies Act, 2006, s. 121(6)), and certain orders where no notice is needed (Residential Tenancies Act, 2006, s. 117(1), (2)).
+- Rent increases were frozen for the period from January 1, 2021 to December 31, 2021, though a landlord could give a notice during that period for an increase taking effect after it (Residential Tenancies Act, 2006, s. 136.1(3), (4)).
+- If a tenant does not give a notice of termination after receiving a proper notice of rent increase, the tenant is deemed to have accepted the increase allowed under the Act (Residential Tenancies Act, 2006, s. 118).
+
+I couldn't find in these sections how much the guideline increase amount is or the exact details of the Board form, so those would need to be checked elsewhere.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","notice of rent increase by landlord to tenant under Residential Tenancies Act, 2006",RTA 116; RTA 246; RTA 110; RTA 126; RTA 136.1; RTA 117; RTA 121; RTA 118,yes,correct,"The answer gives the key point: at least 90 days' written notice in a Board-approved form, and an increase without proper notice is void. The extra points on exceptions, the 2021 rent freeze, and the other sections go beyond the provided text but don't contradict it."
+Can my boss take money out of my pay because my cash register was short?,tricky,"Generally no. An employer can only deduct from wages if a statute or court order allows it, or the employee gave written authorization (s. 13(1)-(3)). Written authorization does not count for a cash shortage if anyone other than the employee had access to the cash (s. 13(5)(b)(ii)).",ESA 13,"**Probably not, in most cases.** Your employer generally can't take money out of your pay for a cash shortage unless a law or court order allows it (Employment Standards Act, 2000, s. 13(1), (2)). The Act's exceptions depend on who had access to the cash.
+
+- **If other people had access to the register,** your written authorization doesn't allow the deduction. The Act says the written-authorization rule does not apply when wages are withheld because of a cash shortage and someone other than you had access to the cash (s. 13(5)(b)(ii)).
+- **If only you had access,** the cash-shortage exception doesn't apply. Your employer could then deduct only with your written authorization, and that authorization must name a specific amount or give a formula for calculating one (s. 13(3), (5)(a)).
+
+Your employer also cannot make a deduction in these situations unless one of these applies. (The sections I have don't cover whether any other statute or court order would authorize it.)
+
+For advice about your situation, you can contact the Ministry of Labour, or the Employment Standards office, which enforces this Act.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",deductions from wages for cash shortages employer recovery of cash register losses,ESA 13; ESA 14.3; ESA 14.2; ESA 14.4; ESA 65; ESA 12.1; ESA 56; ESA 81,yes,correct,"The answer matches the key: a deduction is generally not allowed without a statute, court order, or written authorization, and written authorization can't cover a cash shortage when someone other than the employee had access to the cash (s. 13(5)(b)(ii)). It also correctly notes the specific-amount requirement in s. 13(5)(a)."
