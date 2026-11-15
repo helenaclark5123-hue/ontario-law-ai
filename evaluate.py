@@ -209,17 +209,20 @@ def summarize(rows):
             if group:
                 hit = sum(r["citation_flag"] == "FLAG" for r in group)
                 lines.append(f"    flagged among {g:<8} answers: {hit}/{len(group)}")
-    if "confidence" in rows[0]:
-        lines += ["", "Semantic entropy confidence:"]
+    for key, rule in (("confidence", "strict"), ("confidence_loose", "loose")):
+        if key not in rows[0]:
+            continue
+        lines += ["", f"Semantic entropy confidence ({rule} rule):"]
         for label in ("high", "medium", "low"):
-            group = [r for r in rows if r["confidence"] == label]
+            group = [r for r in rows if r[key] == label]
             grades = ", ".join(f"{sum(r['grade'] == g for r in group)} {g}" for g in GRADES)
             lines.append(f"  {label:<6} {len(group):>2} answers ({grades})")
     lines += ["", "Per question:"]
     for i, r in enumerate(rows, 1):
         flag = f"citations: {r['citation_flag']:<4}  " if "citation_flag" in r else ""
         if "confidence" in r:
-            flag += f"confidence: {r['confidence']:<6} ({r['entropy']:.2f})  "
+            flag += (f"confidence strict: {r['confidence']:<6} ({r['entropy']:.2f})  "
+                     f"loose: {r['confidence_loose']:<6} ({r['entropy_loose']:.2f})  ")
         lines.append(
             f"  {i:>2}. [{r['grade']:<7}] search found source: {r['source_section_retrieved']:<7}  {flag}{r['question']}"
         )
@@ -263,7 +266,8 @@ def main():
         except MissingKeyError as e:
             sys.exit(f"Stopping: {e}")
         flag = f", citations: {rows[-1]['citation_flag']}" if args.citations else ""
-        flag += f", confidence: {rows[-1]['confidence']}" if args.entropy else ""
+        flag += (f", confidence: {rows[-1]['confidence']} (loose: {rows[-1]['confidence_loose']})"
+                 if args.entropy else "")
         print(f"         -> {rows[-1]['grade']}{flag}", flush=True)
 
     # Save everything, named by date and time so nothing gets overwritten.

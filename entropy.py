@@ -22,6 +22,14 @@ Confidence labels:
   medium  - entropy up to 0.7 (e.g. a 4-1 split = 0.50, or 3-2 = 0.67)
   low     - entropy above 0.7 (e.g. 3-1-1 = 0.95, or more scattered)
 
+Two clustering rules are scored from the same 5 samples:
+  strict - each answer must entail the other (the original method). In
+           testing, long answers got split just for including different
+           details, even when they agreed.
+  loose  - same conclusion and no contradiction: leaving a detail out is
+           fine, but disagreeing on a yes/no, number, deadline or condition
+           is not.
+
     python entropy.py "your question"     # run one question and show everything
 """
 
@@ -52,6 +60,19 @@ B_ENTAILS_A: Does everything answer A says about the question follow from answer
 Reply in exactly this format:
 A_ENTAILS_B: <yes or no>
 B_ENTAILS_A: <yes or no>
+REASON: <one sentence>"""
+
+
+SAME_CONCLUSION_PROMPT = """You compare two answers that an Ontario law assistant gave to the same question.
+
+Decide whether they give the SAME ANSWER to the question:
+- Same conclusion (for example both say yes, both say no, or both say it couldn't be found).
+- No contradiction on any key legal fact: yes or no, numbers, deadlines, amounts, who it applies to, conditions and exceptions.
+
+One answer leaving out a detail that the other includes is fine, as long as nothing contradicts. Ignore wording, order, formatting and citation style.
+
+Reply in exactly this format:
+SAME: <yes or no>
 REASON: <one sentence>"""
 
 
@@ -92,17 +113,35 @@ def same_meaning(client, question, a, b):
     return both, reason.group(1).strip() if reason else text.strip()
 
 
-def cluster(client, question, answers):
+def same_conclusion(client, question, a, b):
+    """The loose rule: True if the judge says A and B give the same answer
+    with no contradiction (omissions allowed)."""
+    response = client.messages.create(
+        model=JUDGE_MODEL,
+        max_tokens=2000,
+        system=SAME_CONCLUSION_PROMPT,
+        messages=[{
+            "role": "user",
+            "content": f"QUESTION:\n{question}\n\nANSWER A:\n{a}\n\nANSWER B:\n{b}",
+        }],
+    )
+    text = "".join(b.text for b in response.content if b.type == "text")
+    same = re.search(r"SAME:\s*(yes|no)", text, re.I)
+    reason = re.search(r"REASON:\s*(.+)", text)
+    return bool(same and same.group(1).lower() == "yes"), reason.group(1).strip() if reason else text.strip()
+
+
+def cluster(client, question, answers, compare=same_meaning):
     """Put answers that mean the same thing together.
 
-    Each new answer is compared with the first answer of every existing
-    cluster; it joins the first cluster it matches both ways, or starts a new
-    one. Returns (clusters as lists of answer numbers, comparison notes).
+    Each new answer is compared (with the given rule) to the first answer of
+    every existing cluster; it joins the first cluster it matches, or starts
+    a new one. Returns (clusters as lists of answer numbers, comparison notes).
     """
     clusters, notes = [], []
     for i, ans in enumerate(answers):
         for members in clusters:
-            match, reason = same_meaning(client, question, answers[members[0]], ans)
+            match, reason = compare(client, question, answers[members[0]], ans)
             notes.append(f"answer {members[0] + 1} vs {i + 1}: {'SAME' if match else 'different'} - {reason}")
             if match:
                 members.append(i)
@@ -113,7 +152,8 @@ def cluster(client, question, answers):
 
 
 def entropy_of(clusters, n):
-    return -sum((len(c) / n) * math.log(len(c) / n) for c in clusters)
+    h = -sum((len(c) / n) * math.log(len(c) / n) for c in clusters)
+    return max(0.0, h)  # avoid printing "-0.0" when all answers agree
 
 
 def confidence_label(h, n_clusters):
@@ -122,32 +162,45 @@ def confidence_label(h, n_clusters):
     return "medium" if h <= MEDIUM_MAX else "low"
 
 
+def score(client, question, answers):
+    """Cluster the same samples with both rules and score each.
+
+    Returns (summary columns, details per rule)."""
+    summary, details = {}, {}
+    for rule, compare in (("strict", same_meaning), ("loose", same_conclusion)):
+        clusters, notes = cluster(client, question, answers, compare)
+        h = entropy_of(clusters, len(answers))
+        suffix = "" if rule == "strict" else "_loose"
+        summary.update({
+            f"entropy{suffix}": round(h, 3),
+            f"n_clusters{suffix}": len(clusters),
+            f"cluster_sizes{suffix}": "-".join(str(len(c)) for c in sorted(clusters, key=len, reverse=True)),
+            f"confidence{suffix}": confidence_label(h, len(clusters)),
+        })
+        details[rule] = {"clusters": [[i + 1 for i in c] for c in clusters], "comparisons": notes}
+    return summary, details
+
+
 def semantic_entropy(client, question, sections):
     """Sample, cluster and score. Returns (summary columns, full details)."""
     answers = sample_answers(client, question, sections)
-    clusters, notes = cluster(client, question, answers)
-    h = entropy_of(clusters, len(answers))
-    label = confidence_label(h, len(clusters))
-    summary = {
-        "entropy": round(h, 3),
-        "n_clusters": len(clusters),
-        "cluster_sizes": "-".join(str(len(c)) for c in sorted(clusters, key=len, reverse=True)),
-        "confidence": label,
-    }
-    details = {"samples": answers, "clusters": [[i + 1 for i in c] for c in clusters], "comparisons": notes}
-    return summary, details
+    summary, details = score(client, question, answers)
+    return summary, {"samples": answers, **details}
 
 
 def print_report(summary, details, show_answers=True):
     if show_answers:
         for i, a in enumerate(details["samples"], 1):
             print(f"\n--- Sample {i} ---\n{a}")
-    print("\nComparisons:")
-    for note in details["comparisons"]:
-        print(f"  {note}")
-    print("\nClusters (answer numbers):", "  ".join("{" + ", ".join(map(str, c)) + "}" for c in details["clusters"]))
-    print(f"Semantic entropy: {summary['entropy']} (0 = all agree, max {math.log(SAMPLES):.2f})"
-          f"  ->  confidence: {summary['confidence'].upper()}")
+    for rule in ("strict", "loose"):
+        suffix = "" if rule == "strict" else "_loose"
+        print(f"\n[{rule.upper()} rule] comparisons:")
+        for note in details[rule]["comparisons"]:
+            print(f"  {note}")
+        print("  Clusters (answer numbers):",
+              "  ".join("{" + ", ".join(map(str, c)) + "}" for c in details[rule]["clusters"]))
+        print(f"  Semantic entropy: {summary['entropy' + suffix]} (0 = all agree, max {math.log(SAMPLES):.2f})"
+              f"  ->  confidence: {summary['confidence' + suffix].upper()}")
 
 
 if __name__ == "__main__":
