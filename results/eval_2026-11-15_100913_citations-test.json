@@ -1,0 +1,327 @@
+[
+  {
+    "question": "My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?",
+    "type": "tricky",
+    "correct_answer": "A landlord can end the tenancy if they in good faith need the unit for at least one year for themselves, their spouse, or a child or parent. The termination date must be at least 60 days after notice and at the end of a rental period or fixed term. The landlord must also pay the tenant one month's rent as compensation or offer another acceptable unit.",
+    "source_section": "RTA 48; RTA 48.1",
+    "assistant_answer": "**Short answer:** Not right away. Your landlord must give you a proper written notice, and you don't have to leave just because they say so. Whether you must leave depends on whether the notice meets the rules below.\n\n**What the landlord must do:**\n- The landlord must give notice, and it must be in good faith. The person moving in must be the landlord's child, and they must need the unit to live in for at least one year (Residential Tenancies Act, 2006, s. 48(1)(c)).\n- The landlord must be an individual, and the unit must be owned in whole or in part by an individual (s. 48(5)).\n- The termination date must be at least 60 days after the notice is given, and it must fall on the last day of a rental period or, for a fixed-term lease, the end of the term (s. 48(2)).\n- If the landlord wants an eviction order, the Landlord and Tenant Board can only make one if the landlord files an affidavit (a sworn statement) from the person who personally needs the unit, saying they need it in good faith for at least one year (s. 72(1)(a)).\n- The Board generally cannot evict based on this kind of notice where the landlord's claim relies on a tenancy agreement that lets the landlord live in the unit, unless the building has four or fewer units or someone in the listed family group was previously a genuine occupant (s. 72(2)).\n- The Board may look at whether the landlord has used these notices before, including on other units (s. 72(3)).\n\n**Your options:**\n- You can end the tenancy earlier than the landlord's date by giving your own notice. It must give at least 10 days' notice and can be effective on any earlier date you choose, as long as you give it before the landlord's date (s. 48(3), s. 48(4)).\n\n**Compensation:**\n- I couldn't find in these sections any right for you to receive money from the landlord when they end a tenancy for a family member moving in. The only money rule here, s. 86, lets a landlord claim compensation from a tenant who stays after the tenancy has ended. It doesn't give tenants compensation.\n\n**What I couldn't find:** Whether you are owed moving costs or other payments under other sections of the Act, and what the notice must look like. A community legal clinic or the Landlord and Tenant Board can help with those questions.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "landlord's own use of rental unit, notice of termination, family member occupancy, compensation to tenant, Residential Tenancies Act, 2006",
+    "sections_retrieved": "RTA 48; RTA 60; RTA 58; RTA 49; RTA 72; RTA 61; RTA 66; RTA 86",
+    "source_section_retrieved": "partial",
+    "grade": "wrong",
+    "judge_reason": "The answer key says the landlord must pay one month's rent in compensation or offer another unit under s. 48.1, which the assistant never received. The assistant said it could not find any tenant compensation right, so it misses the key's compensation point, but it does not state invented law.",
+    "citations_total": 3,
+    "citations_verified": 2,
+    "citations_unsupported": 1,
+    "citations_not_found": 0,
+    "citation_flag": "FLAG",
+    "citation_details": "UNSUPPORTED: Residential Tenancies Act, 2006, s. 48 - Subsections (1)(c), (2), (3), (4), and (5) support the 60-day, 10-day, tenant-early-termination, and individual-landlord points. But the first bullet says the person \"must be the landlord's child,\" while s. 48(1)(c) allows a child or parent of the landlord or spouse, and s. 48(1)(a), (b), and (d) list other qualifying people. The claim narrows the list to children only.\nVERIFIED: Residential Tenancies Act, 2006, s. 72 - Section 72(1)(a) requires an affidavit from the person who personally requires the unit, certifying good-faith need for at least one year. Section 72(2) bars eviction on a tenancy-agreement claim unless the building has four or fewer units or a listed family member was a prior genuine occupant. Section 72(3) lets the Board consider prior use of notices, including for other units.\nVERIFIED: Residential Tenancies Act, 2006, s. 86 - Section 86 gives the landlord compensation for use and occupation by a tenant who does not vacate after the tenancy is terminated. The text does not say it is the \"only\" money rule, but the claim's core point is supported.",
+    "_citations": [
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "48",
+        "cited_as": [
+          "s. 48(1)(c)",
+          "s. 48(5)",
+          "s. 48(2)",
+          "s. 48(3)",
+          "s. 48(4)"
+        ],
+        "claims": [
+          "The person moving in must be the landlord's child, and they must need the unit to live in for at least one year (Residential Tenancies Act, 2006, s. 48(1)(c)).",
+          "The landlord must be an individual, and the unit must be owned in whole or in part by an individual (s. 48(5)).",
+          "The termination date must be at least 60 days after the notice is given, and it must fall on the last day of a rental period or, for a fixed-term lease, the end of the term (s. 48(2)).",
+          "It must give at least 10 days' notice and can be effective on any earlier date you choose, as long as you give it before the landlord's date (s. 48(3), s. 48(4))."
+        ],
+        "status": "unsupported",
+        "reason": "Subsections (1)(c), (2), (3), (4), and (5) support the 60-day, 10-day, tenant-early-termination, and individual-landlord points. But the first bullet says the person \"must be the landlord's child,\" while s. 48(1)(c) allows a child or parent of the landlord or spouse, and s. 48(1)(a), (b), and (d) list other qualifying people. The claim narrows the list to children only."
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "72",
+        "cited_as": [
+          "s. 72(1)(a)",
+          "s. 72(2)",
+          "s. 72(3)"
+        ],
+        "claims": [
+          "If the landlord wants an eviction order, the Landlord and Tenant Board can only make one if the landlord files an affidavit (a sworn statement) from the person who personally needs the unit, saying they need it in good faith for at least one year (s. 72(1)(a)).",
+          "The Board generally cannot evict based on this kind of notice where the landlord's claim relies on a tenancy agreement that lets the landlord live in the unit, unless the building has four or fewer units or someone in the listed family group was previously a genuine occupant (s. 72(2)).",
+          "The Board may look at whether the landlord has used these notices before, including on other units (s. 72(3))."
+        ],
+        "status": "verified",
+        "reason": "Section 72(1)(a) requires an affidavit from the person who personally requires the unit, certifying good-faith need for at least one year. Section 72(2) bars eviction on a tenancy-agreement claim unless the building has four or fewer units or a listed family member was a prior genuine occupant. Section 72(3) lets the Board consider prior use of notices, including for other units."
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "86",
+        "cited_as": [
+          "s. 86"
+        ],
+        "claims": [
+          "The only money rule here, s. 86, lets a landlord claim compensation from a tenant who stays after the tenancy has ended."
+        ],
+        "status": "verified",
+        "reason": "Section 86 gives the landlord compensation for use and occupation by a tenant who does not vacate after the tenancy is terminated. The text does not say it is the \"only\" money rule, but the claim's core point is supported."
+      }
+    ],
+    "_sections": [
+      {
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "total_parts": 1,
+        "section": "48",
+        "citation": "SO 2006, c 17",
+        "heading": "Notice, landlord personally, etc., requires unit",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "hash": "7026113d72e9a2a3",
+        "part": 1,
+        "law": "Residential Tenancies Act, 2006",
+        "text": "Residential Tenancies Act, 2006, s. 48 – Notice, landlord personally, etc., requires unit\n(1) A landlord may, by notice, terminate a tenancy if the landlord in good faith requires possession of the rental unit for the purpose of residential occupation for a period of at least one year by,\n(a) the landlord;\n(b) the landlord’s spouse;\n(c) a child or parent of the landlord or the landlord’s spouse; or\n(d) a person who provides or will provide care services to the landlord, the landlord’s spouse, or a child or parent of the landlord or the landlord’s spouse, if the person receiving the care services resides or will reside in the building, related group of buildings, mobile home park or land lease community in which the rental unit is located.\n(2) The date for termination specified in the notice shall be at least 60 days after the notice is given and shall be the day a period of the tenancy ends or, where the tenancy is for a fixed term, the end of the term.\n(3) A tenant who receives notice of termination under subsection (1) may, at any time before the date specified in the notice, terminate the tenancy, effective on a specified date earlier than the date set out in the landlord’s notice.\n(4) The date for termination specified in the tenant’s notice shall be at least 10 days after the date the tenant’s notice is given.\n(5) This section does not authorize a landlord to give a notice of termination of a tenancy with respect to a rental unit unless,\n(a) the rental unit is owned in whole or in part by an individual; and\n(b) the landlord is an individual.",
+        "score": 0.814
+      },
+      {
+        "heading": "Termination for cause, misrepresentation of income",
+        "law": "Residential Tenancies Act, 2006",
+        "hash": "eb3c1b559db26de4",
+        "citation": "SO 2006, c 17",
+        "part": 1,
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "section": "60",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 60 – Termination for cause, misrepresentation of income\n(1) A landlord may give a tenant notice of termination of the tenancy if the rental unit is a rental unit described in paragraph 1, 2, 3 or 4 of subsection 7 (1) and the tenant has knowingly and materially misrepresented his or her income or that of other members of his or her household.\n(2) A notice of termination under this section shall set out the grounds for termination and shall provide a termination date not earlier than the 20th day after the notice is given.",
+        "score": 0.804
+      },
+      {
+        "hash": "0207728230679953",
+        "citation": "SO 2006, c 17",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "heading": "Notice at end of term or period, additional grounds",
+        "section": "58",
+        "law": "Residential Tenancies Act, 2006",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "part": 1,
+        "text": "Residential Tenancies Act, 2006, s. 58 – Notice at end of term or period, additional grounds\n(1) A landlord may give a tenant notice of termination of their tenancy on any of the following grounds:\n1. The tenant has persistently failed to pay rent on the date it becomes due and payable.\n2. The rental unit that is the subject of the tenancy agreement is a rental unit described in paragraph 1, 2, 3 or 4 of subsection 7 (1) and the tenant has ceased to meet the qualifications required for occupancy of the rental unit.\n3. The tenant was an employee of an employer who provided the tenant with the rental unit during the tenant’s employment and the employment has terminated.\n4. The tenancy arose by virtue of or collateral to an agreement of purchase and sale of a proposed unit within the meaning of the Condominium Act, 1998 in good faith and the agreement of purchase and sale has been terminated.\n(1.1) For the purposes of paragraph 1 of subsection (1), what constitutes a persistent failure to pay rent on the date it becomes due and payable shall be determined in accordance with the regulations, if any.\n(2) The date for termination specified in the notice shall be at least the number of days after the date the notice is given that is set out in section 44 and shall be the day a period of the tenancy ends or, where the tenancy is for a fixed term, the end of the term.\n(3) For greater certainty, paragraph 2 of subsection (1) does not authorize a landlord to give a tenant notice of termination of the tenancy on the ground that the tenant has ceased to be eligible for, or has failed to take any step necessary to maintain eligibility for, rent-geared-to-income assistance as defined in section 38 of the Housing Services Act, 2011.",
+        "score": 0.8
+      },
+      {
+        "citation": "SO 2006, c 17",
+        "part": 1,
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "law": "Residential Tenancies Act, 2006",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "section": "49",
+        "total_parts": 1,
+        "hash": "9e5c7960851a9633",
+        "heading": "Notice, purchaser personally requires unit",
+        "text": "Residential Tenancies Act, 2006, s. 49 – Notice, purchaser personally requires unit\n(1) A landlord of a residential complex that contains no more than three residential units who has entered into an agreement of purchase and sale of the residential complex may, on behalf of the purchaser, give the tenant of a unit in the residential complex a notice terminating the tenancy, if the purchaser in good faith requires possession of the residential complex or the unit for the purpose of residential occupation by,\n(a) the purchaser;\n(b) the purchaser’s spouse;\n(c) a child or parent of the purchaser or the purchaser’s spouse; or\n(d) a person who provides or will provide care services to the purchaser, the purchaser’s spouse, or a child or parent of the purchaser or the purchaser’s spouse, if the person receiving the care services resides or will reside in the building, related group of buildings, mobile home park or land lease community in which the rental unit is located.\n(2) If a landlord who is an owner as defined in clause (a) or (b) of the definition of “owner” in subsection 1 (1) of the Condominium Act, 1998 owns a unit, as defined in subsection 1 (1) of that Act, that is a rental unit and has entered into an agreement of purchase and sale of the unit, the landlord may, on behalf of the purchaser, give the tenant of the unit a notice terminating the tenancy, if the purchaser in good faith requires possession of the unit for the purpose of residential occupation by,\n(a) the purchaser;\n(b) the purchaser’s spouse;\n(c) a child or parent of the purchaser or the purchaser’s spouse; or\n(d) a person who provides or will provide care services to the purchaser, the purchaser’s spouse, or a child or parent of the purchaser or the purchaser’s spouse, if the person receiving the care services resides or will reside in the building, related group of buildings, mobile home park or land lease community in which the rental unit is located.\n(3) The date for termination specified in a notice given under subsection (1) or (2) shall be at least 60 days after the notice is given and shall be the day a period of the tenancy ends or, where the tenancy is for a fixed term, the end of the term.\n(4) A tenant who receives notice of termination under subsection (1) or (2) may, at any time before the date specified in the notice, terminate the tenancy, effective on a specified date earlier than the date set out in the landlord’s notice.\n(5) The date for termination specified in the tenant’s notice shall be at least 10 days after the date the tenant’s notice is given.",
+        "score": 0.799
+      },
+      {
+        "part": 1,
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "citation": "SO 2006, c 17",
+        "heading": "Landlord or purchaser personally requires premises",
+        "hash": "5ffa73e69bfb3efd",
+        "total_parts": 1,
+        "section": "72",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "text": "Residential Tenancies Act, 2006, s. 72 – Landlord or purchaser personally requires premises\n(1) The Board shall not make an order terminating a tenancy and evicting the tenant in an application under section 69 based on,\n(a) a notice of termination given under section 48, unless the landlord has filed with the Board an affidavit sworn by the person who personally requires the rental unit certifying that the person in good faith requires the rental unit for his or her own personal use for a period of at least one year; or\n(b) a notice of termination under section 49, unless the landlord has filed with the Board an affidavit sworn by the person who personally requires the rental unit certifying that the person in good faith requires the rental unit for his or her own personal use.\n(1.1) Repealed: 2023, c. 10, Sched. 7, s. 6 (2).\n(2) The Board shall not make an order terminating a tenancy and evicting the tenant in an application under section 69 based on a notice of termination under section 48 or 49 where the landlord’s claim is based on a tenancy agreement or occupancy agreement that purports to entitle the landlord to reside in the rental unit unless,\n(a) the application is brought in respect of premises situate in a building containing not more than four residential units; or\n(b) one or more of the following people has previously been a genuine occupant of the premises:\n(i) the landlord,\n(ii) the landlord’s spouse,\n(iii) a child or parent of the landlord or the landlord’s spouse, or\n(iv) a person who provided care services to the landlord, the landlord’s spouse, or a child or parent of the landlord or the landlord’s spouse.\n(3) In determining the good faith of the landlord or the purchaser, as applicable, in an application described in subsection (1) or (2), the Board may consider any evidence the Board considers relevant that relates to the landlord’s or purchaser’s previous use of notices of termination under section 48, 49 or 50 in respect of the same or a different rental unit.\n(4) Subsection (3) applies with respect to any application described in subsection (1) or (2) that,\n(a) is made on or after the day section 12 of Schedule 4 to the Protecting Tenants and Strengthening Community Housing Act, 2020 comes into force; or\n(b) was made before that day and was not finally determined before that day.",
+        "score": 0.797
+      },
+      {
+        "heading": "Termination for cause, illegal act",
+        "law": "Residential Tenancies Act, 2006",
+        "part": 1,
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "section": "61",
+        "total_parts": 1,
+        "citation": "SO 2006, c 17",
+        "hash": "df3d442cebc89683",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 61 – Termination for cause, illegal act\n(1) A landlord may give a tenant notice of termination of the tenancy if the tenant or another occupant of the rental unit commits an illegal act or carries on an illegal trade, business or occupation or permits a person to do so in the rental unit or the residential complex.\n(2) A notice of termination under this section shall set out the grounds for termination and shall provide a termination date not earlier than,\n(a) the 10th day after the notice is given, in the case of a notice grounded on an illegal act, trade, business or occupation involving,\n(i) the production of an illegal drug,\n(ii) the trafficking in an illegal drug, or\n(iii) the possession of an illegal drug for the purposes of trafficking; or\n(b) the 20th day after the notice is given, in all other cases.\n(3) In this section,\n“illegal drug” means a controlled substance or precursor as those terms are defined in the Controlled Drugs and Substances Act (Canada); (“drogue illicite”)\n“possession” has the same meaning as in the Controlled Drugs and Substances Act (Canada); (“possession”)\n“production” means, with respect to an illegal drug, to produce the drug within the meaning of the Controlled Drugs and Substances Act (Canada); (“production”)\n“trafficking” means, with respect to an illegal drug, to traffic in the drug within the meaning of the Controlled Drugs and Substances Act (Canada). (“trafic”)",
+        "score": 0.794
+      },
+      {
+        "total_parts": 1,
+        "law": "Residential Tenancies Act, 2006",
+        "section": "66",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "citation": "SO 2006, c 17",
+        "heading": "Termination for cause, act impairs safety",
+        "hash": "ab6549a0af09e9de",
+        "text": "Residential Tenancies Act, 2006, s. 66 – Termination for cause, act impairs safety\n(1) A landlord may give a tenant notice of termination of the tenancy if,\n(a) an act or omission of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant seriously impairs or has seriously impaired the safety of any person; and\n(b) the act or omission occurs in the residential complex.\n(2) A notice of termination under this section shall provide a termination date not earlier than the 10th day after the notice is given and shall set out the grounds for termination.",
+        "score": 0.787
+      },
+      {
+        "hash": "9252cf24a54458ba",
+        "section": "86",
+        "part": 1,
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "citation": "SO 2006, c 17",
+        "heading": "Compensation, unit not vacated",
+        "total_parts": 1,
+        "text": "Residential Tenancies Act, 2006, s. 86 – Compensation, unit not vacated\nA landlord is entitled to compensation for the use and occupation of a rental unit by a tenant who does not vacate the unit after his or her tenancy is terminated by order, notice or agreement.",
+        "score": 0.786
+      }
+    ]
+  },
+  {
+    "question": "How long of a break do I get for lunch?",
+    "type": "easy",
+    "correct_answer": "At least a 30-minute eating period, so you never work more than five hours in a row without one. You and your employer can agree to split it into two breaks that add up to at least 30 minutes in each five-hour period.",
+    "source_section": "ESA 20",
+    "assistant_answer": "You are entitled to an eating period of at least 30 minutes. Your employer must give it so that you don't work more than five consecutive hours without one (Employment Standards Act, 2000, s. 20(1)).\n\nThere is one exception. You and your employer can agree to two shorter eating periods that together total at least 30 minutes in each five-hour stretch (Employment Standards Act, 2000, s. 20(2)).\n\nThe eating period doesn't have to be paid unless your employment contract says it must be. Your employer doesn't have to pay you for time you are not working during the break (Employment Standards Act, 2000, s. 21).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "meal periods for employees under the Employment Standards Act, 2000",
+    "sections_retrieved": "ESA 20; ESA 21; ESA 34; ESA 141; ESA 23; ESA 25; ESA 60; ESA 49.7",
+    "source_section_retrieved": "yes",
+    "grade": "correct",
+    "judge_reason": "The assistant gives the 30-minute minimum eating period, the five-consecutive-hour limit, and the agreed split into two periods totaling at least 30 minutes, all matching s. 20 and the answer key. The added point that the break is unpaid unless the contract says otherwise is supported by s. 21 and is accurate extra detail.",
+    "citations_total": 2,
+    "citations_verified": 2,
+    "citations_unsupported": 0,
+    "citations_not_found": 0,
+    "citation_flag": "ok",
+    "citation_details": "VERIFIED: Employment Standards Act, 2000, s. 20 - s. 20(1) requires an eating period of at least 30 minutes so the employee works no more than five consecutive hours without one; s. 20(2) allows an agreement for two eating periods totalling at least 30 minutes in each five-hour period.\nVERIFIED: Employment Standards Act, 2000, s. 21 - s. 21 says the employer is not required to pay for an eating period in which work is not performed, unless the employment contract requires payment.",
+    "_citations": [
+      {
+        "law": "Employment Standards Act, 2000",
+        "section": "20",
+        "cited_as": [
+          "s. 20(1)",
+          "s. 20(2)"
+        ],
+        "claims": [
+          "Your employer must give it so that you don't work more than five consecutive hours without one (Employment Standards Act, 2000, s. 20(1)).",
+          "You and your employer can agree to two shorter eating periods that together total at least 30 minutes in each five-hour stretch (Employment Standards Act, 2000, s. 20(2))."
+        ],
+        "status": "verified",
+        "reason": "s. 20(1) requires an eating period of at least 30 minutes so the employee works no more than five consecutive hours without one; s. 20(2) allows an agreement for two eating periods totalling at least 30 minutes in each five-hour period."
+      },
+      {
+        "law": "Employment Standards Act, 2000",
+        "section": "21",
+        "cited_as": [
+          "s. 21"
+        ],
+        "claims": [
+          "Your employer doesn't have to pay you for time you are not working during the break (Employment Standards Act, 2000, s. 21)."
+        ],
+        "status": "verified",
+        "reason": "s. 21 says the employer is not required to pay for an eating period in which work is not performed, unless the employment contract requires payment."
+      }
+    ],
+    "_sections": [
+      {
+        "law_part": "Part Vii Hours Of Work And Eating Periods",
+        "hash": "3046d52f6dde2ba4",
+        "section": "20",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "law": "Employment Standards Act, 2000",
+        "part": 1,
+        "total_parts": 1,
+        "heading": "Eating periods",
+        "text": "Employment Standards Act, 2000, s. 20 – Eating periods\n(1) An employer shall give an employee an eating period of at least 30 minutes at intervals that will result in the employee working no more than five consecutive hours without an eating period.\n(2) Subsection (1) does not apply if the employer and the employee agree, whether or not in writing, that the employee is to be given two eating periods that together total at least 30 minutes in each consecutive five-hour period.",
+        "score": 0.842
+      },
+      {
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "total_parts": 1,
+        "heading": "Payment not required",
+        "law": "Employment Standards Act, 2000",
+        "part": 1,
+        "section": "21",
+        "law_part": "Part Vii Hours Of Work And Eating Periods",
+        "hash": "7d86f24d346edd91",
+        "text": "Employment Standards Act, 2000, s. 21 – Payment not required\nAn employer is not required to pay an employee for an eating period in which work is not being performed unless his or her employment contract requires such payment.",
+        "score": 0.793
+      },
+      {
+        "citation": "SO 2000, c 41",
+        "section": "34",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "total_parts": 1,
+        "law": "Employment Standards Act, 2000",
+        "heading": "Application",
+        "law_part": "Part Xi Vacation With Pay",
+        "hash": "b0d7805ae09571ef",
+        "text": "Employment Standards Act, 2000, s. 34 – Application\n(1) This section applies if the employer establishes an alternative vacation entitlement year for an employee.\n(2) If the employee’s period of employment is less than five years, the employer shall do the following with respect to the stub period:\n1. The employer shall calculate the ratio between the stub period and 12 months.\n2. If the employee has a regular work week, the employer shall give the employee a vacation for the stub period that is equal to two weeks multiplied by the ratio calculated under paragraph 1.\n3. If the employee does not have a regular work week, the employer shall give the employee a vacation for the stub period that is equal to,\n2 × A × the ratio calculated under paragraph 1\nwhere,\nA = the average number of days the employee worked per work week in the stub period.\n(3) If the employee’s period of employment is five years or more, the employer shall do the following with respect to the stub period:\n1. The employer shall calculate the ratio between the stub period and 12 months.\n2. If the employee has a regular work week, the employer shall give the employee a vacation for the stub period that is equal to three weeks multiplied by the ratio calculated under paragraph 1.\n3. If the employee does not have a regular work week, the employer shall give the employee a vacation for the stub period that is equal to,\n3 × A × the ratio calculated under paragraph 1\nwhere,\nA = the average number of days the employee worked per work week in the stub period.\n(4) Both active employment and inactive employment shall be included for the purposes of subsections (2) and (3).\n(5) Subsection (3) requires employers to provide employees with a period of employment of at least five years or more with vacation calculated in accordance with that subsection for any stub period that ends on or after December 31, 2017 but does not require them to provide additional vacation days in respect of a stub period that ended before that time.",
+        "score": 0.773
+      },
+      {
+        "heading": "Regulations",
+        "part": 1,
+        "law": "Employment Standards Act, 2000",
+        "law_part": "Part Xxvii Regulations",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "hash": "3e0fa3cd345fdd77",
+        "section": "141",
+        "text": "Employment Standards Act, 2000, s. 141 – Regulations (excerpt)\n[...]\n(4) If the Lieutenant Governor in Council is satisfied that laws are or will be in effect in the state for the enforcement of orders made under this Act on a basis substantially similar to that set out in section 126, the Lieutenant Governor in Council may by regulation,\n(a) declare a state to be a reciprocating state for the purposes of section 130; and\n(b) designate an authority of that state as the authority who may make applications under section 130.\n(5) A regulation made under this section may be restricted in its application to any class of employee or employer and may treat different classes of employee or employer in different ways.\n(5.1) A regulation made under this section may provide that it applies only if one or more conditions specified in it are met.\n(6) Without restricting the generality of paragraphs 6 and 7 of subsection (1), a regulation made under paragraph 6 or 7 may establish requirements for the industry respecting such matters as a minimum wage, the scheduling of work, maximum hours of work, eating periods and other breaks from work, posting of work schedules, conditions under which the maximum hours of work set out in the regulation may be exceeded, overtime thresholds and overtime pay, vacations, vacation pay, working on public holidays and public holiday pay and treating some public holidays differently than others for those purposes.\n(7) Repealed: 2004, c. 21, s. 10 (5).\n(8) A regulation made under paragraph 9 of subsection (1) may authorize the Director to impose conditions in granting an approval and may authorize the Director to rescind an approval.\n(9) An employer may not require an employee who has made an agreement approved by the Director under a regulation made under paragraph 9 of subsection (1) to work more than 10 hours in a day, except in the circumstances described in section 19.\n(10) If an employee has agreed to work hours in excess of those referred to in clause 17 (1) (a) and hours in excess of those referred to in clause 17 (1) (b), the fact that the Director has approved the agreement in accordance with a regulation made under paragraph 9 of subsection (1) does not prevent the employee from revoking, in accordance with subsection 17 (6), that part of the agreement dealing with the hours in excess of those referred to in clause 17 (1) (b).",
+        "score": 0.771
+      },
+      {
+        "total_parts": 1,
+        "part": 1,
+        "section": "23",
+        "hash": "188eb8cbe92197c8",
+        "law_part": "Part Ix Minimum Wage",
+        "heading": "Minimum wage",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "law": "Employment Standards Act, 2000",
+        "citation": "SO 2000, c 41",
+        "text": "Employment Standards Act, 2000, s. 23 – Minimum wage\n(1) An employer shall pay employees at least the minimum wage.\n(2) If an employer provides room or board to an employee, the prescribed amount with respect to room or board shall be deemed to have been paid by the employer to the employee as wages.\n(3) Compliance with this Part shall be determined on a pay period basis.\n(4) Without restricting the generality of subsection (3), if the minimum wage applicable with respect to an employee is expressed as an hourly rate, the employer shall not be considered to have complied with this Part unless,\n(a) when the amount of regular wages paid to the employee in the pay period is divided by the number of hours he or she worked in the pay period, other than hours for which the employee was entitled to receive overtime pay or premium pay, the quotient is at least equal to the minimum wage; and\n(b) when the amount of overtime pay and premium pay paid to the employee in the pay period is divided by the number of hours worked in the pay period for which the employee was entitled to receive overtime pay or premium pay, the quotient is at least equal to one and one half times the minimum wage.",
+        "score": 0.764
+      },
+      {
+        "law_part": "Part X Public Holidays",
+        "section": "25",
+        "heading": "Two kinds of work",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "total_parts": 1,
+        "part": 1,
+        "citation": "SO 2000, c 41",
+        "hash": "47712e9bc6341e50",
+        "law": "Employment Standards Act, 2000",
+        "text": "Employment Standards Act, 2000, s. 25 – Two kinds of work\n(1) Subsection (2) applies with respect to an employee if,\n(a) an employee performs work of a particular kind or character in a work week in which a public holiday occurs;\n(b) the regulations exempt employees who perform work of that kind or character from the application of this Part; and\n(c) the duties of the employee’s position also require him or her to perform work of another kind or character.\n(2) This Part applies to the employee with respect to that public holiday unless the time spent by the employee performing the work referred to in clause (1) (b) constitutes more than half the time that the employee spent fulfilling the duties of his or her position in that work week.",
+        "score": 0.764
+      },
+      {
+        "part": 1,
+        "law": "Employment Standards Act, 2000",
+        "section": "60",
+        "heading": "Requirements during notice period",
+        "citation": "SO 2000, c 41",
+        "total_parts": 1,
+        "law_part": "Part Xv Termination And Severance Of Employment",
+        "hash": "3dc7f1c057f810e9",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "text": "Employment Standards Act, 2000, s. 60 – Requirements during notice period\n(1) During a notice period under section 57 or 58, the employer,\n(a) shall not reduce the employee’s wage rate or alter any other term or condition of employment;\n(b) shall in each week pay the employee the wages the employee is entitled to receive, which in no case shall be less than his or her regular wages for a regular work week; and\n(c) shall continue to make whatever benefit plan contributions would be required to be made in order to maintain the employee’s benefits under the plan until the end of the notice period.\n(2) For the purposes of clause (1) (b), if the employee does not have a regular work week or if the employee is paid on a basis other than time, the employer shall pay the employee an amount equal to the average amount of regular wages earned by the employee per week for the weeks in which the employee worked in the period of 12 weeks immediately preceding the day on which notice was given.\n(3) If an employer fails to contribute to a benefit plan contrary to clause (1) (c), an amount equal to the amount the employer should have contributed shall be deemed to be unpaid wages for the purpose of section 103.\n(4) Nothing in subsection (3) precludes the employee from an entitlement that he or she may have under a benefit plan.",
+        "score": 0.763
+      },
+      {
+        "section": "49.7",
+        "law_part": "Part Xiv Leaves Of Absence",
+        "hash": "3ae212a10c80b433",
+        "citation": "SO 2000, c 41",
+        "heading": "Definitions",
+        "law": "Employment Standards Act, 2000",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "total_parts": 1,
+        "text": "Employment Standards Act, 2000, s. 49.7 – Definitions\n(1) In this section,\n“child” means a child, step-child, foster child or child who is under legal guardianship, and who is under 18 years of age; (“enfant”)\n“week” means a period of seven consecutive days beginning on Sunday and ending on Saturday. (“semaine”)\n(2) An employee who has been employed by an employer for at least 13 consecutive weeks is entitled to a leave of absence if the employee or a child of the employee experiences domestic or sexual violence, or the threat of domestic or sexual violence, and the leave of absence is taken for any of the following purposes:\n1. To seek medical attention for the employee or the child of the employee in respect of a physical or psychological injury or disability caused by the domestic or sexual violence.\n2. To obtain services from a victim services organization for the employee or the child of the employee.\n3. To obtain psychological or other professional counselling for the employee or the child of the employee.\n4. To relocate temporarily or permanently.\n5. To seek legal or law enforcement assistance, including preparing for or participating in any civil or criminal legal proceeding related to or resulting from the domestic or sexual violence.\n6. Such other purposes as may be prescribed.\n(3) Subsection (2) does not apply if the domestic or sexual violence is committed by the employee.\n(4) An employee is entitled to take, in each calendar year,\n(a) up to 10 days of leave under this section; and\n(b) up to 15 weeks of leave under this section.\n(5) If an employee takes a leave under this section, the employee is entitled to take the first five such days as paid days of leave in each calendar year and the balance of his or her entitlement under this section as unpaid leave.\n(6) Subject to subsections (7) and (8), if an employee takes a paid day of leave under this section, the employer shall pay the employee,\n(a) either,\n(i) the wages the employee would have earned had they not taken the leave, or\n(ii) if the employee receives performance-related wages, including commissions or a piece work rate, the greater of the employee’s hourly rate, if any, and the minimum wage that would have applied to the employee for the number of hours the employee would have worked had they not taken the leave; or\n(b) if some other manner of calculation is prescribed, the amount determined using that manner of calculation.\n(7) If a paid day of leave under this section falls on a day or at a time of day when overtime pay, a shift premium, or both would be payable by the employer,\n(a) the employee is not entitled to more than his or her regular rate for any leave taken under this section; and\n(b) the employee is not entitled to the shift premium for any leave taken under this section.\n(8) If a paid day of leave under this section falls on a public holiday, the employee is not entitled to premium pay for any leave taken under this section.\n(9) For the purposes of an employee’s entitlement under clause (4) (a), if an employee takes any part of a day as leave, the employer may deem the employee to have taken one day of leave on that day.\n(10) An employee who wishes to take leave under clause (4) (a) shall advise the employer that the employee will be doing so.\n(11) If an employee must begin a leave under clause (4) (a) before advising the employer, the employee shall advise the employer of the leave as soon as possible after beginning it.\n(12) For the purposes of an employee’s entitlement under clause (4) (b), if an employee takes any part of a week as leave, the employer may deem the employee to have taken one week of leave.\n(13) An employee who wishes to take a leave under clause (4) (b) shall advise the employer in writing that the employee will be doing so.\n(14) If an employee must begin a leave under clause (4) (b) before advising the employer, the employee shall advise the employer of the leave in writing as soon as possible after beginning it.\n(15) An employer may require an employee who takes a leave under this section to provide evidence reasonable in the circumstances of the employee’s entitlement to the leave.\n(16) Repealed: 2018, c. 14, Sched. 1, s. 18.\n(17) An employer shall ensure that mechanisms are in place to protect the confidentiality of records given to or produced by the employer that relate to an employee taking a leave under this section.\n(18) Nothing in subsection (17) prevents an employer from disclosing a record where,\n(a) the employee has consented to the disclosure of the record;\n(b) disclosure is made to an officer, employee, consultant or agent of the employer who needs the record in the performance of their duties;\n(c) the disclosure is authorized or required by law; or\n(d) the disclosure is prescribed as a permitted disclosure.",
+        "score": 0.762
+      }
+    ]
+  }
+]

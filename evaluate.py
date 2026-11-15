@@ -40,6 +40,7 @@ from pathlib import Path
 import anthropic
 
 from answer import MissingKeyError, answer
+from citations import check_citations
 from search import saved_sections
 
 ROOT = Path(__file__).parent
@@ -132,14 +133,19 @@ def source_found(expected, retrieved):
     return "yes" if found == set(expected) else "partial" if found else "NO"
 
 
-def run_question(client, row, result=None):
+def run_question(client, row, result=None, citations=False):
     """Run one test question through the assistant (unless a saved result is
-    given, when re-grading) and the judge."""
+    given, when re-grading), the judge, and any checks that are switched on."""
     if result is None:
         result = answer(row["question"])
     retrieved = [short(s["law"], s["section"]) for s in result["sections"]]
     expected = [short(law, n) for law, n in parse_sections(row["source_section"])]
     grade, reason = judge(client, row, result["answer"], result["sections"])
+    checks = {}
+    if citations:
+        found, summary = check_citations(client, result["answer"], result["sections"])
+        checks.update(summary)
+        checks["_citations"] = found
     return {
         "question": row["question"],
         "type": row["type"],
@@ -153,7 +159,8 @@ def run_question(client, row, result=None):
         "source_section_retrieved": source_found(expected, retrieved),
         "grade": grade,
         "judge_reason": reason,
-        # Kept only in the .json file, for the checkers in later steps.
+        **checks,
+        # Kept only in the .json file, for re-grading and later checks.
         "_sections": result["sections"],
     }
 
@@ -179,10 +186,28 @@ def summarize(rows):
             ok = sum(r["grade"] == "correct" for r in group)
             bad = sum(r["grade"] == "made_up" for r in group)
             lines.append(f"  {t:<14} {ok}/{len(group)} correct, {bad} made up")
+    if "citation_flag" in rows[0]:
+        total = sum(r["citations_total"] for r in rows)
+        flagged = [r for r in rows if r["citation_flag"] == "FLAG"]
+        lines += [
+            "",
+            "Citation checker:",
+            f"  citations checked: {total} "
+            f"({sum(r['citations_verified'] for r in rows)} verified, "
+            f"{sum(r['citations_unsupported'] for r in rows)} unsupported, "
+            f"{sum(r['citations_not_found'] for r in rows)} not found)",
+            f"  answers flagged: {len(flagged)}/{n}",
+        ]
+        for g in GRADES:
+            group = [r for r in rows if r["grade"] == g]
+            if group:
+                hit = sum(r["citation_flag"] == "FLAG" for r in group)
+                lines.append(f"    flagged among {g:<8} answers: {hit}/{len(group)}")
     lines += ["", "Per question:"]
     for i, r in enumerate(rows, 1):
+        flag = f"citations: {r['citation_flag']:<4}  " if "citation_flag" in r else ""
         lines.append(
-            f"  {i:>2}. [{r['grade']:<7}] search found source: {r['source_section_retrieved']:<3}  {r['question']}"
+            f"  {i:>2}. [{r['grade']:<7}] search found source: {r['source_section_retrieved']:<7}  {flag}{r['question']}"
         )
     return "\n".join(lines)
 
@@ -195,6 +220,7 @@ def main():
         "--regrade", metavar="RESULTS.json",
         help="re-judge the answers saved in an earlier run instead of asking the assistant again",
     )
+    parser.add_argument("--citations", action="store_true", help="also run the citation checker")
     args = parser.parse_args()
 
     with TEST_SET.open() as f:
@@ -216,10 +242,11 @@ def main():
     for i, row in enumerate(tests, 1):
         print(f"[{i}/{len(tests)}] {row['question']}", flush=True)
         try:
-            rows.append(run_question(client, row, saved.get(row["question"])))
+            rows.append(run_question(client, row, saved.get(row["question"]), citations=args.citations))
         except MissingKeyError as e:
             sys.exit(f"Stopping: {e}")
-        print(f"         -> {rows[-1]['grade']}", flush=True)
+        flag = f", citations: {rows[-1]['citation_flag']}" if args.citations else ""
+        print(f"         -> {rows[-1]['grade']}{flag}", flush=True)
 
     # Save everything, named by date and time so nothing gets overwritten.
     RESULTS_DIR.mkdir(exist_ok=True)

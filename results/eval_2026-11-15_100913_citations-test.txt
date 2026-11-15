@@ -1,0 +1,18 @@
+Questions: 2
+Accuracy:           1/2 = 50%
+Hallucination rate: 0/2 = 0%  (graded made_up)
+Wrong (not made up): 1/2
+
+By type:
+  easy           1/1 correct, 0 made up
+  tricky         0/1 correct, 0 made up
+
+Citation checker:
+  citations checked: 5 (4 verified, 1 unsupported, 0 not found)
+  answers flagged: 1/2
+    flagged among correct  answers: 0/1
+    flagged among wrong    answers: 1/1
+
+Per question:
+   1. [wrong  ] search found source: partial  citations: FLAG  My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?
+   2. [correct] search found source: yes      citations: ok    How long of a break do I get for lunch?
