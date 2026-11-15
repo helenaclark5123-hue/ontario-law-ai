@@ -58,11 +58,15 @@ GRADES = ("correct", "wrong", "made_up")
 
 JUDGE_PROMPT = """You grade answers from an Ontario law assistant against an answer key written by a person who checked the official law.
 
-You get the question, the answer key, the official text of the relevant law section(s) if there are any, and the assistant's answer. Grade the assistant's answer with exactly one label:
+You get the question, the answer key, the official text of the answer key's law section(s) if there are any, the official text of every section the assistant was given, and the assistant's answer.
+
+Judge only from these texts. Do NOT use your own memory of Ontario law: it may be out of date or wrong. A claim counts as supported if the answer key or any of the provided law texts says it.
+
+Grade the assistant's answer with exactly one label:
 
 correct - The answer gets the main point of the answer key right. Extra true detail is fine. If the answer key says the question is not covered by the assistant's laws, "correct" means the assistant said it couldn't find it.
 wrong - The answer misses or gets the main point wrong, but does not invent law. For example: it says it couldn't find the answer when the answer key has one, it answers a different question, or it misreads the law (like reading an exception as the rule).
-made_up - The answer states law that isn't true: a rule, number, deadline, amount or section that contradicts the answer key or the official text, or isn't in the law at all. Also use this if the question is not covered and the assistant answers it anyway with legal rules.
+made_up - The answer states law that isn't true: a rule, number, deadline, amount or section that contradicts the answer key or the provided law texts, or that none of the provided texts support. Also use this if the question is not covered and the assistant answers it anyway with legal rules.
 
 If an answer is both wrong and invents law, choose made_up.
 
@@ -89,12 +93,14 @@ def official_text(source_section):
     return "\n\n".join(blocks) or "(none - the answer key says the question isn't covered)"
 
 
-def judge(client, row, assistant_answer):
+def judge(client, row, assistant_answer, sections_used):
     """Ask the judge model to grade one answer. Returns (grade, reason)."""
+    used = "\n\n".join(s["text"] for s in sections_used) or "(none)"
     message = (
         f"QUESTION:\n{row['question']}\n\n"
         f"ANSWER KEY:\n{row['correct_answer']}\n\n"
-        f"OFFICIAL LAW TEXT:\n{official_text(row['source_section'])}\n\n"
+        f"OFFICIAL TEXT OF THE ANSWER KEY'S SECTIONS:\n{official_text(row['source_section'])}\n\n"
+        f"OFFICIAL TEXT OF THE SECTIONS THE ASSISTANT WAS GIVEN:\n{used}\n\n"
         f"ASSISTANT'S ANSWER:\n{assistant_answer}"
     )
     response = client.messages.create(
@@ -118,12 +124,22 @@ def short(law, number):
     return f"{abbreviations.get(law, law)} {number}"
 
 
-def run_question(client, row):
-    """Run one test question through the assistant and the judge."""
-    result = answer(row["question"])
+def source_found(expected, retrieved):
+    """Did search find the answer key's sections? yes / partial / NO / n/a"""
+    if not expected:
+        return "n/a"
+    found = set(expected) & set(retrieved)
+    return "yes" if found == set(expected) else "partial" if found else "NO"
+
+
+def run_question(client, row, result=None):
+    """Run one test question through the assistant (unless a saved result is
+    given, when re-grading) and the judge."""
+    if result is None:
+        result = answer(row["question"])
     retrieved = [short(s["law"], s["section"]) for s in result["sections"]]
     expected = [short(law, n) for law, n in parse_sections(row["source_section"])]
-    grade, reason = judge(client, row, result["answer"])
+    grade, reason = judge(client, row, result["answer"], result["sections"])
     return {
         "question": row["question"],
         "type": row["type"],
@@ -134,9 +150,7 @@ def run_question(client, row):
         "sections_retrieved": "; ".join(retrieved),
         # Did search find the answer key's section? Tells you whether a wrong
         # answer is a search problem or an answering problem.
-        "source_section_retrieved": (
-            "n/a" if not expected else "yes" if set(expected) & set(retrieved) else "NO"
-        ),
+        "source_section_retrieved": source_found(expected, retrieved),
         "grade": grade,
         "judge_reason": reason,
         # Kept only in the .json file, for the checkers in later steps.
@@ -177,6 +191,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--limit", type=int, help="only run the first N questions")
     parser.add_argument("--label", default="", help="added to the result file names, e.g. baseline")
+    parser.add_argument(
+        "--regrade", metavar="RESULTS.json",
+        help="re-judge the answers saved in an earlier run instead of asking the assistant again",
+    )
     args = parser.parse_args()
 
     with TEST_SET.open() as f:
@@ -184,12 +202,21 @@ def main():
     if args.limit:
         tests = tests[: args.limit]
 
+    # When re-grading, reuse the saved answers (and the sections they used).
+    saved = {}
+    if args.regrade:
+        for r in json.loads(Path(args.regrade).read_text()):
+            saved[r["question"]] = {
+                "answer": r["assistant_answer"], "rewrite": r["search_rewrite"], "sections": r["_sections"],
+            }
+        tests = [row for row in tests if row["question"] in saved]
+
     client = anthropic.Anthropic()
     rows = []
     for i, row in enumerate(tests, 1):
         print(f"[{i}/{len(tests)}] {row['question']}", flush=True)
         try:
-            rows.append(run_question(client, row))
+            rows.append(run_question(client, row, saved.get(row["question"])))
         except MissingKeyError as e:
             sys.exit(f"Stopping: {e}")
         print(f"         -> {rows[-1]['grade']}", flush=True)
