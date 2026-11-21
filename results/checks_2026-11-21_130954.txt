@@ -1,0 +1,55 @@
+Run: results/eval_2026-11-21_130909_citations-final-checker.json
+
+THIS RUN (new answers, graded the same way):
+  correct 33, wrong 2, made_up 0  (of 35)
+  hallucination rate 0/35 (0%)
+
+HOW EACH CHECK DID
+  check                                     caught (wrong or made up)   false alarms (correct flagged)  
+  Citation checker                          1/2 (50%)                   2/33 (6%)                       
+  Entropy strict (low)                      2/2 (100%)                  30/33 (91%)                     
+  Entropy strict (low/medium)               2/2 (100%)                  31/33 (94%)                     
+  Entropy loose (low)                       0/2 (0%)                    0/33 (0%)                       
+  Entropy loose (low/medium)                0/2 (0%)                    3/33 (9%)                       
+  Citations OR entropy loose (low/medium)   1/2 (50%)                   5/33 (15%)                      
+  Citations OR entropy strict (low)         2/2 (100%)                  30/33 (91%)                     
+
+Wrong or made-up answers missed by BOTH checks (citations, and entropy with either rule): 0/2 (0%)
+
+PER QUESTION
+  grade    citations  strict   loose    search   question
+  correct  ok         low      high     yes      How much notice does my landlord need to give before raising my rent?
+  correct  ok         low      high     yes      How often can my landlord raise my rent?
+  correct  ok         low      high     yes      Can my landlord charge me a damage deposit?
+  correct  ok         low      high     yes      Can my landlord ask for first and last month's rent, and do I get interest on it?
+  correct  ok         low      high     yes      Can my landlord come into my apartment without telling me first?
+  correct  ok         low      high     yes      My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?
+  correct  ok         low      high     yes      My lease says no pets. Can my landlord evict me for having a cat?
+  correct  ok         low      medium   yes      Can my boss take money out of my pay because my cash register was short?
+  correct  ok         low      high     yes      Can my boss make me work a 13-hour shift?
+  correct  ok         medium   high     yes      How long of a break do I get for lunch?
+  correct  ok         low      high     yes      When do I get paid overtime?
+  correct  ok         low      high     yes      How much vacation time do I get each year?
+  correct  ok         low      high     yes      I've worked at my job for three and a half years. How much notice do I get if I'm fired?
+  correct  ok         low      high     yes      Can I be fired for asking my boss about my rights under the Employment Standards Act?
+  correct  FLAG       low      high     yes      Someone sold me something at my door. How long do I have to cancel?
+  correct  ok         low      high     partial  I signed up for a gym membership yesterday. Can I cancel it?
+  correct  ok         low      medium   yes      A mechanic gave me an estimate but charged a lot more. What can I do?
+  correct  ok         low      high     yes      A company sent me a product I never ordered and now wants me to pay. Do I have to?
+  correct  ok         low      high     yes      I bought something online but the site never showed me the full terms before I paid. Can I cancel?
+  correct  ok         low      high     n/a      Can I be sentenced to jail for shoplifting?
+  correct  ok         low      high     n/a      How do I get a divorce in Ontario?
+  correct  ok         high     high     n/a      What is the speed limit on Ontario highways?
+  wrong    FLAG       low      high     NO       My landlord is trying to evict me because I complained to the city about mould. Is that allowed?
+  wrong    ok         low      high     NO       Can my landlord raise my rent by 10% this year?
+  correct  ok         low      high     yes      My landlord gave me 30 days' notice because his daughter is moving in. Do I have to be out in 30 days?
+  correct  ok         low      high     yes      I rent month to month and want to move out. How much notice do I have to give?
+  correct  ok         low      high     yes      Can my landlord change the locks while I'm still living there?
+  correct  ok         low      high     NO       Can my landlord turn off my heat because I'm late on rent?
+  correct  ok         low      high     yes      I worked somewhere for three years and got laid off. Do I get severance pay?
+  correct  FLAG       low      high     yes      How many paid sick days do I get?
+  correct  ok         low      medium   yes      Do I get paid extra if I work on a public holiday?
+  correct  ok         low      high     yes      What is the minimum wage in Ontario right now?
+  correct  ok         low      high     n/a      I took out a payday loan yesterday. Can I still cancel it?
+  correct  ok         low      high     n/a      Is a debt collector allowed to call me at work?
+  correct  ok         high     high     n/a      Do I have to pay income tax on my tips?

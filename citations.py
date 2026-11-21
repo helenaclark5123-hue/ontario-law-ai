@@ -3,15 +3,21 @@
 For each answer:
   1. Find every citation, like "(Residential Tenancies Act, 2006, s. 116(1))"
      or the short form "(s. 116(3))". A short citation belongs to the Act
-     most recently named before it.
+     most recently named before it. Section numbers of other Acts (e.g.
+     "Fighting Delays, Building Faster Act, 2025, s. 2(2)") are skipped.
   2. Look the section up in the law database (data/). If it isn't there,
      the citation is "not_found".
-  3. For sections that exist, an AI judge reads the real section text and the
-     sentence(s) where the answer cites it, and decides whether the text
-     supports what the answer says: "verified" or "unsupported". The judge is
-     asked 3 times and the majority wins ("unclear" if the votes tie).
+  3. For sections that exist, an AI judge reads the real section text and
+     each sentence that cites it, together with that sentence's paragraph and
+     heading, reasons first, then decides "verified" or "unsupported". The
+     judge is asked 3 times:
+       verified    - all 3 say supported
+       unsupported - most say unsupported
+       disputed    - most say supported, but at least one objects (a warning)
 
-An answer is flagged if any citation is unsupported or not_found.
+An answer is flagged if any citation is unsupported or not_found. "Disputed"
+is recorded but doesn't flag: it caught more real errors in testing, but
+added about 4 false alarms per run.
 
     python citations.py --demo     # check a made-up answer with planted mistakes
     python citations.py --recheck results/eval_..._full-checks.json
@@ -48,10 +54,12 @@ CITATION = re.compile(
     r"(\d+(?:\.\d+)*(?:\([^)\s]*\))*(?:\s*(?:,|and|to|-|–)\s*\d+(?:\.\d+)*(?:\([^)\s]*\))*)*)"
 )
 SECTION_NUMBER = re.compile(r"(?<![(\w.])(\d+(?:\.\d+)*)")
+# The name of any Act, e.g. "Fighting Delays, Building Faster Act, 2025".
+OTHER_ACT = re.compile(r"((?:[A-Z][\w'’-]*,?\s+){1,8}Act(?:,\s*\d{4})?)")
 
 JUDGE_PROMPT = """You check citations in answers from an Ontario law assistant.
 
-For each numbered citation you get the claim(s) the answer makes while citing it, the official text of the cited section, and whether the assistant was GIVEN that section when it wrote the answer. Decide whether the claim is supported:
+For each numbered citation you get the claim(s) the answer makes while citing it, each with its CONTEXT (the paragraph and heading it appears under, so you know who "you" is and what the sentence is about), the official text of the cited section, and whether the assistant was GIVEN that section when it wrote the answer. Decide whether the claim, read in its context, is supported:
 
 verified - The section text says what the claim says (wording can differ).
 unsupported - The section text does not say it, says something different, or says the opposite. Also use this if the claim gets a number, deadline, amount or condition wrong.
@@ -62,9 +70,11 @@ Rules:
 - The assistant only sees some sections. If the claim just says the assistant doesn't have this section, couldn't find it, or can't say what it requires, and the assistant was NOT given it, that statement is true: mark it verified. Only judge the legal content of the claim.
 - Long sections are shown as excerpts (the parts most related to the claim), with [...] for skipped parts.
 
-Reply with one line per citation, in exactly this format:
-[1] verified - <short reason>
-[2] unsupported - <short reason>"""
+For each citation, reason FIRST, then give your verdict on its own line. Use exactly this format:
+[1] REASON: <one to three sentences comparing the claim with the section text>
+VERDICT: <verified or unsupported>
+[2] REASON: <...>
+VERDICT: <...>"""
 
 
 def split_claims(text):
@@ -79,25 +89,75 @@ def split_claims(text):
     return units
 
 
+def is_heading(line):
+    """A markdown heading, a fully bold line, or a short line ending in ':'."""
+    line = line.strip(" -")
+    return (
+        line.startswith("#")
+        or (line.startswith("**") and line.endswith(("**", "**:", ":**")))
+        or (line.endswith(":") and len(line) < 100)
+    )
+
+
+def context_for(text, pos, limit=700):
+    """The paragraph or bullet point containing pos, with the nearest heading
+    above it, so the judge knows what a sentence like "You must give 10 days'
+    notice" is about (e.g. under "Can you leave earlier?")."""
+    line_start = text.rfind("\n", 0, pos) + 1
+    line_end = text.find("\n", pos)
+    line = text[line_start: line_end if line_end != -1 else len(text)].strip()
+    heading = next((l.strip() for l in reversed(text[:line_start].split("\n")) if is_heading(l)), "")
+    return (f"{heading}\n{line}" if heading and heading != line else line)[:limit]
+
+
+def other_act_mentions(text):
+    """Positions of Acts other than our three, e.g. 'Fighting Delays, Building
+    Faster Act, 2025', so their section numbers aren't mistaken for ours."""
+    generic = ("The", "This", "That", "Each", "Under", "In", "By")
+    found = []
+    for m in OTHER_ACT.finditer(text):
+        name = m.group(1).strip()
+        words = name.split()
+        while words and words[0] in generic:  # "The Fighting Delays ... Act" -> keep the name
+            words.pop(0)
+        if LAW_NAME.search(name) or len(words) < 2:  # one of our laws, or just "the Act"
+            continue
+        found.append(m.start())
+    return found
+
+
 def extract_citations(text, default_law=None):
     """Find every cited (law, section) and the claims made with it.
 
-    Returns a list of dicts: law, section, cited_as (as written), claims.
+    Returns a list of dicts: law, section, cited_as (as written), claims, and
+    contexts (each claim's paragraph and heading). Section numbers that follow
+    the name of a different Act on the same line are skipped.
     """
     law_mentions = [(m.start(), m.group(0)) for m in LAW_NAME.finditer(text)]
+    others = other_act_mentions(text)
     units = split_claims(text)
     found = {}
     for m in CITATION.finditer(text):
-        before = [name for pos, name in law_mentions if pos < m.start()]
-        law = before[-1] if before else default_law or "unknown law"
+        before = [(pos, name) for pos, name in law_mentions if pos < m.start()]
+        law = before[-1][1] if before else default_law or "unknown law"
+        # Skip citations that belong to another Act: its name comes after ours and
+        # in the same phrase, e.g. "(Fighting Delays ... Act, 2025, Schedule 12, s. 2(2))".
+        last_ours = before[-1][0] if before else -1
+        if any(
+            last_ours < pos < m.start() and m.start() - pos < 150
+            and not re.search(r"\)|\.\s|\n", text[pos:m.start()])
+            for pos in others
+        ):
+            continue
         claim = next((u[2] for u in units if u[0] <= m.start() < u[1]), "")
         for number in SECTION_NUMBER.findall(m.group(1)):
             entry = found.setdefault((law, number), {
-                "law": law, "section": number, "cited_as": [], "claims": [],
+                "law": law, "section": number, "cited_as": [], "claims": [], "contexts": [],
             })
             entry["cited_as"].append(m.group(0))
             if claim and claim not in entry["claims"]:
                 entry["claims"].append(claim)
+                entry["contexts"].append(context_for(text, m.start()))
     return list(found.values())
 
 
@@ -139,7 +199,11 @@ def judge_support(client, citations):
     sections = saved_sections()
     blocks = []
     for i, c in enumerate(citations, 1):
-        claims = "\n".join(f"- {claim}" for claim in c["claims"])
+        contexts = c.get("contexts") or [""] * len(c["claims"])
+        claims = "\n".join(
+            f"- CLAIM: {claim}" + (f"\n  CONTEXT: {context}" if context and context != claim else "")
+            for claim, context in zip(c["claims"], contexts)
+        )
         text = relevant_text(sections[(c["law"], c["section"])], c["claims"])
         given = "yes" if c["given"] else "NO"
         blocks.append(
@@ -158,10 +222,17 @@ def judge_support(client, citations):
             messages=[{"role": "user", "content": content}],
         )
         reply = "".join(b.text for b in response.content if b.type == "text")
+        # Each block runs from "[i]" to the next "[i+1]"; the verdict comes last.
         votes = []
         for i in range(1, len(citations) + 1):
-            m = re.search(rf"\[{i}\]\s*(verified|unsupported)\s*[-–:]?\s*(.*)", reply, re.I)
-            votes.append((m.group(1).lower(), m.group(2).strip()) if m else ("unclear", ""))
+            block = re.search(rf"\[{i}\](.*?)(?=\[{i + 1}\]|\Z)", reply, re.S)
+            body = block.group(1) if block else ""
+            verdict = re.findall(r"VERDICT:\s*\**\s*(verified|unsupported)", body, re.I)
+            reason = re.search(r"REASON:\s*(.*?)(?=VERDICT:|\Z)", body, re.S | re.I)
+            votes.append((
+                verdict[-1].lower() if verdict else "unclear",
+                reason.group(1).strip() if reason else body.strip(),
+            ))
         return votes
 
     # Ask the same judge VOTES times at once and keep the majority verdict,
@@ -172,10 +243,15 @@ def judge_support(client, citations):
         votes = [ballot[i] for ballot in ballots]
         counts = Counter(status for status, _ in votes if status != "unclear")
         verified, unsupported = counts["verified"], counts["unsupported"]
-        if verified > unsupported:
+        # A citation only passes if every judge agrees it's supported. In testing,
+        # subtle real errors (RTA s. 120, s. 83) got 2-1 votes, while false alarms
+        # went 3-0 "verified" once judges saw the claim's context.
+        if unsupported == 0 and verified > 0:
             c["status"] = "verified"
         elif unsupported > verified:
             c["status"] = "unsupported"
+        elif unsupported:
+            c["status"] = "disputed"
         else:
             c["status"] = "unclear"
         c["votes"] = f"{verified} verified / {unsupported} unsupported"
@@ -202,12 +278,18 @@ def check_citations(client, answer_text, sections_used=()):
     if to_judge:
         judge_support(client, to_judge)
 
-    count = {s: sum(c["status"] == s for c in citations) for s in ("verified", "unsupported", "not_found", "unclear")}
+    count = {
+        s: sum(c["status"] == s for c in citations)
+        for s in ("verified", "unsupported", "disputed", "not_found", "unclear")
+    }
     summary = {
         "citations_total": len(citations),
         "citations_verified": count["verified"],
         "citations_unsupported": count["unsupported"],
+        "citations_disputed": count["disputed"],
         "citations_not_found": count["not_found"],
+        # "disputed" is recorded but doesn't flag: in testing, single judges
+        # objected at random often enough to add ~4 false alarms per run.
         "citation_flag": "FLAG" if count["unsupported"] or count["not_found"] else "ok",
         "citation_details": "\n".join(
             f"{c['status'].upper()}: {c['law']}, s. {c['section']} - {c['reason']}" for c in citations

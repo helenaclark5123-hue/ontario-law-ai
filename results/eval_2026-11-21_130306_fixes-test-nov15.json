@@ -1,0 +1,608 @@
+[
+  {
+    "question": "How often can my landlord raise my rent?",
+    "type": "easy",
+    "correct_answer": "Only once every 12 months: at least 12 months must pass since the last increase, or since the tenant first moved in if there hasn't been one.",
+    "source_section": "RTA 119",
+    "assistant_answer": "Your landlord generally can raise your rent only once every 12 months. The increase must come at least 12 months after the day of your last rent increase, or, if there has been no earlier increase, at least 12 months after the day you first rented the unit (Residential Tenancies Act, 2006, s. 119(1)).\n\nOther limits that apply:\n\n- **Notice:** The landlord must give you at least 90 days' written notice, on a form approved by the Board, before the increase. An increase without proper notice is void, and the landlord must give a new notice before taking it (Residential Tenancies Act, 2006, s. 116(1), (3), (4)).\n- **Guideline cap:** During your tenancy, the increase generally cannot be more than the guideline set for that year. The guideline is based on the Consumer Price Index, and it cannot be more than 2.5% (Residential Tenancies Act, 2006, s. 120(1), (2)).\n- **Exceptions:** A landlord can go above the guideline only if the Board orders it for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs (Residential Tenancies Act, 2006, s. 120(1), s. 126(1)). A landlord and tenant can also agree to an above-guideline increase tied to a specified capital expenditure or a new or additional service. If you agree, you can cancel within five days after signing (Residential Tenancies Act, 2006, s. 121(1), (4)).\n- **Added services:** An increase for adding a parking space or a prescribed service, facility, or thing, if you agree to it, is not counted as a rent increase for the 12-month rule (Residential Tenancies Act, 2006, s. 123(1), s. 119(2)).\n\nI could not find in these sections what the guideline is for a particular year, so check the current figure with the Ministry or a community legal clinic.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "annual rent increase guideline; increase of rent; lawful rent; tenancy agreement; landlord; tenant",
+    "sections_retrieved": "RTA 120; RTA 126; RTA 119; RTA 110; RTA 123; RTA 116; RTA 246; RTA 121",
+    "source_section_retrieved": "yes",
+    "grade": "correct",
+    "judge_reason": "The assistant states the core rule from s. 119(1), that a landlord can raise rent only after at least 12 months since the last increase or since the tenant first moved in, which matches the answer key. Its extra points on notice, the guideline cap, exceptions and added services are all supported by the provided sections.",
+    "citations_total": 6,
+    "citations_verified": 6,
+    "citations_unsupported": 0,
+    "citations_not_found": 0,
+    "citation_flag": "ok",
+    "citation_details": "VERIFIED: Residential Tenancies Act, 2006, s. 119 - Section 119(1) states the 12-month rule exactly as the claim describes, measured from the last increase or, if none, from the first rental. Section 119(2) says an increase under s. 123 is deemed not to be an increase for the purposes of s. 119, which supports the added-services point.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 116 - Section 116(1) requires at least 90 days' written notice, s. 116(3) requires a Board-approved form, and s. 116(4) makes an increase without the required notice void and requires a new notice before the increase can be taken. All three parts of the claim match.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 120 - Section 120(1) limits increases during the tenancy to the guideline, and s. 120(2) sets the guideline from the Ontario CPI with a maximum of 2.5 per cent. The exceptions sentence is supported by s. 120(1)'s reference to s. 126, since s. 126(1) lists the Board-order cost categories. Section 120(1) also refers to agreements under ss. 121 and 123, so \"only\" is an overstatement, but the answer covers agreements in the next sentence.  [votes: 2 verified / 1 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 126 - Section 126(1) lists the three cases for a Board order above guideline: extraordinary municipal tax increases, eligible capital expenditures, and security-service operating costs. The claim's examples match this list. The word \"only\" is not in s. 126(1) itself, and the wider exclusivity issue is addressed under s. 120 above.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 121 - Section 121(4) lets a tenant who signed an agreement cancel by written notice within five days after signing, and s. 121(1) permits agreements tied to a specified capital expenditure or a new or additional service. The claim matches both.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 123 - Section 123(1) allows a rent increase at any time if the landlord and tenant agree to add a parking space or a prescribed service, facility, privilege, accommodation or thing. Section 123(2) makes s. 119 inapplicable to such an increase, which supports the claim that it does not count for the 12-month rule.  [votes: 3 verified / 0 unsupported]",
+    "_citations": [
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "119",
+        "cited_as": [
+          "s. 119(1)",
+          "s. 119(2)"
+        ],
+        "claims": [
+          "The increase must come at least 12 months after the day of your last rent increase, or, if there has been no earlier increase, at least 12 months after the day you first rented the unit (Residential Tenancies Act, 2006, s. 119(1)).",
+          "Added services:** An increase for adding a parking space or a prescribed service, facility, or thing, if you agree to it, is not counted as a rent increase for the 12-month rule (Residential Tenancies Act, 2006, s. 123(1), s. 119(2))."
+        ],
+        "contexts": [
+          "Your landlord generally can raise your rent only once every 12 months. The increase must come at least 12 months after the day of your last rent increase, or, if there has been no earlier increase, at least 12 months after the day you first rented the unit (Residential Tenancies Act, 2006, s. 119(1)).",
+          "Other limits that apply:\n- **Added services:** An increase for adding a parking space or a prescribed service, facility, or thing, if you agree to it, is not counted as a rent increase for the 12-month rule (Residential Tenancies Act, 2006, s. 123(1), s. 119(2))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Section 119(1) states the 12-month rule exactly as the claim describes, measured from the last increase or, if none, from the first rental. Section 119(2) says an increase under s. 123 is deemed not to be an increase for the purposes of s. 119, which supports the added-services point.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "116",
+        "cited_as": [
+          "s. 116(1)"
+        ],
+        "claims": [
+          "An increase without proper notice is void, and the landlord must give a new notice before taking it (Residential Tenancies Act, 2006, s. 116(1), (3), (4))."
+        ],
+        "contexts": [
+          "Other limits that apply:\n- **Notice:** The landlord must give you at least 90 days' written notice, on a form approved by the Board, before the increase. An increase without proper notice is void, and the landlord must give a new notice before taking it (Residential Tenancies Act, 2006, s. 116(1), (3), (4))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Section 116(1) requires at least 90 days' written notice, s. 116(3) requires a Board-approved form, and s. 116(4) makes an increase without the required notice void and requires a new notice before the increase can be taken. All three parts of the claim match.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "120",
+        "cited_as": [
+          "s. 120(1)",
+          "s. 120(1)"
+        ],
+        "claims": [
+          "The guideline is based on the Consumer Price Index, and it cannot be more than 2.5% (Residential Tenancies Act, 2006, s. 120(1), (2)).",
+          "Exceptions:** A landlord can go above the guideline only if the Board orders it for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs (Residential Tenancies Act, 2006, s. 120(1), s. 126(1))."
+        ],
+        "contexts": [
+          "Other limits that apply:\n- **Guideline cap:** During your tenancy, the increase generally cannot be more than the guideline set for that year. The guideline is based on the Consumer Price Index, and it cannot be more than 2.5% (Residential Tenancies Act, 2006, s. 120(1), (2)).",
+          "Other limits that apply:\n- **Exceptions:** A landlord can go above the guideline only if the Board orders it for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs (Residential Tenancies Act, 2006, s. 120(1), s. 126(1)). A landlord and tenant can also agree to an above-guideline increase tied to a specified capital expenditure or a new or additional service. If you agree, you can cancel within five days after signing (Residential Tenancies Act, 2006, s. 121(1), (4))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "2 verified / 1 unsupported",
+        "reason": "Section 120(1) limits increases during the tenancy to the guideline, and s. 120(2) sets the guideline from the Ontario CPI with a maximum of 2.5 per cent. The exceptions sentence is supported by s. 120(1)'s reference to s. 126, since s. 126(1) lists the Board-order cost categories. Section 120(1) also refers to agreements under ss. 121 and 123, so \"only\" is an overstatement, but the answer covers agreements in the next sentence.  [votes: 2 verified / 1 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "126",
+        "cited_as": [
+          "s. 126(1)"
+        ],
+        "claims": [
+          "Exceptions:** A landlord can go above the guideline only if the Board orders it for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs (Residential Tenancies Act, 2006, s. 120(1), s. 126(1))."
+        ],
+        "contexts": [
+          "Other limits that apply:\n- **Exceptions:** A landlord can go above the guideline only if the Board orders it for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs (Residential Tenancies Act, 2006, s. 120(1), s. 126(1)). A landlord and tenant can also agree to an above-guideline increase tied to a specified capital expenditure or a new or additional service. If you agree, you can cancel within five days after signing (Residential Tenancies Act, 2006, s. 121(1), (4))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Section 126(1) lists the three cases for a Board order above guideline: extraordinary municipal tax increases, eligible capital expenditures, and security-service operating costs. The claim's examples match this list. The word \"only\" is not in s. 126(1) itself, and the wider exclusivity issue is addressed under s. 120 above.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "121",
+        "cited_as": [
+          "s. 121(1)"
+        ],
+        "claims": [
+          "If you agree, you can cancel within five days after signing (Residential Tenancies Act, 2006, s. 121(1), (4))."
+        ],
+        "contexts": [
+          "Other limits that apply:\n- **Exceptions:** A landlord can go above the guideline only if the Board orders it for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs (Residential Tenancies Act, 2006, s. 120(1), s. 126(1)). A landlord and tenant can also agree to an above-guideline increase tied to a specified capital expenditure or a new or additional service. If you agree, you can cancel within five days after signing (Residential Tenancies Act, 2006, s. 121(1), (4))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Section 121(4) lets a tenant who signed an agreement cancel by written notice within five days after signing, and s. 121(1) permits agreements tied to a specified capital expenditure or a new or additional service. The claim matches both.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "123",
+        "cited_as": [
+          "s. 123(1)"
+        ],
+        "claims": [
+          "Added services:** An increase for adding a parking space or a prescribed service, facility, or thing, if you agree to it, is not counted as a rent increase for the 12-month rule (Residential Tenancies Act, 2006, s. 123(1), s. 119(2))."
+        ],
+        "contexts": [
+          "Other limits that apply:\n- **Added services:** An increase for adding a parking space or a prescribed service, facility, or thing, if you agree to it, is not counted as a rent increase for the 12-month rule (Residential Tenancies Act, 2006, s. 123(1), s. 119(2))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Section 123(1) allows a rent increase at any time if the landlord and tenant agree to add a parking space or a prescribed service, facility, privilege, accommodation or thing. Section 123(2) makes s. 119 inapplicable to such an increase, which supports the claim that it does not count for the 12-month rule.  [votes: 3 verified / 0 unsupported]"
+      }
+    ],
+    "entropy": 1.332,
+    "n_clusters": 4,
+    "cluster_sizes": "2-1-1-1",
+    "confidence": "low",
+    "entropy_loose": 0.0,
+    "n_clusters_loose": 1,
+    "cluster_sizes_loose": "5",
+    "confidence_loose": "high",
+    "_entropy": {
+      "samples": [
+        "Your landlord can raise your rent once every 12 months. The 12 months run from your last rent increase, or from the day you first rented the unit if there has been no increase yet (Residential Tenancies Act, 2006, s. 119(1)).\n\nOther limits that apply:\n\n- **Notice:** Your landlord must give you at least 90 days' written notice of the increase, on a form approved by the Board. Without proper notice, the increase is void, and the landlord must give a new notice before taking it (Residential Tenancies Act, 2006, s. 116(1), (3), (4)).\n- **Amount:** For most tenancies, the increase cannot be more than the yearly guideline set by the Minister. The guideline is capped at 2.5% (Residential Tenancies Act, 2006, s. 120(1), (2)). I couldn't find the guideline for your year in the sections I have.\n- **Exceptions:** Increases for adding a parking space or a prescribed service, facility or thing, when you agree to it, are not counted in the 12-month rule (Residential Tenancies Act, 2006, s. 119(2), s. 123(1)). Higher increases can also be allowed by a Board order or a signed agreement (Residential Tenancies Act, 2006, s. 120(1), s. 121(1)). I couldn't find the full conditions for Board orders in the sections I have.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "Your landlord can generally raise your rent once every 12 months. The 12 months runs from your last rent increase, or from the day you first rented the unit if there has been no increase yet (Residential Tenancies Act, 2006, s. 119(1)).\n\nOther limits that apply:\n\n- **Notice:** The landlord must give you at least 90 days' written notice, on a form approved by the Board, stating the new rent amount. An increase without proper notice is void, and the landlord must give a new notice before taking the increase (s. 116(1), (3), (4)).\n- **Amount:** Without an exception, the increase cannot be more than the guideline set by the Minister for that year (s. 120(1)). The guideline is capped at 2.5 per cent (s. 120(2), para. 2). The guideline for 2021 was zero per cent (s. 120(3.1)). I can't find the guideline for the current year in the sections I have.\n\nExceptions:\n\n- **Above-guideline increase:** The Board can allow a higher increase for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs (s. 126(1)). The landlord must apply at least 90 days before the increase takes effect (s. 126(3)).\n- **Agreement:** You and your landlord can agree to an above-guideline increase in exchange for a specified capital expenditure or a new or additional service (s. 121(1)). You can cancel that agreement by written notice within five days after signing it (s. 121(4)).\n- **Parking or added services:** A rent increase for adding a parking space or a prescribed service can happen at any time if you both agree. This rule applies even despite the 12-month rule (s. 123(1), (2)).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "Your landlord generally can raise your rent once every 12 months. The increase must wait at least 12 months from the date of your last rent increase, or from the date you first rented the unit if there has been no earlier increase (Residential Tenancies Act, 2006, s. 119(1)).\n\nOther limits and exceptions:\n\n- **Notice:** Your landlord must give you at least 90 days' written notice of the increase, on a form approved by the Board. Without proper notice, the increase is void, and the landlord must give a new notice before taking it (Residential Tenancies Act, 2006, s. 116(1), (3), (4)).\n- **Guideline cap:** Without special approval, the increase cannot be more than the yearly guideline. The guideline is tied to inflation and is capped at 2.5% (Residential Tenancies Act, 2006, s. 120(1), (2)). For 2021, the guideline was zero per cent (Residential Tenancies Act, 2006, s. 120(3.1)). I could not find the guideline for the current year in the sections I have.\n- **Above-guideline increases:** A landlord can ask the Board for permission to go above the guideline for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or certain security costs. The application must be made at least 90 days before the increase takes effect (Residential Tenancies Act, 2006, s. 126(1), (3)).\n- **Agreements:** You and your landlord can agree to an increase above the guideline in exchange for a specified capital expenditure or a new or additional service. You have five days after signing to cancel in writing (Residential Tenancies Act, 2006, s. 121(1), (4)).\n- **Extra services:** If you agree to add a parking space or a prescribed service or facility, the rent can go up at any time, even within the 12-month period (Residential Tenancies Act, 2006, s. 123(1), (2)).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "Your landlord generally must wait at least **12 months** between rent increases. The 12 months run from the day of your last rent increase, or from the day you first rented the unit if there has been no increase yet (Residential Tenancies Act, 2006, s. 119(1)).\n\n**Other limits:**\n- **Notice:** The landlord must give you at least 90 days' written notice, on a form approved by the Board, stating the new rent amount. An increase without proper notice is void, and the landlord must give a new notice before taking it (s. 116(1), (3), (4)).\n- **Guideline cap:** Without special permission, the increase cannot be more than the annual guideline (s. 120(1)). The guideline is based on the Consumer Price Index and cannot be more than 2.5% (s. 120(2)). I couldn't find the guideline figure for the current year in the sections I have.\n\n**Exceptions:**\n- **Above-guideline order:** The Board can allow a higher increase for certain costs, such as an extraordinary increase in municipal taxes, eligible capital expenditures, or certain security costs (s. 126(1)).\n- **Agreement:** You and your landlord can agree to an above-guideline increase in exchange for a specified capital expenditure or a new or additional service. You can cancel that agreement by written notice within five days after signing it (s. 121(1), (4)).\n- **Added services or parking:** An increase for adding a parking space or a prescribed service or facility, by agreement, is not subject to the 12-month rule (s. 123(1), (2); s. 119(2)).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "Your landlord can generally raise your rent once every 12 months. The increase must wait at least 12 months from your last rent increase, or from the day you first rented the unit if there has been no previous increase (Residential Tenancies Act, 2006, s. 119(1)).\n\nOther rules that apply:\n\n- **Notice:** Your landlord must give you at least 90 days' written notice, on a form approved by the Board, stating the new rent amount. An increase without proper notice is void, and the landlord must give a new notice before taking it (s. 116(1), (3), (4)).\n- **Guideline cap:** Each year, the Minister sets a guideline, which is the maximum a landlord can raise rent without special approval. It is tied to the Consumer Price Index and cannot be more than 2.5 per cent (s. 120(1), (2)). The sections I have do not give the guideline for a specific year.\n\nExceptions:\n\n- **Above-guideline increase:** A landlord can apply to the Board for a higher increase for certain costs, such as extraordinary municipal tax increases, eligible capital expenditures, or security service costs. The application must be made at least 90 days before the first intended increase (s. 126(1), (3)).\n- **Agreement:** A landlord and tenant can agree to an increase above the guideline in exchange for a specified capital expenditure or a new or additional service. The increase cannot exceed the guideline plus 3 per cent of the previous lawful rent. You can cancel the agreement in writing within five days after signing it (s. 121(1), (3), (4)).\n- **Additional services:** A landlord can increase rent at any time if you agree to add a parking space or a prescribed service, facility or thing. This is not counted toward the 12-month rule (s. 123(1), (2); s. 119(2)).\n\nI couldn't find in these sections the specific guideline for the current year or the exact rules for how the Board calculates above-guideline increases.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic."
+      ],
+      "strict": {
+        "clusters": [
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: different - Answer B contains all of Answer A's main points (the 12-month rule, 90-day notice, the 2.5% cap, and the parking/service and Board-order/agreement exceptions), but adds specifics A lacks, such as the 2021 zero guideline, the five-day cancellation right, and the Board application timing.",
+          "answer 1 vs 3: different - Answer B includes all of Answer A's core rules (12-month rule, 90-day notice, 2.5% cap, parking/service exceptions, Board and agreement exceptions), but adds specifics Answer A lacks, such as the 2021 zero-per-cent guideline, the 90-day Board application requirement, and the five-day cancellation right.",
+          "answer 2 vs 3: SAME - The two answers reach the same conclusions on the 12-month rule, 90-day notice, 2.5% cap, 2021 zero guideline, Board exceptions, five-day cancellation, and parking/services exception, and B's only extra detail (guideline \"tied to inflation\") is a minor descriptive point that does not change the answer.",
+          "answer 1 vs 4: different - Answer B includes specifics that Answer A lacks, such as the types of Board-ordered increases and the five-day right to cancel an agreement, while Answer A's core facts (12-month rule, 90-day notice, 2.5% guideline cap, parking and agreement exceptions) all appear in Answer B, with only A's note about not finding full Board-order conditions left unmatched.",
+          "answer 2 vs 4: different - Answer A includes facts Answer B omits (the 2021 zero per cent guideline and the 90-day deadline for an above-guideline application), while Answer B states that the guideline is based on the Consumer Price Index, which Answer A does not mention.",
+          "answer 1 vs 5: different - Answer B contains all of Answer A's main points (the 12-month rule, 90-day notice, 2.5% cap, parking and service exceptions, and above-guideline increases through the Board or agreement), but adds specific facts Answer A lacks, such as the guideline-plus-3% agreement limit, the five-day cancellation right, and the 90-day application deadline.",
+          "answer 2 vs 5: different - Answer A states that the 2021 guideline was zero per cent, which B omits, while Answer B states that agreed above-guideline increases are capped at the guideline plus 3 per cent, which A omits, so neither answer's content follows from the other.",
+          "answer 4 vs 5: different - Answer B adds substantive details that Answer A omits (the 90-day deadline for an above-guideline application and the cap of guideline plus 3% on agreed increases), while every point in Answer A also appears in Answer B."
+        ]
+      },
+      "loose": {
+        "clusters": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: SAME - Both answers say rent can generally be raised once every 12 months, require 90 days' written notice, cap the guideline at 2.5%, and treat parking or added services as exceptions. Answer B adds details, such as the 2021 zero-per-cent guideline and above-guideline procedures, but it doesn't contradict Answer A.",
+          "answer 1 vs 3: SAME - Both answers state the same core rule (one increase every 12 months, 90 days' written notice, guideline capped at 2.5%, and exceptions for above-guideline and agreed increases), and Answer B only adds details such as the 2021 zero guideline and the five-day cancellation right without contradicting Answer A.",
+          "answer 1 vs 4: SAME - Both answers give the same core rules: rent can go up once every 12 months, at least 90 days' written notice is required (with the increase void otherwise), and the increase is capped at the guideline, which cannot exceed 2.5%. The differences are in the exceptions' detail and citations, not in any conflicting legal fact.",
+          "answer 1 vs 5: SAME - Both answers give the same core rules (once every 12 months, 90 days' written notice, a 2.5% guideline cap, and the same parking/service and above-guideline exceptions), and B only adds more detail on exceptions without contradicting A."
+        ]
+      }
+    },
+    "_sections": [
+      {
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "total_parts": 1,
+        "heading": "Guideline increase",
+        "hash": "74beada606fc5f5b",
+        "section": "120",
+        "law_part": "Part Vii Rules Relating To Rent",
+        "part": 1,
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "text": "Residential Tenancies Act, 2006, s. 120 – Guideline increase\n(1) No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline, except in accordance with section 126 or 127 or an agreement under section 121 or 123.\n(2) The Minister shall determine the guideline in effect for each calendar year as follows:\n1. Subject to the limitation set out in paragraph 2, the guideline for a calendar year is the percentage change from year to year in the Consumer Price Index for Ontario for prices of goods and services as reported monthly by Statistics Canada, averaged over the 12-month period that ends at the end of May of the previous calendar year, rounded to the first decimal point.\n2. The guideline for a calendar year shall be not more than 2.5 per cent.\n(3) The Minister shall have the guideline for each calendar year published in The Ontario Gazette not later than August 31 of the preceding year.\n(3.1) The guideline for the calendar year 2021 is zero per cent, despite subsection (2) and despite the guideline published under subsection (3) in The Ontario Gazette for 2021.\n(3.2) The Minister is not required to have the guideline for the calendar year 2021, as set out in subsection (3.1), published in The Ontario Gazette.\n(4) The guideline for the calendar year in which the commencement date occurs is the guideline established for that year under this section as it read immediately before the commencement date.\n(5) If the commencement date occurs on or after September 1 in a calendar year, the guideline for the following calendar year is the guideline established for that year under this section as it read immediately before the commencement date.\n(6) The Minister shall initiate a review of the operation of this section within four years after the commencement date and thereafter within four years after the end of the previous review.\n(7) In subsections (4), (5) and (6),\n“commencement date” means the day section 1 of the Residential Tenancies Amendment Act (Rent Increase Guideline), 2012 comes into force.",
+        "score": 0.829
+      },
+      {
+        "total_parts": 1,
+        "part": 1,
+        "hash": "37c20403924b24e1",
+        "citation": "SO 2006, c 17",
+        "heading": "Application for above guideline increase",
+        "law": "Residential Tenancies Act, 2006",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "section": "126",
+        "law_part": "Part Vii Rules Relating To Rent",
+        "text": "Residential Tenancies Act, 2006, s. 126 – Application for above guideline increase (excerpt)\n(1) A landlord may apply to the Board for an order permitting the rent charged to be increased by more than the guideline for any or all of the rental units in a residential complex in any or all of the following cases:\n1. An extraordinary increase in the cost for municipal taxes and charges for the residential complex or any building in which the rental units are located.\n2. Eligible capital expenditures incurred respecting the residential complex or one or more of the rental units in it.\n3. Operating costs related to security services provided in respect of the residential complex or any building in which the rental units are located by persons not employed by the landlord.\n(2) In this section,\n“extraordinary increase” means extraordinary increase as defined by or determined in accordance with the regulations.\n(3) An application under this section shall be made at least 90 days before the effective date of the first intended rent increase referred to in the application.\n(3.1) The landlord shall include with an application under this section a summary of each of the following, if applicable:\n1. Any item in a work order that relates to one or more elevators in the residential complex and that has not yet been completed, regardless of whether or not the compliance period has expired.\n2. Any item in an order made under section 21 of the Technical Standards and Safety Act, 2000 that relates to one or more elevators in the residential complex and that has not yet been completed, regardless of whether or not the compliance period has expired and regardless of whether the order was made against the landlord or another person or entity.\n3. Any specified repairs or replacements or other work ordered by the Board under paragraph 4 of subsection 30 (1) that relates to one or more elevators in the residential complex and that has not yet been completed, regardless of whether or not the compliance period has expired.\n[...]\n(10) Subject to subsections (11) to (13), in an application under this section, the Board shall make findings in accordance with the prescribed rules with respect to all of the grounds of the application and, if it is satisfied that an order permitting the rent charged to be increased by more than the guideline is justified, shall make an order,\n(a) specifying the percentage by which the rent charged may be increased in addition to the guideline; and\n(b) subject to the prescribed rules, specifying a 12-month period during which an increase permitted by clause (a) may take effect.\n[...]\n(12.1) Subsection (13) applies to a rental unit in a residential complex if the Board finds that,\n(a) the landlord has not completed items in work orders for which the compliance period has expired and which relate to one or more elevators in the residential complex;\n(b) the landlord or another person or entity, as applicable, has not completed items in orders made under the section 21 of the Technical Standards and Safety Act, 2000 for which the compliance period has expired and which relate to one or more elevators in the residential complex; or\n(c) the landlord has not completed specified repairs or replacements or other work ordered by the Board under paragraph 4 of subsection 30 (1) for which the compliance period has expired and which relates to one or more elevators in the residential complex.\n(13) If this subsection applies to a rental unit, the Board shall,\n(a) dismiss the application with respect to the rental unit; or\n(b) provide, in any order made under subsection (10), that the rent charged for the rental unit shall not be increased pursuant to the order until the Board is satisfied, on a motion made by the landlord within the time period specified by the Board, on notice to the tenant of the rental unit, that,\n(i) all items referred to in subclause (12) (a) (i) that affect the rental unit have been completed, if a finding was made under that subclause,\n(ii) all repairs, replacements and other work referred to in subclause (12) (a) (ii) that affect the rental unit have been completed, if a finding was made under that subclause,\n(iii) the serious breach referred to in subclause (12) (a) (iii) no longer affects the rental unit, if a finding was made under that subclause,\n(iv) all items referred to in clause (12.1) (a) have been completed, if a finding was made under that clause,\n(v) all items referred to in clause (12.1) (b) have been completed, if a finding was made under that clause, and\n(vi) all repairs, replacements and other work referred to in clause (12.1) (c) have been completed, if a finding was made under that clause.\n(14) An order of the Board under subsection (10) with respect to a rental unit ceases to be of any effect on and after the day a new tenant enters into a new tenancy agreement with the landlord in respect of that rental unit if that agreement takes effect on or after the day that is 90 days before the first effective date of a rent increase in the order.\n(15) Subsections (3.1), (3.2) and (12.1) and subclauses 126 (13) (b) (iv), (v) and (vi) do not apply with respect to an application under this section if the application was made before the day subsection 22 (7) of the Rental Fairness Act, 2017 comes into force.\n(16) This section and any related regulations, as they read immediately before the day subsection 22 (1) of the Rental Fairness Act, 2017 comes into force, continue to apply with respect to applications for an above-guideline rent increase due in whole or in part to an extraordinary increase in the cost for utilities that are made before that day and have not been finally determined before that day.\n(17) In this section,\n“elevator” means an elevator intended for use by tenants.",
+        "score": 0.818
+      },
+      {
+        "citation": "SO 2006, c 17",
+        "hash": "187ccf3ff69b3060",
+        "law": "Residential Tenancies Act, 2006",
+        "law_part": "Part Vii Rules Relating To Rent",
+        "total_parts": 1,
+        "section": "119",
+        "part": 1,
+        "heading": "12-month rule",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 119 – 12-month rule\n(1) A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed,\n(a) since the day of the last rent increase for that tenant in that rental unit, if there has been a previous increase; or\n(b) since the day the rental unit was first rented to that tenant, if clause (a) does not apply.\n(2) An increase in rent under section 123 shall be deemed not to be an increase in rent for the purposes of this section.",
+        "score": 0.811
+      },
+      {
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "law_part": "Part Vii Rules Relating To Rent",
+        "heading": "Landlord’s duty, rent increases",
+        "section": "110",
+        "hash": "b587ba836e901f13",
+        "citation": "SO 2006, c 17",
+        "total_parts": 1,
+        "text": "Residential Tenancies Act, 2006, s. 110 – Landlord’s duty, rent increases\nNo landlord shall increase the rent charged to a tenant for a rental unit, except in accordance with this Part.",
+        "score": 0.805
+      },
+      {
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "total_parts": 1,
+        "law_part": "Part Vii Rules Relating To Rent",
+        "section": "123",
+        "citation": "SO 2006, c 17",
+        "heading": "Additional services, etc.",
+        "part": 1,
+        "law": "Residential Tenancies Act, 2006",
+        "hash": "667e016f35e55fb1",
+        "text": "Residential Tenancies Act, 2006, s. 123 – Additional services, etc.\n(1) A landlord may increase the rent charged to a tenant for a rental unit as prescribed at any time if the landlord and the tenant agree that the landlord will add any of the following with respect to the tenant’s occupancy of the rental unit:\n1. A parking space.\n2. A prescribed service, facility, privilege, accommodation or thing.\n(2) Subsection (1) applies despite sections 116 and 119 and despite any order under paragraph 6 of subsection 30 (1).",
+        "score": 0.805
+      },
+      {
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "part": 1,
+        "section": "116",
+        "citation": "SO 2006, c 17",
+        "law_part": "Part Vii Rules Relating To Rent",
+        "hash": "7ce5bf8524a00dd3",
+        "law": "Residential Tenancies Act, 2006",
+        "heading": "Notice of rent increase required",
+        "text": "Residential Tenancies Act, 2006, s. 116 – Notice of rent increase required\n(1) A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.\n(2) Subsection (1) applies even if the rent charged is increased in accordance with an order under section 126.\n(3) The notice shall be in a form approved by the Board and shall set out the landlord’s intention to increase the rent and the amount of the new rent.\n(4) An increase in rent is void if the landlord has not given the notice required by this section, and the landlord must give a new notice before the landlord can take the increase.",
+        "score": 0.789
+      },
+      {
+        "part": 1,
+        "law_part": "Part Xviii Transition",
+        "section": "246",
+        "heading": "Use of certain forms",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "hash": "0db42ec3a9c99897",
+        "text": "Residential Tenancies Act, 2006, s. 246 – Use of certain forms\nDespite the repeal of the Tenant Protection Act, 1997, the form of a notice of rent increase, notice of increased charges in a care home or notice of termination that could have been used under that Act may be used for the corresponding purpose under this Act any time within two months after this section comes into force.",
+        "score": 0.787
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "121",
+        "part": 1,
+        "citation": "SO 2006, c 17",
+        "heading": "Agreement",
+        "hash": "95ac9555f5afbecc",
+        "total_parts": 1,
+        "law_part": "Part Vii Rules Relating To Rent",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 121 – Agreement\n(1) A landlord and a tenant may agree to increase the rent charged to the tenant for a rental unit above the guideline if,\n(a) the landlord has carried out or undertakes to carry out a specified capital expenditure in exchange for the rent increase; or\n(b) the landlord has provided or undertakes to provide a new or additional service in exchange for the rent increase.\n(2) An agreement under subsection (1) shall be in the form approved by the Board and shall set out the new rent, the tenant’s right under subsection (4) to cancel the agreement and the date the agreement is to take effect.\n(3) A landlord shall not increase rent charged under this section by more than the guideline plus 3 per cent of the previous lawful rent charged.\n(4) A tenant who enters into an agreement under this section may cancel the agreement by giving written notice to the landlord within five days after signing it.\n(5) An agreement under this section may come into force no earlier than six days after it has been signed.\n(6) Section 116 does not apply with respect to a rent increase under this section.\n(7) Despite any deemed acceptance of a rent increase under section 118, if a landlord and tenant enter into an agreement under this section, a notice of rent increase given by the landlord to the tenant before the agreement was entered into becomes void when the agreement takes effect, if the notice of rent increase is to take effect on or after the day the agreed to increase is to take effect.",
+        "score": 0.781
+      }
+    ]
+  },
+  {
+    "question": "My lease says no pets. Can my landlord evict me for having a cat?",
+    "type": "tricky",
+    "correct_answer": "A lease term banning animals in the residential complex is void, so the 'no pets' clause itself can't be enforced.",
+    "source_section": "RTA 14",
+    "assistant_answer": "**Short answer: probably not just for having a cat.** The sections provided say a \"no pets\" clause in a lease is void (Residential Tenancies Act, 2006, s. 14). The Board also cannot order you evicted because of an animal unless it is satisfied that you keep the animal and that one of three things applies (s. 76(1)):\n\n- **Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants (s. 76(1)(a)). This does not apply if the Board is satisfied your cat did not cause or contribute to the interference (s. 76(2)).\n- **Serious allergic reaction:** the cat has caused the landlord or another tenant to suffer a serious allergic reaction (s. 76(1)(b)). This does not apply if the Board is satisfied your cat did not cause or contribute to the reaction (s. 76(3)).\n- **Inherent danger:** the species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n\nEven where one of these applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)). It must also refuse if the landlord is in serious breach of its responsibilities, or if the eviction is really retaliation for you asserting your legal rights (s. 83(3)(a), (c)).\n\nA landlord also generally has to apply within 30 days after the termination date in its notice (s. 69(2)).\n\n**What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid. If you have received a notice, a community legal clinic or the Landlord and Tenant Board can help you check it.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "tenant's obligation not to keep animals under tenancy agreement; eviction for breach of tenancy agreement; landlord application for termination of tenancy for tenant's breach",
+    "sections_retrieved": "RTA 76; RTA 29; RTA 14; RTA 83; RTA 137; RTA 37; RTA 23; RTA 69",
+    "source_section_retrieved": "yes",
+    "grade": "correct",
+    "judge_reason": "The assistant states the answer key's main point: the \"no pets\" clause is void under s. 14. Its added detail on the s. 76 grounds for eviction and the s. 83 limits is supported by the provided texts and does not contradict the key.",
+    "citations_total": 6,
+    "citations_verified": 6,
+    "citations_unsupported": 0,
+    "citations_not_found": 0,
+    "citation_flag": "ok",
+    "citation_details": "VERIFIED: Residential Tenancies Act, 2006, s. 14 - The claim that a \"no pets\" clause is void matches s. 14, which states that a tenancy agreement provision prohibiting animals is void. The claim is framed as \"probably not just for having a cat,\" which is a reasonable application of that text.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 76 - Section 76(1) says the Board shall not evict on an animal-based notice unless it is satisfied the tenant keeps an animal and one of three grounds applies. The three grounds (substantial interference, serious allergic reaction, inherent danger) match 76(1)(a)–(c), and the exceptions in 76(2) and 76(3) match the \"did not cause or contribute\" language the answer attributes to them.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 83 - Section 83(1)(a) lets the Board refuse eviction if it would be unfair, considering all circumstances. Section 83(3)(a) requires refusal where the landlord is in serious breach of its responsibilities, and 83(3)(c) requires refusal where the application is brought because the tenant attempted to enforce legal rights. The answer's description of \"retaliation for asserting your legal rights\" is a fair paraphrase of 83(3)(c).  [votes: 2 verified / 1 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 69 - Section 69(2) provides that an application may not be made later than 30 days after the termination date in the notice. The answer's \"generally\" reflects the exception in 69(3) for non-payment of rent.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 64 - The assistant was not given s. 64, and the claim only states that the sections provided do not include the notice rules and that it cannot assess the notice. That statement about what the assistant had is accurate, so it is not a legal assertion that the section contradicts.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 66 - The assistant was not given s. 66, and the claim only states that the provided sections lacked the notice rules in ss. 64–66. That is an accurate description of what the assistant had, so it is verified.  [votes: 3 verified / 0 unsupported]",
+    "_citations": [
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "14",
+        "cited_as": [
+          "s. 14"
+        ],
+        "claims": [
+          "Short answer: probably not just for having a cat.** The sections provided say a \"no pets\" clause in a lease is void (Residential Tenancies Act, 2006, s. 14)."
+        ],
+        "contexts": [
+          "**Short answer: probably not just for having a cat.** The sections provided say a \"no pets\" clause in a lease is void (Residential Tenancies Act, 2006, s. 14). The Board also cannot order you evicted because of an animal unless it is satisfied that you keep the animal and that one of three things applies (s. 76(1)):"
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "The claim that a \"no pets\" clause is void matches s. 14, which states that a tenancy agreement provision prohibiting animals is void. The claim is framed as \"probably not just for having a cat,\" which is a reasonable application of that text.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "76",
+        "cited_as": [
+          "s. 76(1)",
+          "s. 76(1)(a)",
+          "s. 76(2)",
+          "s. 76(1)(b)",
+          "s. 76(3)",
+          "s. 76(1)(c)"
+        ],
+        "claims": [
+          "The Board also cannot order you evicted because of an animal unless it is satisfied that you keep the animal and that one of three things applies (s. 76(1)):",
+          "Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants (s. 76(1)(a)).",
+          "This does not apply if the Board is satisfied your cat did not cause or contribute to the interference (s. 76(2)).",
+          "Serious allergic reaction:** the cat has caused the landlord or another tenant to suffer a serious allergic reaction (s. 76(1)(b)).",
+          "This does not apply if the Board is satisfied your cat did not cause or contribute to the reaction (s. 76(3)).",
+          "Inherent danger:** the species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c))."
+        ],
+        "contexts": [
+          "**Short answer: probably not just for having a cat.** The sections provided say a \"no pets\" clause in a lease is void (Residential Tenancies Act, 2006, s. 14). The Board also cannot order you evicted because of an animal unless it is satisfied that you keep the animal and that one of three things applies (s. 76(1)):",
+          "- **Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants (s. 76(1)(a)). This does not apply if the Board is satisfied your cat did not cause or contribute to the interference (s. 76(2)).",
+          "- **Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants (s. 76(1)(a)). This does not apply if the Board is satisfied your cat did not cause or contribute to the interference (s. 76(2)).",
+          "- **Serious allergic reaction:** the cat has caused the landlord or another tenant to suffer a serious allergic reaction (s. 76(1)(b)). This does not apply if the Board is satisfied your cat did not cause or contribute to the reaction (s. 76(3)).",
+          "- **Serious allergic reaction:** the cat has caused the landlord or another tenant to suffer a serious allergic reaction (s. 76(1)(b)). This does not apply if the Board is satisfied your cat did not cause or contribute to the reaction (s. 76(3)).",
+          "- **Inherent danger:** the species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Section 76(1) says the Board shall not evict on an animal-based notice unless it is satisfied the tenant keeps an animal and one of three grounds applies. The three grounds (substantial interference, serious allergic reaction, inherent danger) match 76(1)(a)–(c), and the exceptions in 76(2) and 76(3) match the \"did not cause or contribute\" language the answer attributes to them.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "83",
+        "cited_as": [
+          "s. 83(1)(a)",
+          "s. 83(3)(a)"
+        ],
+        "claims": [
+          "Even where one of these applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)).",
+          "It must also refuse if the landlord is in serious breach of its responsibilities, or if the eviction is really retaliation for you asserting your legal rights (s. 83(3)(a), (c))."
+        ],
+        "contexts": [
+          "Even where one of these applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)). It must also refuse if the landlord is in serious breach of its responsibilities, or if the eviction is really retaliation for you asserting your legal rights (s. 83(3)(a), (c)).",
+          "Even where one of these applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)). It must also refuse if the landlord is in serious breach of its responsibilities, or if the eviction is really retaliation for you asserting your legal rights (s. 83(3)(a), (c))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "2 verified / 1 unsupported",
+        "reason": "Section 83(1)(a) lets the Board refuse eviction if it would be unfair, considering all circumstances. Section 83(3)(a) requires refusal where the landlord is in serious breach of its responsibilities, and 83(3)(c) requires refusal where the application is brought because the tenant attempted to enforce legal rights. The answer's description of \"retaliation for asserting your legal rights\" is a fair paraphrase of 83(3)(c).  [votes: 2 verified / 1 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "69",
+        "cited_as": [
+          "s. 69(2)"
+        ],
+        "claims": [
+          "A landlord also generally has to apply within 30 days after the termination date in its notice (s. 69(2))."
+        ],
+        "contexts": [
+          "A landlord also generally has to apply within 30 days after the termination date in its notice (s. 69(2))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Section 69(2) provides that an application may not be made later than 30 days after the termination date in the notice. The answer's \"generally\" reflects the exception in 69(3) for non-payment of rent.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "64",
+        "cited_as": [
+          "ss. 64–66"
+        ],
+        "claims": [
+          "What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid."
+        ],
+        "contexts": [
+          "**What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid. If you have received a notice, a community legal clinic or the Landlord and Tenant Board can help you check it."
+        ],
+        "given": false,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "The assistant was not given s. 64, and the claim only states that the sections provided do not include the notice rules and that it cannot assess the notice. That statement about what the assistant had is accurate, so it is not a legal assertion that the section contradicts.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "66",
+        "cited_as": [
+          "ss. 64–66"
+        ],
+        "claims": [
+          "What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid."
+        ],
+        "contexts": [
+          "**What I couldn't find:** The sections provided don't include the notice rules that lead to these applications (ss. 64–66), so I can't tell you whether your landlord's notice was valid. If you have received a notice, a community legal clinic or the Landlord and Tenant Board can help you check it."
+        ],
+        "given": false,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "The assistant was not given s. 66, and the claim only states that the provided sections lacked the notice rules in ss. 64–66. That is an accurate description of what the assistant had, so it is verified.  [votes: 3 verified / 0 unsupported]"
+      }
+    ],
+    "entropy": 1.609,
+    "n_clusters": 5,
+    "cluster_sizes": "1-1-1-1-1",
+    "confidence": "low",
+    "entropy_loose": 0.0,
+    "n_clusters_loose": 1,
+    "cluster_sizes_loose": "5",
+    "confidence_loose": "high",
+    "_entropy": {
+      "samples": [
+        "No, not just because your lease says \"no pets.\" The no-pet clause is void (Residential Tenancies Act, 2006, s. 14). Also, if the landlord applies to evict based on an animal, the Board cannot order eviction unless it is satisfied that you are keeping an animal and that one of these is true (Residential Tenancies Act, 2006, s. 76(1)):\n\n- **Substantial interference:** the past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex by the landlord or other tenants (s. 76(1)(a)). Even then, the Board cannot evict on this ground if it is satisfied your animal did not cause or contribute to the interference (s. 76(2)).\n- **Serious allergic reaction:** the animal's presence has caused the landlord or another tenant a serious allergic reaction (s. 76(1)(b)). The Board cannot evict on this ground if your animal did not cause or contribute to the reaction (s. 76(3)).\n- **Inherent danger:** the species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n\nOther protections also apply. The Board can refuse an eviction if it would be unfair to grant it in all the circumstances (s. 83(1)(a)). It must refuse if the landlord is in serious breach of its duties, or if the eviction is because you complained to a government authority about a health, safety, housing or maintenance violation, or because you tried to enforce your legal rights (s. 83(3)(a)–(c)). A landlord also cannot harass, threaten or interfere with you (s. 23), and you can apply to the Board about that (s. 29(1), paragraphs 3–4). A tenancy can only be ended in accordance with the Act (s. 37(1)).\n\nThe sections I have do not define \"substantially interfered,\" \"serious allergic reaction,\" or \"inherently dangerous,\" so I can't say how those would apply to a cat. Those are questions for the Board or a lawyer.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**Short answer:** Probably not just for having a cat. Your lease's \"no pets\" clause is void, and a landlord who wants to evict over an animal must meet strict conditions.\n\n- **The no-pet clause doesn't count.** A tenancy agreement provision that prohibits animals in the residential complex is void (Residential Tenancies Act, 2006, s. 14).\n- **Eviction over an animal has limits.** If an eviction application is based on an animal's presence, control or behaviour, the Board (the tribunal that hears these cases) cannot evict you unless it is satisfied that you keep an animal and that one of these applies (Residential Tenancies Act, 2006, s. 76(1)):\n  - (a) the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the residential complex by the landlord or other tenants;\n  - (b) the animal's presence has caused the landlord or another tenant a serious allergic reaction; or\n  - (c) the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants.\n- **Your cat may be a defence.** The Board cannot evict based on substantial interference if it is satisfied your animal did not cause or contribute to it (s. 76(2)). The same applies to an allergic reaction (s. 76(3)).\n- **Eviction needs a proper process.** A tenancy can be ended only in accordance with the Act (s. 37(1)). A landlord applying to evict must have given a notice to terminate under the Act (s. 69(1)).\n- **Harassment is not allowed.** A landlord must not harass, obstruct, coerce, threaten or interfere with a tenant (s. 23). A tenant can apply for an order about this within one year of the conduct (s. 29(1), 29(2)).\n\nI couldn't find in the sections provided what the specific notice rules are, or how the Board weighs \"substantial interference\" in practice. Your situation may depend on those details, so contact a lawyer, paralegal or community legal clinic (or the Landlord and Tenant Board) if your landlord gives you a notice.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**Short answer:** Probably not just because the lease says \"no pets.\" Under Ontario law, a no-pet clause is void (Residential Tenancies Act, 2006, s. 14). A landlord who wants to evict you over an animal must also meet stricter conditions.\n\n**What the law says:**\n\n- **The no-pet clause doesn't count.** A tenancy agreement term that prohibits animals in or about the residential complex is void (s. 14).\n- **The Board can't evict over an animal unless certain conditions are met.** If the eviction is based on an animal's presence, control or behaviour, the Board cannot order eviction unless it is satisfied that you are keeping an animal and one of these applies (s. 76(1)):\n  - **Substantial interference:** the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the complex for the landlord or other tenants. The Board cannot evict on this basis if it finds your animal did not cause or contribute to the interference (s. 76(1)(a), 76(2)).\n  - **Serious allergic reaction:** the animal's presence has caused the landlord or another tenant a serious allergic reaction. The Board cannot evict on this basis if it finds your animal did not cause or contribute to the reaction (s. 76(1)(b), 76(3)).\n  - **Inherent danger:** the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n- **The Board can refuse eviction on fairness grounds.** Even if a ground exists, the Board may refuse eviction unless it is satisfied that, considering all the circumstances, it would be unfair to refuse (s. 83(1)(a)).\n- **Notice must be valid.** A tenancy can only be ended in accordance with the Act (s. 37(1)), and a landlord generally needs to apply to the Board for an eviction order (s. 69(1)).\n\n**What I couldn't find:** The sections don't say whether cats fall under the \"inherently dangerous\" category in s. 76(1)(c), and they don't cover how much past interference or what kind of allergy is needed. If your landlord has given you a notice or started an application, a community legal clinic or a paralegal who handles tenancy matters can help you check the details.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**Probably not, just for having a cat.** Your lease's \"no pets\" clause is void, and a landlord generally can't evict you for keeping an animal unless one of the specific grounds below applies.\n\n- **The no-pet clause doesn't count.** A tenancy agreement provision prohibiting animals in or about the residential complex is void (Residential Tenancies Act, 2006, s. 14).\n- **Eviction over an animal has limits.** If a landlord's application is based on an animal, the Board cannot order an eviction unless it is satisfied that the tenant keeps an animal and that one of these applies (Residential Tenancies Act, 2006, s. 76(1)):\n  - (a) the past behaviour of an animal of that species has substantially interfered with others' reasonable enjoyment of the residential complex, though the Board won't evict if your animal didn't cause or contribute to that interference (s. 76(1)(a), s. 76(2));\n  - (b) the animal's presence has caused the landlord or another tenant a serious allergic reaction, though the Board won't evict if your animal didn't cause or contribute to the reaction (s. 76(1)(b), s. 76(3)); or\n  - (c) the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n- **Eviction must go through the Board.** A landlord must apply to the Board for an order terminating the tenancy and evicting you, after giving a notice to terminate (Residential Tenancies Act, 2006, s. 69(1)). A landlord can't simply remove you (see s. 37(1), which says a tenancy may be terminated only in accordance with the Act).\n- **Harassment is not allowed.** A landlord shall not harass, obstruct, coerce, threaten or interfere with a tenant (Residential Tenancies Act, 2006, s. 23). You can apply to the Board for an order if this happens, generally within one year of the conduct (s. 29(1), para. 4, s. 29(2)).\n- **The Board can refuse an eviction.** Even where grounds exist, the Board may refuse if it would be unfair to grant it, having regard to all the circumstances (s. 83(1)(a)).\n\nI couldn't find in the provided laws what notice periods apply to a cat-related termination, so check with a paralegal, lawyer, or community legal clinic about your specific notice and timelines.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "A \"no pets\" clause in your lease does not, by itself, let your landlord evict you for having a cat. Under the Residential Tenancies Act, 2006, a clause prohibiting animals in the residential complex is void (s. 14). Your tenancy can also only be ended in accordance with the Act (s. 37(1)).\n\nIf your landlord applies to evict you based on your cat, the Board cannot end the tenancy unless it is satisfied that you keep an animal and that one of these applies (s. 76(1)):\n\n- **(a) Substantial interference:** the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants. The Board cannot rely on this if it is satisfied your animal did not cause or contribute to the interference (s. 76(1)(a), (2)).\n- **(b) Serious allergic reaction:** the animal's presence has caused the landlord or another tenant a serious allergic reaction. The Board cannot rely on this if it is satisfied your animal did not cause or contribute to the reaction (s. 76(1)(b), (3)).\n- **(c) Inherent danger:** the animal's species or breed is inherently dangerous to the safety of the landlord or other tenants (s. 76(1)(c)).\n\nEven where a ground applies, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)). The Board must also refuse an eviction if it is satisfied the landlord is in serious breach of the Act or the tenancy agreement, or if the application is because you attempted to enforce your legal rights (s. 83(3)(a), (c)). A landlord also cannot harass, obstruct, coerce, threaten or interfere with you (s. 23).\n\nI couldn't find in the sections whether a cat is an animal of a species that is \"inherently dangerous\" under s. 76(1)(c), so I can't say whether that ground could apply to a cat.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic."
+      ],
+      "strict": {
+        "clusters": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: different - Answer B adds facts absent from A, such as the s.69(1) notice requirement and the one-year limit for harassment applications (s.29(2)), while Answer A adds facts absent from B, such as the s.83 grounds on which the Board can or must refuse eviction.",
+          "answer 1 vs 3: different - Answer B says the landlord generally must apply to the Board (s. 69(1)), which Answer A does not state, and Answer A includes mandatory refusal grounds under s. 83(3) and harassment protection under s. 23, which Answer B omits.",
+          "answer 2 vs 3: different - Answer B says the Board may refuse eviction on fairness grounds under s. 83(1)(a), which Answer A never mentions, while Answer A says the landlord must not harass the tenant (s. 23) and that a tenant has one year to apply (s. 29), which Answer B omits.",
+          "answer 1 vs 4: different - Answer B adds claims A lacks (the s. 69(1) notice-then-Board-application requirement and the one-year limit for harassment applications), while Answer A adds claims B lacks (the mandatory refusal grounds in s. 83(3) and the s. 29(1) paragraph 3 application).",
+          "answer 2 vs 4: different - Answer B includes an extra legal point, that the Board may refuse an eviction as unfair under s. 83(1)(a), which Answer A never mentions, while every substantive point in Answer A (the void no-pet clause, the s. 76 grounds and defences, the notice requirement, the s. 23 harassment bar and one-year limit) also appears in Answer B.",
+          "answer 3 vs 4: different - Answer B adds substantive points absent from A, namely the harassment prohibition (s. 23) and the one-year deadline to apply to the Board (s. 29), while A adds that the sections don't settle whether cats are \"inherently dangerous\" under s. 76(1)(c), which B doesn't state.",
+          "answer 1 vs 5: different - Answer A contains everything in Answer B plus extra points that B lacks (the complaint-to-authority refusal ground in s. 83(3)(b) and the tenant's right to apply to the Board under s. 29), so B does not cover A's content.",
+          "answer 2 vs 5: different - Answer B adds the s. 83 unfairness and serious-breach refusal grounds, which Answer A omits, while Answer A adds the s. 69(1) notice requirement and the one-year harassment application deadline, which Answer B omits.",
+          "answer 3 vs 5: different - Answer B adds claims absent from A (the mandatory refusal grounds in s. 83(3) and the harassment protection in s. 23), while Answer A adds a claim absent from B (that a landlord generally must apply to the Board under s. 69(1)).",
+          "answer 4 vs 5: different - Answer B adds the mandatory refusal grounds in s. 83(3) (landlord's serious breach, or the tenant enforcing rights), which Answer A omits, while Answer A adds the notice-to-terminate requirement in s. 69(1) and the one-year limit for harassment applications, which Answer B omits."
+        ]
+      },
+      "loose": {
+        "clusters": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: SAME - Both answers conclude the eviction is probably not allowed just for having a cat, both say the no-pet clause is void under s. 14, and both list the same s. 76(1) grounds and s. 76(2)–(3) defences; the differences are only extra details (notice rules, the one-year limit, s. 83 protections) that do not contradict each other.",
+          "answer 1 vs 3: SAME - Both answers conclude that a no-pet clause is void under s. 14 and that the Board cannot evict over an animal unless one of the s. 76(1) grounds is met, with the same exceptions and fairness rule, and neither contradicts the other on any key fact.",
+          "answer 1 vs 4: SAME - Both answers conclude that the no-pet clause is void and that a cat alone is not grounds for eviction, and both list the same s. 76(1) grounds with the same s. 76(2)–(3) exceptions and the s. 83(1)(a) unfairness discretion, with no conflicting legal facts; they differ only in which extra provisions they add.",
+          "answer 1 vs 5: SAME - Both say the \"no pets\" clause is void under s. 14, that eviction for an animal requires one of the s. 76(1) grounds with the same exceptions, and that the Board can refuse eviction as unfair, with each answer adding only minor protections the other omits, which does not conflict."
+        ]
+      }
+    },
+    "_sections": [
+      {
+        "total_parts": 1,
+        "section": "76",
+        "heading": "Application based on animals",
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "hash": "3a0cec285bdf0b71",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "text": "Residential Tenancies Act, 2006, s. 76 – Application based on animals\n(1) If an application based on a notice of termination under section 64, 65 or 66 is grounded on the presence, control or behaviour of an animal in or about the residential complex, the Board shall not make an order terminating the tenancy and evicting the tenant without being satisfied that the tenant is keeping an animal and that,\n(a) subject to subsection (2), the past behaviour of an animal of that species has substantially interfered with the reasonable enjoyment of the residential complex for all usual purposes by the landlord or other tenants;\n(b) subject to subsection (3), the presence of an animal of that species has caused the landlord or another tenant to suffer a serious allergic reaction; or\n(c) the presence of an animal of that species or breed is inherently dangerous to the safety of the landlord or the other tenants.\n(2) The Board shall not make an order terminating the tenancy and evicting the tenant relying on clause (1) (a) if it is satisfied that the animal kept by the tenant did not cause or contribute to the substantial interference.\n(3) The Board shall not make an order terminating the tenancy and evicting the tenant relying on clause (1) (b) if it is satisfied that the animal kept by the tenant did not cause or contribute to the allergic reaction.",
+        "score": 0.83
+      },
+      {
+        "section": "29",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "citation": "SO 2006, c 17",
+        "hash": "92e2c363db76cb82",
+        "part": 1,
+        "law_part": "Part Iii Responsibilities Of Landlords",
+        "total_parts": 1,
+        "heading": "Tenant applications",
+        "text": "Residential Tenancies Act, 2006, s. 29 – Tenant applications\n(1) A tenant or former tenant of a rental unit may apply to the Board for any of the following orders:\n1. An order determining that the landlord has breached an obligation under subsection 20 (1) or section 161.\n2. An order determining that the landlord, superintendent or agent of the landlord has withheld the reasonable supply of any vital service, care service or food that it is the landlord’s obligation to supply under the tenancy agreement or deliberately interfered with the reasonable supply of any vital service, care service or food.\n3. An order determining that the landlord, superintendent or agent of the landlord has substantially interfered with the reasonable enjoyment of the rental unit or residential complex for all usual purposes by the tenant or a member of his or her household.\n4. An order determining that the landlord, superintendent or agent of the landlord has harassed, obstructed, coerced, threatened or interfered with the tenant during the tenant’s occupancy of the rental unit.\n5. An order determining that the landlord, superintendent or agent of the landlord has altered the locking system on a door giving entry to the rental unit or the residential complex or caused the locking system to be altered during the tenant’s occupancy of the rental unit without giving the tenant replacement keys.\n6. An order determining that the landlord, superintendent or agent of the landlord has illegally entered the rental unit.\n(2) No application may be made under subsection (1) more than one year after the day the alleged conduct giving rise to the application occurred.",
+        "score": 0.807
+      },
+      {
+        "part": 1,
+        "section": "14",
+        "law": "Residential Tenancies Act, 2006",
+        "law_part": "Part Ii Tenancy Agreements",
+        "heading": "“No pet” provisions void",
+        "hash": "13b6088a8e836b8c",
+        "citation": "SO 2006, c 17",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 14 – “No pet” provisions void\nA provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+        "score": 0.801
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "part": 1,
+        "section": "83",
+        "citation": "SO 2006, c 17",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "hash": "08321cf16bbc5e49",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "total_parts": 1,
+        "heading": "Power of Board, eviction",
+        "text": "Residential Tenancies Act, 2006, s. 83 – Power of Board, eviction\n(1) Upon an application for an order evicting a tenant, the Board may, despite any other provision of this Act or the tenancy agreement,\n(a) refuse to grant the application unless satisfied, having regard to all the circumstances, that it would be unfair to refuse; or\n(b) subject to any prescribed limitations or conditions, order that the enforcement of the eviction order be postponed for a period of time.\n(2) If a hearing is held, the Board shall not grant the application unless it has reviewed the circumstances and considered whether or not it should exercise its powers under subsection (1).\n(3) Without restricting the generality of subsection (1), the Board shall refuse to grant the application where satisfied that,\n(a) the landlord is in serious breach of the landlord’s responsibilities under this Act or of any material covenant in the tenancy agreement;\n(b) the reason for the application being brought is that the tenant has complained to a governmental authority of the landlord’s violation of a law dealing with health, safety, housing or maintenance standards;\n(c) the reason for the application being brought is that the tenant has attempted to secure or enforce his or her legal rights;\n(d) the reason for the application being brought is that the tenant is a member of a tenants’ association or is attempting to organize such an association; or\n(e) the reason for the application being brought is that the rental unit is occupied by children and the occupation by the children does not constitute overcrowding.\n(4) The Board shall not issue an eviction order in a proceeding regarding termination of a tenancy for the purposes of residential occupation, demolition, conversion to non-residential rental use, renovations or repairs until the landlord has complied with section 48.1, 49.1, 52, 54 or 55, as the case may be.\n(5) If a tenant has given a landlord notice under subsection 53 (2) and subsection 54 (2) or (4) applies, the Board shall not issue an eviction order in a proceeding regarding termination of the tenancy until the landlord has compensated the tenant in accordance with subsection 54 (2) or (4), as applicable.\n(6) Without restricting the generality of subsections (1) and (2), if a hearing is held in respect of an application under section 69 for an order evicting a tenant based on arrears of rent arising in whole or in part during the period beginning on March 17, 2020 and ending on the prescribed date, in determining whether to exercise its powers under subsection (1) the Board shall consider whether the landlord has attempted to negotiate an agreement with the tenant including terms of payment for the tenant’s arrears.\n(7) Subsection (6) applies with respect to any application described in that subsection that,\n(a) is made on or after the day subsection 17 (3) of Schedule 4 to the Protecting Tenants and Strengthening Community Housing Act, 2020 comes into force; or\n(b) was made before that day and was not finally determined before that day.\n(8) For greater certainty, subsection (6) applies whether or not a date has been prescribed for the purposes of that subsection.",
+        "score": 0.793
+      },
+      {
+        "law_part": "Part Viii Suite Meters And Apportionment Of Utility Costs",
+        "hash": "b823d957355d33c6",
+        "part": 1,
+        "heading": "Suite meters",
+        "total_parts": 1,
+        "citation": "SO 2006, c 17",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "section": "137",
+        "text": "Residential Tenancies Act, 2006, s. 137 – Suite meters (excerpt)\n[...]\n(10) If a meter or a suite meter is installed in respect of a rental unit, a landlord shall comply with the electricity conservation and efficiency obligations referred to in subsection (9) in such other circumstances as are prescribed.\n(11) A tenant or a former tenant of a rental unit may apply to the Board in the prescribed circumstances for an order determining whether the landlord has breached an obligation under this section.\n(12) If the Board determines in an application under subsection (11) that a landlord has breached an obligation under subsection (2), (6), (9) or (10), the Board may do one or more of the following:\n1. Order an abatement of rent.\n2. Authorize a repair or replacement that has been or is to be made, or work that has been or is to be done, and order its cost to be paid by the landlord to the tenant.\n3. Order the landlord to do specified repairs or replacements or other work within a specified time.\n4. Order that the rent charged be reduced by a specified amount and order the appropriate rebate.\n5. Make any other order that it considers appropriate.\n(13) If the Board determines in an application under subsection (11) that a landlord has breached an obligation under subsection (3), (4) or (5), the Board may, in addition to the remedies set out in subsection (12), do one or more of the following:\n1. Terminate the tenancy.\n2. Order that the landlord assume the obligation to supply electricity to the rental unit and set the new rent that can be charged.\n(14) If the Board makes an order terminating a tenancy under paragraph 1 of subsection (13), the Board may order that the tenant be evicted, effective not earlier than the termination date specified in the order.\n(15) Except under the prescribed circumstances, for the purpose of section 126, a capital expenditure is not an eligible capital expenditure if,\n(a) a meter or a suite meter was installed in respect of a residential complex before the capital expenditure was made;\n(b) the capital expenditure failed to promote the conservation of electricity or the more efficient use of electricity; and\n(c) the purpose for which the capital expenditure was made could reasonably have been achieved by making a capital expenditure that promoted the conservation of electricity or the more efficient use of electricity.\n(16) Where a meter or suite meter is installed in respect of a rental unit and the tenant is responsible for the payment for the supply of electricity, sections 134 and 135 have no application to charges, fees or security deposits that are required to be paid for the supply of electricity and any amount paid for the supply of electricity shall not be considered to be an amount of consideration or a service that falls within the definition of “rent” in subsection 2 (1).\n[...]",
+        "score": 0.791
+      },
+      {
+        "total_parts": 1,
+        "law": "Residential Tenancies Act, 2006",
+        "heading": "Termination only in accordance with Act",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "hash": "3385a4864a75595f",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "section": "37",
+        "citation": "SO 2006, c 17",
+        "text": "Residential Tenancies Act, 2006, s. 37 – Termination only in accordance with Act\n(1) A tenancy may be terminated only in accordance with this Act.\n(2) If a notice of termination is given in accordance with this Act and the tenant vacates the rental unit in accordance with the notice, the tenancy is terminated on the termination date set out in the notice.\n(3) A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.\n(4) A tenant’s notice to terminate a tenancy is void if it is given,\n(a) at the time the tenancy agreement is entered into; or\n(b) as a condition of entering into the tenancy agreement.\n(5) An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into,\n(a) at the time the tenancy agreement is entered into; or\n(b) as a condition of entering into the tenancy agreement.\n(6) Subsections (4) and (5) do not apply to rental units occupied by students of one or more post-secondary educational institutions,\n(a) in a residential complex owned, operated or administered by or on behalf of the post-secondary educational institutions; or\n(b) in a residential complex where a non-profit housing co-operative provides housing units primarily for post-secondary students.\n(7) Subsections (4) and (5) do not apply to rental units in a residential complex with respect to which the landlord has entered into an agreement with one or more post-secondary educational institutions providing,\n(a) that the landlord, as of the date the agreement is entered into and for the duration of the agreement, rents the rental units which are the subject of the agreement only to students of the institution or institutions;\n(b) that the landlord will comply with the maintenance standards set out in the agreement with respect to the rental units which are the subject of the agreement; and\n(c) that the landlord will not charge a new tenant of a rental unit which is a subject of the agreement a rent which is greater than the lawful rent being charged to the former tenant plus the guideline.\n(8) The maintenance standards set out in the agreement and referred to in clause (7) (b) shall not provide for a lower maintenance standard than that required by law.\n(9) If the landlord breaches any of clauses (7) (a), (b) and (c), the agreement referred to in subsection (7) is terminated and the exemption provided by subsection (7) no longer applies.\n(10) The landlord shall be deemed to have not breached the condition in clause (7) (a) if,\n(a) upon a tenant ceasing to be a student of a post-secondary educational institution that is a party to the agreement with the landlord, the landlord takes action to terminate the tenancy in accordance with an agreement with the tenant to terminate the tenancy or a notice of termination given by the tenant; or\n(b) a tenant sublets the rental unit to a person who is not a student of a post-secondary educational institution that is a party to the agreement with the landlord.\n(11) Either party to an agreement referred to in subsection (7) may terminate the agreement on at least 90 days written notice to the other party and, upon the termination of the agreement, the exemption provided by subsection (7) no longer applies.",
+        "score": 0.786
+      },
+      {
+        "part": 1,
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "hash": "3fbbbfb8d0876378",
+        "heading": "Landlord not to harass, etc.",
+        "section": "23",
+        "law_part": "Part Iii Responsibilities Of Landlords",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 23 – Landlord not to harass, etc.\nA landlord shall not harass, obstruct, coerce, threaten or interfere with a tenant.",
+        "score": 0.778
+      },
+      {
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "heading": "Application by landlord",
+        "section": "69",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "total_parts": 1,
+        "hash": "3df7682c47779dd7",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "part": 1,
+        "text": "Residential Tenancies Act, 2006, s. 69 – Application by landlord\n(1) A landlord may apply to the Board for an order terminating a tenancy and evicting the tenant if the landlord has given notice to terminate the tenancy under this Act or the Tenant Protection Act, 1997.\n(2) An application under subsection (1) may not be made later than 30 days after the termination date specified in the notice.\n(3) Subsection (2) does not apply with respect to an application based on the tenant’s failure to pay rent.",
+        "score": 0.777
+      }
+    ]
+  }
+]

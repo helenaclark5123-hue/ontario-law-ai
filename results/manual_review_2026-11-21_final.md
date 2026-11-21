@@ -73,3 +73,44 @@ reason first and give the label last.
    nothing (0-9%). Neither separates right from wrong answers here.
 4. The citation checker's precision depends on the answers: 0 false alarms on
    the 22-question set, 5 on this run.
+
+## After fixing the 3 weaknesses (re-check of the same saved answers)
+
+Fixes in `citations.py`:
+1. Each claim is shown to the judge with its paragraph and heading.
+2. Section numbers belonging to another Act (named in the same phrase) are skipped.
+3. The judge reasons first and gives its verdict last.
+
+Re-checked files: `eval_2026-11-21_130555_citations-final-checker-nov15.json`
+(22 answers) and `eval_2026-11-21_130909_citations-final-checker.json` (35 answers).
+
+**What the fixes solved:** all 5 false alarms they targeted disappeared
+(son, 13-hour shift, 30 days' notice, sick-days self-contradiction, the
+other-Act "s. 2"); on the 5 answers re-tested, those citations went 3-0 verified.
+
+**What they didn't solve: the judge's verdicts on subtle points change between
+runs.** The same answers got different flags than before:
+
+| Flag | Verdict |
+|---|---|
+| RTA s. 83, no pets (2-1 supported) | real error, missed this time by majority, caught by "disputed" |
+| RTA s. 120, rent (3-0 supported) | real error, missed this time by every judge |
+| CPA s. 43, door-to-door ("instead" vs "in addition") | minor real error, flagged |
+| ESA s. 50.1, sick days | debatable, flagged |
+| RTA s. 69, mould eviction ("landlord must apply") | debatable, flagged (on the wrong answer, but not for its real mistake) |
+| RTA s. 89, ESA s. 35, CPA s. 43.1, CPA s. 56, ESA s. 57 (each 2-1 supported) | mostly false alarms, "disputed" only |
+
+**Flag rule tried both ways:**
+- Flag "disputed" too (any judge objects): caught s. 83, but added ~4 false
+  alarms per run. Rejected.
+- Flag majority "unsupported" only (final rule): 0 clear false alarms; on the
+  35-question run, 3 flags = 1 minor real error, 2 debatable. Missed s. 83 and s. 120.
+
+## Overall conclusion on the citation checker
+
+With the cheapest model (Claude Haiku) as judge, citation checking works for
+clear errors (a wrong number, a section that doesn't exist: caught every
+time), but is unreliable on subtle legal wording: the same claim can be judged
+supported in one run and unsupported in the next, even with 3 votes. Precision
+and recall can be traded against each other with the voting rule, but not both
+improved. The most likely next step is a stronger judge model, at a higher cost.

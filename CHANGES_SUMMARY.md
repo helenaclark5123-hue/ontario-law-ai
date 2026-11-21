@@ -149,6 +149,15 @@ Cost of the whole Iterate: about $1 in API credit.
   reasoning and then contradicts itself. Details in
   `results/manual_review_2026-11-21_final.md`. The overall conclusions held on
   the bigger, harder test.
+- **Fixed those 3 weaknesses** (claim context for the judge, skipping other
+  Acts' section numbers, reasoning before the verdict). The targeted false
+  alarms disappeared, but re-checking the same answers showed **the judge's
+  verdicts on subtle wording change from run to run**: the RTA s. 120 error
+  passed this time, and s. 83 was caught by only 1 of 3 judges. Final rule
+  (flag when most judges say unsupported): 0 clear false alarms on 57 answers,
+  but subtle errors are caught only sometimes. Conclusion: a cheap AI judge
+  reliably catches clear citation errors (wrong numbers, sections that don't
+  exist) but not subtle misreadings; a stronger judge model is the likely next step.
 - **App redesign:** navy and off-white theme, serif headings, law badges,
   example buttons, answer card, works on phones.
 - **Chatbot:** people describe their problem in their own words ("my landlord
