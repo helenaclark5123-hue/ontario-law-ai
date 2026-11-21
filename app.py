@@ -13,7 +13,8 @@ from datetime import datetime
 import anthropic
 import streamlit as st
 
-from answer import MissingKeyError, answer
+from answer import MissingKeyError
+from chat import chat_turn
 from citations import extract_citations
 from get_laws import load_saved_laws
 from make_chunks import CHUNKS_FILE
@@ -29,10 +30,15 @@ LAW_STYLE = {
     "Consumer Protection Act, 2002": ("🛒", "Buying things"),
 }
 EXAMPLES = {
-    "🏠 Renting": "How much notice does my landlord need to give before raising my rent?",
-    "💼 Work": "Can my boss make me work a 13-hour shift?",
-    "🛒 Buying": "Someone sold me something at my door. How long do I have to cancel?",
+    "🏠 Renting": "My landlord is trying to kick me out. What are my rights?",
+    "💼 Work": "My boss wants me to work a 13-hour shift. Is that allowed?",
+    "🛒 Buying": "Someone sold me something at my door yesterday and I want to cancel.",
 }
+WELCOME = (
+    "Hi! Tell me what's going on in your own words, like *\"my landlord is trying to kick me out\"* "
+    "or *\"my boss didn't pay me overtime\"*. I'll find the Ontario laws that apply and explain "
+    "what they say, with the exact sections. I can help with **renting**, **work** and **buying things**."
+)
 
 STYLE = """
 <style>
@@ -61,12 +67,10 @@ h1, h2, h3, h4, .hero-title {
 .hero p.status { color: #6B7280; font-size: .8rem !important; margin: .8rem 0 0 !important; }
 .status b { color: #4A5566; font-weight: 600; }
 
-/* Answer */
-.answer-label {
-    text-transform: uppercase; letter-spacing: .08em; font-size: .75rem;
-    font-weight: 600; color: #8A6D3B; margin-bottom: .2rem;
-}
-.searched { color: #6B7280; font-size: .82rem; font-style: italic; margin-bottom: .6rem; }
+/* Chat */
+[data-testid="stChatMessage"] { background: #FFFFFF; border: 1px solid #E2DCCF; border-radius: 12px; }
+.searched { color: #6B7280; font-size: .8rem; font-style: italic; margin: .2rem 0 .4rem; }
+.law-title { font-weight: 600; color: #1F3A5F; margin-top: .6rem; }
 
 /* Footer */
 .footer {
@@ -143,45 +147,61 @@ def read_status():
     return json.loads(STATUS_FILE.read_text()) if STATUS_FILE.exists() else {}
 
 
-def show_section(law, number, lookup):
-    info = lookup.get((law, number))
-    if not info:
-        return
+def section_title(law, number, info):
     icon, _ = LAW_STYLE.get(law, ("📘", ""))
-    title = f"{icon}  {law}, s. {number}" + (f" — {info['heading']}" if info["heading"] else "")
-    with st.expander(title):
-        st.markdown(safe(info["text"]).replace("\n", "  \n"))
-        st.caption(f"Official version: [{info['url']}]({info['url']}) (find section {number})")
+    return f"{icon} {law}, s. {number}" + (f" — {info['heading']}" if info["heading"] else "")
 
 
-def ask(question):
-    """Answer a question and keep the result, so it stays on screen when the
-    page reruns (for example after clicking something in the sidebar)."""
-    with st.spinner("Searching the laws and writing an answer..."):
-        error, result = None, None
-        try:
-            result = answer(question)
-            retrieved = result["sections"]
-        except MissingKeyError:
-            error = (
-                "The AI answer isn't available yet: no API key is set "
-                "(.env on my computer, or the app's Secrets settings online)."
-            )
-        except anthropic.AuthenticationError:
-            error = (
-                "The AI answer isn't available: the API key isn't working. Check it was pasted "
-                "correctly (.env on my computer, or the app's Secrets settings online)."
-            )
-        except anthropic.AnthropicError as e:
-            error = f"The AI answer isn't available: {e}"
-        if error:
-            retrieved = retrieve([question])
-    st.session_state["last"] = {"question": question, "result": result, "retrieved": retrieved, "error": error}
+def show_laws(message, lookup):
+    """A "Laws used" drop-down under a reply: the full text of every section
+    the reply cites, then the other sections that were searched."""
+    cited = [
+        (c["law"], c["section"]) for c in extract_citations(message["content"], None)
+        if (c["law"], c["section"]) in lookup
+    ]
+    searched = [(s["law"], s["section"]) for s in message["sections"]]
+    others = [s for s in dict.fromkeys(searched) if s not in cited]
+    label = f"📚 Laws used ({len(cited)})" if cited else f"📚 Law sections found ({len(others)})"
+    with st.expander(label):
+        for law, number in cited:
+            info = lookup[(law, number)]
+            st.markdown(f'<div class="law-title">{html.escape(section_title(law, number, info))}</div>',
+                        unsafe_allow_html=True)
+            st.markdown(safe(info["text"]).replace("\n", "  \n"))
+            st.caption(f"Official version: [{info['url']}]({info['url']}) (find section {number})")
+        if others:
+            st.caption("Also searched: " + "; ".join(
+                f"{LAW_STYLE.get(law, ('📘',))[0]} {law.split(',')[0]} s. {n}" for law, n in others
+            ))
 
 
-def use_example(question):
-    st.session_state["question"] = question
-    st.session_state["ask_now"] = True
+def reply_to(message):
+    """Get the assistant's reply to a new message, given the conversation so far."""
+    history = [
+        {"role": m["role"], "content": m["content"]}
+        for m in st.session_state["messages"] if not m.get("error")
+    ]
+    try:
+        result = chat_turn(history, message)
+        return {"role": "assistant", "content": result["reply"], "sections": result["sections"],
+                "searched": result["question"] if history else ""}
+    except MissingKeyError:
+        error = ("The AI answer isn't available yet: no API key is set "
+                 "(.env on my computer, or the app's Secrets settings online).")
+    except anthropic.AuthenticationError:
+        error = ("The AI answer isn't available: the API key isn't working. Check it was pasted "
+                 "correctly (.env on my computer, or the app's Secrets settings online).")
+    except anthropic.AnthropicError as e:
+        error = f"The AI answer isn't available: {e}"
+    return {"role": "assistant", "content": error, "sections": retrieve([message]), "error": True}
+
+
+def use_example(text):
+    st.session_state["pending"] = text
+
+
+def new_conversation():
+    st.session_state["messages"] = []
 
 
 st.markdown(STYLE, unsafe_allow_html=True)
@@ -209,6 +229,8 @@ st.markdown(
 
 # ---- Sidebar ----------------------------------------------------------------
 with st.sidebar:
+    st.button("💬  New conversation", on_click=new_conversation, use_container_width=True, type="primary")
+    st.divider()
     st.markdown("### Keep the laws current")
     st.caption("Re-downloads the laws from the A2AJ dataset and updates only the sections that changed.")
     if st.button("🔄  Check for updates", use_container_width=True):
@@ -249,60 +271,40 @@ with st.sidebar:
         "Toronto Metropolitan University). Answers are written by Claude from the retrieved sections."
     )
 
-# ---- Question ---------------------------------------------------------------
-with st.form("ask"):
-    st.text_input(
-        "Your question",
-        key="question",
-        placeholder="e.g. Can my landlord charge me a damage deposit?",
-    )
-    asked = st.form_submit_button("Ask", type="primary")
+# ---- Conversation -----------------------------------------------------------
+messages = st.session_state.setdefault("messages", [])
+lookup = section_lookup(CHUNKS_FILE.stat().st_mtime)
 
-st.caption("Or try an example:")
-columns = st.columns(len(EXAMPLES))
-for column, (label, example) in zip(columns, EXAMPLES.items()):
-    column.button(label, on_click=use_example, args=(example,), use_container_width=True)
+with st.chat_message("assistant", avatar="⚖️"):
+    st.markdown(WELCOME)
+    if not messages:
+        st.caption("Try an example:")
+        columns = st.columns(len(EXAMPLES))
+        for column, (label, example) in zip(columns, EXAMPLES.items()):
+            column.button(label, on_click=use_example, args=(example,), use_container_width=True)
 
-question = st.session_state.get("question", "").strip()
-if (asked or st.session_state.pop("ask_now", False)) and question:
-    ask(question)
-
-# ---- Answer -----------------------------------------------------------------
-last = st.session_state.get("last")
-if last:
-    lookup = section_lookup(CHUNKS_FILE.stat().st_mtime)
-    result = last["result"]
-    st.write("")
-    with st.container(border=True):
-        st.markdown('<div class="answer-label">Answer</div>', unsafe_allow_html=True)
-        st.markdown(f"**{safe(last['question'])}**")
-        if result:
-            if result.get("rewrite"):
-                st.markdown(
-                    f'<div class="searched">Also searched the laws for: {html.escape(result["rewrite"])}</div>',
-                    unsafe_allow_html=True,
-                )
-            st.markdown(safe(result["answer"]))
+for message in messages:
+    with st.chat_message(message["role"], avatar="⚖️" if message["role"] == "assistant" else "🙂"):
+        if message.get("searched"):
+            st.markdown(f'<div class="searched">Searched the laws for: {html.escape(message["searched"])}</div>',
+                        unsafe_allow_html=True)
+        if message.get("error"):
+            st.error(message["content"])
         else:
-            st.error(last["error"])
-            st.info("Here are the law sections the search found. The AI would answer using these.")
+            st.markdown(safe(message["content"]))
+        if message["role"] == "assistant":
+            show_laws(message, lookup)
 
-    # Every section the answer cites (full or short form, like "s. 116(3)").
-    cited = []
-    if result:
-        found = extract_citations(result["answer"], None)
-        cited = [(c["law"], c["section"]) for c in found if (c["law"], c["section"]) in lookup]
-    if cited:
-        st.markdown("#### Sections cited")
-        for law, number in cited:
-            show_section(law, number, lookup)
-
-    others = [(c["law"], c["section"]) for c in last["retrieved"]]
-    others = [s for s in dict.fromkeys(others) if s not in cited]
-    if others:
-        st.markdown("#### Other sections searched" if cited else "#### Sections found")
-        for law, number in others:
-            show_section(law, number, lookup)
+typed = st.chat_input("Describe your situation or ask a question...")
+new = typed or st.session_state.pop("pending", None)
+if new:
+    with st.chat_message("user", avatar="🙂"):
+        st.markdown(safe(new))
+    with st.chat_message("assistant", avatar="⚖️"):
+        with st.spinner("Finding the laws that apply..."):
+            reply = reply_to(new)
+    messages += [{"role": "user", "content": new}, reply]
+    st.rerun()
 
 # ---- Footer -----------------------------------------------------------------
 st.markdown(
