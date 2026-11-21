@@ -1,0 +1,63 @@
+Questions: 35
+Accuracy:           33/35 = 94%
+Hallucination rate: 0/35 = 0%  (graded made_up)
+Wrong (not made up): 2/35
+
+By type:
+  easy           11/11 correct, 0 made up
+  hard           8/10 correct, 0 made up
+  not_covered    6/6 correct, 0 made up
+  tricky         8/8 correct, 0 made up
+
+Citation checker:
+  citations checked: 116 (109 verified, 7 unsupported, 0 not found)
+  answers flagged: 6/35
+    flagged among correct  answers: 6/33
+    flagged among wrong    answers: 0/2
+
+Semantic entropy confidence (strict rule):
+  high    2 answers (2 correct, 0 wrong, 0 made_up)
+  medium  1 answers (1 correct, 0 wrong, 0 made_up)
+  low    32 answers (30 correct, 2 wrong, 0 made_up)
+
+Semantic entropy confidence (loose rule):
+  high   32 answers (30 correct, 2 wrong, 0 made_up)
+  medium  3 answers (3 correct, 0 wrong, 0 made_up)
+  low     0 answers (0 correct, 0 wrong, 0 made_up)
+
+Per question:
+   1. [correct] search found source: yes      citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  How much notice does my landlord need to give before raising my rent?
+   2. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  How often can my landlord raise my rent?
+   3. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  Can my landlord charge me a damage deposit?
+   4. [correct] search found source: yes      citations: FLAG  confidence strict: low    (1.61)  loose: high   (0.00)  Can my landlord ask for first and last month's rent, and do I get interest on it?
+   5. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  Can my landlord come into my apartment without telling me first?
+   6. [correct] search found source: yes      citations: FLAG  confidence strict: low    (1.33)  loose: high   (0.00)  My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?
+   7. [correct] search found source: yes      citations: ok    confidence strict: low    (1.05)  loose: high   (0.00)  My lease says no pets. Can my landlord evict me for having a cat?
+   8. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: medium (0.50)  Can my boss take money out of my pay because my cash register was short?
+   9. [correct] search found source: yes      citations: FLAG  confidence strict: low    (1.61)  loose: high   (0.00)  Can my boss make me work a 13-hour shift?
+  10. [correct] search found source: yes      citations: ok    confidence strict: medium (0.67)  loose: high   (0.00)  How long of a break do I get for lunch?
+  11. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  When do I get paid overtime?
+  12. [correct] search found source: yes      citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  How much vacation time do I get each year?
+  13. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  I've worked at my job for three and a half years. How much notice do I get if I'm fired?
+  14. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  Can I be fired for asking my boss about my rights under the Employment Standards Act?
+  15. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  Someone sold me something at my door. How long do I have to cancel?
+  16. [correct] search found source: partial  citations: FLAG  confidence strict: low    (1.61)  loose: high   (0.00)  I signed up for a gym membership yesterday. Can I cancel it?
+  17. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: medium (0.67)  A mechanic gave me an estimate but charged a lot more. What can I do?
+  18. [correct] search found source: yes      citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  A company sent me a product I never ordered and now wants me to pay. Do I have to?
+  19. [correct] search found source: yes      citations: ok    confidence strict: low    (1.05)  loose: high   (0.00)  I bought something online but the site never showed me the full terms before I paid. Can I cancel?
+  20. [correct] search found source: n/a      citations: ok    confidence strict: low    (0.95)  loose: high   (0.00)  Can I be sentenced to jail for shoplifting?
+  21. [correct] search found source: n/a      citations: ok    confidence strict: low    (1.05)  loose: high   (0.00)  How do I get a divorce in Ontario?
+  22. [correct] search found source: n/a      citations: ok    confidence strict: high   (0.00)  loose: high   (0.00)  What is the speed limit on Ontario highways?
+  23. [wrong  ] search found source: NO       citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  My landlord is trying to evict me because I complained to the city about mould. Is that allowed?
+  24. [wrong  ] search found source: NO       citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  Can my landlord raise my rent by 10% this year?
+  25. [correct] search found source: yes      citations: FLAG  confidence strict: low    (1.61)  loose: high   (0.00)  My landlord gave me 30 days' notice because his daughter is moving in. Do I have to be out in 30 days?
+  26. [correct] search found source: yes      citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  I rent month to month and want to move out. How much notice do I have to give?
+  27. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  Can my landlord change the locks while I'm still living there?
+  28. [correct] search found source: NO       citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  Can my landlord turn off my heat because I'm late on rent?
+  29. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  I worked somewhere for three years and got laid off. Do I get severance pay?
+  30. [correct] search found source: yes      citations: FLAG  confidence strict: low    (1.61)  loose: high   (0.00)  How many paid sick days do I get?
+  31. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: medium (0.50)  Do I get paid extra if I work on a public holiday?
+  32. [correct] search found source: yes      citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  What is the minimum wage in Ontario right now?
+  33. [correct] search found source: n/a      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  I took out a payday loan yesterday. Can I still cancel it?
+  34. [correct] search found source: n/a      citations: ok    confidence strict: low    (1.05)  loose: high   (0.00)  Is a debt collector allowed to call me at work?
+  35. [correct] search found source: n/a      citations: ok    confidence strict: high   (0.00)  loose: high   (0.00)  Do I have to pay income tax on my tips?
