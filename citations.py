@@ -22,6 +22,8 @@ added about 4 false alarms per run.
     python citations.py --demo     # check a made-up answer with planted mistakes
     python citations.py --recheck results/eval_..._full-checks.json
                                    # re-check the saved answers of an earlier run
+    python citations.py --recheck results/x.json --model claude-sonnet-5-5
+                                   # ...with a stronger (more expensive) judge
 """
 
 import quiet  # noqa: F401  (must come before the AI libraries)
@@ -194,7 +196,7 @@ def relevant_text(text, claims):
     return "\n".join(pieces)
 
 
-def judge_support(client, citations):
+def judge_support(client, citations, model=JUDGE_MODEL):
     """Ask the judge whether each section's text supports its claims."""
     sections = saved_sections()
     blocks = []
@@ -216,8 +218,9 @@ def judge_support(client, citations):
 
     def one_vote(_):
         response = client.messages.create(
-            model=JUDGE_MODEL,
-            max_tokens=4000,
+            model=model,
+            max_tokens=8000,
+            output_config={"effort": "medium"},
             system=JUDGE_PROMPT,
             messages=[{"role": "user", "content": content}],
         )
@@ -259,7 +262,7 @@ def judge_support(client, citations):
         c["reason"] = (reasons[0] if reasons else "(judges split)") + f"  [votes: {c['votes']}]"
 
 
-def check_citations(client, answer_text, sections_used=()):
+def check_citations(client, answer_text, sections_used=(), model=JUDGE_MODEL):
     """Check every citation in an answer. Returns (citations, summary)."""
     laws_used = {s["law"] for s in sections_used}
     default_law = laws_used.pop() if len(laws_used) == 1 else None
@@ -276,7 +279,7 @@ def check_citations(client, answer_text, sections_used=()):
             c["status"] = "not_found"
             c["reason"] = "this section isn't in the law database"
     if to_judge:
-        judge_support(client, to_judge)
+        judge_support(client, to_judge, model)
 
     count = {
         s: sum(c["status"] == s for c in citations)
@@ -316,7 +319,7 @@ DEMO_ANSWER = """Your landlord must give you at least 30 days' written notice be
 This is legal information, not legal advice."""
 
 
-def recheck(path, match=(), label="citations-rechecked"):
+def recheck(path, match=(), label="citations-rechecked", model=JUDGE_MODEL):
     """Re-run only the citation checker on the answers saved in a results
     file. Grades, entropy scores and everything else are kept as they were,
     so the old and new citation results can be compared fairly."""
@@ -331,7 +334,7 @@ def recheck(path, match=(), label="citations-rechecked"):
     for i, r in enumerate(rows, 1):
         print(f"[{i}/{len(rows)}] {r['question']}", flush=True)
         before = r.get("citation_flag", "-")
-        found, summary = check_citations(client, r["assistant_answer"], r["_sections"])
+        found, summary = check_citations(client, r["assistant_answer"], r["_sections"], model)
         r.update(summary)
         r["_citations"] = found
         print(f"         citations: {before} -> {r['citation_flag']}  ({r['grade']})", flush=True)
@@ -353,12 +356,13 @@ if __name__ == "__main__":
         print(DEMO_ANSWER, "\n")
         print_report(*check_citations(anthropic.Anthropic(), DEMO_ANSWER))
     elif "--recheck" in sys.argv:
-        # python citations.py --recheck results/x.json [--label NAME] [question starts...]
+        # python citations.py --recheck results/x.json [--label NAME] [--model ID] [question starts...]
         args = sys.argv[sys.argv.index("--recheck") + 1:]
-        label = "citations-rechecked"
-        if "--label" in args:
-            label = args[args.index("--label") + 1]
-            args = args[:args.index("--label")] + args[args.index("--label") + 2:]
-        recheck(args[0], args[1:], label)
+        options = {"--label": "citations-rechecked", "--model": JUDGE_MODEL}
+        for flag in options:
+            if flag in args:
+                options[flag] = args[args.index(flag) + 1]
+                args = args[:args.index(flag)] + args[args.index(flag) + 2:]
+        recheck(args[0], args[1:], options["--label"], options["--model"])
     else:
         print(__doc__)

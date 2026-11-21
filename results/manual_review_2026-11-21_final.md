@@ -114,3 +114,35 @@ time), but is unreliable on subtle legal wording: the same claim can be judged
 supported in one run and unsupported in the next, even with 3 votes. Precision
 and recall can be traded against each other with the voting rule, but not both
 improved. The most likely next step is a stronger judge model, at a higher cost.
+
+## Stronger judge test: Claude Sonnet 5.5 vs Claude Haiku 5.5
+
+Re-checked the 16 answers whose flags I had hand-reviewed, with Sonnet as the
+citation judge (3 votes each, same fixed checker): files
+`eval_2026-11-21_*_sonnet-judge-nov15.json` and `..._sonnet-judge-final.json`.
+
+| Citation | Hand review | Haiku | Sonnet |
+|---|---|---|---|
+| RTA s. 83, reversed eviction test | real error | 2-1 supported (disputed) | **0-3 unsupported, caught** |
+| RTA s. 120, "only if the Board orders it" | real error | 3-0 supported | 3-0 supported |
+| CPA s. 31, gym term | minor real error | 3-0 supported | 3-0 supported |
+| CPA s. 43, "instead" vs "in addition" | minor real error | 3-0 supported | 3-0 supported |
+| 12 citations judged fine | fine | 0 flagged (3 disputed) | 0 flagged (1 disputed) |
+| ESA s. 50.1, RTA s. 69, ESA s. 57 | debatable | 2 flagged, 1 disputed | 0 flagged |
+
+- **Sonnet is far more consistent:** its 3 judges disagreed on 1 of 68
+  citations (1.5%), vs 8 of 186 for Haiku (4%).
+- **It caught the clearest subtle error** (s. 83) unanimously, which Haiku
+  only half-caught.
+- **It still missed 3 of 4 real errors, consistently.** On s. 120 it reads
+  "only if the Board orders it" generously in the context of the whole answer.
+  My hand review counts that as a misstatement; this is a judgment call.
+- **It made no clear false alarms,** and it read all 3 debatable cases
+  generously.
+- **Cost:** about 20x Haiku per word, roughly $1-3 for these 16 answers.
+
+**Conclusion:** a stronger judge mainly fixes *inconsistency* (it gives the
+same verdict every time), not *coverage*: it still lets most subtle
+misstatements through. Catching those would likely need a different design,
+e.g. checking each sentence against the law separately, or a human reviewer
+for high-stakes answers.

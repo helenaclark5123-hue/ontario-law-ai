@@ -158,6 +158,12 @@ Cost of the whole Iterate: about $1 in API credit.
   but subtle errors are caught only sometimes. Conclusion: a cheap AI judge
   reliably catches clear citation errors (wrong numbers, sections that don't
   exist) but not subtle misreadings; a stronger judge model is the likely next step.
+- **Tried a stronger judge (Claude Sonnet 5.5) on the 16 hand-reviewed answers.**
+  It was far more consistent (judges disagreed on 1.5% of citations vs 4% for
+  Haiku) and caught the reversed eviction test (RTA s. 83) 3-0, with no false
+  alarms. But it still missed 3 of the 4 real errors, every time, reading them
+  generously in context. Lesson: a stronger judge fixes inconsistency, not
+  coverage, and costs about 20x more.
 - **App redesign:** navy and off-white theme, serif headings, law badges,
   example buttons, answer card, works on phones.
 - **Chatbot:** people describe their problem in their own words ("my landlord
