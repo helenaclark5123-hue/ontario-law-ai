@@ -1,0 +1,23 @@
+Questions: 2
+Accuracy:           2/2 = 100%
+Hallucination rate: 0/2 = 0%  (graded made_up)
+Wrong (not made up): 0/2
+
+Citation checker:
+  citations checked: 4 (4 verified, 0 unsupported, 0 not found)
+  answers flagged: 0/2
+    flagged among correct  answers: 0/2
+
+Semantic entropy confidence (strict rule):
+  high    0 answers (0 correct, 0 wrong, 0 made_up)
+  medium  0 answers (0 correct, 0 wrong, 0 made_up)
+  low     2 answers (2 correct, 0 wrong, 0 made_up)
+
+Semantic entropy confidence (loose rule):
+  high    2 answers (2 correct, 0 wrong, 0 made_up)
+  medium  0 answers (0 correct, 0 wrong, 0 made_up)
+  low     0 answers (0 correct, 0 wrong, 0 made_up)
+
+Per question:
+   1. [correct] search found source: yes      citations: ok    confidence strict: low    (1.33)  loose: high   (0.00)  My landlord gave me 30 days' notice because his daughter is moving in. Do I have to be out in 30 days?
+   2. [correct] search found source: yes      citations: ok    confidence strict: low    (1.61)  loose: high   (0.00)  What is the minimum wage in Ontario right now?

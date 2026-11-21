@@ -237,11 +237,12 @@ def main():
         "--regrade", metavar="RESULTS.json",
         help="re-judge the answers saved in an earlier run instead of asking the assistant again",
     )
+    parser.add_argument("--test-set", default=TEST_SET, type=Path, help="questions file (default: test_set.csv)")
     parser.add_argument("--citations", action="store_true", help="also run the citation checker")
     parser.add_argument("--entropy", action="store_true", help="also compute the semantic entropy confidence")
     args = parser.parse_args()
 
-    with TEST_SET.open() as f:
+    with args.test_set.open() as f:
         tests = [row for row in csv.DictReader(f) if row["question"].strip()]
     if args.limit:
         tests = tests[: args.limit]

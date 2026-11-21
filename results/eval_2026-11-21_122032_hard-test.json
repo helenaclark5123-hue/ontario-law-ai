@@ -1,0 +1,455 @@
+[
+  {
+    "question": "My landlord gave me 30 days' notice because his daughter is moving in. Do I have to be out in 30 days?",
+    "type": "hard",
+    "correct_answer": "No. For a landlord's own-use notice, the termination date must be at least 60 days after the notice is given and on the last day of a rental period (or the end of a fixed term). 30 days is not enough.",
+    "source_section": "RTA 48",
+    "assistant_answer": "**No, not based on the 30 days you were given.** A landlord who ends a tenancy so a child can move in must give at least 60 days' notice, and the termination date must fall at the end of a rental period or fixed term (Residential Tenancies Act, 2006, s. 48(2)). A 30-day notice does not meet that requirement.\n\nOther conditions in the same section also apply:\n\n- **Who qualifies:** The landlord must be an individual, the unit must be owned in whole or in part by an individual, and the landlord must need the unit in good faith for a child's residential occupation for at least one year (s. 48(1), (5)). A child of the landlord is listed as a qualifying person (s. 48(1)(c)).\n- **Your option to leave early:** You can end the tenancy sooner by giving at least 10 days' notice, effective on a date earlier than the landlord's date (s. 48(3), (4)).\n- **Notice that expires:** A termination notice becomes void 30 days after the termination date in it, unless you move out first or the landlord applies to the Landlord and Tenant Board for an eviction order before then (s. 46(1)). This rule does not apply to notices based on unpaid rent (s. 46(2)).\n\nI couldn't find in these sections what happens if a notice gives too little time, beyond the rules above. A tenancy can only be ended in accordance with the Act (s. 37(1)), but I can't tell you from these sections whether you must leave on any particular date. A community legal clinic or a tenant advice service can help you check the notice and your options.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "notice of termination by landlord; landlord's own use; residential unit occupied by landlord's child; notice period; tenant obligation to vacate",
+    "sections_retrieved": "RTA 48; RTA 144; RTA 47; RTA 60; RTA 50; RTA 46; RTA 37; RTA 88",
+    "source_section_retrieved": "yes",
+    "grade": "correct",
+    "judge_reason": "The assistant correctly says the 30-day notice is not enough because s. 48(2) requires at least 60 days and a termination date at the end of a rental period or fixed term, matching the answer key. Its extra points about qualifying landlords, early termination, and s. 46 are supported by the provided texts, though its closing hedge about whether the tenant must leave on a particular date is less direct than the key.",
+    "citations_total": 3,
+    "citations_verified": 3,
+    "citations_unsupported": 0,
+    "citations_not_found": 0,
+    "citation_flag": "ok",
+    "citation_details": "VERIFIED: Residential Tenancies Act, 2006, s. 48 - s. 48(2) sets the 60-day minimum and requires the termination date to be the end of a tenancy period or fixed term; s. 48(1), (5) cover good faith, one-year occupation, individual landlord and ownership; s. 48(1)(c) lists a child; s. 48(3)-(4) give the tenant's 10-day early-termination option.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 46 - s. 46(1) makes a notice void 30 days after its termination date unless the tenant vacates or the landlord applies for an order before then, and s. 46(2) excludes notices for unpaid rent.  [votes: 3 verified / 0 unsupported]\nVERIFIED: Residential Tenancies Act, 2006, s. 37 - s. 37(1) says a tenancy may be terminated only in accordance with the Act, and the answer's statement that it cannot say from these sections whether a particular leave date applies is an accurate description of its limits.  [votes: 3 verified / 0 unsupported]",
+    "_citations": [
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "48",
+        "cited_as": [
+          "s. 48(2)",
+          "s. 48(1)",
+          "s. 48(1)(c)",
+          "s. 48(3)"
+        ],
+        "claims": [
+          "No, not based on the 30 days you were given.** A landlord who ends a tenancy so a child can move in must give at least 60 days' notice, and the termination date must fall at the end of a rental period or fixed term (Residential Tenancies Act, 2006, s. 48(2)).",
+          "Who qualifies:** The landlord must be an individual, the unit must be owned in whole or in part by an individual, and the landlord must need the unit in good faith for a child's residential occupation for at least one year (s. 48(1), (5)).",
+          "A child of the landlord is listed as a qualifying person (s. 48(1)(c)).",
+          "Your option to leave early:** You can end the tenancy sooner by giving at least 10 days' notice, effective on a date earlier than the landlord's date (s. 48(3), (4))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "s. 48(2) sets the 60-day minimum and requires the termination date to be the end of a tenancy period or fixed term; s. 48(1), (5) cover good faith, one-year occupation, individual landlord and ownership; s. 48(1)(c) lists a child; s. 48(3)-(4) give the tenant's 10-day early-termination option.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "46",
+        "cited_as": [
+          "s. 46(1)",
+          "s. 46(2)"
+        ],
+        "claims": [
+          "Notice that expires:** A termination notice becomes void 30 days after the termination date in it, unless you move out first or the landlord applies to the Landlord and Tenant Board for an eviction order before then (s. 46(1)).",
+          "This rule does not apply to notices based on unpaid rent (s. 46(2))."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "s. 46(1) makes a notice void 30 days after its termination date unless the tenant vacates or the landlord applies for an order before then, and s. 46(2) excludes notices for unpaid rent.  [votes: 3 verified / 0 unsupported]"
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "section": "37",
+        "cited_as": [
+          "s. 37(1)"
+        ],
+        "claims": [
+          "A tenancy can only be ended in accordance with the Act (s. 37(1)), but I can't tell you from these sections whether you must leave on any particular date."
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "s. 37(1) says a tenancy may be terminated only in accordance with the Act, and the answer's statement that it cannot say from these sections whether a particular leave date applies is an accurate description of its limits.  [votes: 3 verified / 0 unsupported]"
+      }
+    ],
+    "entropy": 1.332,
+    "n_clusters": 4,
+    "cluster_sizes": "2-1-1-1",
+    "confidence": "low",
+    "entropy_loose": 0.0,
+    "n_clusters_loose": 1,
+    "cluster_sizes_loose": "5",
+    "confidence_loose": "high",
+    "_entropy": {
+      "samples": [
+        "**No, probably not.** Under s. 48, a landlord ending a tenancy so a child can move in must give at least 60 days' notice. The termination date must be at least 60 days after the notice is given, and it must be the last day of a rental period or the end of a fixed term (Residential Tenancies Act, 2006, s. 48(2)). A 30-day notice falls short of that minimum. A tenancy can only be ended in accordance with the Act (s. 37(1)).\n\n**Conditions the landlord must meet under s. 48:**\n- The landlord must, in good faith, need the unit to live in for at least one year. A child of the landlord counts (s. 48(1)(c)).\n- The landlord must be an individual, and the unit must be owned in whole or in part by an individual (s. 48(5)).\n\n**Other points:**\n- You can end the tenancy earlier than the date in the notice by giving the landlord at least 10 days' notice (s. 48(3), (4)).\n- A notice becomes void 30 days after the termination date in it, unless you move out before then or the landlord applies for an eviction order before then (s. 46(1)).\n- If you leave before the termination date without proper notice, you may owe rent for a set period (s. 88(2)).\n\nI couldn't find in these sections what happens when a landlord gives a notice with too few days, or how to challenge one. A community legal clinic or the Landlord and Tenant Board can help with that.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "No, not based on the notice you describe. A landlord who ends a tenancy so a child can move in must give at least 60 days' notice. The termination date must be at least 60 days after the notice is given (Residential Tenancies Act, 2006, s. 48(2)). A 30-day notice does not meet that minimum.\n\nOther points that may matter:\n\n- **Who qualifies:** A landlord can end a tenancy for a child of the landlord or the landlord's spouse, but only if the landlord in good faith needs the unit for that person to live in for at least one year (s. 48(1)(c)).\n- **Landlord must be an individual:** This type of notice is allowed only if the unit is owned in whole or part by an individual and the landlord is an individual (s. 48(5)).\n- **Leaving early:** If you want to move out sooner, you can give the landlord notice at any time before the date in the landlord's notice. Your termination date must be at least 10 days after you give your notice (s. 48(3), (4)).\n- **Notice expiry:** A termination notice becomes void 30 days after the termination date in the notice, unless you move out or the landlord applies to the Landlord and Tenant Board for an eviction order before then (s. 46(1)).\n\nI couldn't find in these sections what happens if a notice gives less than the required time. A tenancy can be ended only in accordance with the Act (s. 37(1)), so the short notice does not meet the Act's rules. For advice on what to do next, a tenant rights clinic or the Landlord and Tenant Board may help.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**Probably not.** For a landlord's move-in notice like this, the Act requires at least 60 days between the notice and the termination date, not 30 (Residential Tenancies Act, 2006, s. 48(2)). A tenancy can be ended only in accordance with the Act (s. 37(1)), so a 30-day notice does not by itself end your tenancy on that date.\n\nOther conditions also apply. The landlord must:\n- Be an individual, and own the unit in whole or in part (s. 48(5)).\n- Need the unit in good faith for a daughter (a child of the landlord) to live in for at least one year (s. 48(1)(c)).\n- Set the termination date at the end of a period of the tenancy, or at the end of a fixed term (s. 48(2)).\n\nIf the notice is not valid, the sections don't say exactly what happens next. They also don't say whether a 30-day notice could be corrected by giving a later date.\n\nYou may choose to leave early. You can end the tenancy by giving the landlord at least 10 days' notice, on a date earlier than the landlord's date (s. 48(3) and (4)).\n\nAlso note that a notice of termination becomes void 30 days after the termination date in the notice, unless you move out first or the landlord applies for an eviction order before then (s. 46(1)). That rule is separate from the 60-day requirement.\n\nFor advice on what to do next, a community legal clinic or the Landlord and Tenant Board can help. I couldn't find the Board's procedures in the sections provided.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**No, not based on this notice.** For a landlord ending a tenancy so a family member can move in, the termination date must be at least 60 days after the notice is given, and it must fall on the last day of a rental period or the end of a fixed term (Residential Tenancies Act, 2006, s. 48(2)). A 30-day notice does not meet that requirement, and a tenancy can only be ended in line with the Act (s. 37(1)).\n\n**Key points:**\n\n- **The family member must qualify.** A landlord's child can qualify, but only if they will live in the unit for at least one year, and the landlord must need the unit in good faith (s. 48(1)(c)). Your landlord must also be an individual, and the unit must be owned in whole or in part by an individual (s. 48(5)).\n- **You can leave earlier if you want.** You may give the landlord notice at any time before the date in his notice, ending the tenancy on an earlier date you choose. Your notice must give at least 10 days (s. 48(3), (4)).\n- **Check the notice's validity.** A notice that is not in line with the Act does not end your tenancy on its own terms. Also, under s. 46, a notice generally becomes void 30 days after the termination date in it unless you move out or the landlord applies to the Landlord and Tenant Board before then.\n\nI couldn't find in these sections what happens to a notice with the wrong date beyond the points above, or how a landlord must prove good faith. A community legal clinic or the Landlord and Tenant Board can help with those questions.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "**No, probably not on that notice alone.** A landlord who wants to move a child into the unit must give at least 60 days' notice, and the termination date must be the last day of a rental period or the end of a fixed term (Residential Tenancies Act, 2006, s. 48(2)). A 30-day notice does not meet that requirement. A tenancy can be ended only in accordance with the Act (s. 37(1)).\n\n**Conditions for this kind of notice:**\n- The landlord must be an individual, and the rental unit must be owned in whole or in part by an individual (s. 48(5)).\n- The landlord must, in good faith, need the unit for a child or parent of the landlord or the landlord's spouse (s. 48(1)(c)). The person must intend to live there for at least one year (s. 48(1)).\n\nI can't tell from the sections whether your landlord meets these conditions. Your notice may also be void if the termination date passes and you have not moved out and the landlord has not applied to the Landlord and Tenant Board. A notice becomes void 30 days after its termination date unless the tenant vacates or the landlord applies for an eviction order before then (s. 46(1)).\n\n**Your options:**\n- You don't have to leave on the date in a notice that doesn't follow the Act.\n- If you decide to move out, you can give your own notice at least 10 days before the date you choose, and you can do this at any time before the landlord's termination date (s. 48(3), (4)).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic."
+      ],
+      "strict": {
+        "clusters": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: different - Answer B states that a child of the landlord's spouse also qualifies, which Answer A does not mention, while Answer A adds the rule that the termination date must fall on the last day of a rental period or fixed term and that a departing tenant may owe rent under s. 88(2), which Answer B omits.",
+          "answer 1 vs 3: different - Answer A includes the s. 88(2) point that a tenant who leaves early without proper notice may owe rent, which Answer B never mentions, while everything B says (60-day minimum, landlord conditions, 10-day early-exit notice, s. 46(1) void rule, and the gaps in the sections) is also covered by A.",
+          "answer 2 vs 3: different - Answer B adds a condition that the termination date must fall at the end of a tenancy period or fixed term, which Answer A does not state, while every point in Answer A (60-day minimum, child/spouse and one-year good-faith need, individual landlord, 10-day early-exit notice, 30-day voiding rule) also appears in Answer B.",
+          "answer 1 vs 4: different - Answer A includes the s. 88(2) point that a tenant who leaves early without proper notice may owe rent, which Answer B never mentions, while everything B says (including that a non-compliant notice doesn't end the tenancy) is at least implied by A's citation of s. 37(1) and its other points.",
+          "answer 2 vs 4: different - Answer B adds a requirement that the termination date fall on the last day of a rental period or the end of a fixed term, which Answer A never states, while Answer A's points (60-day minimum, qualifying family member, individual landlord, 10-day tenant notice, s. 46 expiry) all appear in Answer B.",
+          "answer 3 vs 4: SAME - Both answers reach the same conclusion (the 30-day notice doesn't meet the 60-day requirement under s. 48(2)) and give the same supporting conditions, the 10-day tenant exit option, and the s. 46 void rule; the differences are only in hedging (\"probably\" vs. \"no\") and in which unknowns each flags.",
+          "answer 1 vs 5: different - Answer B says the qualifying relatives include a parent or the landlord's spouse, which Answer A never states, while Answer A says a tenant may owe rent for leaving without proper notice (s. 88(2)), which Answer B never mentions.",
+          "answer 2 vs 5: different - Answer B includes a claim that the termination date must be the last day of a rental period or fixed term, which Answer A never states, while every point in Answer A (60-day minimum, individual landlord, child-of-landlord rule, one-year intent, 10-day tenant notice, 30-day void rule) also appears in Answer B.",
+          "answer 3 vs 5: different - Both answers reach the same conclusion and give the same core rules (60 days required, individual landlord, good-faith need for at least one year, the tenant's 10-day early exit, and the s. 46(1) voiding rule), but B also says the landlord's family-member category includes a parent or spouse's relative, which A does not state, so A does not entail B. A's remarks about what the sections leave unsaid are hedges rather than substantive rules, so B covers A's substance."
+        ]
+      },
+      "loose": {
+        "clusters": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: SAME - Both answers conclude the 30-day notice is too short because a child-move-in termination requires at least 60 days, and they agree on the related conditions, the 10-day early-exit rule, the 30-day void rule, and s. 37(1); the differences are only omissions or minor wording (A's \"probably,\" A's omission of the spouse's child and of s. 88(2)).",
+          "answer 1 vs 3: SAME - Both answers conclude the landlord's 30-day notice is probably not enough, since the Act requires at least 60 days, and they give the same conditions, the 10-day early-termination option, and the s. 46(1) void rule without contradicting each other. Answer A also mentions s. 88(2) rent liability, which Answer B omits, but that addition does not conflict with anything in B.",
+          "answer 1 vs 4: SAME - Both answers conclude the 30-day notice is not valid because s. 48 requires at least 60 days, and they give the same conditions, 10-day tenant notice rule, and s. 46 point without contradicting each other; the differences are only extra detail like s. 88(2) in Answer A.",
+          "answer 1 vs 5: SAME - Both answers conclude that a 30-day notice is insufficient because the Act requires at least 60 days, cite the same sections (s. 48(2), 37(1), 48(5), 48(1)(c), 46(1), 48(3)-(4)), and give the same tenant-ending and void-notice rules, differing only in detail and emphasis."
+        ]
+      }
+    },
+    "_sections": [
+      {
+        "hash": "7026113d72e9a2a3",
+        "heading": "Notice, landlord personally, etc., requires unit",
+        "law": "Residential Tenancies Act, 2006",
+        "part": 1,
+        "section": "48",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "total_parts": 1,
+        "citation": "SO 2006, c 17",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "text": "Residential Tenancies Act, 2006, s. 48 – Notice, landlord personally, etc., requires unit\n(1) A landlord may, by notice, terminate a tenancy if the landlord in good faith requires possession of the rental unit for the purpose of residential occupation for a period of at least one year by,\n(a) the landlord;\n(b) the landlord’s spouse;\n(c) a child or parent of the landlord or the landlord’s spouse; or\n(d) a person who provides or will provide care services to the landlord, the landlord’s spouse, or a child or parent of the landlord or the landlord’s spouse, if the person receiving the care services resides or will reside in the building, related group of buildings, mobile home park or land lease community in which the rental unit is located.\n(2) The date for termination specified in the notice shall be at least 60 days after the notice is given and shall be the day a period of the tenancy ends or, where the tenancy is for a fixed term, the end of the term.\n(3) A tenant who receives notice of termination under subsection (1) may, at any time before the date specified in the notice, terminate the tenancy, effective on a specified date earlier than the date set out in the landlord’s notice.\n(4) The date for termination specified in the tenant’s notice shall be at least 10 days after the date the tenant’s notice is given.\n(5) This section does not authorize a landlord to give a notice of termination of a tenancy with respect to a rental unit unless,\n(a) the rental unit is owned in whole or in part by an individual; and\n(b) the landlord is an individual.",
+        "score": 0.832
+      },
+      {
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "citation": "SO 2006, c 17",
+        "part": 1,
+        "law": "Residential Tenancies Act, 2006",
+        "law_part": "Part Ix Care Homes",
+        "section": "144",
+        "hash": "250de12c05a64b69",
+        "heading": "Notice of termination",
+        "text": "Residential Tenancies Act, 2006, s. 144 – Notice of termination\n(1) A landlord may, by notice, terminate the tenancy of a tenant in a care home if,\n(a) the rental unit was occupied solely for the purpose of receiving rehabilitative or therapeutic services agreed upon by the tenant and the landlord;\n(b) no other tenant of the care home occupying a rental unit solely for the purpose of receiving rehabilitative or therapeutic services is permitted to live there for longer than the prescribed period; and\n(c) the period of tenancy agreed to has expired.\n(2) The date for termination specified in the notice shall be at least the number of days after the date the notice is given that is set out in section 44 and shall be the day a period of the tenancy ends or, where the tenancy is for a fixed term, the end of the term.",
+        "score": 0.826
+      },
+      {
+        "heading": "Tenant’s notice to terminate, end of period or term",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "law": "Residential Tenancies Act, 2006",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "section": "47",
+        "citation": "SO 2006, c 17",
+        "part": 1,
+        "hash": "9cb69866765ae9a5",
+        "text": "Residential Tenancies Act, 2006, s. 47 – Tenant’s notice to terminate, end of period or term\nA tenant may terminate a tenancy at the end of a period of the tenancy or at the end of the term of a tenancy for a fixed term by giving notice of termination to the landlord in accordance with section 44.",
+        "score": 0.821
+      },
+      {
+        "part": 1,
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "law": "Residential Tenancies Act, 2006",
+        "section": "60",
+        "hash": "eb3c1b559db26de4",
+        "heading": "Termination for cause, misrepresentation of income",
+        "citation": "SO 2006, c 17",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 60 – Termination for cause, misrepresentation of income\n(1) A landlord may give a tenant notice of termination of the tenancy if the rental unit is a rental unit described in paragraph 1, 2, 3 or 4 of subsection 7 (1) and the tenant has knowingly and materially misrepresented his or her income or that of other members of his or her household.\n(2) A notice of termination under this section shall set out the grounds for termination and shall provide a termination date not earlier than the 20th day after the notice is given.",
+        "score": 0.815
+      },
+      {
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "citation": "SO 2006, c 17",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "total_parts": 1,
+        "law": "Residential Tenancies Act, 2006",
+        "part": 1,
+        "section": "50",
+        "hash": "0a49fa201fe1701d",
+        "heading": "Notice, demolition, conversion or repairs",
+        "text": "Residential Tenancies Act, 2006, s. 50 – Notice, demolition, conversion or repairs\n(1) A landlord may give notice of termination of a tenancy if the landlord requires possession of the rental unit in order to,\n(a) demolish it;\n(b) convert it to use for a purpose other than residential premises; or\n(c) do repairs or renovations to it that are so extensive that they require a building permit and vacant possession of the rental unit.\n(2) The date for termination specified in the notice shall be at least 120 days after the notice is given and shall be the day a period of the tenancy ends or, where the tenancy is for a fixed term, the end of the term.\n(3) A notice under clause (1) (c) shall inform the tenant that if he or she wishes to exercise the right of first refusal under section 53 to occupy the premises after the repairs or renovations, he or she must give the landlord notice of that fact in accordance with subsection 53 (2) before vacating the rental unit.\n(4) A tenant who receives notice of termination under subsection (1) may, at any time before the date specified in the notice, terminate the tenancy, effective on a specified date earlier than the date set out in the landlord’s notice.\n(5) The date for termination specified in the tenant’s notice shall be at least 10 days after the date the tenant’s notice is given.",
+        "score": 0.811
+      },
+      {
+        "heading": "Where notice void",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "total_parts": 1,
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "hash": "99348d4c55443616",
+        "section": "46",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 46 – Where notice void\n(1) A notice of termination becomes void 30 days after the termination date specified in the notice unless,\n(a) the tenant vacates the rental unit before that time; or\n(b) the landlord applies for an order terminating the tenancy and evicting the tenant before that time.\n(2) Subsection (1) does not apply with respect to a notice based on a tenant’s failure to pay rent.",
+        "score": 0.811
+      },
+      {
+        "law": "Residential Tenancies Act, 2006",
+        "hash": "5347e9010e4a838c",
+        "section": "37",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "citation": "SO 2006, c 17",
+        "part": 1,
+        "total_parts": 1,
+        "heading": "Termination only in accordance with Act",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 37 – Termination only in accordance with Act\n(1) A tenancy may be terminated only in accordance with this Act.\n(2) If a notice of termination is given in accordance with this Act and the tenant vacates the rental unit in accordance with the notice, the tenancy is terminated on the termination date set out in the notice.\n(3) A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.\n(4) A tenant’s notice to terminate a tenancy is void if it is given,\n(a) at the time the tenancy agreement is entered into; or\n(b) as a condition of entering into the tenancy agreement.\n(5) An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into,\n(a) at the time the tenancy agreement is entered into; or\n(b) as a condition of entering into the tenancy agreement.\n(6) Subsections (4) and (5) do not apply to rental units occupied by students of one or more post-secondary educational institutions,\n(a) in a residential complex owned, operated or administered by or on behalf of the post-secondary educational institutions; or\n(b) in a residential complex where a non-profit housing co-operative provides housing units primarily for post-secondary students.\n(7) Subsections (4) and (5) do not apply to rental units in a residential complex with respect to which the landlord has entered into an agreement with one or more post-secondary educational institutions providing,\n(a) that the landlord, as of the date the agreement is entered into and for the duration of the agreement, rents the rental units which are the subject of the agreement only to students of the institution or institutions;\n(b) that the landlord will comply with the maintenance standards set out in the agreement with respect to the rental units which are the subject of the agreement; and\n(c) that the landlord will not charge a new tenant of a rental unit which is a subject of the agreement a rent which is greater than the lawful rent being charged to the former tenant plus the guideline.\n(8) The maintenance standards set out in the agreement and referred to in clause (7) (b) shall not provide for a lower maintenance standard than that required by law.\n(9) If the landlord breaches any of clauses (7) (a), (b) and (c), the agreement referred to in subsection (7) is terminated and the exemption provided by subsection (7) no longer applies.\n(10) The landlord shall be deemed to have not breached the condition in clause (7) (a) if,\n(a) upon a tenant ceasing to be a student of a post-secondary educational institution that is a party to the agreement with the landlord, the landlord takes action to terminate the tenancy in accordance with an agreement with the tenant to terminate the tenancy or a notice of termination given by the tenant; or\n(b) a tenant sublets the rental unit to a person who is not a student of a post-secondary educational institution that is a party to the agreement with the landlord.\n(11) Either party to an agreement referred to in subsection (7) may terminate the agreement on at least 90 days written notice to the other party and, upon the termination of the agreement, the exemption provided by subsection (7) no longer applies.",
+        "score": 0.809
+      },
+      {
+        "part": 1,
+        "hash": "414a18dfc85786ae",
+        "total_parts": 1,
+        "section": "88",
+        "law_part": "Part V Security Of Tenure And Termination Of Tenancies",
+        "heading": "Arrears of rent when tenant abandons or vacates without notice",
+        "citation": "SO 2006, c 17",
+        "law": "Residential Tenancies Act, 2006",
+        "url": "https://www.ontario.ca/laws/statute/06r17",
+        "text": "Residential Tenancies Act, 2006, s. 88 – Arrears of rent when tenant abandons or vacates without notice\n(1) If a tenant abandons or vacates a rental unit without giving notice of termination in accordance with this Act and no agreement to terminate has been made or the landlord has not given notice to terminate the tenancy, a determination of the amount of arrears of rent owing by the tenant shall be made in accordance with the following rules:\n1. If the tenant vacated the rental unit after giving notice that was not in accordance with this Act, arrears of rent are owing for the period that ends on the earliest termination date that could have been specified in the notice, had the notice been given in accordance with section 47, 96 or 145, as the case may be.\n2. If the tenant abandoned or vacated the rental unit without giving any notice, arrears of rent are owing for the period that ends on the earliest termination date that could have been specified in a notice of termination had the tenant, on the date that the landlord knew or ought to have known that the tenant had abandoned or vacated the rental unit, given notice of termination in accordance with section 47, 96 or 145, as the case may be.\n(2) If a notice of termination has been given by the landlord under section 48, 49 or 50 and the tenant vacates the rental unit before the termination date set out in the notice without giving a notice of earlier termination or after giving a notice of earlier termination that is not in accordance with subsection 48 (3), 49 (4) or 50 (4), as the case may be, a determination of the amount of arrears of rent owing by the tenant shall be made as if arrears of rent are owing for the period that ends on the earlier of the following dates:\n1. The date that is 10 days after,\ni. the date the tenant gave notice of earlier termination, if the tenant vacated the rental unit after giving a notice of earlier termination that was not in accordance with subsection 48 (3), 49 (4) or 50 (4), as the case may be, or\nii. the date the landlord knew or ought to have known that the tenant had vacated the rental unit, if the tenant vacated the rental unit without giving a notice of earlier termination.\n2. The termination date set out in the landlord’s notice of termination.\n(3) Despite subsections (1) and (2), if the landlord enters into a new tenancy agreement with a new tenant with respect to the rental unit, the tenant who abandoned or vacated the rental unit is not liable to pay an amount of arrears of rent that exceeds the lesser of the following amounts:\n1. The amount of arrears of rent determined under subsection (1) or (2).\n2. The amount of arrears of rent owing for the period that ends on the date the new tenant is entitled to occupy the rental unit.\n(4) In determining the amount of arrears of rent owing under subsections (1), (2) and (3), consideration shall be given to whether or not the landlord has taken reasonable steps to minimize losses in accordance with section 16.",
+        "score": 0.805
+      }
+    ]
+  },
+  {
+    "question": "What is the minimum wage in Ontario right now?",
+    "type": "hard",
+    "correct_answer": "The Act doesn't state today's amount. It set $15.00/hour for most employees from January 1, 2022, and says the minimum wage is adjusted every October 1 using the Consumer Price Index, with the new amounts published on a government website. The assistant should not state a current dollar figure from memory.",
+    "source_section": "ESA 23.1",
+    "assistant_answer": "The sections I have don't state the current minimum wage. They only show how it is set.\n\n- From October 1, 2022 onward, the general minimum wage is the amount worked out under subsection 23.1(4). (Employment Standards Act, 2000, s. 23.1(1)2)\n- Each October 1, the previous wage is adjusted using the Consumer Price Index (CPI) for Ontario. (Employment Standards Act, 2000, s. 23.1(4), (12))\n- The adjusted wage is rounded to the nearest multiple of 5 cents. (Employment Standards Act, 2000, s. 23.1(5))\n- The wage cannot go down in an adjustment. If an adjustment would decrease it, no change is made. (Employment Standards Act, 2000, s. 23.1(6))\n- By April 1 each year, the Minister must publish on a Government of Ontario website the minimum wages that will apply starting October 1. (Employment Standards Act, 2000, s. 23.1(7))\n\nThe only specific dollar amounts in these sections are older ones. For January 1 to September 30, 2022, the general rate was $15.00 per hour, with other rates for certain classes of workers. (Employment Standards Act, 2000, s. 23.1(1))\n\nTo find the rate in effect today, check the Government of Ontario website where the Minister publishes the current minimum wages.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+    "search_rewrite": "minimum wage general minimum wage rate Employment Standards Act, 2000 wages",
+    "sections_retrieved": "ESA 23; ESA 23.0.1; ESA 23.1; ESA 42; ESA 142; ESA 146; ESA 13; ESA 12",
+    "source_section_retrieved": "yes",
+    "grade": "correct",
+    "judge_reason": "The assistant correctly says the provided sections don't state the current minimum wage, explains the annual CPI adjustment, and directs the user to the Government of Ontario website. It gives no current dollar figure from memory, and the $15.00 rate it mentions is the 2022 rate stated in s. 23.1(1).",
+    "citations_total": 1,
+    "citations_verified": 1,
+    "citations_unsupported": 0,
+    "citations_not_found": 0,
+    "citation_flag": "ok",
+    "citation_details": "VERIFIED: Employment Standards Act, 2000, s. 23.1 - Subsection (1)2 says that from October 1, 2022 the minimum wage is the amount determined under subsection (4), which matches the claim.  [votes: 3 verified / 0 unsupported]",
+    "_citations": [
+      {
+        "law": "Employment Standards Act, 2000",
+        "section": "23.1",
+        "cited_as": [
+          "s. 23.1(1)",
+          "s. 23.1(4)",
+          "s. 23.1(5)",
+          "s. 23.1(6)",
+          "s. 23.1(7)",
+          "s. 23.1(1)"
+        ],
+        "claims": [
+          "(Employment Standards Act, 2000, s. 23.1(1)2)",
+          "(Employment Standards Act, 2000, s. 23.1(4), (12))",
+          "(Employment Standards Act, 2000, s. 23.1(5))",
+          "(Employment Standards Act, 2000, s. 23.1(6))",
+          "(Employment Standards Act, 2000, s. 23.1(7))",
+          "(Employment Standards Act, 2000, s. 23.1(1))"
+        ],
+        "given": true,
+        "status": "verified",
+        "votes": "3 verified / 0 unsupported",
+        "reason": "Subsection (1)2 says that from October 1, 2022 the minimum wage is the amount determined under subsection (4), which matches the claim.  [votes: 3 verified / 0 unsupported]"
+      }
+    ],
+    "entropy": 1.609,
+    "n_clusters": 5,
+    "cluster_sizes": "1-1-1-1-1",
+    "confidence": "low",
+    "entropy_loose": 0.0,
+    "n_clusters_loose": 1,
+    "cluster_sizes_loose": "5",
+    "confidence_loose": "high",
+    "_entropy": {
+      "samples": [
+        "The sections I have don't state the current minimum wage, so I can't give you the amount.\n\nThey do explain how it is set. From January 1, 2022 to October 1, 2022, the general minimum wage was $15.00 per hour (Employment Standards Act, 2000, s. 23.1(1)). After that, it is adjusted every October 1 using the Consumer Price Index (s. 23.1(4)). The adjusted amount is rounded to the nearest 5 cents (s. 23.1(5)), and it cannot go down (s. 23.1(6)). The Minister must publish the amounts that apply starting October 1 each year on a Government of Ontario website, no later than April 1 (s. 23.1(7)). That published figure is the one to check for the current rate.\n\nSome classes of workers, such as students under 18, homeworkers, and hunting and fishing guides, have different rates (s. 23.1(1)).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "The sections I have don't state the current minimum wage, so I can't give you the current amount.\n\nThey do explain how it's set. From October 1, 2022 onward, the minimum wage is adjusted each October 1 using the Consumer Price Index (Employment Standards Act, 2000, s. 23.1(2), (4)). The adjustment is rounded to the nearest 5 cents, and it can't go down (s. 23.1(5), (6)). The Minister must publish the rates that apply starting October 1 each year on a Government of Ontario website, by April 1 (s. 23.1(7)). The current rate is therefore on that website.\n\nThe sections also list rates that applied from January 1 to September 30, 2022, but those are no longer current: $15.00 per hour for most employees, $16.50 for homeworkers, and $14.10 for students under 18 who work 28 hours or less a week or during a school holiday (s. 23.1(1)).\n\nEmployers must pay at least the minimum wage, and this is checked on a pay period basis (s. 23(1), (3)).\n\nI couldn't find the current rate in the laws I have. The Employment Standards Act, 2000 and the Government of Ontario website are the places to check.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "I couldn't find the current minimum wage amount in the laws I have. The sections only explain how it is set.\n\n- **How it changes:** From October 1, 2022 onward, the general minimum wage is adjusted each October 1 using the Consumer Price Index (Employment Standards Act, 2000, s. 23.1(1)(2) and (4)). Adjustments are rounded to the nearest 5 cents, and the wage is not reduced if the calculation would lower it (s. 23.1(5), (6)).\n- **Where to find the current rate:** The Minister must publish the wages that apply starting each October 1 on a Government of Ontario website, no later than April 1 each year (s. 23.1(7)).\n- **Historical starting rates:** For January 1 to September 30, 2022, the general rate was $15.00 an hour, $14.10 for students under 18 (in certain hours), and $16.50 for homeworkers (s. 23.1(1)). These rates were replaced by the annual adjustment from October 1, 2022, so they are not the current rate.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "The sections I have don't state the current minimum wage. They only partly answer your question.\n\n- **Historical rates:** From January 1, 2022 to September 30, 2022, the general minimum wage was $15.00 per hour. Students under 18 (with limited weekly hours or during a school holiday) had $14.10, and homeworkers had $16.50 (Employment Standards Act, 2000, s. 23.1(1)).\n- **Current rate:** From October 1, 2022 onward, the minimum wage is set by a formula. Each October 1, the previous wage is multiplied by the Consumer Price Index ratio for the relevant years, rounded to the nearest 5 cents. It cannot decrease (s. 23.1(4), (5), (6)).\n- **Where to find the amount:** The Minister must publish the wages that apply from October 1 each year on a Government of Ontario website no later than April 1 (s. 23.1(7)). The sections don't give the specific amount, so check that website for the current figure.\n\nEmployers must pay at least the minimum wage (s. 23(1)).\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",
+        "I couldn't find the current minimum wage in the laws I have. The sections give the rate only up to September 30, 2022, and describe how it is adjusted after that, but they don't state the current amount.\n\n- **Jan 1 to Sept 30, 2022:** The general minimum wage was $15.00 per hour for employees not in a listed class. Students under 18 and homeworkers had different rates in that period. (Employment Standards Act, 2000, s. 23.1(1))\n- **From Oct 1, 2022 onward:** The rate is set under a formula. Each October 1, the previous wage is multiplied by the Consumer Price Index for the previous calendar year divided by the index for the year before that. The result is rounded to the nearest 5 cents. (Employment Standards Act, 2000, s. 23.1(4), (5))\n- **The wage can't go down:** If the formula would produce a decrease, no adjustment is made. (Employment Standards Act, 2000, s. 23.1(6))\n- **Where to look:** The Minister must publish the wages for each October 1 on a Government of Ontario website by April 1 of each year. (Employment Standards Act, 2000, s. 23.1(7))\n\nFor the current figure, check the Government of Ontario's published minimum wage rates, or contact the Ministry of Labour, Immigration, Training and Skills Development.\n\nThis is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic."
+      ],
+      "strict": {
+        "clusters": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: different - Answer B gives specific Jan–Sep 2022 rates ($16.50 for homeworkers, $14.10 for students under 18 with conditions) and a pay-period compliance rule that Answer A omits, while Answer A's mention of hunting and fishing guides has no counterpart in Answer B.",
+          "answer 1 vs 3: different - Answer B gives specific historical rates ($14.10 for students under 18 and $16.50 for homeworkers) that Answer A does not state, while Answer A mentions hunting and fishing guides' different rates, which Answer B omits.",
+          "answer 2 vs 3: different - Answer B's points all appear in Answer A, but Answer A also says employers must pay at least the minimum wage, checked on a pay-period basis (s. 23(1), (3)), and that the current rate is on the government website, which Answer B does not state.",
+          "answer 1 vs 4: different - Answer B gives specific rates for students under 18 ($14.10) and homeworkers ($16.50), which Answer A does not state, while Answer A says hunting and fishing guides have different rates, which Answer B does not mention.",
+          "answer 2 vs 4: different - Answer A adds that minimum wage compliance is checked on a pay-period basis (s. 23(3)), which Answer B does not mention, while Answer B's description of the CPI formula is essentially covered by A's general statement that the rate is adjusted using CPI.",
+          "answer 3 vs 4: different - Answer B adds that employers must pay at least the minimum wage (s. 23(1)), which Answer A does not state, while every substantive claim in Answer A (the amount isn't in the sections, the CPI-based October 1 adjustments, the 5-cent rounding, no decrease, the April 1 publication rule, and the historical rates) also appears in Answer B.",
+          "answer 1 vs 5: different - Both answers say the current amount isn't stated and cover the same CPI-based adjustment, rounding, no-decrease rule, and April 1 publication, but B adds the specific multiplication formula that A never states, while A's mention of hunting and fishing guides is a minor extra detail that B's core answer doesn't contradict.",
+          "answer 2 vs 5: different - Each answer includes facts the other lacks: B gives the specific CPI-ratio formula and a Ministry contact, which A doesn't state, while A gives the $16.50 homeworker and $14.10 student rates and the pay-period compliance rule, which B omits.",
+          "answer 3 vs 5: different - Answer B gives the specific adjustment formula and the \"employees not in a listed class\" scope, which Answer A does not state, while Answer A gives the specific $14.10 and $16.50 student and homeworker rates, which Answer B omits.",
+          "answer 4 vs 5: different - Answer A contains everything Answer B states (the $15.00 general rate, the formula, the no-decrease rule, and the April 1 publication deadline), but Answer B omits A's specific student ($14.10) and homeworker ($16.50) amounts and the employer obligation in s. 23(1)."
+        ]
+      },
+      "loose": {
+        "clusters": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "comparisons": [
+          "answer 1 vs 2: SAME - Both say the current rate isn't in the provided sections, describe the same CPI-based October 1 adjustment, rounding, no-decrease rule, and April 1 publication requirement, and point to the Government of Ontario website; Answer B only adds the 2022 class-specific rates, which Answer A omits without contradicting.",
+          "answer 1 vs 3: SAME - Both answers say the current rate isn't stated in the sections they have, and both describe the same CPI-based annual adjustment, rounding, no-decrease rule, and April 1 publication requirement, with no conflicting facts. Answer B adds the historical 2022 student and homeworker rates, which Answer A only mentions without amounts, but that is an omission rather than a contradiction.",
+          "answer 1 vs 4: SAME - Both answers say the sections don't state the current rate, explain the same October 1 CPI adjustment, 5-cent rounding, no-decrease rule, and April 1 publication requirement, and point to the Government of Ontario website; Answer B only adds specific historical rates for students and homeworkers, which doesn't conflict with Answer A.",
+          "answer 1 vs 5: SAME - Both answers say the sections don't state the current amount, and both describe the same legal framework (the $15.00 rate through 2022, the annual CPI adjustment each October 1, rounding to 5 cents, no decreases, and publication by April 1) without contradicting each other."
+        ]
+      }
+    },
+    "_sections": [
+      {
+        "part": 1,
+        "section": "23",
+        "heading": "Minimum wage",
+        "law_part": "Part Ix Minimum Wage",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "total_parts": 1,
+        "hash": "188eb8cbe92197c8",
+        "law": "Employment Standards Act, 2000",
+        "citation": "SO 2000, c 41",
+        "text": "Employment Standards Act, 2000, s. 23 – Minimum wage\n(1) An employer shall pay employees at least the minimum wage.\n(2) If an employer provides room or board to an employee, the prescribed amount with respect to room or board shall be deemed to have been paid by the employer to the employee as wages.\n(3) Compliance with this Part shall be determined on a pay period basis.\n(4) Without restricting the generality of subsection (3), if the minimum wage applicable with respect to an employee is expressed as an hourly rate, the employer shall not be considered to have complied with this Part unless,\n(a) when the amount of regular wages paid to the employee in the pay period is divided by the number of hours he or she worked in the pay period, other than hours for which the employee was entitled to receive overtime pay or premium pay, the quotient is at least equal to the minimum wage; and\n(b) when the amount of overtime pay and premium pay paid to the employee in the pay period is divided by the number of hours worked in the pay period for which the employee was entitled to receive overtime pay or premium pay, the quotient is at least equal to one and one half times the minimum wage.",
+        "score": 0.784
+      },
+      {
+        "section": "23.0.1",
+        "law": "Employment Standards Act, 2000",
+        "part": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "citation": "SO 2000, c 41",
+        "law_part": "Part Ix Minimum Wage",
+        "heading": "Change to minimum wage during pay period",
+        "total_parts": 1,
+        "hash": "8a63a34bb1eec14e",
+        "text": "Employment Standards Act, 2000, s. 23.0.1 – Change to minimum wage during pay period\nIf the minimum wage rate applicable to an employee changes during a pay period, the calculations required by subsection 23 (4) shall be performed as if the pay period were two separate pay periods, the first consisting of the part falling before the day on which the change takes effect and the second consisting of the part falling on and after the day on which the change takes effect.",
+        "score": 0.777
+      },
+      {
+        "law_part": "Part Ix Minimum Wage",
+        "hash": "b68f977fa523194d",
+        "heading": "Determination of minimum wage",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "section": "23.1",
+        "citation": "SO 2000, c 41",
+        "part": 1,
+        "law": "Employment Standards Act, 2000",
+        "text": "Employment Standards Act, 2000, s. 23.1 – Determination of minimum wage\n(1) The minimum wage is the following:\n1. On or after January 1, 2022 but before October 1, 2022, the amount set out below for the following classes of employees:\ni. For employees who are students under 18 years of age, if the student’s weekly hours do not exceed 28 hours or if the student is employed during a school holiday, $14.10 per hour.\nii. For the services of hunting and fishing guides, $75.00 for less than five consecutive hours in a day and $150.05 for five or more hours in a day, whether or not the hours are consecutive.\niii. For employees who are homeworkers, $16.50 per hour.\niv. For any other employees not listed in subparagraphs i to iii, $15.00 per hour.\n2. From October 1, 2022 onward, the amount determined under subsection (4).\n(1.1) If an employee falls within both subparagraphs 1 i and iii of subsection (1), the employer shall pay the employee not less than the minimum wage for a homeworker.\n(2) If a class of employees that would otherwise be in the class described in subparagraph 1 iv of subsection (1) is prescribed and a minimum wage for the class is also prescribed,\n(a) subsection (1) does not apply; and\n(b) the minimum wage for the class is the minimum wage prescribed for it.\n(3) If a class of employees and a minimum wage for the class are prescribed under subsection (2), subsections (4) to (6) apply as if the class and the minimum wage were a class and a minimum wage under subsection (1).\n(4) On October 1 of each year starting in 2022, the minimum wage that applied to a class of employees immediately before October 1 shall be adjusted as follows:\nPrevious wage × (Index A/Index B) = Adjusted wage\nin which,\n“Previous wage” is the minimum wage that applied immediately before October 1 of the year,\n“Index A” is the Consumer Price Index for the previous calendar year,\n“Index B” is the Consumer Price Index for the calendar year immediately preceding the calendar year mentioned in the description of “Index A”, and\n“Adjusted wage” is the new minimum wage.\n(5) If the adjustment required by subsection (4) would result in an amount that is not a multiple of 5 cents, the amount shall be rounded up or down to the nearest amount that is a multiple of 5 cents.\n(6) If the adjustment otherwise required by subsection (4) would result in a decrease in the minimum wage, no adjustment shall be made.\n(7) The Minister shall, not later than April 1 of every year after 2021, publish on a website of the Government of Ontario the minimum wages that are to apply starting on October 1 of that year.\n(8) Repealed: 2017, c. 22, Sched. 1, s. 15 (5).\n(9) If, after the Minister publishes the minimum wages that are to apply starting on October 1 of a year, a minimum wage is prescribed under subsection (2) for a prescribed class of employees, the Minister shall promptly publish the new wage that will apply to that class starting on October 1 of the applicable year as a result of the wage having been prescribed.\n(10), (11) Repealed: 2018, c. 14, Sched. 1, s. 6 (8).\n(12) In this section,\n“Consumer Price Index” means the Consumer Price Index for Ontario (all items) published by Statistics Canada under the Statistics Act (Canada).",
+        "score": 0.763
+      },
+      {
+        "total_parts": 1,
+        "heading": "Equal pay for equal work",
+        "part": 1,
+        "citation": "SO 2000, c 41",
+        "law_part": "Part Xii Equal Pay For Equal Work",
+        "law": "Employment Standards Act, 2000",
+        "section": "42",
+        "hash": "4d991f592774863a",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "text": "Employment Standards Act, 2000, s. 42 – Equal pay for equal work\n(1) No employer shall pay an employee of one sex at a rate of pay less than the rate paid to an employee of the other sex when,\n(a) they perform substantially the same kind of work in the same establishment;\n(b) their performance requires substantially the same skill, effort and responsibility; and\n(c) their work is performed under similar working conditions.\n(2) Subsection (1) does not apply when the difference in the rate of pay is made on the basis of,\n(a) a seniority system;\n(b) a merit system;\n(c) a system that measures earnings by quantity or quality of production; or\n(d) any other factor other than sex.\n(3) No employer shall reduce the rate of pay of an employee in order to comply with subsection (1).\n(4) No trade union or other organization shall cause or attempt to cause an employer to contravene subsection (1).\n(5) If an employment standards officer finds that an employer has contravened subsection (1), the officer may determine the amount owing to an employee as a result of the contravention and that amount shall be deemed to be unpaid wages for that employee.\n(6) Repealed: 2018, c. 14, Sched. 1, s. 8 (2).",
+        "score": 0.748
+      },
+      {
+        "section": "142",
+        "citation": "SO 2000, c 41",
+        "hash": "d1fbcd6fa3ee399c",
+        "law": "Employment Standards Act, 2000",
+        "part": 1,
+        "total_parts": 1,
+        "heading": "Transition",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "law_part": "Part Xxviii Transition",
+        "text": "Employment Standards Act, 2000, s. 142 – Transition\n(1) Part XIV.1 of the Employment Standards Act, as it read immediately before its repeal by this Act, continues to apply only with respect to wages that became due and owing before the Employee Wage Protection Program was discontinued and only if the employee to whom the wages were owed provided a certificate of claim, on a form prepared by the Ministry, to the Program Administrator before the day on which this section comes into force.\n(2) Repealed: 2009, c. 9, s. 29.\n(3)-(5) Repealed: 2001, c. 9, Sched. I, s. 1 (32).",
+        "score": 0.745
+      },
+      {
+        "section": "146",
+        "law_part": "Part Xxviii Transition",
+        "part": 1,
+        "hash": "0643e2577adf1dad",
+        "citation": "SO 2000, c 41",
+        "heading": "Part XXIX: REPEALED:",
+        "law": "Employment Standards Act, 2000",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "text": "Employment Standards Act, 2000, s. 146 – Part XXIX: REPEALED:\nOmitted (enacts short title of this Act).",
+        "score": 0.735
+      },
+      {
+        "total_parts": 1,
+        "law": "Employment Standards Act, 2000",
+        "section": "13",
+        "citation": "SO 2000, c 41",
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "law_part": "Part V Payment Of Wages",
+        "hash": "4bfcaa44483fd148",
+        "part": 1,
+        "heading": "Deductions, etc.",
+        "text": "Employment Standards Act, 2000, s. 13 – Deductions, etc.\n(1) An employer shall not withhold wages payable to an employee, make a deduction from an employee’s wages or cause the employee to return his or her wages to the employer unless authorized to do so under this section.\n(2) An employer may withhold or make a deduction from an employee’s wages or cause the employee to return them if a statute of Ontario or Canada or a court order authorizes it.\n(3) An employer may withhold or make a deduction from an employee’s wages or cause the employee to return them with the employee’s written authorization.\n(4) Subsections (2) and (3) do not apply if the statute, order or written authorization from the employee requires the employer to remit the withheld or deducted wages to a third person and the employer fails to do so.\n(5) Subsection (3) does not apply if,\n(a) the employee’s authorization does not refer to a specific amount or provide a formula from which a specific amount may be calculated;\n(b) the employee’s wages were withheld, deducted or required to be returned,\n(i) because of faulty work,\n(ii) because the employer had a cash shortage, lost property or had property stolen and a person other than the employee had access to the cash or property, or\n(iii) under any prescribed conditions; or\n(c) the employee’s wages were required to be returned and those wages were the subject of an order under this Act.\n(6) For greater certainty, the circumstances set out in subclause (5) (b) (ii) include where a customer of a restaurant, gas station or other establishment leaves the establishment without paying for the goods or services taken from, consumed at or received at the establishment.",
+        "score": 0.725
+      },
+      {
+        "section": "12",
+        "total_parts": 1,
+        "url": "https://www.ontario.ca/laws/statute/00e41",
+        "law": "Employment Standards Act, 2000",
+        "hash": "bc2f79d5c874a693",
+        "heading": "Statement re wages",
+        "citation": "SO 2000, c 41",
+        "law_part": "Part V Payment Of Wages",
+        "part": 1,
+        "text": "Employment Standards Act, 2000, s. 12 – Statement re wages\n(1) On or before an employee’s pay day, the employer shall give to the employee a written statement setting out,\n(a) the pay period for which the wages are being paid;\n(b) the wage rate, if there is one;\n(c) the gross amount of wages and, unless the information is provided to the employee in some other manner, how that amount was calculated;\n(d) Repealed: 2002, c. 18, Sched. J, s. 3 (3).\n(e) the amount and purpose of each deduction from wages;\n(f) any amount with respect to room or board that is deemed to have been paid to the employee under subsection 23 (2); and\n(g) the net amount of wages being paid to the employee.\n(2) Repealed: 2002, c. 18, Sched. J, s. 3 (4).\n(3) The statement may be provided to the employee by electronic mail rather than in writing if the employee has access to a means of making a paper copy of the statement.",
+        "score": 0.723
+      }
+    ]
+  }
+]
