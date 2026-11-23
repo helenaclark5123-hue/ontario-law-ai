@@ -93,7 +93,7 @@ collected, _ = law_dates()
 # ---- Header -----------------------------------------------------------------
 title, action = st.columns([4, 1.3], vertical_alignment="bottom")
 with title:
-    st.markdown('<div class="eyebrow">Ontario Law Assistant</div>', unsafe_allow_html=True)
+    st.markdown('<div class="eyebrow">The Bridge</div>', unsafe_allow_html=True)
     st.markdown('<h2 class="section-title">How can I help?</h2>', unsafe_allow_html=True)
     chips = "".join(f'<span class="chip">{group}</span>' for group in GROUPS)
     st.markdown(f'<div class="chips">{chips}<span class="chip">Law text from {collected}</span></div>',

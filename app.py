@@ -1,4 +1,4 @@
-"""The Ontario Law Assistant website: a home page, the chat assistant, and a
+"""The Bridge website: a home page, the chat assistant, and a
 "How it works" page, with navigation along the top.
 
     .venv/bin/streamlit run app.py
@@ -13,7 +13,7 @@ import streamlit as st
 from search import build, get_collection
 from ui import apply_style
 
-st.set_page_config(page_title="Ontario Law Assistant", page_icon="⚖️", layout="wide")
+st.set_page_config(page_title="The Bridge: know your rights in Ontario", page_icon="⚖️", layout="wide")
 
 
 def load_api_key():

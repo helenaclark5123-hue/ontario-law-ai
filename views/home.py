@@ -13,12 +13,13 @@ st.markdown(
     f"""
     <div class="hero">
       <div class="flag-line"><img src="{STATIC}/flag-canada.png" alt="Flag of Canada">
-        <span>Ontario Law Assistant</span></div>
-      <h1>Know your rights in Ontario, straight from the law.</h1>
-      <p class="lead">Describe your problem in your own words: your landlord or condo, your job, a purchase or a debt,
+        <span>The Bridge</span></div>
+      <h1>You deserve justice. We help you get there.</h1>
+      <p class="lead"><b>Know your rights in Ontario. In plain language, from the real law.</b><br>
+      Describe your problem in your own words: your landlord or condo, your job, a purchase or a debt,
       your family, driving, discrimination, benefits, and more.
-      The assistant finds the Ontario laws that apply and explains them in plain English,
-      citing the exact section for every point.</p>
+      The Bridge finds the Ontario laws that apply and explains them clearly,
+      citing the exact section for every point, so you can show up ready.</p>
     </div>
     """,
     unsafe_allow_html=True,
