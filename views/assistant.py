@@ -1,6 +1,9 @@
 """The chat assistant: people describe their situation and get cited answers."""
 
 import html
+import json
+from datetime import datetime
+from pathlib import Path
 
 import anthropic
 import streamlit as st
@@ -78,6 +81,40 @@ def reply_to(message):
     return {"role": "assistant", "content": error, "sections": retrieve([message]), "error": True}
 
 
+FLAGS_FILE = Path(__file__).parent.parent / "logs" / "flags.jsonl"
+
+
+def save_flag(question, message, comment):
+    """Add one flagged answer to logs/flags.jsonl (one JSON record per line)."""
+    FLAGS_FILE.parent.mkdir(exist_ok=True)
+    record = {
+        "time": datetime.now().isoformat(timespec="seconds"),
+        "question": question,
+        "searched": message.get("searched", ""),
+        "answer": message["content"],
+        "sections": [f"{s['law']}, s. {s['section']}" for s in message["sections"]],
+        "comment": comment.strip(),
+    }
+    with FLAGS_FILE.open("a") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def flag_button(i, question, message):
+    """A small "Flag this answer" pop-up under each reply."""
+    flagged = st.session_state.setdefault("flagged", set())
+    if i in flagged:
+        st.caption("Thanks, this answer was flagged for review.")
+        return
+    with st.popover("Flag this answer", icon=":material/flag:"):
+        st.caption("Think this answer is wrong or unclear? Flag it so it can be checked against the law.")
+        with st.form(f"flag-{i}", border=False):
+            comment = st.text_area("What looks wrong? (optional)", key=f"flag-comment-{i}")
+            if st.form_submit_button("Send flag", type="primary"):
+                save_flag(question, message, comment)
+                flagged.add(i)
+                st.rerun()
+
+
 def suggest(text):
     st.session_state["pending"] = text
 
@@ -119,7 +156,7 @@ if not messages and "pending" not in st.session_state:
                 text, key=f"suggest-{i}", on_click=suggest, args=(text,), use_container_width=True,
             )
 
-for message in messages:
+for i, message in enumerate(messages):
     with st.chat_message(message["role"], avatar=":material/gavel:" if message["role"] == "assistant" else ":material/person:"):
         if message.get("searched"):
             st.markdown(f'<div class="searched">Searched the laws for: {html.escape(message["searched"])}</div>',
@@ -132,6 +169,8 @@ for message in messages:
             st.markdown('<span class="user-msg"></span>', unsafe_allow_html=True)  # tints the bubble
         if message["role"] == "assistant":
             show_laws(message, lookup)
+            if not message.get("error"):
+                flag_button(i, messages[i - 1]["content"] if i else "", message)
 
 typed = st.chat_input("Describe your situation or ask a question...")
 new = typed or st.session_state.pop("pending", None)

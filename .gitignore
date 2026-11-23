@@ -17,3 +17,6 @@ backups/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Flagged answers can contain what people typed; keep them off GitHub
+logs/flags.jsonl
