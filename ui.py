@@ -168,6 +168,111 @@ LAWS = {
             "Can I have cannabis in my car?",
         ],
     },
+    'Education Act': {
+        "topic": 'School',
+        "photo": f"{STATIC}/school.jpg",
+        "about": "Suspensions and expulsions, attending school, special education, and parents' rights.",
+        "examples": [
+            'My son got suspended. Can we appeal?',
+            'Until what age do kids have to go to school in Ontario?',
+        ],
+    },
+    'Health Care Consent Act, 1996': {
+        "topic": 'Consent to treatment',
+        "photo": f"{STATIC}/consent.jpg",
+        "about": "Agreeing to or refusing treatment, capacity, and who decides for someone who can't.",
+        "examples": [
+            'Can a doctor treat me without my consent?',
+            "Who makes medical decisions for my mom if she can't?",
+        ],
+    },
+    'Mental Health Act': {
+        "topic": 'Mental health',
+        "photo": f"{STATIC}/mental-health.jpg",
+        "about": "Psychiatric assessment, involuntary admission, and patients' rights to a hearing.",
+        "examples": [
+            'Can a hospital keep me against my will for mental health?',
+            'How long can someone be held for a psychiatric assessment?',
+        ],
+    },
+    'Personal Health Information Protection Act, 2004': {
+        "topic": 'Health records',
+        "photo": f"{STATIC}/health-records.jpg",
+        "about": 'Getting your medical records, correcting them, and who can see your health information.',
+        "examples": [
+            'How do I get a copy of my medical records?',
+            'Can my doctor share my health information without asking me?',
+        ],
+    },
+    'Provincial Offences Act': {
+        "topic": 'Tickets and fines',
+        "photo": f"{STATIC}/tickets.jpg",
+        "about": 'Fighting a ticket, deadlines to respond, trials, and paying fines.',
+        "examples": [
+            'I got a ticket. How do I fight it?',
+            "What happens if I don't pay a ticket?",
+        ],
+    },
+    'Courts of Justice Act': {
+        "topic": 'Small claims court',
+        "photo": f"{STATIC}/small-claims.jpg",
+        "about": 'The courts of Ontario, small claims court and its money limit, and interest on judgments.',
+        "examples": [
+            'How much can I sue for in small claims court?',
+            'Someone owes me $5,000. Which court do I go to?',
+        ],
+    },
+    "Dog Owners' Liability Act": {
+        "topic": 'Dog bites',
+        "photo": f"{STATIC}/dogs.jpg",
+        "about": 'Who is responsible when a dog bites or attacks, and court orders about dangerous dogs.',
+        "examples": [
+            "My neighbour's dog bit me. Is the owner responsible?",
+            'What can happen to a dog that attacks someone?',
+        ],
+    },
+    'Smoke-Free Ontario Act, 2017': {
+        "topic": 'Smoking and vaping',
+        "photo": f"{STATIC}/smoking.jpg",
+        "about": 'The age to buy tobacco and vapes, and where smoking and vaping are banned.',
+        "examples": [
+            'How old do you have to be to buy a vape in Ontario?',
+            'Can I smoke on a restaurant patio?',
+        ],
+    },
+    'Child, Youth and Family Services Act, 2017': {
+        "topic": 'Child protection',
+        "photo": f"{STATIC}/child-protection.jpg",
+        "about": "When children's aid can step in, a child's rights in care, and youth services.",
+        "examples": [
+            "When can children's aid take a child from their home?",
+            'Do I have to report it if I think a child is being abused?',
+        ],
+    },
+    'Fixing Long-Term Care Act, 2021': {
+        "topic": 'Long-term care',
+        "photo": f"{STATIC}/long-term-care.jpg",
+        "about": "Residents' rights in long-term care homes, care standards, and making complaints.",
+        "examples": [
+            'What rights does my grandmother have in a long-term care home?',
+            'How do I complain about care in a nursing home?',
+        ],
+    },
+}
+
+# Topic groups for the tabs on the Home and How it works pages.
+GROUPS = {
+    "Housing": ["Residential Tenancies Act, 2006", "Condominium Act, 1998", "Trespass to Property Act"],
+    "Work": ["Employment Standards Act, 2000", "Occupational Health and Safety Act", "Workplace Safety and Insurance Act, 1997"],
+    "Money": ["Consumer Protection Act, 2002", "Payday Loans Act, 2008", "Collection and Debt Settlement Services Act"],
+    "Family": ["Family Law Act", "Children's Law Reform Act", "Child, Youth and Family Services Act, 2017"],
+    "Health": ["Health Care Consent Act, 1996", "Mental Health Act", "Personal Health Information Protection Act, 2004",
+               "Fixing Long-Term Care Act, 2021"],
+    "Benefits": ["Ontario Works Act, 1997", "Ontario Disability Support Program Act, 1997"],
+    "Rights and school": ["Human Rights Code", "Education Act"],
+    "Driving and court": ["Highway Traffic Act", "Provincial Offences Act", "Courts of Justice Act"],
+    "Everyday rules": ["Liquor Licence and Control Act, 2019", "Cannabis Control Act, 2017", "Smoke-Free Ontario Act, 2017",
+                       "Dog Owners' Liability Act"],
 }
 
 STYLE = """

@@ -138,5 +138,75 @@
     "artist": "Ross Dunn",
     "license": "CC BY-SA 2.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "school.jpg": {
+    "title": "Boxwood PS School bus at front entrance.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Boxwood_PS_School_bus_at_front_entrance.jpg",
+    "artist": "ChinaFlag",
+    "license": "Public domain",
+    "license_url": null
+  },
+  "mental-health.jpg": {
+    "title": "CAMH Shaw entrance.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:CAMH_Shaw_entrance.JPG",
+    "artist": "Secondarywaltz",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "child-protection.jpg": {
+    "title": "Children playing Gaelic football Ajax Ontario.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Children_playing_Gaelic_football_Ajax_Ontario.jpg",
+    "artist": "Derrick Mealiffe",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "dogs.jpg": {
+    "title": "Dog at Cherry Beach.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dog_at_Cherry_Beach.jpg",
+    "artist": "angelune des lauriers",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "health-records.jpg": {
+    "title": "IMG Dokumentationsmappe.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:IMG_Dokumentationsmappe.jpg",
+    "artist": "BlankeVla",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "long-term-care.jpg": {
+    "title": "MonSheong.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:MonSheong.jpg",
+    "artist": "Raysonho",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "smoking.jpg": {
+    "title": "Vaping, Electronic Cigarette (25469446852).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Vaping,_Electronic_Cigarette_(25469446852).jpg",
+    "artist": "Lindsay Fox",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "small-claims.jpg": {
+    "title": "Toronto Courthouse, Toronto, Ontario, 2025-08-25 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Toronto_Courthouse,_Toronto,_Ontario,_2025-08-25_01.jpg",
+    "artist": "Chris Woodrich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "consent.jpg": {
+    "title": "Toronto Western Hospital from Dundas.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Toronto_Western_Hospital_from_Dundas.jpg",
+    "artist": "Nephron",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "tickets.jpg": {
+    "title": "Windsor Police Service patrol car, Windsor, Ontario, 2025-06-11 01.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Windsor_Police_Service_patrol_car,_Windsor,_Ontario,_2025-06-11_01.jpg",
+    "artist": "Chris Woodrich (Crisco 1492)",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
   }
 }

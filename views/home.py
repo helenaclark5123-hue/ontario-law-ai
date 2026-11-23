@@ -3,7 +3,7 @@
 import streamlit as st
 
 from get_laws import REGULATIONS
-from ui import LAWS, STATIC, number_word, footer, grid, law_dates, section_counts, start_chat
+from ui import GROUPS, LAWS, STATIC, number_word, footer, grid, law_dates, section_counts, start_chat
 
 collected, _ = law_dates()
 sections = sum(section_counts().values())
@@ -47,22 +47,24 @@ st.markdown(
 st.markdown('<div class="eyebrow">What it can help with</div>', unsafe_allow_html=True)
 st.markdown('<h2 class="section-title">Pick a topic, or just describe your situation</h2>', unsafe_allow_html=True)
 st.write("")
-for column, (law, info) in grid(LAWS.items()):
-    with column, st.container(border=True, key=f"card-{info['topic'].lower().replace(' ', '-')}"):
-        st.markdown(
-            f"""
-            <div class="card-photo" style="background-image:url('{info['photo']}')"></div>
-            <div class="card-body">
-              <div class="card-title">{info['topic']}</div>
-              <div class="card-law">{law}</div>
-              <div class="card-text">{info['about']}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-        for i, example in enumerate(info["examples"]):
-            if st.button(f"“{example}”  →", key=f"ex-{law}-{i}", type="tertiary"):
-                start_chat(example)
+for tab, names in zip(st.tabs(list(GROUPS)), GROUPS.values()):
+    with tab:
+        for column, (law, info) in grid((n, LAWS[n]) for n in names):
+            with column, st.container(border=True, key=f"card-{info['topic'].lower().replace(' ', '-')}"):
+                st.markdown(
+                    f"""
+                    <div class="card-photo" style="background-image:url('{info['photo']}')"></div>
+                    <div class="card-body">
+                      <div class="card-title">{info['topic']}</div>
+                      <div class="card-law">{law}</div>
+                      <div class="card-text">{info['about']}</div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+                for i, example in enumerate(info["examples"]):
+                    if st.button(f"“{example}”  →", key=f"ex-{law}-{i}", type="tertiary"):
+                        start_chat(example)
 
 # ---- How it works -----------------------------------------------------------
 st.write("")

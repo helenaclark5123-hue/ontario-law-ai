@@ -70,6 +70,16 @@ LAW_NAMES = {
     "LLCA": "Liquor Licence and Control Act, 2019",
     "CCA": "Cannabis Control Act, 2017",
     "REG74": "R.R.O. 1990, Reg. 74",
+    "EDA": "Education Act",
+    "HCCA": "Health Care Consent Act, 1996",
+    "MHA": "Mental Health Act",
+    "PHIPA": "Personal Health Information Protection Act, 2004",
+    "POA": "Provincial Offences Act",
+    "CJA": "Courts of Justice Act",
+    "DOLA": "Dog Owners' Liability Act",
+    "SFOA": "Smoke-Free Ontario Act, 2017",
+    "CYFSA": "Child, Youth and Family Services Act, 2017",
+    "FLTCA": "Fixing Long-Term Care Act, 2021",
 }
 SHORT_CODE = re.compile(r"\b(" + "|".join(LAW_NAMES) + r")\s*(?:s\.)?\s*(\d+(?:\.\d+)*)", re.I)
 GRADES = ("correct", "wrong", "made_up")

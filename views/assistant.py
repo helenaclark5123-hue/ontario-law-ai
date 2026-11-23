@@ -9,7 +9,7 @@ from answer import MissingKeyError
 from chat import chat_turn
 from citations import extract_citations
 from search import retrieve
-from ui import LAWS, current_lookup, footer, law_dates, safe
+from ui import GROUPS, LAWS, current_lookup, footer, law_dates, safe
 
 # A narrower column reads better for a conversation.
 st.markdown(
@@ -17,8 +17,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Topic names for the welcome message, e.g. "renting", "Ontario Works".
-TOPICS = [i["topic"] if i["topic"].startswith("Ontario") else i["topic"].lower() for i in LAWS.values()]
+# Topic groups for the welcome message, e.g. "housing", "work", "money".
+TOPICS = [group.lower() for group in GROUPS]
 
 SUGGESTIONS = [
     "My landlord is trying to kick me out",
@@ -95,7 +95,7 @@ title, action = st.columns([4, 1.3], vertical_alignment="bottom")
 with title:
     st.markdown('<div class="eyebrow">Ontario Law Assistant</div>', unsafe_allow_html=True)
     st.markdown('<h2 class="section-title">How can I help?</h2>', unsafe_allow_html=True)
-    chips = "".join(f'<span class="chip">{v["topic"]}</span>' for v in LAWS.values())
+    chips = "".join(f'<span class="chip">{group}</span>' for group in GROUPS)
     st.markdown(f'<div class="chips">{chips}<span class="chip">Law text from {collected}</span></div>',
                 unsafe_allow_html=True)
 with action:
@@ -110,7 +110,7 @@ if not messages and "pending" not in st.session_state:
             "Hi! Tell me what's going on in your own words, and I'll find the Ontario laws that "
             "apply and explain what they say, with the exact sections. I can help with "
             + ", ".join(f"**{topic}**" for topic in TOPICS[:-1])
-            + f" and **{TOPICS[-1]}**."
+            + f", and **{TOPICS[-1]}**."
         )
         st.caption("Or start with one of these:")
         left, right = st.columns(2)

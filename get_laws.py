@@ -38,6 +38,16 @@ LAWS = [
     "Trespass to Property Act",
     "Liquor Licence and Control Act, 2019",
     "Cannabis Control Act, 2017",
+    "Education Act",
+    "Health Care Consent Act, 1996",
+    "Mental Health Act",
+    "Personal Health Information Protection Act, 2004",
+    "Provincial Offences Act",
+    "Courts of Justice Act",
+    "Dog Owners' Liability Act",
+    "Smoke-Free Ontario Act, 2017",
+    "Child, Youth and Family Services Act, 2017",
+    "Fixing Long-Term Care Act, 2021",
 ]
 
 # Regulations made under those Acts that fill gaps the Acts leave (detailed
@@ -66,6 +76,10 @@ REGULATIONS = [
     {"citation": "RRO 1990, Reg 74", "title": "General", "parent": "Collection and Debt Settlement Services Act"},
     {"citation": "O Reg 48/01", "title": "General", "parent": "Condominium Act, 1998"},
     {"citation": "O Reg 745/21", "title": "General", "parent": "Liquor Licence and Control Act, 2019"},
+    {"citation": "O Reg 181/98", "title": "Identification and Placement of Exceptional Pupils", "parent": "Education Act"},
+    {"citation": "O Reg 472/07", "title": "Behaviour, Discipline and Safety of Pupils", "parent": "Education Act"},
+    {"citation": "O Reg 626/00", "title": "Small Claims Court Jurisdiction and Appeal Limit", "parent": "Courts of Justice Act"},
+    {"citation": "O Reg 268/18", "title": "General", "parent": "Smoke-Free Ontario Act, 2017"},
 ]
 
 

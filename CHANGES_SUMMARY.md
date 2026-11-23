@@ -334,3 +334,40 @@ Cost of the whole Iterate: about $1 in API credit.
   CPA s. 10(2), and the public-holiday headline overstated premium pay. Both
   passed in earlier runs, so they vary run to run. Nothing invented.
   (`results/eval_2026-11-23_152709_seventeen-laws`)
+
+## 10. Ten more laws: school, health, tickets and court, dogs and smoking (Nov 23)
+
+- Added **10 Acts and 4 regulations** (3,455 new chunks; database now 9,444),
+  for a total of **27 Acts and 22 regulations**:
+  - **School:** Education Act (498 sections) + O. Reg. 472/07 (suspension
+    and expulsion procedures) + O. Reg. 181/98 (special education).
+  - **Health:** Health Care Consent Act (consent, substitute decision-makers),
+    Mental Health Act (involuntary assessment and admission), Personal Health
+    Information Protection Act (getting your medical records).
+  - **Tickets and court:** Provincial Offences Act (fighting a ticket) and
+    Courts of Justice Act + O. Reg. 626/00 (the $50,000 small claims limit).
+  - **Dogs and smoking:** Dog Owners' Liability Act and Smoke-Free Ontario Act
+    + O. Reg. 268/18 (age 19 for tobacco and vapes, where it's banned).
+  - **Added as "something else":** Child, Youth and Family Services Act
+    (child protection, the duty to report abuse) and Fixing Long-Term Care
+    Act (residents' bill of rights).
+- **Website:** 27 topic cards were too many for one list, so the Home and How
+  it works pages now group them into **9 tabs** (Housing, Work, Money, Family,
+  Health, Benefits, Rights and school, Driving and court, Everyday rules). The
+  chat's welcome message and chips list the 9 groups. Ten new credited photos.
+- **Spot checks (one per new law): all 10 correct and cited**, e.g. 10 school
+  days to appeal a suspension (Education Act s. 309(3)); custodians must
+  answer a records request within 30 days (PHIPA s. 54(2)); everyone must
+  report suspected child abuse themselves, directly (CYFSA s. 125).
+- **Size note:** the database file is now 72 MB. GitHub refuses files over
+  100 MB, so a much larger set of laws would need a different way to ship the
+  database (e.g. Git LFS, or building it on the server).
+- **Evaluation with all 27 laws (37 questions): 34/37 (92%), 0 made up**, the
+  same as with 17 laws, so tripling the law collection hasn't hurt the
+  original topics. Misses: first-and-last-month's rent (said "can't" for a
+  last-month deposit) and public holiday pay (headline overstated premium
+  pay), both answering slips with the right section found, and the
+  debt-collector question, whose key section wasn't found this run. Re-checked
+  that search 3 more times and it was found 3/3, so it was a one-off.
+  Search itself is still instant (0.04 s) with 9,444 chunks.
+  (`results/eval_2026-11-23_162227_twentyseven-laws`)
