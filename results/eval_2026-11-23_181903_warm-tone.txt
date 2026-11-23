@@ -1,0 +1,49 @@
+Questions: 37
+Accuracy:           35/37 = 95%
+Hallucination rate: 1/37 = 3%  (graded made_up)
+Wrong (not made up): 1/37
+
+By type:
+  easy           12/12 correct, 0 made up
+  hard           11/12 correct, 0 made up
+  not_covered    5/5 correct, 0 made up
+  tricky         7/8 correct, 1 made up
+
+Per question:
+   1. [correct] search found source: yes      How much notice does my landlord need to give before raising my rent?
+   2. [correct] search found source: yes      How often can my landlord raise my rent?
+   3. [correct] search found source: yes      Can my landlord charge me a damage deposit?
+   4. [correct] search found source: yes      Can my landlord ask for first and last month's rent, and do I get interest on it?
+   5. [correct] search found source: yes      Can my landlord come into my apartment without telling me first?
+   6. [made_up] search found source: partial  My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?
+   7. [correct] search found source: yes      My lease says no pets. Can my landlord evict me for having a cat?
+   8. [correct] search found source: yes      Can my boss take money out of my pay because my cash register was short?
+   9. [correct] search found source: yes      Can my boss make me work a 13-hour shift?
+  10. [correct] search found source: yes      How long of a break do I get for lunch?
+  11. [correct] search found source: yes      When do I get paid overtime?
+  12. [correct] search found source: yes      How much vacation time do I get each year?
+  13. [correct] search found source: yes      I've worked at my job for three and a half years. How much notice do I get if I'm fired?
+  14. [correct] search found source: yes      Can I be fired for asking my boss about my rights under the Employment Standards Act?
+  15. [correct] search found source: yes      Someone sold me something at my door. How long do I have to cancel?
+  16. [correct] search found source: partial  I signed up for a gym membership yesterday. Can I cancel it?
+  17. [correct] search found source: yes      A mechanic gave me an estimate but charged a lot more. What can I do?
+  18. [correct] search found source: yes      A company sent me a product I never ordered and now wants me to pay. Do I have to?
+  19. [correct] search found source: yes      I bought something online but the site never showed me the full terms before I paid. Can I cancel?
+  20. [correct] search found source: n/a      Can I be sentenced to jail for shoplifting?
+  21. [correct] search found source: n/a      How do I get a divorce in Ontario?
+  22. [correct] search found source: yes      What is the speed limit on Ontario highways?
+  23. [correct] search found source: yes      My landlord is trying to evict me because I complained to the city about mould. Is that allowed?
+  24. [correct] search found source: yes      Can my landlord raise my rent by 10% this year?
+  25. [correct] search found source: yes      My landlord gave me 30 days' notice because his daughter is moving in. Do I have to be out in 30 days?
+  26. [correct] search found source: yes      I rent month to month and want to move out. How much notice do I have to give?
+  27. [correct] search found source: yes      Can my landlord change the locks while I'm still living there?
+  28. [correct] search found source: NO       Can my landlord turn off my heat because I'm late on rent?
+  29. [correct] search found source: yes      I worked somewhere for three years and got laid off. Do I get severance pay?
+  30. [correct] search found source: yes      How many paid sick days do I get?
+  31. [correct] search found source: yes      Do I get paid extra if I work on a public holiday?
+  32. [correct] search found source: yes      What is the minimum wage in Ontario right now?
+  33. [correct] search found source: yes      I took out a payday loan yesterday. Can I still cancel it?
+  34. [wrong  ] search found source: NO       Is a debt collector allowed to call me at work?
+  35. [correct] search found source: n/a      Do I have to pay income tax on my tips?
+  36. [correct] search found source: n/a      How do I sponsor my parents to immigrate to Canada?
+  37. [correct] search found source: n/a      Will I get fined for not shovelling the sidewalk in front of my house?

@@ -1,0 +1,500 @@
+question,type,correct_answer,source_section,assistant_answer,search_rewrite,sections_retrieved,source_section_retrieved,grade,judge_reason
+How much notice does my landlord need to give before raising my rent?,easy,"At least 90 days' written notice, in the form approved by the Landlord and Tenant Board. An increase without proper notice is void.",RTA 116,"The law says a landlord must give the tenant at least 90 days written notice of the intention to increase the rent (Residential Tenancies Act, 2006, s. 116(1)). The notice must be in a form approved by the Board and must state the intention to increase the rent and the amount of the new rent (Residential Tenancies Act, 2006, s. 116(3)).
+
+Some key points:
+
+- A landlord cannot increase rent except in accordance with this Part of the Act (Residential Tenancies Act, 2006, s. 110).
+- If the landlord did not give the required notice, the increase is void, and the landlord must give a new notice before taking the increase (Residential Tenancies Act, 2006, s. 116(4)).
+- The 90-day notice requirement applies even if the increase follows an order under section 126 (Residential Tenancies Act, 2006, s. 116(2)).
+- A landlord may only increase rent if at least 12 months have passed since the last increase for that tenant in that unit, or since the unit was first rented to that tenant if there has been no previous increase (Residential Tenancies Act, 2006, s. 119(1)).
+- If a tenant does not give notice of termination after receiving a notice of rent increase, the tenant is deemed to have accepted the increase allowed under the Act (Residential Tenancies Act, 2006, s. 118).
+
+The laws I have do not say how a tenant should respond to a notice, or what the guideline increase amount is for a given year, so I couldn't find that here.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Residential Tenancies Act, 2006: landlord's notice of rent increase, required notice period, lawful rent increase for a rental unit, guideline increase",RTA 116; RTA 110; RTA 118; RTA 120.1; RTA 119; RTA 121; RTA 136.1; RTA 140,yes,correct,"The assistant gives the core answer from the key: at least 90 days' written notice in a Board-approved form, and an increase without proper notice is void (s. 116(1), (3), (4)). The extra points (s. 110, 119, 118, 116(2)) are all supported by the provided texts and do not contradict the key."
+How often can my landlord raise my rent?,easy,"Only once every 12 months: at least 12 months must pass since the last increase, or since the tenant first moved in if there hasn't been one.",RTA 119,"A landlord can raise your rent only once every 12 months. The 12 months run from the day of your last rent increase, or from the day you first rented the unit if there has been no increase yet (Residential Tenancies Act, 2006, s. 119(1)).
+
+Other rules also apply:
+
+- **Notice:** The landlord must give you at least 90 days' written notice before the increase, in a form approved by the Board. The notice must say the new rent amount (Residential Tenancies Act, 2006, s. 116(1), (3)). An increase without proper notice is void, and the landlord must give a new notice before taking it (s. 116(4)).
+- **Amount:** Without a Board order or a special agreement, the increase cannot be more than the guideline. The Minister sets the guideline each year based on the Consumer Price Index, and it cannot be more than 2.5 per cent (Residential Tenancies Act, 2006, s. 120(1), (2)). I couldn't find the guideline for your specific year in the laws I have.
+- **Exceptions:** The guideline limit does not apply to increases allowed under section 126 or 127 or under an agreement under section 121 or 123 (Residential Tenancies Act, 2006, s. 120(1)). An increase under section 123 also does not count as an increase for the 12-month rule (s. 119(2)).
+- **Notice not objected to:** If a tenant does not give a notice of termination under section 47 after receiving a proper notice of increase, the tenant is deemed to have accepted the increase that the Act allows (Residential Tenancies Act, 2006, s. 118).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Residential Tenancies Act, 2006: rent increase for a rental unit, lawful rent increase, guideline, notice of rent increase, frequency of rent increases",RTA 120; RTA 119; RTA 116; RTA 110; RTA 118; O. Reg. 516/06 32; RTA 117; RTA 127,yes,correct,"The assistant gives the answer key's main point, that a landlord may raise rent only once every 12 months, counted from the last increase or the first rental date, and cites s. 119(1). Its extra points on notice, the guideline cap, exceptions and deemed acceptance are all supported by the provided sections."
+Can my landlord charge me a damage deposit?,tricky,No. The only security deposit a landlord may collect is a rent deposit (last month's rent) under s. 106. A damage deposit is a security deposit and isn't allowed.,RTA 105,"No. The law says a landlord can only collect one kind of deposit, a rent deposit. A damage deposit counts as a ""security deposit,"" and the only security deposit allowed is a rent deposit (Residential Tenancies Act, 2006, s. 105(1), (2)).
+
+Rules for a rent deposit:
+
+- **Timing:** The landlord may ask for it only on or before signing the tenancy agreement (s. 106(1)).
+- **Amount:** It cannot be more than the lesser of one rent period's rent or one month's rent (s. 106(2)).
+- **Rent increases:** If the lawful rent goes up, the landlord may ask for more to bring the deposit up to that limit (s. 106(3)).
+- **Interest:** The landlord must pay interest on the deposit every year (s. 106(6)). I couldn't find the interest rate in the laws I have.
+- **Last month:** The landlord must apply the deposit to the rent for the last rent period before the tenancy ends (s. 106(10)).
+- **Receipt:** The landlord must give you a receipt for it free of charge if you ask (s. 109(1)). A receipt must include the unit address, tenant names, amount and date, what the payment was for, the landlord's name, and the landlord's signature (O. Reg. 516/06, s. 9).
+
+A landlord may also require a guarantee for the rent (O. Reg. 290/98, s. 2(1)).
+
+If a landlord collected money in breach of these rules, a tenant, former tenant, or prospective tenant can apply to the Landlord and Tenant Board for an order that the money be paid back. The application must be filed within one year of the collection or retention of the money (Residential Tenancies Act, 2006, s. 135(1), (2), (4)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","security deposit collected by landlord from tenant under Residential Tenancies Act, 2006",RTA 105; RTA 106; RTA 107; RTA 109; O. Reg. 290/98 2; RTA 135; O. Reg. 516/06 9; RTA 115,yes,correct,"The assistant answers ""No"" and explains that s. 105(1) limits landlords to rent deposits under s. 106, which matches the answer key. Its supporting details (timing, amount cap, interest, receipts, guarantees, and the one-year limit) all come from the provided law texts."
+"Can my landlord ask for first and last month's rent, and do I get interest on it?",easy,"Yes, a landlord can require a rent deposit if asked for on or before entering the tenancy agreement, but it can't be more than one month's rent (or one rent period, if less). The landlord must pay the tenant interest on it every year, at the rent increase guideline rate.",RTA 106,"A landlord can ask for a **rent deposit**, but only up to one month's rent. The law does not allow any other kind of security deposit. The landlord may collect the rent deposit only on or before signing the tenancy agreement (Residential Tenancies Act, 2006, s. 105(1), s. 106(1), s. 106(2)). The rent deposit is applied to the rent for the last rent period before the tenancy ends (s. 106(10)). So a ""last month's rent"" payment is the rent deposit, and it cannot be more than one month's rent.
+
+The sections you gave do not say whether a landlord can also require first month's rent as a separate payment, so I couldn't find that in the laws I have.
+
+**Interest:** Yes. The landlord must pay you interest on the rent deposit once a year. The rate is the guideline set under s. 120 that is in effect when the payment is due (s. 106(6)). I couldn't find the actual rate in the sections I have. If the landlord doesn't pay the interest when it's due, you may deduct the missed amount from a later rent payment (s. 106(9)). A landlord who fails to pay the annual interest commits an offence (s. 234(e)).
+
+**Other points:**
+- If the rent goes up, the landlord may ask for more deposit, but only up to the one-month limit (s. 106(3)).
+- If you paid a deposit to a previous landlord, a new landlord cannot ask for another one (s. 106(4)).
+- If a landlord collects money that the law doesn't allow, the law allows a tenant or former tenant to apply to the Board for an order to repay it. The application must be filed within one year of when the money was collected or kept (Residential Tenancies Act, 2006, s. 135(1), s. 135(4)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","rent deposit prohibited under Residential Tenancies Act, 2006: collection of last month's rent deposit, interest on rent deposit or security deposit",RTA 105; RTA 106; RTA 107; RTA 135; RTA 134; RTA 234; RTA 243; RTA 244,yes,correct,"The assistant gets the key point right: a landlord may require a rent deposit only on or before entering the tenancy, capped at one month's rent, and must pay annual interest at the guideline rate. Its other points, including the offence and the one-year filing limit, are supported by the provided sections."
+Can my landlord come into my apartment without telling me first?,easy,"Generally no. For things like repairs or inspections, the landlord must give written notice at least 24 hours before entering, stating the reason, the day, and a time between 8 a.m. and 8 p.m. The landlord can enter without notice only in an emergency or if the tenant consents at the time.",RTA 27; RTA 26,"No, not in most cases. The law says a landlord may enter a rental unit only in the ways allowed by sections 26 or 27 (Residential Tenancies Act, 2006, s. 25).
+
+**Entry without notice is allowed only in these cases:**
+
+- **Emergency.** (Residential Tenancies Act, 2006, s. 26(1)(a))
+- **You agree at the time.** If you consent when the landlord is entering, no written notice is needed. (s. 26(1)(b))
+- **Cleaning.** The tenancy agreement requires the landlord to clean at regular intervals. The landlord must enter at the times in the agreement, or between 8 a.m. and 8 p.m. if none are set. (s. 26(2))
+- **Showing the unit to prospective tenants.** The tenancy has been agreed to end, or one side has given notice to end it. The landlord must enter between 8 a.m. and 8 p.m. and must inform you, or make a reasonable effort to inform you, before entering. (s. 26(3))
+
+**Entry with written notice:**
+
+For other reasons, such as repairs, inspections, viewings by a potential buyer or mortgage lender, or another reason written in the tenancy agreement, the landlord must give you written notice at least 24 hours before entering (Residential Tenancies Act, 2006, s. 27(1) and (2)). The notice must state the reason for entry, the day, and a time between 8 a.m. and 8 p.m. (s. 27(3)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Residential Tenancies Act, 2006: landlord's right of entry to rental unit, notice requirements, tenant's reasonable enjoyment, entry without written notice",RTA 244; RTA 25; RTA 27; RTA 26; RTA 142; RTA 23; RTA 22; RTA 235,yes,correct,"The assistant says entry without notice is generally not allowed, lists emergency and consent as exceptions, and explains the 24-hour written notice with reason, day, and 8 a.m. to 8 p.m. time requirements, all matching the answer key and the provided ss. 25–27. Its extra exceptions for cleaning and showing the unit to prospective tenants are accurately drawn from s. 26."
+"My landlord says their son is moving into my unit. Do I have to leave, and do I get anything?",tricky,"A landlord can end the tenancy if they in good faith need the unit for at least one year for themselves, their spouse, or a child or parent. The termination date must be at least 60 days after notice and at the end of a rental period or fixed term. The landlord must also pay the tenant one month's rent as compensation or offer another acceptable unit.",RTA 48; RTA 48.1,"That sounds unsettling. Here is what the law says.
+
+**Does the landlord have a right to end your tenancy?**
+Possibly. A landlord may end a tenancy by notice if they, in good faith, need the unit to live in for at least one year. This includes the landlord's child (Residential Tenancies Act, 2006, s. 48(1)(c)). The landlord must be an individual, and must own the unit in whole or in part (s. 48(5)).
+
+**Does a notice alone mean you must leave?**
+No. A tenancy can only be ended in the way the Act allows (s. 37(1)). If you leave by the date in a valid notice, the tenancy ends on that date (s. 37(2)). If you do not leave, the landlord may apply to the Board for an order ending the tenancy and evicting you (s. 43(2)(b)). The Board cannot make that order unless the landlord has filed an affidavit (a sworn written statement) from the person who needs the unit. The affidavit must certify that they in good faith need it for at least one year (s. 72(1)(a)).
+
+**What must the notice include?**
+- It must be in the form approved by the Board or the prescribed form (s. 43(1)).
+- It must identify the unit, state the termination date, and be signed by the landlord or their agent (s. 43(1)(a)-(c)).
+- It must set out the reasons and details, and tell you that you can dispute an application to the Board (s. 43(2)).
+- The termination date must be at least 60 days after the notice is given, and must fall at the end of a rental period or fixed term (s. 48(2)).
+
+**Can you end the tenancy sooner?**
+Yes. The law allows you to give the landlord a notice ending the tenancy on an earlier date you choose. That date must be at least 10 days after you give your notice (s. 48(3), (4)).
+
+**Do you get compensation?**
+I couldn't find a compensation requirement for this type of notice in the laws I have. The one-month compensation rule in s. 49.1 applies to notices given on behalf of a purchaser under s. 49, not to notices under s. 48. The sections I have do not say whether a landlord must pay you if they give a s. 48 notice.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Residential Tenancies Act, 2006: landlord's notice of termination of tenancy for own use or use by landlord's family member (child), compensation to tenant, notice to vacate, rights of tenant upon termination for landlord's own residential occupation",RTA 48; RTA 72; RTA 49; RTA 49.1; RTA 43; RTA 37; RTA 71; RTA 47,partial,made_up,"The answer key says the landlord must pay one month's rent or offer another unit under s. 48.1, but the assistant said that compensation rule does not apply to s. 48 notices. That contradicts the provided s. 48.1 text, which requires compensation for s. 48 notices subject to a 120-day exception."
+My lease says no pets. Can my landlord evict me for having a cat?,tricky,"A lease term banning animals in the residential complex is void, so the 'no pets' clause itself can't be enforced.",RTA 14,"That sounds stressful. Here is what the law says.
+
+**A ""no pets"" clause in your lease does not, on its own, let your landlord evict you.** Under the Residential Tenancies Act, 2006, a lease provision that bans animals in the residential complex is void (Residential Tenancies Act, 2006, s. 14).
+
+**An eviction based on an animal has to meet specific conditions.** If the landlord applies to the Board to evict you because of an animal, the Board cannot order eviction unless it is satisfied that you keep the animal and that one of these is true (Residential Tenancies Act, 2006, s. 76(1)):
+
+- **(a)** Past behaviour of animals of that species has substantially interfered with the reasonable enjoyment of the residential complex for the landlord or other tenants.
+- **(b)** The animal has caused the landlord or another tenant a serious allergic reaction.
+- **(c)** The species or breed is inherently dangerous to the safety of the landlord or other tenants.
+
+The Board also cannot evict you on ground (a) if it is satisfied that your animal did not cause or contribute to the interference. It also cannot evict you on ground (b) if it is satisfied your animal did not cause or contribute to the allergic reaction (Residential Tenancies Act, 2006, s. 76(2) and (3)).
+
+**Steps a landlord must follow.** For a cause-based eviction, a landlord may give a notice of termination if a tenant's conduct substantially interferes with others' reasonable enjoyment of the residential complex. The notice must give a termination date at least 20 days after it is given and require the tenant to stop the conduct within seven days. If the tenant stops within those seven days, the notice is void (Residential Tenancies Act, 2006, s. 64(1) to (3)). The landlord can then apply to the Board, generally within 30 days after the termination date in the notice (Residential Tenancies Act, 2006, s. 69(1), (2)).
+
+**The Board's discretion.** Even when a landlord applies, the Board can refuse the eviction if it is satisfied that refusing would be fair, based on all the circumstances (Residential Tenancies Act, 2006, s. 83(1)(a)).
+
+**What I couldn't find:** The laws I have don't say whether a cat, specifically, falls under ground (c). They also don't say how the Board would decide grounds (a) or (b) for your situation. Those depend on the facts of your case.
+
+People in this situation can get help from a tenant duty counsel or a community legal clinic. The law allows you to ask the Board to consider the circumstances before any eviction order is made (Residential Tenancies Act, 2006, s. 83(2)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","tenant's obligations under tenancy agreement prohibiting animals, eviction for breach of tenancy agreement, landlord application to terminate tenancy for tenant's conduct in Residential Tenancies Act, 2006",RTA 14; RTA 76; RTA 64; RTA 69; RTA 71; RTA 72; RTA 233; RTA 83,yes,correct,"The assistant states the key point that a ""no pets"" clause is void under s. 14 and so cannot by itself support eviction. Its added detail on s. 76, s. 64, s. 69 and s. 83 is all drawn from the provided texts and does not contradict the key."
+Can my boss take money out of my pay because my cash register was short?,tricky,"Generally no. An employer can only deduct from wages if a statute or court order allows it, or the employee gave written authorization (s. 13(1)-(3)). Written authorization does not count for a cash shortage if anyone other than the employee had access to the cash (s. 13(5)(b)(ii)).",ESA 13,"That sounds really stressful. The sections I have don't clearly allow a cash shortage deduction, and they set out limits.
+
+- The general rule is that an employer cannot withhold or deduct wages unless a law allows it. (Employment Standards Act, 2000, s. 13(1))
+- Two ways an employer can make a deduction are a law or court order (s. 13(2)) or the employee's written authorization (s. 13(3)).
+- A written authorization must refer to a specific amount or give a formula for calculating one. (s. 13(5)(a))
+- The written-authorization route does not apply when wages are deducted because of a cash shortage and a person other than the employee had access to the cash. (s. 13(5)(b)(ii))
+- I couldn't find a law or court order in these sections that allows a cash shortage deduction. The sections also don't say what happens if only you had access to the register.
+
+Other rules that may apply:
+
+- Your employer must give you a written pay statement on or before pay day. It must list the amount and purpose of each deduction. (Employment Standards Act, 2000, s. 12(1)(e))
+- Under the law, people in this situation can file a complaint with the Ministry. An officer can't issue an order for wages that became due more than two years before the complaint was filed. (Employment Standards Act, 2000, s. 111(1))
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","deductions from wages by employer for cash shortages or losses, Employment Standards Act, 2000",ESA 13; ESA 12; ESA 103; ESA 11; ESA 14.2; ESA 81; ESA 106; ESA 111,yes,correct,"The answer conveys the key point: an employer can't deduct wages without a statute, court order, or written authorization, and the written-authorization route doesn't cover a cash shortage where someone else had access to the cash. It is hedged (""don't clearly allow"") rather than a direct ""generally no,"" and it doesn't address the case where only the employee had access, but it invents no law."
+Can my boss make me work a 13-hour shift?,tricky,"Not without an agreement. The limit is 8 hours a day (or a longer regular work day the employer has set), unless the employee has agreed with the employer to work up to a specified number of extra hours. There are also exceptions for emergencies and exceptional circumstances.",ESA 17; ESA 19,"Generally, no. The law sets a limit of 8 hours in a day, unless your employer has set a regular workday longer than 8 hours for you (Employment Standards Act, 2000, s. 17(1)(a)). A 13-hour shift would only be allowed in these situations:
+
+- **A written agreement.** You can agree to work up to a set number of extra hours in a day. The agreement is not valid unless your employer gave you the Director's most recent document before you signed, and the agreement includes your acknowledgment that you received it (Employment Standards Act, 2000, s. 17(2), s. 17(5)).
+- **An emergency or unforeseen event.** An employer can require more hours only to deal with an emergency, to keep essential public services running, to keep continuous or seasonal operations from being interrupted, or to do urgent repairs. This is allowed only as far as necessary to avoid serious interference with the business (Employment Standards Act, 2000, s. 19).
+- **An older arrangement.** A narrow exception exists for certain arrangements made at or before hiring and before September 4, 2001, with an employer who held a permit. Under that exception, the employer cannot require more than 10 hours a day (O. Reg. 285/01, s. 32.1).
+
+Other rules may also apply to a long shift. An employee must get at least 11 consecutive hours free from work in each day, unless they are on call and called in during time they would not otherwise be expected to work (Employment Standards Act, 2000, s. 18(1), s. 18(2)). An employee must also get an eating period of at least 30 minutes so they do not work more than five consecutive hours without one (Employment Standards Act, 2000, s. 20(1)).
+
+If you signed an agreement to work longer hours, the law allows you to revoke it by giving your employer written notice, and the revocation takes effect two weeks after the notice (Employment Standards Act, 2000, s. 17(6)).
+
+I couldn't find in these sections whether a particular shift of yours falls under one of these exceptions. That depends on your specific agreement and your employer's workday setup.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","hours of work and eating periods, limits on daily hours of work, employer requirement to work more than the maximum daily hours, Employment Standards Act, 2000",ESA 17; ESA 19; ESA 18; ESA 20; ESA 22; O. Reg. 285/01 32.1; ESA 141; O. Reg. 285/01 1.1,yes,correct,"The answer matches the key: the 8-hour daily limit (or a longer set regular workday) applies, extra hours need a valid agreement, and s. 19 provides emergency and exceptional-circumstance exceptions. The extra points on the older arrangement, rest periods and revocation are all supported by the provided texts."
+How long of a break do I get for lunch?,easy,"At least a 30-minute eating period, so you never work more than five hours in a row without one. You and your employer can agree to split it into two breaks that add up to at least 30 minutes in each five-hour period.",ESA 20,"Under the Employment Standards Act, 2000, an employer must give an employee an eating period of at least 30 minutes. The employer must schedule it so the employee does not work more than five consecutive hours without an eating period (Employment Standards Act, 2000, s. 20(1)).
+
+There is one alternative. If the employer and employee agree, the employee can instead get two eating periods that together total at least 30 minutes in each consecutive five-hour period (Employment Standards Act, 2000, s. 20(2)).
+
+The law also says the employer does not have to pay for an eating period when no work is being done, unless the employment contract requires payment (Employment Standards Act, 2000, s. 21).
+
+I couldn't find in these sections whether a lunch break counts as a specific clock time, such as noon, or how long a break must be if an employee is only working a short shift.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","meal periods, length of meal period, employee entitled to an eating period, employer, hours of work, Employment Standards Act, 2000",ESA 20; ESA 21; ESA 21.2; ESA 17; ESA 1; O. Reg. 285/01 1.1; O. Reg. 288/01 8; O. Reg. 285/01 15,yes,correct,"The assistant gives the same core rule as the answer key: a 30-minute eating period, no more than five consecutive hours without one, and the option to split it into two periods totaling 30 minutes in each five-hour period. The extra points about unpaid eating periods under s. 21 are supported by the provided text."
+When do I get paid overtime?,easy,"For each hour worked over 44 hours in a work week, at least one and a half times the regular rate.",ESA 22,"The general rule is that you get overtime pay for hours over 44 in a work week. Your employer must pay at least one and one-half times your regular rate for each of those hours, unless a different threshold is prescribed (Employment Standards Act, 2000, s. 22(1)).
+
+Some other rules can change when overtime starts:
+
+- **Regular rate:** If you're paid by the hour, your regular rate is what you earn for an hour in your usual work week, not counting overtime hours. If you're not paid by the hour, it's your earnings in a week divided by the non-overtime hours you actually worked (Employment Standards Act, 2000, s. 1, ""regular rate"").
+- **Two or more regular rates:** If you have two or more regular rates with the same employer in a week, overtime starts once your total hours reach the threshold. Each overtime hour is paid at one and one-half times the rate for the work done in that hour (s. 22(1.1)).
+- **Hours averaged over weeks:** Hours can be averaged over two or more weeks, but only if you made an agreement with your employer to do so. The averaging period cannot exceed four weeks or the number of weeks in the agreement, whichever is shorter (s. 22(2)).
+- **Time off instead of pay:** Instead of overtime pay, you can get one and one-half hours of paid time off for each overtime hour, if you and your employer agree. The time off must be taken within three months of the work week, or within 12 months with your agreement (s. 22(7)).
+- **Public holidays:** Hours you work on a public holiday and receive premium pay for are not counted toward overtime (Employment Standards Act, 2000, s. 31).
+- **Hotels, restaurants and similar businesses:** For employees who work 24 weeks or less in a calendar year at these businesses and get room and board, overtime starts after 50 hours in a week (O. Reg. 285/01, s. 14).
+- **Highway transport:** Certain truck drivers get overtime after 60 hours in a week (O. Reg. 285/01, s. 18(1)–(2)).
+- **Waiting time:** Time you are required to stay at work while waiting or ready to be called to work, or during a rest break other than an eating period, can count as work (O. Reg. 285/01, s. 1.1(1)(b)). Certain breaks and time off are not counted (s. 1.1(2)).
+- **Better terms:** If your employment contract or another Act gives a better overtime benefit, that lower threshold applies to you (Employment Standards Act, 2000, s. 1, ""overtime hour"").
+
+I couldn't find information in these sections about which threshold applies to a specific job, so I can't tell you which of these rules fits your situation.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","overtime pay: hours of work in excess of eight hours in a day or forty-four hours in a week, wages for overtime hours, Employment Standards Act, 2000",ESA 22; ESA 1; ESA 17; ESA 31; O. Reg. 285/01 1.1; ESA 141; O. Reg. 285/01 14; O. Reg. 285/01 18,yes,correct,"The assistant states the main rule from the answer key: overtime is owed for hours over 44 in a work week, at one and one-half times the regular rate. Its extra points, such as the averaging, time-off, and sector-specific rules, all match the provided statutory and regulatory text."
+How much vacation time do I get each year?,easy,"At least two weeks after each completed vacation entitlement year if you've worked there less than five years, and at least three weeks if five years or more.",ESA 33,"The law gives you vacation time based on how long you have worked for your employer:
+
+- **Less than five years of employment:** your employer must give you at least two weeks of vacation after each vacation entitlement year you complete (Employment Standards Act, 2000, s. 33(1)(a)).
+- **Five years or more:** your employer must give you at least three weeks after each vacation entitlement year you complete (Employment Standards Act, 2000, s. 33(1)(b)).
+
+Both active and inactive employment count toward these periods (Employment Standards Act, 2000, s. 33(2)).
+
+If vacation isn't taken in full weeks, the number of days is based on your regular work week. If you don't have a regular work week, it's based on the average number of days you worked per week in the most recently completed vacation entitlement year (Employment Standards Act, 2000, s. 33(3)).
+
+Vacation pay is separate from vacation time. It must be at least 4% of your wages (excluding vacation pay) if you've worked less than five years, or at least 6% if you've worked five years or more (Employment Standards Act, 2000, s. 35.2).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Vacation time entitlement under the Employment Standards Act, 2000: vacation with pay, vacation time, vacation pay entitlement, length of vacation entitlement after each vacation entitlement year",ESA 33; ESA 35.2; ESA 35; ESA 35.1; ESA 34; ESA 1; O. Reg. 285/01 26; ESA 15.1,yes,correct,"The assistant accurately states the s. 33(1) rule: at least two weeks after each completed vacation entitlement year for employment under five years, and at least three weeks for five years or more, matching the answer key. The extra details on inactive employment, partial weeks, and vacation pay are all supported by the provided texts."
+I've worked at my job for three and a half years. How much notice do I get if I'm fired?,easy,"At least three weeks' notice, since the period of employment is three years or more and fewer than four years.",ESA 57,"That sounds really stressful. Under the law, if your employer fires you after three years or more of employment, they must give you at least three weeks' written notice before the termination takes effect (Employment Standards Act, 2000, s. 57(c)).
+
+Some conditions apply:
+
+- **Written notice is required.** Your employer must give you written notice, and the notice must have expired before the termination (Employment Standards Act, 2000, s. 54(a)).
+- **Your length of service counts from your most recent start date.** This is measured from the day you most recently started work to the day notice is given, or to the day of termination if no notice is given (O. Reg. 288/01, s. 8(1)). Two periods of employment that are not more than 13 weeks apart are added together (O. Reg. 288/01, s. 8(2)).
+- **Pay instead of notice is an option the law allows.** An employer may end your employment without notice, or with less notice, by paying termination pay in a lump sum equal to what you would have earned in the notice period. They must also keep making required benefit plan contributions for that period (Employment Standards Act, 2000, s. 61(1)).
+- **Vacation time doesn't count toward notice.** Unless you agree after receiving the notice, vacation time is not included in the notice period (O. Reg. 288/01, s. 7).
+
+I couldn't find in these sections whether any other rules, such as those for severance or for cases where the employer claims cause, would change this.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","termination of employment, notice of termination, employee with three years or more of service, length of notice required under Employment Standards Act, 2000",ESA 57; ESA 54; ESA 56; O. Reg. 288/01 8; ESA 61; O. Reg. 288/01 7; ESA 50.3; O. Reg. 288/01 3,yes,correct,"The assistant states the key point that three years or more and fewer than four years requires at least three weeks' written notice under s. 57(c), matching the answer key. The extra details (s. 54, O. Reg. 288/01 s. 8, s. 61 pay in lieu, s. 7 vacation) are all supported by the provided texts."
+Can I be fired for asking my boss about my rights under the Employment Standards Act?,easy,"No. An employer can't intimidate, dismiss or penalize an employee (or threaten to) because they asked about their rights under the Act or asked the employer to comply with it.",ESA 74,"That sounds like a worrying situation. Here is what the law says.
+
+No. The law says an employer cannot fire, intimidate, or otherwise penalize an employee, or threaten to, because the employee makes inquiries about their rights under the Act (Employment Standards Act, 2000, s. 74(1)(a)(ii)). The same protection covers an employee who asks the employer to follow the Act (s. 74(1)(a)(i)).
+
+Some related points:
+
+- **Threats count.** The protection also covers threatening to penalize you, not only actually doing it (s. 74(1)).
+- **The employer carries the burden of proof.** If a dispute goes to a proceeding under the Act, the employer must prove it did not break this rule. The law does not require you to prove it (s. 74(2)).
+- **Possible remedies.** If an employment standards officer finds this kind of contravention, the officer may order that you be compensated for your loss, reinstated, or both (s. 104(1), para. 4). Where compensation is ordered, the employer must also pay an administration amount equal to the greater of $100 and 10 per cent of the compensation (s. 104(3)).
+- **Filing a complaint is also protected.** Filing a complaint with the Ministry under the Act is one of the protected activities, so an employer cannot penalize you for doing so (s. 74(1)(a)(iii)).
+
+I couldn't find in these sections how long you have to act after a reprisal, or the exact steps for making a complaint. Those details would be in the Act's complaint provisions, which were not included here.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","reprisal against employee for asserting rights under Employment Standards Act, 2000, termination of employment, employer or supervisor",ESA 74; ESA 68; ESA 67.1; ESA 104; ESA 5; ESA 91; ESA 111; ESA 89,yes,correct,"The assistant answers ""No"" and correctly explains that s. 74(1)(a)(ii) and (i) prohibit firing, intimidating, or penalizing an employee (or threatening to) for asking about rights or asking the employer to comply with the Act, matching the answer key. The extra points (threats, burden of proof, remedies, complaint protection) are all supported by the provided sections."
+Someone sold me something at my door. How long do I have to cancel?,tricky,"Up to 10 days after receiving the written copy of the agreement (a 'direct agreement'), for any reason. If the copy didn't meet the legal requirements, up to one year.",CPA 43,"The law gives you a cooling-off period. You can cancel a direct agreement, meaning one made in person somewhere other than the seller's business or a market, auction, trade fair, or exhibition, for any reason, until 10 days after you receive a written copy of the agreement (Consumer Protection Act, 2002, s. 43(1); s. 20(1)). The cancellation notice in the regulation says the same thing (O. Reg. 17/05, s. 35(2)).
+
+A few things affect this:
+
+- **The agreement must be large enough.** These rules apply only if your total payment obligations, not counting the cost of borrowing, are above a prescribed amount (Consumer Protection Act, 2002, s. 41(1)). I couldn't find that amount in the laws I have.
+- **If you never got a proper written copy,** the law gives you one year from the date you entered the agreement to cancel (Consumer Protection Act, 2002, s. 43(2)). I couldn't find what a proper copy must contain, because the section that sets those requirements (s. 42) wasn't in the laws I have.
+- **If you asked the seller to come to your home and to start work or deliver within 10 days,** the seller can claim reasonable compensation for goods used up or services already received before you cancelled (O. Reg. 17/05, s. 83(1), (2)).
+- **If you cancel,** the seller has 15 days to refund your payments (O. Reg. 17/05, s. 35(2)).
+- **Certain products have their own rules.** The regulation lists items such as furnaces, air conditioners, water heaters, water filters and water softeners (O. Reg. 17/05, s. 35.1(1)). I couldn't find the rules that apply to those sales in the laws I have.
+
+To cancel, the agreement's cancellation notice says you must give notice to the supplier at the address in the agreement, by a method that lets you prove the date you sent it (O. Reg. 17/05, s. 35(2)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","direct agreement made at a consumer's home, right to cancel within the cooling-off period, Consumer Protection Act, 2002",CPA 43; O. Reg. 17/05 83; CPA 41; O. Reg. 17/05 35; O. Reg. 17/05 17; CPA 20; O. Reg. 17/05 35.2; O. Reg. 17/05 35.1,yes,correct,"The assistant gives the answer key's core rule: a 10-day cooling-off period running from receipt of the written copy, and one year if the copy didn't meet the requirements. Its extra points, such as the 15-day refund and the compensation rules, are supported by the provided regulation texts."
+I signed up for a gym membership yesterday. Can I cancel it?,tricky,"Yes, if it's covered: a gym membership is a personal development services agreement (the definition includes fitness services, s. 20), which can be cancelled for any reason within 10 days after the later of receiving the written copy and the day all services are available. This only applies if payment in advance is required and the total is over a prescribed amount.",CPA 35; CPA 29; CPA 20,"Possibly, but the laws I have don't say whether a gym membership counts.
+
+The law gives a cooling-off period for personal development services agreements. A consumer may cancel without giving any reason within 10 days after the later of receiving the written copy of the agreement and the day all the services are available (Consumer Protection Act, 2002, s. 35(1)). Since you signed yesterday, you would be inside that window if this rule applies.
+
+I couldn't find a definition of ""personal development services"" in the laws I have, so I can't confirm whether a gym membership is one. The rules also apply only if payment in advance is required and your total potential payment is more than a prescribed amount (s. 29(1)). The amount isn't in these sections. The exceptions in s. 29(2) don't list gyms, but that doesn't confirm that gyms are covered.
+
+If the rules do apply, the law says:
+- Cancellation takes effect when you give notice (s. 94(2)). The sections I have don't say how to give notice.
+- Cancelling cancels the agreement as if it never existed, along with related credit agreements and guarantees (s. 95).
+- If you did not receive a written copy of the agreement that meets the requirements in s. 30, the law allows you to cancel within one year of signing (s. 35(2)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Consumer agreement for health club services: cancellation by consumer, cooling-off period, Consumer Protection Act, 2002",CPA 35; CPA 29; CPA 94; O. Reg. 17/05 28; O. Reg. 17/05 16; CPA 95; CPA 51; CPA 43,partial,correct,"The assistant identifies the 10-day no-reason cooling-off right in s. 35(1) and correctly notes the user is within the window if the rule applies, along with the s. 29 conditions. It doesn't confirm that gyms are covered because the s. 20 definition wasn't in its materials, and it says so openly rather than inventing law."
+A mechanic gave me an estimate but charged a lot more. What can I do?,easy,"A supplier can't charge more than 10 per cent above the estimate. If they do, the consumer can require the goods or services at the estimated price.",CPA 10,"That sounds frustrating. Here is what the law says.
+
+**The 10% limit:** A repairer must not charge more than 10 per cent above a written estimate for the work (Consumer Protection Act, 2002, s. 58(2)). The general rule for suppliers is the same (Consumer Protection Act, 2002, s. 10(1)).
+
+**If the bill is over 10%:** If a supplier charges more than 10 per cent over the estimate, the consumer may require that the supplier provide the goods or services at the estimated price (Consumer Protection Act, 2002, s. 10(2)).
+
+**Work you did not authorize:** A repairer cannot charge for any work or repairs unless the consumer authorizes them (Consumer Protection Act, 2002, s. 58(1)). An estimate must be given before a repairer charges for work, unless the consumer declined an offered estimate and set a maximum amount they would pay (Consumer Protection Act, 2002, s. 56(1) and (2)).
+
+**What the estimate must include:** For vehicle repairs, a written estimate must list items such as the parts and their prices, the labour charges, the total amount to be billed, and a statement that the repairer will not charge more than 10 per cent over the estimated total (O. Reg. 17/05, s. 48, items 7–9, 12, 15).
+
+**Extra changes:** If you asked for additional or different work, the price can be changed by agreement (Consumer Protection Act, 2002, s. 10(3)).
+
+**The invoice:** On completion, the repairer must give you an invoice with the prescribed information (Consumer Protection Act, 2002, s. 62).
+
+I couldn't find in the laws I have what happens if a repairer refuses to lower the bill, what process applies to complaints, or any deadlines for acting. A consumer protection office or a legal clinic would be the place to ask about those.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","consumer agreement for repair services, estimate exceeded, unauthorized charges, supplier's obligations under the Consumer Protection Act, 2002",CPA 58; CPA 56; CPA 10; CPA 57; CPA 62; CPA 55; O. Reg. 17/05 48; O. Reg. 17/05 50,yes,correct,"The assistant states the key point: a supplier cannot charge more than 10 per cent above the estimate, and the consumer may require the service at the estimated price (s. 10(2)). Its other statements, including the repairer-specific rules in ss. 56 to 58 and O. Reg. 17/05, are supported by the provided texts."
+A company sent me a product I never ordered and now wants me to pay. Do I have to?,easy,"No. You have no legal obligation for unsolicited goods, and the supplier can't demand payment for them.",CPA 13,"That sounds stressful. Here is what the law says.
+
+In general, you don't have to pay. Under the Consumer Protection Act, 2002, a person who receives unsolicited goods ""has no legal obligation in respect of their use or disposal"" (Consumer Protection Act, 2002, s. 13(1)). A supplier also cannot demand payment for unsolicited goods, or suggest you must pay, even if you used, received, or kept them (s. 13(2)). A request for goods can't be assumed from your payment, your silence, or the passage of time (s. 13(3)).
+
+Some conditions apply:
+
+- **Personal use only.** The Act covers individuals acting for personal, family or household purposes. It does not cover people acting for business purposes (s. 1, ""consumer"").
+- **Exceptions.** The goods are not ""unsolicited"" if they were meant for another person and you knew or ought to have known that. They are also excluded if they come under a written future performance agreement that provides for ongoing supply without further requests (s. 13(9)(a)).
+- **Ongoing or periodic supply.** If you already receive goods on a regular basis, a change counts as unsolicited only if it is a ""material change."" The supplier must prove you agreed to a material change (s. 13(4), (5)).
+
+If you have already paid, the law says you may demand a refund within one year of paying (s. 13(6)). A supplier who gets a refund demand must refund within the prescribed period (s. 13(7)). If the supplier doesn't, you may start a court action to recover the payment (s. 13(8)). The Act also says nothing in it limits any right or remedy you have in law (s. 6).
+
+I couldn't find the details of the refund process or the court action in the sections I have. Those are set out in sections 92 and 100 of the Act, which aren't included here.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","unsolicited goods, no agreement, consumer not obligated to pay for goods not requested, Consumer Protection Act, 2002 unsolicited goods supplier right to demand payment",CPA 13; O. Reg. 17/05 82; CPA 6; CPA 96; CPA 1; CPA 93; CPA 7; CPA 24,yes,correct,"The assistant gives the key answer: no obligation to pay for unsolicited goods, and suppliers cannot demand payment, citing s. 13(1) and (2). The extra detail on exceptions, refunds, and the consumer-only limit is accurate to the provided text and does not contradict the answer key."
+I bought something online but the site never showed me the full terms before I paid. Can I cancel?,tricky,"Yes, if the seller didn't give the required disclosure or an express chance to accept, decline or correct errors before the agreement, you can cancel up to seven days after receiving a copy of the agreement.",CPA 40; CPA 38,"That sounds frustrating. Under the law, you may be able to cancel, but it depends on what the website did.
+
+**When you may be able to cancel**
+
+- **Missing required information.** Before you enter an internet agreement, the supplier must disclose prescribed information to you (Consumer Protection Act, 2002, s. 38(1)). That information includes the supplier's name and contact details, a description of the goods or services, an itemized list of prices including taxes and shipping, the total amount payable, the payment terms, delivery details, and any restrictions or conditions (O. Reg. 17/05, s. 32). If the supplier did not disclose it, you can cancel at any time from when you entered the agreement until seven days after you receive a copy of the agreement (Consumer Protection Act, 2002, s. 40(1)(a)).
+- **No chance to accept, decline, or correct errors.** The supplier must give you an express opportunity to accept or decline the agreement and to correct errors immediately before you enter it (s. 38(2)). If it did not, the same cancellation window applies (s. 40(1)(b)).
+- **No copy of the agreement.** The supplier must deliver a written copy of the agreement within the prescribed period after you enter it (s. 39(1)). The regulation sets that period at 15 days (O. Reg. 17/05, s. 33(1)). If the supplier does not comply with this requirement, you may cancel within 30 days after entering the agreement (s. 40(2)).
+
+**When cancellation may not apply**
+
+- Sections 38 to 40 apply only if your total potential payment obligation, excluding the cost of borrowing, is more than a prescribed amount (s. 37). I couldn't find that amount in the laws I have, so I can't tell you whether it applies to your purchase.
+- The sections I have don't define ""internet agreement,"" so I can't confirm that your purchase counts as one.
+
+**If you cancel**
+
+The law says a valid cancellation cancels the agreement as if it never existed. This includes related agreements, guarantees, security, and linked credit agreements or payment instruments (Consumer Protection Act, 2002, s. 95).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","internet agreement, disclosure of information before entering into the agreement, right to cancel consumer agreement, Consumer Protection Act, 2002",CPA 40; CPA 38; CPA 37; O. Reg. 17/05 33; O. Reg. 17/05 32; CPA 39; O. Reg. 17/05 18; CPA 95,yes,correct,"The assistant gives the answer key's main point: a consumer can cancel if the supplier failed to make the required disclosure or to give an express chance to accept, decline, or correct errors, within seven days after receiving a copy. Its extra points (the 30-day window for a missing copy, the prescribed-amount threshold, and the s. 95 effect of cancellation) are all supported by the provided texts."
+Can I be sentenced to jail for shoplifting?,not_covered,"Not covered by these three laws (it's criminal law). The assistant should say it couldn't find this, not answer from memory.",NONE,"I couldn't find this in the laws I have.
+
+The laws I have cover provincial offences, the Highway Traffic Act, and long-term care, but not the Criminal Code, which is usually where theft offences like shoplifting are found. A lawyer, paralegal, or community legal clinic could tell you which law applies and what penalties it allows.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","provincial offence, theft under $5,000, punishment by imprisonment, Provincial Offences Act, Criminal Code",POA 2; POA 61; POA 12; POA 63; HTA 100.6; POA 62; POA 157; FLTCA 192,n/a,correct,"The answer key says the question isn't covered by the provided laws (criminal law), and the assistant correctly said it couldn't find the answer in its laws without answering from memory. It did not invent any legal rule."
+How do I get a divorce in Ontario?,not_covered,"Not covered by these three laws (it's family law). The assistant should say it couldn't find this, not answer from memory.",NONE,"I couldn't find this in the laws I have. The Divorce Act (Canada) is the federal law that governs divorce proceedings, and it is not among the sections I have.
+
+The sections I have do say what happens to other family law matters when a divorce is started:
+
+- **Support:** When a divorce is started under the Divorce Act (Canada), a support application under the Family Law Act that has not been decided is paused (stayed), unless the court orders otherwise (Family Law Act, s. 36(1)).
+- **Existing support orders:** If support is not decided in the divorce, an existing support order continues in force according to its terms (Family Law Act, s. 36(3)).
+- **Arrears:** The court handling the divorce may decide the amount of unpaid support owing under an existing order and make an order about it at the same time (Family Law Act, s. 36(2)).
+- **Parenting:** When a divorce action is started, an undecided application about decision-making, parenting time or contact for a child is paused, unless the court gives leave (permission) to continue (Children's Law Reform Act, s. 27).
+- **Court:** Divorce Act proceedings are heard and decided in the Family Court where that court has jurisdiction (Courts of Justice Act, s. 21.8(1)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","divorce granting of a divorce, grounds for divorce, breakdown of marriage, application for divorce, Divorce Act, Family Law Act",FLA 36; CLRA 27; FLA 47; CLRA 33.3; CJA 21.8; FLA 48; CJA 149; FLA 7,n/a,correct,"The assistant said it couldn't find how to get a divorce in the provided laws, which matches the answer key. Its extra points about support, parenting and court jurisdiction are all drawn from the provided texts, so it doesn't invent law, though it goes further than needed."
+What is the speed limit on Ontario highways?,hard,"Under the Highway Traffic Act itself: 50 km/h within a local municipality or built-up area, and 80 km/h on highways outside built-up areas and on controlled-access highways, unless a different speed is prescribed by regulation or posted (s. 128(1)). Higher limits like 100 km/h on 400-series highways are set by regulation, not stated in the Act, so the assistant should not state them as coming from the Act.",HTA 128,"There isn't one speed limit for all Ontario highways. The limit depends on where the road is.
+
+- **Inside a local municipality or built-up area:** 50 km/h. (Highway Traffic Act, s. 128(1)(a))
+- **Outside a local municipality or built-up area:** 80 km/h. (Highway Traffic Act, s. 128(1)(b.1))
+- **Controlled-access highways designated under the Public Transportation and Highway Improvement Act:** 80 km/h, whether or not they are in a municipality or built-up area. (Highway Traffic Act, s. 128(1)(c))
+
+For King's Highways, a regulation sets limits by part of each Schedule: 110, 100, 90, 80, 70, 60, or 50 km/h. (R.R.O. 1990, Reg. 619, s. 1) The Schedules that say which highway falls in which part are not in the laws I have, so I can't tell you the limit for a specific highway.
+
+Other limits can apply:
+
+- **Truck inspection stations** on King's Highways: 40 km/h. (R.R.O. 1990, Reg. 619, s. 2)
+- **Municipal by-laws** can set a different rate, but not above 100 km/h, and can vary by time of day. (Highway Traffic Act, s. 128(2)) A by-law can also set a lower limit, under 50 km/h, in a designated area. (s. 128(2.1))
+- **Construction zones** can have a lower posted limit. The limit applies once the zone is signed. (Highway Traffic Act, s. 128(8), (10), (11))
+- **Specific school-day limits** of 60 km/h apply on certain named stretches of King's Highway during set school hours. (R.R.O. 1990, Reg. 619, s. 7) These are limited to the locations listed in that section.
+
+Some emergency vehicles are exempt from speed limits in certain situations. (Highway Traffic Act, s. 128(13))
+
+I couldn't find the posted limit for a particular road in the laws I have. Signs on the road and the local municipality's by-laws would be the places to check.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","rate of speed, maximum speed limit, highway, Highway Traffic Act","R.R.O. 1990, Reg. 619 1; HTA 128; HTA 129; HTA 128.1; R.R.O. 1990, Reg. 619 2; R.R.O. 1990, Reg. 619 4; R.R.O. 1990, Reg. 619 3; R.R.O. 1990, Reg. 619 7",yes,correct,"The assistant gives the answer key's core rules: 50 km/h in a local municipality or built-up area and 80 km/h outside them and on controlled-access highways, all cited to s. 128(1). It attributes the higher King's Highway limits (up to 110 km/h) to Reg. 619, not the Act, and its other details are supported by the provided texts."
+My landlord is trying to evict me because I complained to the city about mould. Is that allowed?,hard,"No. The Board must refuse to evict if the reason for the application is that the tenant complained to a government authority about the landlord breaking a health, safety, housing or maintenance law, or tried to enforce their legal rights.",RTA 83,"That sounds really stressful. Here is what the law says.
+
+The Board (the body that hears eviction applications) must refuse an eviction application if it is satisfied the reason for the application is that the tenant complained to a government authority about a landlord's violation of a law dealing with health, safety, housing or maintenance standards (Residential Tenancies Act, 2006, s. 83(3)(b)). A complaint to the city about mould may fall under this, since mould can relate to health and maintenance standards. The sections I have don't say whether mould specifically counts, so the Board would decide that based on the facts.
+
+Other relevant rules:
+
+- The Board must also refuse if the landlord is in serious breach of their responsibilities under the Act or a material term of the tenancy agreement (s. 83(3)(a)).
+- The Board must refuse if the application is because the tenant tried to secure or enforce their legal rights (s. 83(3)(c)).
+- Even without those reasons, the Board can refuse an eviction if it finds it would be unfair to grant it, considering all the circumstances (s. 83(1)(a)).
+- A landlord cannot recover possession of a rental unit unless the tenant has moved out or left, or a Board order authorizes it (s. 39).
+- A landlord must not harass, obstruct, coerce, threaten or interfere with a tenant (s. 23). Knowingly harassing a tenant to make them leave, or harassing a tenant for seeking their rights under the Act, is an offence (s. 233(h), (i)).
+- A tenant can send a written complaint about maintenance standards to the local municipality, which must receive it and arrange an inspection if the prescribed maintenance standards apply (s. 224.1).
+
+People in this situation can also contact a lawyer, paralegal or community legal clinic to look at the specific facts and the eviction notice.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","retaliation by landlord for tenant's complaint to municipality about residential complex maintenance, notice of termination, Residential Tenancies Act, 2006, prohibited reprisal against tenant",RTA 83; RTA 233; RTA 23; RTA 22; RTA 224.1; RTA 226.2; RTA 235; RTA 39,yes,correct,"The assistant gets the key point right: under s. 83(3)(b) the Board must refuse an eviction where the real reason is that the tenant complained to a government authority about a health, safety, housing or maintenance violation. Its extra points, such as the s. 233 offence and s. 224.1 complaint route, are supported by the provided texts, and its caution about whether mould specifically qualifies is reasonable."
+Can my landlord raise my rent by 10% this year?,hard,"Generally no. A landlord can't raise rent by more than the yearly guideline, which can be no more than 2.5%. The only exceptions are a Board order (ss. 126, 127) or an agreement under s. 121 or 123.",RTA 120,"I couldn't find the current guideline for this year in the laws I have, so I can't give you the exact maximum. But under the law, a 10% increase is very likely more than allowed.
+
+- **The guideline caps most increases.** A landlord may not raise rent during a tenancy by more than the guideline, except in limited cases (Residential Tenancies Act, 2006, s. 120(1)). The guideline is based on Ontario's Consumer Price Index and cannot be more than 2.5 per cent (s. 120(2)).
+- **Exceptions.** A landlord can go above the guideline in two situations described in these sections:
+  - An order under section 126 or 127 of the Act. Those sections are not in the laws I have, so I can't tell you what they say.
+  - A voluntary agreement with the tenant. This is allowed only for a specified capital expenditure (a major repair or upgrade) or a new or additional service. The increase cannot be more than the guideline plus 3 per cent of the previous lawful rent (s. 121(1), (3)). The tenant can cancel that agreement by written notice within five days after signing it (s. 121(4)).
+- **Other rules that apply to any increase:**
+  - The landlord must give at least 90 days' written notice, in a form approved by the Board, stating the new rent amount (s. 116(1), (3)).
+  - The landlord generally must wait at least 12 months after the last increase (s. 119(1)).
+  - If the landlord did not give proper notice, the increase is void, and the landlord must give a new notice before taking it (s. 116(4)).
+  - If a tenant does not give notice of termination after receiving a proper notice of increase, the tenant is deemed to have accepted whatever increase the Act allows (s. 118).
+
+Your notice, the date of your last increase, and whether any agreement or order exists would all matter here. I can't tell from the laws I have whether your specific increase is lawful.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Residential Tenancies Act, 2006 rent increase, lawful rent increase, guideline increase, notice of rent increase, rental unit, tenant, landlord, maximum rent increase without approval of Landlord and Tenant Board",RTA 120; RTA 116; RTA 119; RTA 110; RTA 118; RTA 111; RTA 121; RTA 123,yes,correct,"The assistant gets the main point right: a 10% increase is very likely not allowed because the guideline cannot exceed 2.5%, with exceptions for s. 126/127 orders and s. 121 or 123 agreements. Its other statements, including the s. 121 cap of guideline plus 3%, come from the provided texts."
+My landlord gave me 30 days' notice because his daughter is moving in. Do I have to be out in 30 days?,hard,"No. For a landlord's own-use notice, the termination date must be at least 60 days after the notice is given and on the last day of a rental period (or the end of a fixed term). 30 days is not enough.",RTA 48,"That sounds stressful. Under the law, a 30-day notice is not enough for this reason.
+
+A landlord who wants the unit for a child can end a tenancy only if the child will live there for at least one year, and the landlord must need it in good faith (Residential Tenancies Act, 2006, s. 48(1)(c)). The termination date must be at least 60 days after the notice is given (s. 48(2)). A 30-day notice does not meet that minimum.
+
+Other rules that apply:
+
+- **Earlier move-out:** You may end the tenancy sooner by giving the landlord at least 10 days' written notice, on a date earlier than the landlord's date (s. 48(3), (4)).
+- **Landlord must be an individual:** The landlord can give this kind of notice only if the landlord is a person and the unit is owned at least in part by an individual (s. 48(5)).
+- **Notice alone does not end the tenancy:** A tenancy ends only in accordance with the Act (s. 37(1)). If you move out on the date in a valid notice, the tenancy ends on that date (s. 37(2)).
+- **Landlord must apply to the Board to evict:** A landlord can ask the Board for an order terminating the tenancy and evicting the tenant (s. 69(1)). That application must be made no later than 30 days after the termination date in the notice (s. 69(2)).
+- **Affidavit required:** The Board cannot evict you based on this kind of notice unless the landlord files a sworn affidavit from the person who personally needs the unit, confirming good faith and at least one year of use (s. 72(1)(a)).
+- **Notice may become void:** A notice of termination becomes void 30 days after its termination date unless you move out first or the landlord applies to the Board in that time (s. 46(1)). This does not apply to notices based on unpaid rent (s. 46(2)).
+
+I couldn't find in these sections whether a shorter notice period could apply for other reasons, or what happens if your building has four or fewer units. The sections mention a special rule for buildings with four or fewer units (s. 72(2)(a)), but they don't explain how it changes things for you.
+
+People in this situation can contact a community legal clinic or the Landlord and Tenant Board for more information about their notice.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","landlord's notice of termination of tenancy for own use by landlord's child, notice period, obligation of tenant to vacate rental unit, Residential Tenancies Act, 2006",RTA 48; RTA 72; RTA 58; RTA 49; RTA 46; RTA 69; RTA 37; RTA 88,yes,correct,"The assistant gives the key point that a 30-day notice is not enough and that the termination date must be at least 60 days after notice, citing s. 48(2). Its extra details (the one-year occupancy requirement, the tenant's early-move-out right, and the affidavit and void-notice rules) are supported by the provided texts. The only small overreach is describing the tenant's notice as ""written,"" which the statute does not say."
+I rent month to month and want to move out. How much notice do I have to give?,hard,"At least 60 days' notice, with the termination date on the last day of a rental period.",RTA 44,"A tenant with a month-to-month tenancy must give at least 60 days' notice. The notice must be given at least 60 days before the date the tenancy is set to end, and that end date must be the last day of a rental period (Residential Tenancies Act, 2006, s. 44(2); s. 47).
+
+The notice also has to:
+- identify the rental unit (Residential Tenancies Act, 2006, s. 43(1)(a))
+- state the date the tenancy will end (s. 43(1)(b))
+- be signed by you or your agent (s. 43(1)(c))
+- be in a form approved by the Board, or in the prescribed form if one is set (s. 43(1))
+
+The law also says that a notice you give at the start of the tenancy, or as a condition of signing the tenancy agreement, is void (Residential Tenancies Act, 2006, s. 37(4)).
+
+I couldn't find in these sections whether a different rule applies if you give notice in a particular month, such as the February and March rule in s. 44(5), because that rule covers a notice to end on the last day of February or March. Your situation may depend on your rental period dates, so check the details against the full Act.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","termination of a tenancy by a tenant, month-to-month tenancy, notice of termination, residential premises",RTA 44; RTA 47; RTA 58; RTA 43; RTA 37; RTA 46; RTA 47.1; RTA 47.2,yes,correct,"The assistant states the key point: a month-to-month tenant must give at least 60 days' notice ending on the last day of a rental period, citing s. 44(2). The extra details (s. 43 form requirements, s. 37(4), the February/March rule) are accurate per the provided texts and do not contradict the answer key."
+Can my landlord change the locks while I'm still living there?,hard,Not without giving the tenant replacement keys. A landlord can't alter the locking system during the tenant's occupancy unless replacement keys are given.,RTA 24,"No, not without giving you replacement keys. The law says a landlord shall not change the locks during your tenancy unless they give you replacement keys (Residential Tenancies Act, 2006, s. 24).
+
+If a landlord does change the locks without giving you keys, the law allows you to apply to the Board for an order finding that the landlord breached this rule (Residential Tenancies Act, 2006, s. 29(1), para. 5). You must apply within one year of the conduct (s. 29(2)).
+
+If the Board finds this happened, it can:
+- order the landlord to pay the reasonable costs of repairing or replacing your damaged or disposed-of property, and other reasonable out-of-pocket expenses (s. 31(1)(b));
+- order a rent abatement, meaning a reduction in rent (s. 31(1)(c));
+- order an administrative fine paid to the Board, up to the greater of $10,000 and the Small Claims Court monetary limit (s. 31(1)(d));
+- order that the landlord not engage in further listed conduct against tenants in the complex (s. 31(1)(a));
+- order that the tenancy be terminated (s. 31(1)(e)).
+
+If you were out of the unit and it was vacant when the Board made its decision, the Board may also order that you get back possession and that the landlord not rent the unit to anyone else (s. 31(3)).
+
+A landlord who knowingly changes the locks in a way that breaks section 24 is guilty of an offence (s. 233(b)).
+
+Only the landlord's own changes are covered by these rules. Tenants also cannot change the locks without the landlord's consent (s. 35(1)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","landlord changing locks tenant's right of entry residential complex Residential Tenancies Act, 2006 landlord's right to enter rental unit, withholding or changing access, residential tenancy agreement, tenant's possession of rental unit",RTA 24; RTA 35; RTA 29; RTA 31; RTA 25; RTA 22; RTA 26; RTA 233,yes,correct,"The assistant gives the same core answer as the key: the landlord cannot change the locks during the tenancy without giving replacement keys, citing s. 24. Its extra details on remedies, the one-year limit, offences, and tenant lock changes all come from the provided sections."
+Can my landlord turn off my heat because I'm late on rent?,hard,"No. Until an eviction order is actually carried out, a landlord can't withhold or deliberately interfere with the reasonable supply of a vital service like heat that the landlord is obligated to supply.",RTA 21,"The law does not appear to let a landlord turn off heat because rent is late. Heat is a vital service from September 1 to June 15 (O. Reg. 516/06, s. 4(1); Residential Tenancies Act, 2006, s. 2). A landlord or their agent must not withhold the reasonable supply of a vital service that the landlord is obligated to provide under the tenancy agreement, or deliberately interfere with it (Residential Tenancies Act, 2006, s. 29(1), para. 2).
+
+Other rules that may apply:
+
+- **Heat level:** During that period, heat must keep the room temperature at least 20 degrees Celsius in habitable space and shared areas, measured 1.5 metres above the floor and one metre from exterior walls. There is an exception where the tenant can control the temperature and the main heat source can maintain 20 degrees (O. Reg. 516/06, s. 4(2)-(3)).
+- **Non-payment process:** If rent is unpaid, the landlord may give a notice of termination, effective no earlier than the 7th day after notice. The notice must state the rent owed and that the tenant can avoid termination by paying on or before the termination date (Residential Tenancies Act, 2006, s. 59(1)-(2)). The notice is void if the tenant pays the arrears and any additional rent owing before the landlord applies to the Board (s. 59(3)).
+- **Eviction:** A landlord may apply to the Board for an eviction order after giving a notice to terminate (s. 69(1)).
+- **No self-help seizure:** A landlord cannot seize a tenant's property for unpaid rent without legal process (s. 40).
+- **Harassment and interference:** A landlord must not harass, obstruct, coerce, threaten or interfere with a tenant (s. 23). A landlord also must not substantially interfere with the tenant's reasonable enjoyment of the unit (s. 22).
+
+People in this situation can apply to the Board for an order that the landlord withheld or interfered with a vital service. The application must be made within one year of the conduct (Residential Tenancies Act, 2006, s. 29(1)-(2)).
+
+The laws I have don't say what happens to heat outside the September 1 to June 15 period, so I couldn't find that part.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Residential Tenancies Act, 2006: landlord discontinuing or interrupting essential services such as heat, water or electricity to a tenant unit for non-payment of rent, restriction of access to utilities by landlord, remedies for tenant where landlord withholds vital services",RTA 2; O. Reg. 516/06 4; RTA 59; RTA 69; RTA 40; RTA 23; RTA 29; RTA 22,NO,correct,"The assistant correctly says a landlord cannot withhold a vital service like heat because rent is late, matching the answer key's main point. Its citations to s. 29 and O. Reg. 516/06 are supported by the provided texts, though it does not cite s. 21 or mention that the protection lasts until an eviction order is carried out."
+I worked somewhere for three years and got laid off. Do I get severance pay?,hard,"No. Severance pay only applies to employees with five or more years of service, and only if the employer has a payroll of $2.5 million or more or 50+ employees are let go from a business closure within six months. (Termination notice or pay is a separate entitlement.)",ESA 64,"That sounds really stressful.
+
+Based on the law I have, probably not. Under the Employment Standards Act, 2000, an employer must pay severance pay only if the employee was employed by that employer for five years or more (Employment Standards Act, 2000, s. 64(1)). Three years does not meet that requirement.
+
+A layoff can count as ""severance"" under the Act. For example, a layoff of 35 or more weeks in a 52-week period, or a permanent discontinuance of the business, can qualify (Employment Standards Act, 2000, s. 63(1)(c), (d)). But even when a layoff counts, the five-year requirement in s. 64(1) still has to be met.
+
+The five years include all time you spent in the employer's employ, whether or not it was continuous or active (Employment Standards Act, 2000, s. 65(2)). So if you had earlier periods of work with the same employer, those count toward the five years. Time with a different employer does not.
+
+I couldn't find in the laws I have whether you are owed any other payment after a layoff, such as termination pay. A lawyer, paralegal, or community legal clinic could help you look at that.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","termination of employment due to layoff, entitlement to severance pay, length of employment, Employment Standards Act, 2000",ESA 64; ESA 63; O. Reg. 288/01 3; ESA 65; O. Reg. 288/01 11; O. Reg. 288/01 10; ESA 56; O. Reg. 288/01 8,yes,correct,"The assistant reaches the answer key's conclusion that three years of service is not enough for severance pay under s. 64(1), which requires five years. It does not explain the payroll or 50-employee conditions, but it states only the five-year requirement as a necessary condition and invents no law."
+How many paid sick days do I get?,hard,"None are paid under the Act. After two consecutive weeks of employment, an employee can take up to three days of unpaid leave per calendar year for personal illness, injury or medical emergency.",ESA 50,"The laws I have don't show a general right to paid sick days for personal illness. Here is what they do say:
+
+- **Unpaid sick leave:** An employee who has worked for the employer for at least two consecutive weeks can take leave without pay for a personal illness, injury or medical emergency (Employment Standards Act, 2000, s. 50(1)). This leave is limited to three days in each calendar year (s. 50(2)).
+- **Notice:** The employee must tell the employer they will be taking the leave. If they must start before telling the employer, they must tell the employer as soon as possible after starting (s. 50(3) and (4)).
+- **Proof:** The employer may ask for evidence that is reasonable in the circumstances. The employer cannot require a certificate from a qualified health practitioner as that evidence (s. 50(6) and (6.1)).
+
+**Paid days:** Section 50.1(1.3) gives three paid days, but those days are for infectious disease emergency leave under s. 50.1(1.2), such as isolation or quarantine following public health directions. Under s. 50.1(5.2), that paid entitlement is deemed to have started on April 19, 2021 and ends on September 25, 2021, or on a later date prescribed by regulation. The sections I have don't show any later date, so I can't tell you whether that paid entitlement still applies today.
+
+I couldn't find any other paid sick day rule in the laws I have.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Entitlement to sick leave (paid sick days) for employees under the Employment Standards Act, 2000",ESA 50; ESA 50.0.1; ESA 50.0.2; ESA 49.7; ESA 50.1; ESA 49.5; ESA 141; ESA 1,yes,correct,"The answer gives the key's main point: no general paid sick days, with unpaid leave of up to three days per year after two consecutive weeks of employment for personal illness, injury or medical emergency. Its extra discussion of the expired s. 50.1 infectious disease paid days is drawn from the provided text and does not contradict the key."
+Do I get paid extra if I work on a public holiday?,hard,"If you agree to work a public holiday, the employer must either pay your regular rate for the hours worked and give you a substitute day off with public holiday pay, or, if you both agree, pay public holiday pay plus premium pay (at least 1.5 times your regular rate) for each hour worked.",ESA 27; ESA 24,"Often, yes. The law gives extra pay in two main ways, depending on how you came to work the holiday.
+
+**If your employer requires you to work** (only in a hospital, a continuous operation, or a hotel, motel, tourist resort, restaurant or tavern), the employer must choose one of these:
+- **Option A:** Pay your regular rate for the hours worked on the holiday, and give you a substitute day off. You also get public holiday pay for that substitute day. (Employment Standards Act, 2000, s. 28(2)(a))
+- **Option B:** Pay public holiday pay for the day, plus premium pay for each hour worked. (Employment Standards Act, 2000, s. 28(2)(b))
+
+**If you and your employer agree** that you will work the holiday, the same two options apply. (Employment Standards Act, 2000, s. 27(2)). Under Option B, the agreement must also say so. (Employment Standards Act, 2000, s. 27(2)(b)) For a holiday that falls on a day you wouldn't normally work, or on a vacation day, the same rules apply under a separate agreement. (Employment Standards Act, 2000, s. 30(1), s. 30(2))
+
+**How much is premium pay?** It must be at least one and one-half times your regular rate. (Employment Standards Act, 2000, s. 24(2))
+
+**Other points:**
+- Public holiday pay is generally based on your regular wages and vacation pay in the four work weeks before the holiday, divided by 20. (Employment Standards Act, 2000, s. 24(1))
+- Hours worked on a public holiday with premium pay do not count toward overtime. (Employment Standards Act, 2000, s. 31)
+- If you are scheduled to work but don't, you may lose some or all of these entitlements unless you had reasonable cause. Missing your last scheduled day before the holiday, or your first scheduled day after it, without reasonable cause can also remove the entitlement. (Employment Standards Act, 2000, s. 27(4), s. 28(4))
+- An employee may refuse to work on a public holiday. If an employee has agreed to work, they may still decline, but only with at least 48 hours' notice. (Employment Standards Act, 2000, s. 73(1), s. 73(3))
+
+I couldn't find the rules for every type of workplace, so I can't say for certain which applies to your job. The details above are based on the sections I have.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","public holiday pay: employee who works on a public holiday, wages for work performed on a public holiday, Employment Standards Act, 2000",ESA 28; ESA 27; ESA 30; ESA 26; ESA 24; ESA 1; ESA 31; ESA 73,yes,correct,"The assistant captures the answer key's main point: for an agreed holiday shift, the employer must either pay regular rate plus a substitute day off with public holiday pay, or (if both agree) public holiday pay plus at least 1.5 times premium pay per hour. Its other details, including the overtime point and the 73(3) notice rule, are supported by the provided texts."
+What is the minimum wage in Ontario right now?,hard,"The Act doesn't state today's amount. It set $15.00/hour for most employees from January 1, 2022, and says the minimum wage is adjusted every October 1 using the Consumer Price Index, with the new amounts published on a government website. The assistant should not state a current dollar figure from memory.",ESA 23.1,"I couldn't find the current minimum wage amount in the laws I have.
+
+The sections I have explain how the rate is set, but they don't list the current number:
+
+- From October 1, 2022 onward, the general minimum wage is the amount worked out under subsection (4). (Employment Standards Act, 2000, s. 23.1(1), para. 2)
+- Each October 1, the previous wage is multiplied by the ratio of two Consumer Price Index figures, and the result is rounded to the nearest 5 cents. (Employment Standards Act, 2000, s. 23.1(4), (5))
+- The wage cannot go down. If the calculation would produce a decrease, no adjustment is made. (Employment Standards Act, 2000, s. 23.1(6))
+- The Minister must publish the minimum wages that apply starting October 1 of each year on a Government of Ontario website, no later than April 1. (Employment Standards Act, 2000, s. 23.1(7))
+
+For context, the sections list $15.00 per hour as the general rate for the period before October 1, 2022. (Employment Standards Act, 2000, s. 23.1(1), subpara. 1 iv) That rate has since been adjusted under the formula above, so it is not the current rate.
+
+Other rates also apply to some workers, such as students under 18, homeworkers, hunting and fishing guides, and wilderness guides. (Employment Standards Act, 2000, s. 23.1(1); O. Reg. 285/01, s. 6)
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","minimum wage rates wages payable by employer under Employment Standards Act, 2000",ESA 23.1; ESA 23; ESA 23.0.1; O. Reg. 285/01 6; O. Reg. 285/01 5; O. Reg. 285/01 25; O. Reg. 285/01 19; O. Reg. 285/01 28,yes,correct,"The answer key says the Act doesn't state today's amount, that $15.00 applied from January 1, 2022, and that the rate is adjusted each October 1 by CPI and published online. The assistant said it couldn't find the current amount, explained the same formula, rounding, no-decrease rule, and publication requirement, and did not state a current dollar figure from memory."
+I took out a payday loan yesterday. Can I still cancel it?,easy,"Yes. A borrower can cancel a payday loan agreement without any reason up to the end of the second day after getting the agreement (or the next day the lender is open, if it is closed that day), by giving notice. The lender must then refund the payments and return post-dated cheques and debit authorizations; the borrower repays the advance.",PLA 30; PLA 43,"Under the law, you may be able to cancel without giving a reason, but only within a short window. A borrower may cancel a payday loan agreement without any reason up to the end of the second day after the lender complies with subsections 29(1) and (2), if the lender is open for business that day. If the lender is closed that day, the deadline moves to the next day it is open (Payday Loans Act, 2008, s. 30(1)).
+
+If you received the loan and a copy of the agreement yesterday, the second day after that would be tomorrow, provided the lender is open then. The sections don't say exactly when the lender ""complies"" with its requirements, so the exact deadline depends on those facts.
+
+To cancel, the law says:
+
+- **Give notice in time.** The notice goes to the lender, or to the loan broker if one helped you get the loan (O. Reg. 98/09, s. 19(1); Payday Loans Act, 2008, s. 30(2)).
+- **Repay the advance.** At the time you give notice, you must repay the amount you borrowed (O. Reg. 98/09, s. 19(2); Payday Loans Act, 2008, s. 43(3)(b)).
+- **The cancellation takes effect** when you give notice, and it cancels the agreement as if it never existed (Payday Loans Act, 2008, s. 43(1), (2)).
+- **The lender must refund any payments you made** under the agreement, except repayments of the advance itself. It must also return or destroy post-dated cheques and pre-authorized debits, depending on their form (Payday Loans Act, 2008, s. 43(3)(a)). The lender must do this at the earliest reasonable opportunity after you give notice (O. Reg. 98/09, s. 19(3)).
+
+Separately, if the lender did not give you the loan or a copy of a compliant agreement when you signed, the law says you only have to repay the advance and do not have to pay the cost of borrowing (Payday Loans Act, 2008, s. 29(4)).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","payday loan agreement, cancellation within the prescribed period after entering into the agreement, right to rescind",PLA 30; O. Reg. 98/09 18; O. Reg. 98/09 19; PLA 43; PLA 29; PLA 35; PLA 34; CPA 18,yes,correct,"The assistant correctly says the borrower can cancel without a reason until the second day after the lender complies with s. 29(1) and (2), or the next business day if the lender is closed. Its cancellation mechanics (notice, repaying the advance, refunds and return of cheques) match ss. 30 and 43 and O. Reg. 98/09, s. 19."
+Is a debt collector allowed to call me at work?,hard,"Collectors generally may not contact the debtor's employer, except once to confirm employment, business title or business address, or if the employer guaranteed the debt, the debtor gave written authorization, or for payments under a wage assignment or court order. (This rule is in the regulation under the Collection and Debt Settlement Services Act.)",REG74 22,"The laws I have don't say whether a debt collector can call you at work in general. They do set some limits on calls, and one rule covers calls to your employer in a specific case.
+
+- **Waiting period:** A collection agency can't demand payment or otherwise contact you until the sixth day after sending you a written notice. There are exceptions, such as confirming your details. (O. Reg. 74, s. 21(1); s. 21.1)
+- **Calls that cost you money:** If you tell a collector that a method of contact, such as texts or calls, costs you money, they must stop using that method. (R.R.O. 1990, Reg. 74, s. 21.4) A collector also can't use a means of communication that makes you pay the charges, unless the cost is fully reimbursed within 15 days of you showing proof. You have 60 days after learning of the cost to present that proof, in the form of a bill from your phone provider. (Collection and Debt Settlement Services Act, s. 22(b); R.R.O. 1990, Reg. 74, s. 19.10)
+- **Your employer:** The rules on contacting a debtor's employer apply to employees of the employer too. (R.R.O. 1990, Reg. 74, s. 20) For lawyers collecting debts they bought or were assigned, contacting your employer more than three times in seven days is restricted unless the employer consents or asks for the contact. Automatic or predictive dialing devices and bulk texting are also restricted for those contacts. (R.R.O. 1990, Reg. 74, s. 18.1(6)(b) and (c))
+
+I couldn't find a rule that stops an ordinary collection agency from calling you at work, or a limit on how often it can do so. The rules above on employer contact apply only to lawyers collecting debts in the way described in s. 18.1(6).
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","collection agency communication with debtor, contact at place of employment, Collection and Debt Settlement Services Act, 2002 prohibited communications",CDSSA 16.6; REG74 18.1; REG74 20; REG74 21.1; CDSSA 22; REG74 21.4; REG74 19.10; REG74 21,NO,wrong,"The answer key says collectors generally may not contact the debtor's employer, with listed exceptions, but the assistant said it couldn't find a rule limiting ordinary collectors' calls to work. It also wrongly suggested the employer-contact rules apply only to lawyers. It doesn't state a fabricated rule, so it is wrong rather than made up."
+Do I have to pay income tax on my tips?,not_covered,"Not covered by these three laws (tax law). The Employment Standards Act covers who keeps tips, not tax. The assistant should say it couldn't find this.",NONE,"I couldn't find this in the laws I have.
+
+The sections I have don't say whether tips are subject to income tax. A tax law, such as the federal Income Tax Act, or the Canada Revenue Agency would cover that.
+
+The Employment Standards Act, 2000 does define ""wages"" to exclude tips or other gratuities (Employment Standards Act, 2000, s. 1). That definition is for employment standards purposes and doesn't answer the tax question.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Income tax on tips is a federal matter under the Income Tax Act (Canada), which is not among the Ontario statutes in the database, so I can't produce a query that would find an answer there. The closest Ontario-law rewrite would concern tips as wages under the Employment Standards Act, 2000, but that addresses tip payment and distribution, not income tax liability.",ESA 1; ESA 14.2; ESA 14.3; ESA 14.4; ESA 14.1; ESA 21; WSIA 55; ESA 49.2,n/a,correct,"The answer key says the question isn't covered by the provided laws, and the assistant said it couldn't find the answer and noted the sections don't address income tax. Its mention of the ""wages"" definition excluding tips is accurate per the provided s. 1 text and does not invent law."
+How do I sponsor my parents to immigrate to Canada?,not_covered,"Not covered by these laws (immigration is federal). The assistant should say it couldn't find this, not answer from memory.",NONE,"I couldn't find this in the laws I have.
+
+The laws I have only mention sponsorship in the context of social assistance. They say how a sponsored person's income is counted when they live with the sponsor (O. Reg. 134/98, s. 51; O. Reg. 222/98, s. 40), and they don't explain how to sponsor a parent. Immigration law, such as the federal Immigration and Refugee Protection Act, would likely cover this, and an immigration lawyer or licensed immigration consultant may be able to help.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","sponsorship of parents as members of the family class, undertaking of financial support, Immigration and Refugee Protection Act",O. Reg. 134/98 51; O. Reg. 222/98 40; O. Reg. 222/98 11; O. Reg. 134/98 1; O. Reg. 222/98 1; EDA 49; EDA 190; O. Reg. 134/98 65.1,n/a,correct,"The answer key says the question is not covered by these laws, and the assistant said it couldn't find an answer. Its brief mention of federal immigration law is a hedge, not a stated rule, and its description of the provided sections is accurate."
+Will I get fined for not shovelling the sidewalk in front of my house?,not_covered,"Not covered by these laws (snow clearing is a city bylaw). The assistant should say it couldn't find this, not answer from memory.",NONE,"I couldn't find this in the laws I have.
+
+The sections I have don't say whether a homeowner must shovel the sidewalk in front of their house, or what fine applies if they don't. The closest section is Highway Traffic Act, s. 181, but it only says no person shall deposit snow or ice on a roadway without written permission (Highway Traffic Act, s. 181). It doesn't cover shovelling sidewalks. A municipal by-law (a local city or town rule) is the kind of law that often covers sidewalk snow clearing, so checking your municipality's rules would be a good place to start.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","Municipal snow removal bylaw: liability of owner or occupant for failure to clear snow and ice from sidewalk adjacent to residential property, offence and fine","HTA 214; HTA 181; HTA 170; R.R.O. 1990, Reg. 851 11; HTA 180; TPA 11; HTA 195.13; CONDO 26",n/a,correct,"The answer key says the question isn't covered by the provided laws, and the assistant clearly said it couldn't find an answer, noting that sidewalk shovelling is typically a municipal by-law matter. It didn't invent any rule or fine."
