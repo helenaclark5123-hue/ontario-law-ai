@@ -14,6 +14,7 @@ import quiet  # noqa: F401  (must come before the AI libraries)
 
 import json
 import sys
+import threading
 from pathlib import Path
 
 import chromadb
@@ -31,16 +32,21 @@ MODEL_NAME = "BAAI/bge-small-en-v1.5"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 
 _model = None
+# Several questions can be answered at once (e.g. two people on the website),
+# so loading shared things is done by one at a time.
+_lock = threading.Lock()
 
 
 def get_model():
     """Load the embedding model once and reuse it."""
     global _model
-    if _model is None:
+    with _lock:
+        if _model is not None:
+            return _model
         # FastEmbed runs the same model as sentence-transformers, but without
         # PyTorch (600+ MB), so it also fits on Streamlit Community Cloud.
         _model = TextEmbedding(MODEL_NAME)
-    return _model
+        return _model
 
 
 def embed(texts):
@@ -52,7 +58,8 @@ def embed(texts):
 
 def get_collection():
     """Open (or create) the law collection in the db/ folder."""
-    client = chromadb.PersistentClient(path=str(DB_DIR))
+    with _lock:
+        client = chromadb.PersistentClient(path=str(DB_DIR))
     return client.get_or_create_collection(COLLECTION, metadata={"hnsw:space": "cosine"})
 
 
@@ -113,14 +120,15 @@ def saved_sections():
     from get_laws import DATA_DIR, load_saved_laws
 
     version = tuple(p.stat().st_mtime for p in sorted(DATA_DIR.glob("*_*.json")))
-    if _laws_cache.get("version") != version:
-        _laws_cache["version"] = version
-        _laws_cache["sections"] = {
-            (law["name"], number): text
-            for law in load_saved_laws()
-            for number, text in law["sections"].items()
-        }
-    return _laws_cache["sections"]
+    with _lock:
+        if _laws_cache.get("version") != version:
+            _laws_cache["sections"] = {
+                (law["name"], number): text
+                for law in load_saved_laws()
+                for number, text in law["sections"].items()
+            }
+            _laws_cache["version"] = version
+        return _laws_cache["sections"]
 
 
 def expand(hit, matched_parts):

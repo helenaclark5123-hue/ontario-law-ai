@@ -54,5 +54,40 @@
     "artist": "Jacob Willemsma",
     "license": "CC0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "human-rights.jpg": {
+    "title": "Marchers in the Toronto Pride Parade 2014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Marchers_in_the_Toronto_Pride_Parade_2014.jpg",
+    "artist": "Randolph Croft",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "injured-worker.jpg": {
+    "title": "Toronto Paramedic Services Ambulance.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Toronto_Paramedic_Services_Ambulance.jpg",
+    "artist": "Hillelfrei",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "family.jpg": {
+    "title": "\"Family Group\" by Almuth Lutkenhaus-Lackey (1972), Berczy Park, Toronto",
+    "page": "https://commons.wikimedia.org/wiki/File:%22Family_Group%22_by_Almuth_Lutkenhaus-Lackey_(1972),_Berczy_Park,_Toronto,_Ontario,_2025-08-25_01.jpg",
+    "artist": "Chris Woodrich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "ontario-works.jpg": {
+    "title": "Toronto Consulate volunteers at food bank.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Toronto_Consulate_volunteers_at_food_bank.jpg",
+    "artist": "US Mission Canada",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "disability.jpg": {
+    "title": "TTC Flexity 2571 with ramp deployed.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:TTC_Flexity_2571_with_ramp_deployed.jpg",
+    "artist": "TheTrolleyPole",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
   }
 }

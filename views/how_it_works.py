@@ -7,7 +7,7 @@ from pathlib import Path
 import streamlit as st
 
 from get_laws import REGULATIONS, load_saved_laws
-from ui import LAWS, STATIC, footer, grid, nice_date, nice_time, read_status, section_counts
+from ui import LAWS, STATIC, number_word, footer, grid, nice_date, nice_time, read_status, section_counts
 from update_laws import update
 
 st.markdown("<style>.block-container { max-width: 960px; }</style>", unsafe_allow_html=True)
@@ -38,7 +38,7 @@ for column, (name, info) in grid(LAWS.items()):
         f'<div class="card-text" style="font-size:.82rem">{r["name"]}: {r["title"]} '
         f'({counts.get(r["name"], 0)} sections)</div>' for r in regs
     )
-    with column, st.container(border=True, key=f"card-{info['topic'].split()[0].lower()}"):
+    with column, st.container(border=True, key=f"card-{info['topic'].lower().replace(' ', '-')}"):
         st.markdown(
             f"""
             <div class="card-photo" style="background-image:url('{info['photo']}'); height:130px"></div>
@@ -58,21 +58,25 @@ for column, (name, info) in grid(LAWS.items()):
             st.link_button("Official text on ontario.ca", law["url"], icon=":material/open_in_new:", use_container_width=True)
 st.caption("Each Act comes with the main regulations made under it (the detailed rules, amounts and "
            "definitions). Other regulations, the yearly rent increase guideline amount, and court decisions are "
-           "not included. The speed limits regulation includes its rules but not its lists of highway stretches.")
+           "not included. The speed limits regulation includes its rules but not its lists of highway stretches. "
+           "The Family Law Act covers property, support and the family home; custody and parenting time are in "
+           "a different law (the Children's Law Reform Act) that isn't included yet.")
 
 # ---- How an answer is made --------------------------------------------------
 st.write("")
 st.markdown("### How an answer is made")
 st.markdown(
-    """
+    f"""
     <div class="steps">
       <div class="step"><div class="step-num">01</div><b>Understand the question</b>
         <span>Your message, plus anything you said earlier in the conversation, is turned into a
         search question, and rewritten in the law's own words (for example, "door-to-door" becomes
         "direct agreement").</span></div>
       <div class="step"><div class="step-num">02</div><b>Find the law</b>
-        <span>Both versions are matched by meaning against every section of the five Acts. The 8 best
-        sections are pulled in whole, so related rules and exceptions stay together.</span></div>
+        <span>Both versions are matched by meaning against every section of the {number_word(len(LAWS))} Acts
+        and {len(REGULATIONS)} regulations. Claude then reads short previews of about 40 matches and picks the 8
+        sections that answer the question best, which are pulled in whole so related rules and exceptions
+        stay together.</span></div>
       <div class="step"><div class="step-num">03</div><b>Answer only from it</b>
         <span>Claude writes the answer using only those sections, cites a section for every point, says
         "I couldn't find this" when the law doesn't cover it, and asks a follow-up if a key fact is missing.</span></div>
@@ -107,7 +111,7 @@ with st.container(border=True):
     with info:
         checked = nice_time(status["last_checked"]) if "last_checked" in status else "never"
         st.markdown(f"**Last checked for updates:** {checked}")
-        st.caption("Checking re-downloads the five laws, compares every section, and updates only the "
+        st.caption(f"Checking re-downloads the {number_word(len(LAWS))} Acts and {len(REGULATIONS)} regulations, compares every section, and updates only the "
                    "ones that changed.")
     with action:
         if st.button("Check for updates", icon=":material/refresh:", use_container_width=True):
@@ -131,9 +135,9 @@ with st.container(border=True):
 st.write("")
 st.markdown("### Limitations")
 st.markdown(
-    """
+    f"""
 - **Legal information, not legal advice.** It explains what the law says; it can't tell you what to do in your case.
-- **Five laws and 11 of their regulations only**, not other regulations, city bylaws or court decisions.
+- **{number_word(len(LAWS)).capitalize()} Acts and {len(REGULATIONS)} of their regulations only**, not other laws or regulations, city bylaws or court decisions.
 - **Unofficial copy.** The text comes from the A2AJ Canadian Legal Data project and is only as current as their last update.
 - **Search can miss a section**, especially when a problem is described in everyday words. Check the original text, and when it matters, ask a lawyer, paralegal or community legal clinic.
 """

@@ -256,3 +256,41 @@ Cost of the whole Iterate: about $1 in API credit.
   right; the gym question (definition section still hard to find) and public
   holiday pay (right section, but the headline overstated premium pay, an
   answering mistake) were wrong this run. Results vary run to run.
+
+## 8. Five more laws: human rights, injured workers, family, social assistance (Nov 23)
+
+- Added **5 Acts and 3 of their regulations**, using the same download,
+  chunking and self-updating pipeline (1,319 new chunks; database now 4,456):
+  - **Human Rights Code** (87 sections): discrimination and harassment in
+    jobs, housing and services.
+  - **Workplace Safety and Insurance Act, 1997** (215 sections): WSIB
+    benefits, lost earnings, return to work.
+  - **Family Law Act** (88 sections) and **O. Reg. 391/97, the Child Support
+    Guidelines** (32 sections): property division, the family home, spousal
+    and child support. Custody and parenting time are in a different law (the
+    Children's Law Reform Act), which isn't included yet; the website says so.
+  - **Ontario Works Act, 1997** + **O. Reg. 134/98**: who qualifies, appeals.
+  - **Ontario Disability Support Program Act, 1997** + **O. Reg. 222/98**:
+    ODSP eligibility, how earnings are counted, appeals.
+  - In all: **10 Acts and 14 regulations**.
+- The website now reads the law list automatically, so counts ("ten Acts and
+  14 regulations"), topic cards and the chat's welcome message stay correct if
+  more laws are added. Five new topic cards with credited Wikimedia photos.
+  The question rewriter learned everyday words for the new areas
+  ("workers' comp", "welfare", "disability cheque", "divorce money").
+- **Spot checks (one question per new law):** all six answered from the right
+  law with correct citations, e.g. refusing to rent to a family is
+  discrimination on "family status" (HRC s. 2(1)) with the shared-kitchen
+  exception (s. 21); ODSP exempts the first $1,000 a month of earnings, then
+  counts 25% (O. Reg. 222/98 s. 38). **Gap seen:** "how do I file a WSIB
+  claim / deadline" didn't find WSIA s. 22.
+- **Bug found and fixed while testing:** if two questions arrived at the same
+  moment (e.g. two people on the website), the shared law-text cache could be
+  read half-built and crash. Loading is now done one at a time (a lock in
+  `search.py`).
+- **35-question evaluation with all 10 laws: 34/35 (97%), 0 made up**, the
+  best score so far, so the extra laws didn't crowd out the original topics.
+  The one wrong answer was the "son moving in" question (the compensation rule,
+  RTA s. 48.1, was only partly found this run). The divorce question is still
+  correctly answered "not covered" (divorce itself is a federal law).
+  (`results/eval_2026-11-23_145115_ten-laws`)

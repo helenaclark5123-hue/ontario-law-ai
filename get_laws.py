@@ -26,6 +26,11 @@ LAWS = [
     "Consumer Protection Act, 2002",
     "Occupational Health and Safety Act",
     "Highway Traffic Act",
+    "Human Rights Code",
+    "Workplace Safety and Insurance Act, 1997",
+    "Family Law Act",
+    "Ontario Works Act, 1997",
+    "Ontario Disability Support Program Act, 1997",
 ]
 
 # Regulations made under those Acts that fill gaps the Acts leave (detailed
@@ -47,6 +52,9 @@ REGULATIONS = [
     {"citation": "O Reg 455/07", "title": "Races, Contests and Stunts", "parent": "Highway Traffic Act"},
     {"citation": "RRO 1990, Reg 619", "title": "Speed Limits", "parent": "Highway Traffic Act", "skip_schedules": True},
     {"citation": "O Reg 340/94", "title": "Drivers' Licences", "parent": "Highway Traffic Act"},
+    {"citation": "O Reg 391/97", "title": "Child Support Guidelines", "parent": "Family Law Act"},
+    {"citation": "O Reg 134/98", "title": "General", "parent": "Ontario Works Act, 1997"},
+    {"citation": "O Reg 222/98", "title": "General", "parent": "Ontario Disability Support Program Act, 1997"},
 ]
 
 

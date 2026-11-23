@@ -17,11 +17,16 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# Topic names for the welcome message, e.g. "renting", "Ontario Works".
+TOPICS = [i["topic"] if i["topic"].startswith("Ontario") else i["topic"].lower() for i in LAWS.values()]
+
 SUGGESTIONS = [
     "My landlord is trying to kick me out",
     "Can my boss make me work 13 hours?",
     "Can I refuse a job I think is unsafe?",
     "What happens if I'm caught speeding?",
+    "I hurt myself at work. Can I get paid while I recover?",
+    "My landlord won't rent to me because I have kids",
 ]
 
 
@@ -104,7 +109,8 @@ if not messages and "pending" not in st.session_state:
         st.markdown(
             "Hi! Tell me what's going on in your own words, and I'll find the Ontario laws that "
             "apply and explain what they say, with the exact sections. I can help with "
-            "**renting**, **work**, **buying things**, **workplace safety** and **driving**."
+            + ", ".join(f"**{topic}**" for topic in TOPICS[:-1])
+            + f" and **{TOPICS[-1]}**."
         )
         st.caption("Or start with one of these:")
         left, right = st.columns(2)

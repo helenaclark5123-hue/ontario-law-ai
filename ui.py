@@ -60,6 +60,51 @@ LAWS = {
             "Is it illegal to hold my phone while I'm stopped at a red light?",
         ],
     },
+    "Human Rights Code": {
+        "topic": "Human rights",
+        "photo": f"{STATIC}/human-rights.jpg",
+        "about": "Discrimination and harassment at work, in housing and in services, and accommodating disabilities.",
+        "examples": [
+            "My landlord won't rent to me because I have kids. Is that legal?",
+            "My employer won't adjust my duties for my disability. What are my rights?",
+        ],
+    },
+    "Workplace Safety and Insurance Act, 1997": {
+        "topic": "Workplace injuries",
+        "photo": f"{STATIC}/injured-worker.jpg",
+        "about": "WSIB benefits after a workplace injury, reporting deadlines, lost wages and returning to work.",
+        "examples": [
+            "I hurt my back at work. Can I get paid while I recover?",
+            "How long do I have to report a workplace injury?",
+        ],
+    },
+    "Family Law Act": {
+        "topic": "Family law",
+        "photo": f"{STATIC}/family.jpg",
+        "about": "Splitting property after separation, the family home, spousal support and child support.",
+        "examples": [
+            "We're separating. Do we split everything 50/50?",
+            "How is child support worked out in Ontario?",
+        ],
+    },
+    "Ontario Works Act, 1997": {
+        "topic": "Ontario Works",
+        "photo": f"{STATIC}/ontario-works.jpg",
+        "about": "Financial and employment help for people in need: who qualifies, obligations and appeals.",
+        "examples": [
+            "Who can get Ontario Works?",
+            "My Ontario Works was cut off. Can I appeal?",
+        ],
+    },
+    "Ontario Disability Support Program Act, 1997": {
+        "topic": "Disability support",
+        "photo": f"{STATIC}/disability.jpg",
+        "about": "ODSP income support for people with disabilities: who qualifies, assets and appeals.",
+        "examples": [
+            "How do I qualify for ODSP?",
+            "Can I work part-time and still get ODSP?",
+        ],
+    },
 }
 
 STYLE = """
@@ -238,6 +283,12 @@ def _section_counts(version):
 def section_counts():
     """Number of sections with law text in them, per Act (repealed ones excluded)."""
     return _section_counts(CHUNKS_FILE.stat().st_mtime)
+
+
+def number_word(n):
+    """10 -> "ten", for sentences like "the ten Acts"."""
+    words = "zero one two three four five six seven eight nine ten eleven twelve".split()
+    return words[n] if n < len(words) else str(n)
 
 
 def grid(items, per_row=3):

@@ -2,7 +2,8 @@
 
 import streamlit as st
 
-from ui import LAWS, STATIC, footer, grid, law_dates, section_counts, start_chat
+from get_laws import REGULATIONS
+from ui import LAWS, STATIC, number_word, footer, grid, law_dates, section_counts, start_chat
 
 collected, _ = law_dates()
 sections = sum(section_counts().values())
@@ -14,7 +15,8 @@ st.markdown(
       <div class="flag-line"><img src="{STATIC}/flag-canada.png" alt="Flag of Canada">
         <span>Ontario Law Assistant</span></div>
       <h1>Know your rights in Ontario, straight from the law.</h1>
-      <p class="lead">Describe your problem with your landlord, your job, something you bought, safety at work or driving.
+      <p class="lead">Describe your problem with your landlord, your job, something you bought, driving, discrimination,
+      a workplace injury, family money matters or social assistance.
       The assistant finds the Ontario laws that apply and explains them in plain English,
       citing the exact section for every point.</p>
     </div>
@@ -46,7 +48,7 @@ st.markdown('<div class="eyebrow">What it can help with</div>', unsafe_allow_htm
 st.markdown('<h2 class="section-title">Pick a topic, or just describe your situation</h2>', unsafe_allow_html=True)
 st.write("")
 for column, (law, info) in grid(LAWS.items()):
-    with column, st.container(border=True, key=f"card-{info['topic'].split()[0].lower()}"):
+    with column, st.container(border=True, key=f"card-{info['topic'].lower().replace(' ', '-')}"):
         st.markdown(
             f"""
             <div class="card-photo" style="background-image:url('{info['photo']}')"></div>
@@ -68,14 +70,14 @@ st.write("")
 st.markdown('<div class="eyebrow">How it works</div>', unsafe_allow_html=True)
 st.markdown('<h2 class="section-title">Answers from the law itself, not from memory</h2>', unsafe_allow_html=True)
 st.markdown(
-    """
+    f"""
     <div class="steps">
       <div class="step"><div class="step-num">01</div><b>Tell it what's happening</b>
         <span>Write it the way you'd tell a friend, like "my landlord is trying to kick me out".
         It asks a follow-up question if it needs more details.</span></div>
       <div class="step"><div class="step-num">02</div><b>It finds the laws that apply</b>
         <span>Your words are translated into legal terms and matched against every section of
-        the five Acts, so it finds the right rules even if you don't know what they're called.</span></div>
+        the {number_word(len(LAWS))} Acts and {len(REGULATIONS)} regulations, so it finds the right rules even if you don't know what they're called.</span></div>
       <div class="step"><div class="step-num">03</div><b>You get a cited answer</b>
         <span>The answer only uses the law it found, cites a section for every point, and says so
         when the law doesn't cover your question. You can read the original text of each section.</span></div>

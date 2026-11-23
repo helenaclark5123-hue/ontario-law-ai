@@ -4,7 +4,7 @@ Reads test_set.csv, which has four columns:
   question        - a question a real person might ask
   correct_answer  - the right answer, checked on ontario.ca/laws
   source_section  - where the answer is, e.g. "RTA 116" or "ESA 17; ESA 18"
-                    (RTA / ESA / CPA / OHSA / HTA), or "NONE" if the laws don't cover it
+                    (RTA / ESA / CPA / OHSA / HTA / HRC / WSIA / FLA / OWA / ODSPA), or "NONE" if the laws don't cover it
   type            - your own label, e.g. easy, tricky, not_covered
 
 Each question goes through the normal assistant (answer.py, unchanged). Then
@@ -57,7 +57,13 @@ LAW_NAMES = {
     "CPA": "Consumer Protection Act, 2002",
     "OHSA": "Occupational Health and Safety Act",
     "HTA": "Highway Traffic Act",
+    "HRC": "Human Rights Code",
+    "WSIA": "Workplace Safety and Insurance Act, 1997",
+    "FLA": "Family Law Act",
+    "OWA": "Ontario Works Act, 1997",
+    "ODSPA": "Ontario Disability Support Program Act, 1997",
 }
+SHORT_CODE = re.compile(r"\b(" + "|".join(LAW_NAMES) + r")\s*(?:s\.)?\s*(\d+(?:\.\d+)*)", re.I)
 GRADES = ("correct", "wrong", "made_up")
 
 JUDGE_PROMPT = """You grade answers from an Ontario law assistant against an answer key written by a person who checked the official law.
@@ -83,7 +89,7 @@ def parse_sections(text):
     """'RTA 116; ESA s. 17' -> [('Residential Tenancies Act, 2006', '116'), ...]"""
     return [
         (LAW_NAMES[law.upper()], number)
-        for law, number in re.findall(r"\b(RTA|ESA|CPA|OHSA|HTA)\s*(?:s\.)?\s*(\d+(?:\.\d+)*)", text, re.I)
+        for law, number in SHORT_CODE.findall(text)
     ]
 
 

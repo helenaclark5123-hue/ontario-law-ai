@@ -13,6 +13,7 @@ import sys
 import anthropic
 from dotenv import load_dotenv
 
+from get_laws import LAWS
 from rerank import rerank_retrieve
 
 load_dotenv()  # reads ANTHROPIC_API_KEY from the .env file
@@ -38,9 +39,9 @@ Write in plain language a non-lawyer can follow. Keep answers short: a direct an
 
 # Instructions for rewriting a question before searching. The rewrite is only
 # used to search; the answer still comes only from the retrieved sections.
-REWRITE_PROMPT = """You turn everyday questions about Ontario law into search queries for a database of five Ontario statutes and the main regulations made under them: the Residential Tenancies Act, 2006, the Employment Standards Act, 2000, the Consumer Protection Act, 2002, the Occupational Health and Safety Act, and the Highway Traffic Act.
+REWRITE_PROMPT = f"""You turn everyday questions about Ontario law into search queries for a database of {len(LAWS)} Ontario statutes and the main regulations made under them: {", ".join(LAWS[:-1])}, and the {LAWS[-1]}.
 
-Rewrite the question using the words these statutes themselves would use. For example, "door-to-door sale" becomes "direct agreement", "damage deposit" becomes "security deposit", "fired" becomes "termination of employment", "pay" becomes "wages", "unsafe job" becomes "refuse to work where health or safety is in danger", "boss" becomes "employer" or "supervisor", "ticket" becomes "offence" or "fine", and "lose my licence" becomes "driver's licence suspended".
+Rewrite the question using the words these statutes themselves would use. For example, "door-to-door sale" becomes "direct agreement", "damage deposit" becomes "security deposit", "fired" becomes "termination of employment", "pay" becomes "wages", "unsafe job" becomes "refuse to work where health or safety is in danger", "boss" becomes "employer" or "supervisor", "ticket" becomes "offence" or "fine", "lose my licence" becomes "driver's licence suspended", "discriminated against" becomes "right to equal treatment without discrimination", "workers' comp" becomes "benefits for workplace injury, loss of earnings", "divorce money" becomes "spousal support" or "equalization of net family property", "welfare" becomes "income assistance under Ontario Works", and "disability cheque" becomes "income support under the Ontario Disability Support Program".
 
 Use legal terms only. Do not add section numbers, amounts, time periods or anything else that would answer the question, because the answer must come from the law text that the search finds.
 
