@@ -1,0 +1,8 @@
+Questions: 2
+Accuracy:           2/2 = 100%
+Hallucination rate: 0/2 = 0%  (graded made_up)
+Wrong (not made up): 0/2
+
+Per question:
+   1. [correct] search found source: yes      How much notice does my landlord need to give before raising my rent?
+   2. [correct] search found source: yes      How often can my landlord raise my rent?

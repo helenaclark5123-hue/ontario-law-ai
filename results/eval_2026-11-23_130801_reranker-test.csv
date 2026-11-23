@@ -1,0 +1,25 @@
+question,type,correct_answer,source_section,assistant_answer,search_rewrite,sections_retrieved,source_section_retrieved,grade,judge_reason
+How much notice does my landlord need to give before raising my rent?,easy,"At least 90 days' written notice, in the form approved by the Landlord and Tenant Board. An increase without proper notice is void.",RTA 116,"Your landlord must give you at least **90 days' written notice** before raising your rent (Residential Tenancies Act, 2006, s. 116(1)).
+
+Key conditions:
+
+- **Form:** The notice must be in a form approved by the Landlord and Tenant Board. It must state that the landlord intends to increase the rent and the amount of the new rent (s. 116(3)).
+- **Missing or defective notice:** If the landlord doesn't give proper notice, the increase is void. The landlord must give a new notice before taking the increase (s. 116(4)).
+- **Applies even to guideline increases:** The 90-day notice rule applies even when the increase follows a Board order (s. 116(2)).
+- **Wait between increases:** The landlord can only increase rent if at least 12 months have passed since the last increase for that tenant in that unit, or since the tenant first moved in if there has been no earlier increase (s. 119(1)).
+- **Deemed acceptance:** If you don't give the landlord a notice of termination after receiving a proper rent increase notice, you are deemed to have accepted the increase that the Act allows (s. 118). This doesn't make an improper increase valid.
+
+The sections I have don't say how much a rent increase can be, so I can't tell you what amount is allowed.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.","notice of rent increase by landlord to tenant under Residential Tenancies Act, 2006",RTA 116; RTA 110; RTA 118; RTA 120.1; RTA 121; RTA 136.1; RTA 119; RTA 246,yes,correct,"The assistant states the 90 days' written notice requirement, the Board-approved form, and that an increase without proper notice is void, all matching the answer key and s. 116. The extra points (12-month rule, deemed acceptance, guideline amount not covered) are supported by the provided sections."
+How often can my landlord raise my rent?,easy,"Only once every 12 months: at least 12 months must pass since the last increase, or since the tenant first moved in if there hasn't been one.",RTA 119,"Your landlord can generally raise your rent once every 12 months. The first increase must be at least 12 months after your tenancy began, and each later increase must be at least 12 months after the last one (Residential Tenancies Act, 2006, s. 119(1)).
+
+Key conditions:
+
+- **Amount cap:** The increase generally cannot be more than the guideline set by the Minister for that year. The guideline is based on the Consumer Price Index and cannot be more than 2.5% (Residential Tenancies Act, 2006, s. 120(1), (2)). I can't tell you the guideline for your year because the sections don't list it.
+- **Notice:** The landlord must give you at least 90 days' written notice, on an approved form, stating the new rent amount. An increase without proper notice is void, and the landlord must give a new notice before taking it (Residential Tenancies Act, 2006, s. 116(1), (3), (4)).
+- **Exceptions to the cap:** Higher increases may be allowed by a written agreement for a specified capital expenditure or a new or additional service. The tenant can cancel that agreement within five days after signing it (Residential Tenancies Act, 2006, s. 121(1), (3), (4)). Adding a parking space or a prescribed service can also justify an increase, and the 12-month and notice rules do not apply to it (Residential Tenancies Act, 2006, s. 123(1), (2)). The sections also refer to increases ordered by the Board, but they don't set out those rules.
+
+I couldn't find the rules for Board-ordered increases in the laws I have. The Landlord and Tenant Board or a community legal clinic can help with those.
+
+This is legal information, not legal advice. For advice about your situation, contact a lawyer, paralegal or community legal clinic.",rent increase; annual rent increase guideline; lawful rent; landlord; tenant; rental unit,RTA 120; RTA 119; RTA 110; RTA 116; RTA 123; RTA 121; O. Reg. 516/06 33; O. Reg. 516/06 32,yes,correct,"The answer key says rent can be raised only once every 12 months, measured from the last increase or from the first rental date, and the assistant states exactly this rule citing s. 119(1). The extra detail about the guideline, notice, and exceptions is accurate according to the provided sections and does not contradict the key."

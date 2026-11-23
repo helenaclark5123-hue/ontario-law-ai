@@ -233,3 +233,26 @@ Cost of the whole Iterate: about $1 in API credit.
   searches by rank (made the damage-deposit question worse, #1 -> #8) and
   giving the AI 10 sections (no improvement), and kept neither. A better
   search method (e.g. a re-ranking model) is the likely next step.
+
+## 7. Re-ranking search (Nov 23)
+
+- **Problem:** the same question could get a complete answer one run and an
+  incomplete one the next, because the legal-terms rewrite varies and the top-8
+  sections by similarity score shift with it (e.g. the stunt-driving rules were
+  missed in 3 of 3 runs).
+- **Fix (`rerank.py`):** gather ~40 candidate sections from both searches, then
+  Claude Haiku reads a preview of each and picks the 8 needed to answer (main
+  rule, definitions, exceptions, penalties, regulations with the numbers).
+  About 0.05 cents and a couple of seconds extra per question.
+- **Bug found and fixed while testing:** the AI replied with *law section
+  numbers* ("24, 35, 233") instead of the *candidate numbers* asked for, so the
+  wrong sections were picked. Candidates are now labelled C1, C2, ... and only
+  those labels are read.
+- **Measured (13 questions, 3 runs each):** key sections reached the AI
+  **39/45 times with re-ranking vs 28/45 before**, with no question doing
+  worse. Stunt driving and the 100/110 km/h limits went from 0/3 to 3/3.
+- **35-question evaluation:** still 33/35 (94%), 0 made up, but different
+  questions pass: the mould-retaliation and lock-change questions are now
+  right; the gym question (definition section still hard to find) and public
+  holiday pay (right section, but the headline overstated premium pay, an
+  answering mistake) were wrong this run. Results vary run to run.

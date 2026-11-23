@@ -1,7 +1,7 @@
 """Stage 4: Answer a question using only the retrieved Ontario law sections.
 
-This is the RAG step: rewrite the question into legal terms, retrieve the 8
-most relevant sections using both versions (Stage 3), send them to Claude with
+This is the RAG step: rewrite the question into legal terms, search with both
+versions, let the AI pick the 8 most useful sections (rerank.py), send them to Claude with
 strict rules, and return the answer plus the sections used.
 
     python answer.py "your question"
@@ -13,7 +13,7 @@ import sys
 import anthropic
 from dotenv import load_dotenv
 
-from search import retrieve
+from rerank import rerank_retrieve
 
 load_dotenv()  # reads ANTHROPIC_API_KEY from the .env file
 
@@ -87,8 +87,9 @@ def answer(question, k=8):
 
     client = anthropic.Anthropic()
     rewrite = rewrite_question(client, question)
-    # Search with both the person's own words and the legal-terms version.
-    chunks = retrieve([question, rewrite] if rewrite else [question], k)
+    # Search with both the person's own words and the legal-terms version,
+    # then let the AI choose the k most useful sections from a wider pool.
+    chunks = rerank_retrieve(client, question, [question, rewrite] if rewrite else [question], k)
 
     response = client.messages.create(
         model=MODEL,

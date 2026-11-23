@@ -6,7 +6,8 @@ Each turn:
      self-contained question ("he says his daughter is moving in" ->
      "My landlord wants to evict me because his daughter is moving in...").
   2. Search the laws exactly like answer.py: rewrite into legal terms, then
-     retrieve the 8 best whole sections.
+     let the AI pick the 8 most useful whole sections from a wider pool
+     (rerank.py).
   3. Answer with the same strict rules as answer.py (only from the sections,
      cite everything, disclaimer), plus: if the answer depends on a fact the
      person hasn't given, explain the likely cases and ask one short
@@ -21,7 +22,7 @@ import anthropic
 from dotenv import load_dotenv
 
 from answer import MODEL, NOT_FOUND, DISCLAIMER, SYSTEM_PROMPT, MissingKeyError, format_sections, rewrite_question
-from search import retrieve
+from rerank import rerank_retrieve
 
 # How many earlier messages to send with each turn (keeps costs down).
 HISTORY_MESSAGES = 8
@@ -71,7 +72,7 @@ def chat_turn(history, message, k=8):
 
     question = standalone_question(client, history, message)
     rewrite = rewrite_question(client, question)
-    sections = retrieve([question, rewrite] if rewrite else [question], k)
+    sections = rerank_retrieve(client, question, [question, rewrite] if rewrite else [question], k)
 
     messages = [{"role": m["role"], "content": m["content"]} for m in history[-HISTORY_MESSAGES:]]
     messages.append({
