@@ -1,5 +1,6 @@
-"""How it works: the laws covered, how answers are made and tested, keeping
-the law current, and the limitations."""
+"""How it works: why The Bridge exists, information vs advice, how answers are
+made and checked, test results, keeping the law current, free legal help, and
+the limitations."""
 
 import json
 from pathlib import Path
@@ -7,6 +8,7 @@ from pathlib import Path
 import streamlit as st
 
 from get_laws import REGULATIONS, load_saved_laws
+from help import FREE_HELP
 from ui import GROUPS, LAWS, STATIC, number_word, footer, grid, nice_date, nice_time, read_status, section_counts
 from update_laws import update
 
@@ -18,15 +20,41 @@ st.markdown(
     <div class="page-hero" style="background: linear-gradient(90deg, rgba(11,20,36,.95) 0%,
          rgba(11,20,36,.78) 55%, rgba(11,20,36,.35) 100%), url('{STATIC}/queens-park.jpg') center 40% / cover;">
       <div class="eyebrow">How it works</div>
-      <h1>Built on the text of the law</h1>
-      <p>The assistant never answers from memory. It looks up the actual sections of Ontario law,
-      answers only from what they say, and shows you exactly where each point comes from.</p>
+      <h1>A bridge to your rights, built on the text of the law</h1>
+      <p>The Bridge never answers from memory. It looks up the actual sections of Ontario law,
+      explains only what they say, and shows you exactly where each point comes from.</p>
     </div>
     """,
     unsafe_allow_html=True,
 )
 
+# ---- Why The Bridge exists ---------------------------------------------------
+st.markdown("### Why The Bridge exists")
+st.markdown(
+    "Many people with a legal problem never get help. Lawyers are expensive, people often don't know their rights, "
+    "and the process can feel scary and lonely. So people with a bad landlord, an unpaid paycheque or a store that "
+    "won't give a refund often just give up.\n\n"
+    "The Bridge helps people in Ontario understand their rights in plain, warm language, grounded in the real text "
+    "of the law. It doesn't replace lawyers. It helps you show up ready: knowing what the law says, what options "
+    "people in your situation have, and what to ask. **You deserve justice. We help you get there.**"
+)
+
+# ---- Information, not advice ------------------------------------------------
+st.write("")
+st.markdown("### Information, not advice")
+st.markdown(
+    "The Bridge gives **legal information**: what the law says, and the options people in a situation like yours "
+    "typically have. It never gives **legal advice**: it won't tell you what you should do in your case. That's "
+    "because the right choice depends on details only a lawyer or legal clinic can look at properly, and because "
+    "in Ontario, giving legal advice is the job of licensed lawyers and paralegals.\n\n"
+    "So instead of \"you should file a complaint\", The Bridge says \"the law says...\" and \"people in this "
+    "situation can...\". For serious situations (criminal charges, immigration, a court date that's already set, "
+    "family and custody matters, or when it isn't sure), it shows a box pointing to a professional and free help. "
+    "If someone may be in danger, it says to call 911 first."
+)
+
 # ---- The laws ---------------------------------------------------------------
+st.write("")
 st.markdown("### The laws it covers")
 counts = section_counts()
 saved = {law["name"]: law for law in load_saved_laws()}
@@ -87,20 +115,47 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ---- Testing ----------------------------------------------------------------
+# ---- How The Bridge checks itself ------------------------------------------
 st.write("")
-st.markdown("### How it's tested")
-a, b, c = st.columns(3)
-a.metric("Test questions answered correctly", "33 / 35", help="Final test run, Nov 21, 2026, graded against an answer key written from the law text.")
-b.metric("Answers that made up law", "0", help="No answer stated a rule, number or section that isn't in the law.")
-c.metric("Out-of-scope questions declined", "6 / 6", help="Questions about criminal, family, traffic, tax and other laws it didn't cover at the time.")
+st.markdown("### How The Bridge checks itself")
 st.markdown(
-    "These results are from the final test run on the original three laws (renting, work and buying), before "
-    "workplace safety and driving were added. "
-    "Every answer in the test set is graded by an AI judge against a written answer key, and a "
-    "**citation checker** confirms that each cited section exists and says what the answer claims. "
-    "When the assistant got something wrong, it was because search missed a section, and the assistant "
-    "said it couldn't find the rule rather than guessing. Full results are in the project's "
+    """
+- **An AI judge.** A set of test questions, each with an answer key written from the law text, is run through
+  The Bridge. A separate AI judge grades every answer as correct, wrong, or made up (stating law that isn't there).
+- **A citation checker.** For every section an answer cites, it checks that the section exists and actually says
+  what the answer claims.
+- **A confidence score (semantic entropy).** The Bridge asks itself the same question 5 times, from the same law
+  sections, and compares the answers by meaning. If they all agree, it's confident. If they disagree, it's
+  probably guessing. You can run this yourself with the **How sure is this?** button under any answer; a low score
+  shows the "talk to a professional" box.
+- **You.** Every answer has a **Flag this answer** button. Flagged answers are saved with the question so they can
+  be checked against the law and used to improve the search.
+"""
+)
+
+# ---- Test results (numbers copied exactly from the files in results/) -------
+st.write("")
+st.markdown("### Test results")
+st.markdown("**Latest run: November 23, 2026**, with all " + number_word(len(LAWS)) + " Acts and the new warmer tone")
+a, b, c = st.columns(3)
+a.metric("Test questions answered correctly", "35 / 37", help="results/eval_2026-11-23_181903_warm-tone")
+b.metric("Answers graded as made-up law", "1", help="See the note below.")
+c.metric("Out-of-scope questions declined", "5 / 5", help="Questions about laws The Bridge doesn't cover, "
+         "such as criminal law, divorce, tax and immigration.")
+st.caption(
+    "The one answer graded as made up was about a landlord's son moving in. Search missed the section on "
+    "compensation (Residential Tenancies Act, s. 48.1), and the answer said it couldn't find a compensation rule. "
+    "We think the judge was too strict, but we report the grade as it was given. Before the tone change, the same "
+    "test scored 34 / 37 with none graded made up."
+)
+st.markdown("**First final run: November 21, 2026**, on the original three laws (renting, work and buying)")
+a, b, c = st.columns(3)
+a.metric("Test questions answered correctly", "33 / 35", help="results/eval_2026-11-21_125426_final")
+b.metric("Answers that made up law", "0")
+c.metric("Out-of-scope questions declined", "6 / 6")
+st.markdown(
+    "When The Bridge gets something wrong, it's usually because search missed a section, and it says it couldn't "
+    "find the rule rather than guessing. Full results are in the project's "
     "[GitHub repository](https://github.com/helenaclark5123-hue/ontario-law-ai)."
 )
 
@@ -133,12 +188,22 @@ with st.container(border=True):
                         [f"Added: {a}" for a in report["added"]] + [f"Removed: {r}" for r in report["removed"]]:
                 st.write(f"• {item}")
 
+# ---- Where to get more help -------------------------------------------------
+st.write("")
+st.markdown("### Where to get more help")
+st.markdown("Free and low-cost legal help in Ontario. Every link was checked on the organization's own website "
+            "(November 2026). **If you're in immediate danger, call 911.**")
+for column, (name, what, url, phone) in grid(FREE_HELP):
+    with column, st.container(border=True):
+        st.markdown(f"**[{name}]({url})**  \n{what}" + (f"  \nPhone: {phone}" if phone else ""))
+
 # ---- Limitations ------------------------------------------------------------
 st.write("")
 st.markdown("### Limitations")
 st.markdown(
     f"""
 - **Legal information, not legal advice.** It explains what the law says; it can't tell you what to do in your case.
+- **Translations are unofficial.** If you write in another language, the answer is translated, but the law text and citations are in English.
 - **{number_word(len(LAWS)).capitalize()} Acts and {len(REGULATIONS)} of their regulations only**, not other laws or regulations, city bylaws or court decisions.
 - **Unofficial copy.** The text comes from the A2AJ Canadian Legal Data project and is only as current as their last update.
 - **Search can miss a section**, especially when a problem is described in everyday words. Check the original text, and when it matters, ask a lawyer, paralegal or community legal clinic.
