@@ -59,8 +59,8 @@ for column, (name, info) in grid(LAWS.items()):
 st.caption("Each Act comes with the main regulations made under it (the detailed rules, amounts and "
            "definitions). Other regulations, the yearly rent increase guideline amount, and court decisions are "
            "not included. The speed limits regulation includes its rules but not its lists of highway stretches. "
-           "The Family Law Act covers property, support and the family home; custody and parenting time are in "
-           "a different law (the Children's Law Reform Act) that isn't included yet.")
+           "Divorce itself is a federal law (the Divorce Act) and isn't included; separation, support, property "
+           "and parenting under Ontario law are.")
 
 # ---- How an answer is made --------------------------------------------------
 st.write("")

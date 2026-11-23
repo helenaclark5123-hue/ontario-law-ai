@@ -31,6 +31,13 @@ LAWS = [
     "Family Law Act",
     "Ontario Works Act, 1997",
     "Ontario Disability Support Program Act, 1997",
+    "Children's Law Reform Act",
+    "Payday Loans Act, 2008",
+    "Collection and Debt Settlement Services Act",
+    "Condominium Act, 1998",
+    "Trespass to Property Act",
+    "Liquor Licence and Control Act, 2019",
+    "Cannabis Control Act, 2017",
 ]
 
 # Regulations made under those Acts that fill gaps the Acts leave (detailed
@@ -55,6 +62,10 @@ REGULATIONS = [
     {"citation": "O Reg 391/97", "title": "Child Support Guidelines", "parent": "Family Law Act"},
     {"citation": "O Reg 134/98", "title": "General", "parent": "Ontario Works Act, 1997"},
     {"citation": "O Reg 222/98", "title": "General", "parent": "Ontario Disability Support Program Act, 1997"},
+    {"citation": "O Reg 98/09", "title": "General", "parent": "Payday Loans Act, 2008"},
+    {"citation": "RRO 1990, Reg 74", "title": "General", "parent": "Collection and Debt Settlement Services Act"},
+    {"citation": "O Reg 48/01", "title": "General", "parent": "Condominium Act, 1998"},
+    {"citation": "O Reg 745/21", "title": "General", "parent": "Liquor Licence and Control Act, 2019"},
 ]
 
 

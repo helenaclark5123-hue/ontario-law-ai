@@ -15,8 +15,8 @@ st.markdown(
       <div class="flag-line"><img src="{STATIC}/flag-canada.png" alt="Flag of Canada">
         <span>Ontario Law Assistant</span></div>
       <h1>Know your rights in Ontario, straight from the law.</h1>
-      <p class="lead">Describe your problem with your landlord, your job, something you bought, driving, discrimination,
-      a workplace injury, family money matters or social assistance.
+      <p class="lead">Describe your problem in your own words: your landlord or condo, your job, a purchase or a debt,
+      your family, driving, discrimination, benefits, and more.
       The assistant finds the Ontario laws that apply and explains them in plain English,
       citing the exact section for every point.</p>
     </div>

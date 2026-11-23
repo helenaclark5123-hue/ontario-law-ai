@@ -89,5 +89,54 @@
     "artist": "TheTrolleyPole",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "custody.jpg": {
+    "title": "Grange Park fountain Children Playground 2023.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Grange_Park_fountain_Children_Playground_2023.JPG",
+    "artist": "Canmenwalker",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "payday.jpg": {
+    "title": "Cash Money Payday Advance, Windsor, Ontario, 2025-06-23.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cash_Money_Payday_Advance,_Windsor,_Ontario,_2025-06-23.jpg",
+    "artist": "Chris Woodrich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "debt.jpg": {
+    "title": "Modern-desk-phone-or-smartphone-with-incoming-call.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Modern-desk-phone-or-smartphone-with-incoming-call.jpg",
+    "artist": "Youcef Smahi",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "condos.jpg": {
+    "title": "ICE Condominiums - Toronto, Canada.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:ICE_Condominiums_-_Toronto,_Canada.jpg",
+    "artist": "EuroCarGT",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "trespass.jpg": {
+    "title": "Abandoned equipment and \"No Trespassing\" sign, Petrolia, Ontario, 2026-05-17.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Abandoned_equipment_and_%22No_Trespassing%22_sign,_Petrolia,_Ontario,_2026-05-17.jpg",
+    "artist": "Chris Woodrich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "alcohol.jpg": {
+    "title": "LCBO store, Stratford, Ontario, 2025-08-04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:LCBO_store,_Stratford,_Ontario,_2025-08-04.jpg",
+    "artist": "Chris Woodrich",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "cannabis.jpg": {
+    "title": "Cannabis store on Wellington St. West, Ottawa.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cannabis_store_on_Wellington_St._West,_Ottawa.jpg",
+    "artist": "Ross Dunn",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
   }
 }

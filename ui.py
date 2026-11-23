@@ -105,6 +105,69 @@ LAWS = {
             "Can I work part-time and still get ODSP?",
         ],
     },
+    "Children's Law Reform Act": {
+        "topic": "Custody and parenting",
+        "photo": f"{STATIC}/custody.jpg",
+        "about": "Decision-making for children, parenting time, where a child lives, and moving with a child.",
+        "examples": [
+            "We're separating. Who decides where the kids live?",
+            "Can my ex move to another city with our child?",
+        ],
+    },
+    "Payday Loans Act, 2008": {
+        "topic": "Payday loans",
+        "photo": f"{STATIC}/payday.jpg",
+        "about": "The cost of borrowing, cancelling a payday loan, and what lenders can't do.",
+        "examples": [
+            "I took out a payday loan yesterday. Can I still cancel it?",
+            "How much can a payday lender charge me?",
+        ],
+    },
+    "Collection and Debt Settlement Services Act": {
+        "topic": "Debt collectors",
+        "photo": f"{STATIC}/debt.jpg",
+        "about": "When and how collection agencies can contact you, and what they're not allowed to do.",
+        "examples": [
+            "Is a debt collector allowed to call me at work?",
+            "A collection agency keeps calling me late at night. Is that allowed?",
+        ],
+    },
+    "Condominium Act, 1998": {
+        "topic": "Condos",
+        "photo": f"{STATIC}/condos.jpg",
+        "about": "Condo fees, the board and owners' meetings, rules, records, and disputes.",
+        "examples": [
+            "Can my condo board raise my fees?",
+            "How do I get a copy of my condo's records?",
+        ],
+    },
+    "Trespass to Property Act": {
+        "topic": "Trespassing",
+        "photo": f"{STATIC}/trespass.jpg",
+        "about": "When you can be told to leave a property, signs, and fines for trespassing.",
+        "examples": [
+            "Can a store kick me out and ban me?",
+            "What's the fine for trespassing in Ontario?",
+        ],
+    },
+    "Liquor Licence and Control Act, 2019": {
+        "topic": "Alcohol",
+        "photo": f"{STATIC}/alcohol.jpg",
+        "about": "The drinking age, where you can drink, and rules for selling and serving alcohol.",
+        "examples": [
+            "What's the legal drinking age in Ontario?",
+            "Can I drink alcohol in a public park?",
+        ],
+    },
+    "Cannabis Control Act, 2017": {
+        "topic": "Cannabis",
+        "photo": f"{STATIC}/cannabis.jpg",
+        "about": "Age limits, where you can carry and use cannabis, and in cars.",
+        "examples": [
+            "How old do you have to be to buy weed in Ontario?",
+            "Can I have cannabis in my car?",
+        ],
+    },
 }
 
 STYLE = """

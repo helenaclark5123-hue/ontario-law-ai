@@ -294,3 +294,43 @@ Cost of the whole Iterate: about $1 in API credit.
   RTA s. 48.1, was only partly found this run). The divorce question is still
   correctly answered "not covered" (divorce itself is a federal law).
   (`results/eval_2026-11-23_145115_ten-laws`)
+
+## 9. Seven more laws: custody, debt, condos, everyday rules (Nov 23)
+
+- Added **7 Acts and 4 regulations** (1,533 new chunks; database now 5,989),
+  for a total of **17 Acts and 18 regulations**:
+  - **Children's Law Reform Act** (101 sections): decision-making
+    responsibility, parenting time, moving with a child. This fills the
+    custody gap left by the Family Law Act.
+  - **Payday Loans Act, 2008** + **O. Reg. 98/09**: the cost-of-borrowing cap,
+    the 2-day cancellation right, default charges.
+  - **Collection and Debt Settlement Services Act** + **Reg. 74**: when
+    collectors can call (not 9 p.m.-7 a.m., limited Sundays), contacting
+    employers and family, harassment.
+  - **Condominium Act, 1998** + **O. Reg. 48/01**: common expenses (condo
+    fees), reserve funds, boards, records.
+  - **Trespass to Property Act**, **Liquor Licence and Control Act, 2019** +
+    **O. Reg. 745/21**, **Cannabis Control Act, 2017**: trespass fines, where
+    you can drink, cannabis age and car rules.
+  - Skipped the cannabis regulation (O. Reg. 468/18): it's mostly about
+    running a store.
+- Seven new topic cards with credited photos. New everyday words for the
+  question rewriter ("custody", "debt collector calling me", "condo fees",
+  "weed"...). The website's counts and topic lists update by themselves.
+- **Test set updated:** the payday-loan and debt-collector questions used to be
+  "not covered"; they now have real answer keys (PLA s. 30/43; Reg. 74
+  s. 22). Two new "not covered" questions replace them (sponsoring parents to
+  immigrate, a federal law; snow-shovelling fines, a city bylaw). 37 questions.
+- **Spot checks (one per new law):** all 7 answered from the right law with
+  correct citations, e.g. payday lenders can charge at most $14 per $100
+  borrowed (O. Reg. 98/09 s. 23); an ex moving with a child must give 60 days'
+  written notice (CLRA s. 39.3); cannabis in a car must be unopened or packed
+  away (CCA s. 12).
+- **Evaluation with all 17 laws (37 questions): 34/37 (92%), 0 made up.**
+  Both new questions (payday-loan cancelling, debt collector calling at work)
+  were correct. The 3 misses were the "son moving in" question (search found
+  the compensation rule only partly) and two answering slips where the right
+  section *was* found: the mechanic's-estimate answer missed the remedy in
+  CPA s. 10(2), and the public-holiday headline overstated premium pay. Both
+  passed in earlier runs, so they vary run to run. Nothing invented.
+  (`results/eval_2026-11-23_152709_seventeen-laws`)

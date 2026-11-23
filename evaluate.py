@@ -62,6 +62,14 @@ LAW_NAMES = {
     "FLA": "Family Law Act",
     "OWA": "Ontario Works Act, 1997",
     "ODSPA": "Ontario Disability Support Program Act, 1997",
+    "CLRA": "Children's Law Reform Act",
+    "PLA": "Payday Loans Act, 2008",
+    "CDSSA": "Collection and Debt Settlement Services Act",
+    "CONDO": "Condominium Act, 1998",
+    "TPA": "Trespass to Property Act",
+    "LLCA": "Liquor Licence and Control Act, 2019",
+    "CCA": "Cannabis Control Act, 2017",
+    "REG74": "R.R.O. 1990, Reg. 74",
 }
 SHORT_CODE = re.compile(r"\b(" + "|".join(LAW_NAMES) + r")\s*(?:s\.)?\s*(\d+(?:\.\d+)*)", re.I)
 GRADES = ("correct", "wrong", "made_up")
