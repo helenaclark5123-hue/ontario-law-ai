@@ -9,10 +9,15 @@ from get_laws import load_saved_laws
 from make_chunks import CHUNKS_FILE
 from update_laws import STATUS_FILE
 
-# One icon, plain-English topic and short description per Act.
+# Photos are served from static/ (see .streamlit/config.toml); credits are in
+# static/photo_credits.json and shown on the How it works page.
+STATIC = "app/static"
+
+# Plain-English topic, short description, photo and example questions per Act.
 LAWS = {
     "Residential Tenancies Act, 2006": {
-        "icon": "🏠", "topic": "Renting",
+        "topic": "Renting",
+        "photo": f"{STATIC}/renting.jpg",
         "about": "Rent increases, evictions, repairs, deposits and your landlord entering your home.",
         "examples": [
             "My landlord is trying to kick me out. What are my rights?",
@@ -20,7 +25,8 @@ LAWS = {
         ],
     },
     "Employment Standards Act, 2000": {
-        "icon": "💼", "topic": "Work",
+        "topic": "Work",
+        "photo": f"{STATIC}/work.jpg",
         "about": "Hours, breaks, overtime, vacation, sick days, and being fired or laid off.",
         "examples": [
             "My boss wants me to work a 13-hour shift. Is that allowed?",
@@ -28,7 +34,8 @@ LAWS = {
         ],
     },
     "Consumer Protection Act, 2002": {
-        "icon": "🛒", "topic": "Buying things",
+        "topic": "Buying things",
+        "photo": f"{STATIC}/buying.jpg",
         "about": "Cancelling contracts, door-to-door sales, gym memberships, estimates and refunds.",
         "examples": [
             "Someone sold me something at my door yesterday and I want to cancel.",
@@ -37,83 +44,110 @@ LAWS = {
     },
 }
 
-NAVY, GOLD = "#1F3A5F", "#8A6D3B"
-
 STYLE = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
 
+:root {
+    --navy: #0B1424; --panel: #111D33; --panel-2: #14223A; --line: #24344F;
+    --text: #E6EBF2; --muted: #9AA7BA; --red: #D52B1E; --red-soft: #F2A39B;
+}
 html, body, [class*="css"], .stMarkdown, .stTextInput input, button, textarea {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
-h1, h2, h3, h4, .serif { font-family: 'Source Serif 4', Georgia, serif !important; letter-spacing: -0.01em; }
+h1, h2, h3, h4, .serif { font-family: 'Source Serif 4', Georgia, serif !important; letter-spacing: -0.01em; color: #FFFFFF; }
 .block-container { padding-top: 3.5rem; padding-bottom: 3rem; max-width: 1080px; }
 [data-testid="stToolbarActions"], [data-testid="stAppDeployButton"], #MainMenu { display: none; }
+a { color: var(--red-soft) !important; }
 
-/* Small uppercase label above headings */
+/* Small uppercase label above headings, with a red rule */
 .eyebrow {
-    text-transform: uppercase; letter-spacing: .12em; font-size: .75rem;
-    font-weight: 600; color: #8A6D3B; margin-bottom: .5rem;
+    text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 600;
+    color: var(--red-soft); margin-bottom: .6rem; display: flex; align-items: center; gap: .6rem;
 }
-.muted { color: #5B6474; }
+.eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--red); display: inline-block; }
+.muted { color: var(--muted); }
 
-/* Home: hero */
-.hero { padding: 2.5rem 0 1.2rem; }
-.hero h1 { font-size: 3.1rem !important; line-height: 1.08; color: #1F3A5F; margin: 0 0 1rem; padding: 0; }
-.hero p.lead { font-size: 1.2rem; color: #3E4757; max-width: 640px; line-height: 1.55; margin: 0; }
+/* Home: photo hero */
+.hero {
+    position: relative; border-radius: 18px; overflow: hidden; margin: .5rem 0 0;
+    padding: 4.5rem 3rem 4rem; min-height: 420px;
+    background: linear-gradient(90deg, rgba(11,20,36,.96) 0%, rgba(11,20,36,.82) 45%, rgba(11,20,36,.25) 100%),
+                url('app/static/hero-skyline.jpg') center 35% / cover no-repeat;
+    border: 1px solid var(--line);
+}
+.hero h1 { font-size: 3.2rem !important; line-height: 1.07; margin: 0 0 1.1rem; padding: 0; max-width: 620px; }
+.hero p.lead { font-size: 1.15rem; color: #C9D2DF; max-width: 540px; line-height: 1.6; margin: 0; }
+.flag-line { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.2rem; }
+.flag-line img { height: 18px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.15); }
+.flag-line span { text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 600; color: #FFFFFF; }
 
-/* Home: trust strip */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #E2DCCF;
-         border: 1px solid #E2DCCF; border-radius: 14px; overflow: hidden; margin: 2.2rem 0 3rem; }
-.stat { background: #FFFFFF; padding: 1.1rem 1.2rem; }
-.stat b { display: block; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.55rem; color: #1F3A5F; }
-.stat span { font-size: .85rem; color: #5B6474; }
+/* Page header with photo (How it works) */
+.page-hero {
+    border-radius: 18px; overflow: hidden; padding: 3.2rem 2.6rem; margin-bottom: 2rem;
+    border: 1px solid var(--line);
+}
+.page-hero h1 { font-size: 2.6rem !important; margin: 0 0 .6rem; padding: 0; }
+.page-hero p { color: #C9D2DF; font-size: 1.08rem; max-width: 620px; margin: 0; line-height: 1.6; }
 
-/* Section headings */
-.section-title { font-size: 1.9rem !important; color: #1F3A5F; margin: 0 0 .3rem; padding: 0; }
+/* Trust strip */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line);
+         border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: 2.2rem 0 3.2rem; }
+.stat { background: var(--panel); padding: 1.2rem 1.3rem; }
+.stat b { display: block; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.55rem; color: #FFFFFF; }
+.stat span { font-size: .85rem; color: var(--muted); }
+
+.section-title { font-size: 1.9rem !important; margin: 0 0 .3rem; padding: 0; }
 
 /* Cards (bordered containers named "card-...") */
 [class*="st-key-card-"] {
-    background: #FFFFFF; border-radius: 14px !important; padding: 1.3rem 1.2rem !important;
-    box-shadow: 0 1px 2px rgba(30, 39, 51, .04);
+    background: var(--panel); border-color: var(--line) !important; border-radius: 16px !important;
+    padding: 0 0 1.1rem !important; overflow: hidden;
 }
+.card-photo { height: 170px; background-size: cover; background-position: center; margin-bottom: 1rem; }
+.card-body { padding: 0 1.25rem; margin-bottom: .8rem; }
+.card-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.35rem; font-weight: 700; color: #FFFFFF; }
+.card-law { font-size: .78rem; color: var(--red-soft); font-weight: 600; margin: .2rem 0 .6rem; letter-spacing: .02em; }
+.card-text { font-size: .93rem; color: #C3CCD9; line-height: 1.55; }
+[class*="st-key-card-"] [data-testid="stElementContainer"]:has(button),
+[class*="st-key-card-"] [data-testid="stElementContainer"]:has(a) { padding: 0 1.25rem; }
 /* Example questions inside cards look like links */
 [class*="st-key-card-"] [data-testid="stBaseButton-tertiary"] {
-    justify-content: flex-start; text-align: left; color: #1F3A5F; padding: .15rem 0; min-height: 0;
+    justify-content: flex-start; text-align: left; color: #FFFFFF; padding: .2rem 0; min-height: 0;
 }
 [class*="st-key-card-"] [data-testid="stBaseButton-tertiary"] p { text-align: left; font-size: .9rem; }
-[class*="st-key-card-"] [data-testid="stBaseButton-tertiary"]:hover { color: #8A6D3B; text-decoration: underline; }
-.card-head { font-size: 1.9rem; line-height: 1; margin-bottom: .6rem; }
-.card-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.3rem; font-weight: 700; color: #1F3A5F; }
-.card-law { font-size: .8rem; color: #8A6D3B; font-weight: 600; margin: .15rem 0 .55rem; }
-.card-text { font-size: .93rem; color: #3E4757; line-height: 1.5; }
+[class*="st-key-card-"] [data-testid="stBaseButton-tertiary"]:hover { color: var(--red-soft); text-decoration: underline; }
 
-/* How-it-works steps */
+/* Numbered steps */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1rem; }
-.step { background: #FFFFFF; border: 1px solid #E2DCCF; border-radius: 14px; padding: 1.3rem; }
-.step-num { width: 2rem; height: 2rem; border-radius: 50%; background: #1F3A5F; color: #FFFFFF;
-            display: flex; align-items: center; justify-content: center; font-weight: 600; margin-bottom: .8rem; }
-.step b { display: block; color: #1E2733; margin-bottom: .3rem; }
-.step span { font-size: .92rem; color: #3E4757; line-height: 1.5; }
+.step { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem; }
+.step-num { font-family: 'Source Serif 4', Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--red);
+            line-height: 1; margin-bottom: .7rem; }
+.step b { display: block; color: #FFFFFF; margin-bottom: .35rem; }
+.step span { font-size: .92rem; color: #C3CCD9; line-height: 1.55; }
 
 /* Chat */
-[data-testid="stChatMessage"] { background: #FFFFFF; border: 1px solid #E2DCCF; border-radius: 14px; padding: 1rem 1.1rem; }
-[data-testid="stChatMessage"]:has(.user-msg) { background: #EEF2F7; border-color: #D7E0EB; }
-.searched { color: #6B7280; font-size: .8rem; font-style: italic; margin: 0 0 .5rem; }
-.law-title { font-weight: 600; color: #1F3A5F; margin-top: .6rem; }
-.badges { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .6rem; }
-.badge { background: #FFFFFF; border: 1px solid #E2DCCF; border-radius: 999px; padding: .2rem .7rem;
-         font-size: .8rem; color: #1E2733; white-space: nowrap; }
+[data-testid="stChatMessage"] { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.15rem; }
+[data-testid="stChatMessage"]:has(.user-msg) { background: #1A2B48; border-color: #2C4166; }
+.searched { color: var(--muted); font-size: .8rem; font-style: italic; margin: 0 0 .5rem; }
+.law-title { font-weight: 600; color: #FFFFFF; margin-top: .6rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: .2rem .75rem;
+        font-size: .8rem; color: #C3CCD9; white-space: nowrap; background: var(--panel); }
 
 /* Footer */
-.footer { margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid #E2DCCF;
-          color: #6B7280; font-size: .82rem; line-height: 1.6; }
+.footer { margin-top: 3.5rem; padding-top: 1.3rem; border-top: 1px solid var(--line);
+          color: var(--muted); font-size: .82rem; line-height: 1.65; }
 
 /* Phones */
 @media (max-width: 640px) {
+    .hero { padding: 2.6rem 1.4rem 2.4rem; min-height: 0;
+            background: linear-gradient(180deg, rgba(11,20,36,.7) 0%, rgba(11,20,36,.95) 70%),
+                        url('app/static/hero-skyline.jpg') center / cover no-repeat; }
     .hero h1 { font-size: 2.2rem !important; }
-    .hero h1 br { display: none; }
-    .hero p.lead { font-size: 1.05rem; }
+    .hero p.lead { font-size: 1.02rem; }
+    .page-hero { padding: 2.2rem 1.4rem; }
+    .page-hero h1 { font-size: 2rem !important; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .steps { grid-template-columns: 1fr; }
     .block-container { padding-top: 2.5rem; }
@@ -203,6 +237,7 @@ def footer():
           <a href="https://www.ontario.ca/laws" target="_blank">ontario.ca/laws</a>.<br>
           Law text: unofficial copy from the A2AJ Canadian Legal Data project (Osgoode Hall Law School and
           Toronto Metropolitan University). Answers are written by Claude from the retrieved sections.
+          Photos from Wikimedia Commons; credits on the How it works page.
         </div>
         """,
         unsafe_allow_html=True,

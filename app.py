@@ -46,12 +46,14 @@ def ensure_database():
 load_api_key()
 ensure_database()
 apply_style()
+st.logo("static/flag-canada.png", size="large", link="https://ontario-law-ai-hairmdjbph7rmavchjbpbd.streamlit.app/")
 
 pages = st.navigation(
     [
-        st.Page("views/home.py", title="Home", icon="🏛️", default=True),
-        st.Page("views/assistant.py", title="Ask the assistant", icon="💬", url_path="assistant"),
-        st.Page("views/how_it_works.py", title="How it works", icon="📖", url_path="how-it-works"),
+        st.Page("views/home.py", title="Home", icon=":material/home:", default=True),
+        st.Page("views/assistant.py", title="Ask the assistant", icon=":material/forum:", url_path="assistant"),
+        st.Page("views/how_it_works.py", title="How it works", icon=":material/menu_book:",
+                url_path="how-it-works"),
     ],
     position="top",
 )

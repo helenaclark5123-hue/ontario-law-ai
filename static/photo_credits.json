@@ -1,0 +1,44 @@
+{
+  "hero-skyline.jpg": {
+    "title": "Toronto - ON - Skyline bei Nacht.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_Skyline_bei_Nacht.jpg",
+    "artist": "Wladyslaw (talk)",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "queens-park.jpg": {
+    "title": "Legislative Assembly of Ontario - Queen's Park, Toronto.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Legislative_Assembly_of_Ontario_-_Queen%27s_Park,_Toronto.jpg",
+    "artist": "Spudgun67",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "renting.jpg": {
+    "title": "Apartment buildings in Toronto at night - DSC 0344 (15637124596).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Apartment_buildings_in_Toronto_at_night_-_DSC_0344_(15637124596).jpg",
+    "artist": "Lord of the Wings\u00a9 from Toronto, Canada",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "work.jpg": {
+    "title": "Toronto Financial District.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Toronto_Financial_District.jpg",
+    "artist": "Gregory Karastergios",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "buying.jpg": {
+    "title": "Eaton Centre 2011 Toronto.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Eaton_Centre_2011_Toronto.jpg",
+    "artist": "Svetlana Grechkina from Moscow, Russia",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "flag-canada.png": {
+    "title": "Flag of Canada (Pantone).svg",
+    "page": "https://commons.wikimedia.org/wiki/File:Flag_of_Canada_(Pantone).svg",
+    "artist": "Original: George F. G. Stanley Modified by: The original uploader was Illegitimate Barrister at Wikimedia Commons. The current SVG encoding is a rewrite performed by MapGrid.",
+    "license": "Public domain",
+    "license_url": ""
+  }
+}

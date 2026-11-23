@@ -1,11 +1,15 @@
 [browser]
 gatherUsageStats = false
 
-# Colours: deep navy for buttons and links, on a warm off-white page.
+# Serve the photos in static/ at app/static/...
+[server]
+enableStaticServing = true
+
+# Dark navy, with Canadian flag red for buttons and links.
 [theme]
-base = "light"
-primaryColor = "#1F3A5F"
-backgroundColor = "#FAF8F4"
-secondaryBackgroundColor = "#EFEBE3"
-textColor = "#1E2733"
+base = "dark"
+primaryColor = "#D52B1E"
+backgroundColor = "#0B1424"
+secondaryBackgroundColor = "#14223A"
+textColor = "#E6EBF2"
 font = "sans serif"

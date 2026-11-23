@@ -1,24 +1,30 @@
 """How it works: the laws covered, how answers are made and tested, keeping
 the law current, and the limitations."""
 
+import json
+from pathlib import Path
+
 import streamlit as st
 
 from get_laws import load_saved_laws
-from ui import LAWS, footer, nice_date, nice_time, read_status, section_counts
+from ui import LAWS, STATIC, footer, nice_date, nice_time, read_status, section_counts
 from update_laws import update
 
 st.markdown("<style>.block-container { max-width: 960px; }</style>", unsafe_allow_html=True)
 
-st.markdown('<div class="eyebrow">How it works</div>', unsafe_allow_html=True)
-st.markdown('<h1 class="section-title" style="font-size:2.6rem !important">Built on the text of the law</h1>',
-            unsafe_allow_html=True)
+# ---- Header (photo: Queen's Park, the Legislative Assembly of Ontario) ------
 st.markdown(
-    '<p class="muted" style="font-size:1.1rem; max-width:680px">The assistant never answers from memory. '
-    "It looks up the actual sections of Ontario law, answers only from what they say, and shows "
-    "you exactly where each point comes from.</p>",
+    f"""
+    <div class="page-hero" style="background: linear-gradient(90deg, rgba(11,20,36,.95) 0%,
+         rgba(11,20,36,.78) 55%, rgba(11,20,36,.35) 100%), url('{STATIC}/queens-park.jpg') center 40% / cover;">
+      <div class="eyebrow">How it works</div>
+      <h1>Built on the text of the law</h1>
+      <p>The assistant never answers from memory. It looks up the actual sections of Ontario law,
+      answers only from what they say, and shows you exactly where each point comes from.</p>
+    </div>
+    """,
     unsafe_allow_html=True,
 )
-st.write("")
 
 # ---- The laws ---------------------------------------------------------------
 st.markdown("### The laws it covers")
@@ -30,17 +36,19 @@ for column, (name, info) in zip(st.columns(3, gap="medium"), LAWS.items()):
     with column, st.container(border=True, key=f"card-{info['topic'].split()[0].lower()}"):
         st.markdown(
             f"""
-            <div class="card-head">{info['icon']}</div>
-            <div class="card-title">{info['topic']}</div>
-            <div class="card-law">{name}</div>
-            <div class="card-text">{info['about']}</div>
-            <div class="card-text" style="margin-top:.7rem"><b>{count}</b> sections ·
-            collected {nice_date(law['scraped_timestamp']) if law else '?'}</div>
+            <div class="card-photo" style="background-image:url('{info['photo']}'); height:130px"></div>
+            <div class="card-body">
+              <div class="card-title">{info['topic']}</div>
+              <div class="card-law">{name}</div>
+              <div class="card-text">{info['about']}</div>
+              <div class="card-text" style="margin:.7rem 0 .8rem"><b>{count}</b> sections ·
+              collected {nice_date(law['scraped_timestamp']) if law else '?'}</div>
+            </div>
             """,
             unsafe_allow_html=True,
         )
         if law:
-            st.link_button("Official text on ontario.ca ↗", law["url"], use_container_width=True)
+            st.link_button("Official text on ontario.ca", law["url"], icon=":material/open_in_new:", use_container_width=True)
 st.caption("Statutes only. Regulations (like the yearly rent increase guideline amount) and court decisions "
            "are not included.")
 
@@ -50,14 +58,14 @@ st.markdown("### How an answer is made")
 st.markdown(
     """
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><b>Understand the question</b>
+      <div class="step"><div class="step-num">01</div><b>Understand the question</b>
         <span>Your message, plus anything you said earlier in the conversation, is turned into a
         search question, and rewritten in the law's own words (for example, "door-to-door" becomes
         "direct agreement").</span></div>
-      <div class="step"><div class="step-num">2</div><b>Find the law</b>
+      <div class="step"><div class="step-num">02</div><b>Find the law</b>
         <span>Both versions are matched by meaning against every section of the three Acts. The 8 best
         sections are pulled in whole, so related rules and exceptions stay together.</span></div>
-      <div class="step"><div class="step-num">3</div><b>Answer only from it</b>
+      <div class="step"><div class="step-num">03</div><b>Answer only from it</b>
         <span>Claude writes the answer using only those sections, cites a section for every point, says
         "I couldn't find this" when the law doesn't cover it, and asks a follow-up if a key fact is missing.</span></div>
     </div>
@@ -92,7 +100,7 @@ with st.container(border=True):
         st.caption("Checking re-downloads the three laws, compares every section, and updates only the "
                    "ones that changed.")
     with action:
-        if st.button("🔄 Check for updates", use_container_width=True):
+        if st.button("Check for updates", icon=":material/refresh:", use_container_width=True):
             with st.spinner("Downloading the latest laws and comparing every section..."):
                 st.session_state["update_report"] = update()
             st.cache_data.clear()
@@ -120,5 +128,15 @@ st.markdown(
 - **Search can miss a section**, especially when a problem is described in everyday words. Check the original text, and when it matters, ask a lawyer, paralegal or community legal clinic.
 """
 )
+
+# ---- Photo credits (required by the photos' Creative Commons licences) -----
+st.write("")
+with st.expander("Photo credits"):
+    credits = json.loads((Path(__file__).parent.parent / "static" / "photo_credits.json").read_text())
+    for file, c in credits.items():
+        st.caption(
+            f"**{c['title'].rsplit('.', 1)[0]}** by {c['artist'] or 'unknown'}, "
+            f"[{c['license']}]({c['license_url'] or c['page']}), via [Wikimedia Commons]({c['page']}). Resized."
+        )
 
 footer()

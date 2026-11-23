@@ -26,8 +26,7 @@ SUGGESTIONS = [
 
 
 def section_title(law, number, info):
-    icon = LAWS.get(law, {}).get("icon", "📘")
-    return f"{icon} {law}, s. {number}" + (f" — {info['heading']}" if info["heading"] else "")
+    return f"{law}, s. {number}" + (f" — {info['heading']}" if info["heading"] else "")
 
 
 def show_laws(message, lookup):
@@ -39,8 +38,8 @@ def show_laws(message, lookup):
     ]
     searched = [(s["law"], s["section"]) for s in message["sections"]]
     others = [s for s in dict.fromkeys(searched) if s not in cited]
-    label = f"📚 Laws used ({len(cited)})" if cited else f"📚 Law sections found ({len(others)})"
-    with st.expander(label):
+    label = f"Laws used ({len(cited)})" if cited else f"Law sections found ({len(others)})"
+    with st.expander(label, icon=":material/gavel:"):
         for law, number in cited:
             info = lookup[(law, number)]
             st.markdown(f'<div class="law-title">{html.escape(section_title(law, number, info))}</div>',
@@ -49,7 +48,7 @@ def show_laws(message, lookup):
             st.caption(f"Official version: [{info['url']}]({info['url']}) (find section {number})")
         if others:
             st.caption("Also searched: " + "; ".join(
-                f"{LAWS.get(law, {}).get('icon', '📘')} {law.split(',')[0]} s. {n}" for law, n in others
+                f"{law.split(',')[0]} s. {n}" for law, n in others
             ))
 
 
@@ -91,17 +90,17 @@ title, action = st.columns([4, 1.3], vertical_alignment="bottom")
 with title:
     st.markdown('<div class="eyebrow">Ontario Law Assistant</div>', unsafe_allow_html=True)
     st.markdown('<h2 class="section-title">How can I help?</h2>', unsafe_allow_html=True)
-    badges = "".join(f'<span class="badge">{v["icon"]} {v["topic"]}</span>' for v in LAWS.values())
-    st.markdown(f'<div class="badges">{badges}<span class="badge">📅 Law text from {collected}</span></div>',
+    chips = "".join(f'<span class="chip">{v["topic"]}</span>' for v in LAWS.values())
+    st.markdown(f'<div class="chips">{chips}<span class="chip">Law text from {collected}</span></div>',
                 unsafe_allow_html=True)
 with action:
-    st.button("＋ New conversation", on_click=new_conversation, use_container_width=True,
+    st.button("New conversation", icon=":material/add:", on_click=new_conversation, use_container_width=True,
               disabled=not messages)
 st.write("")
 
 # ---- Conversation -----------------------------------------------------------
 if not messages and "pending" not in st.session_state:
-    with st.chat_message("assistant", avatar="⚖️"):
+    with st.chat_message("assistant", avatar=":material/gavel:"):
         st.markdown(
             "Hi! Tell me what's going on in your own words, and I'll find the Ontario laws that "
             "apply and explain what they say, with the exact sections. I can help with "
@@ -115,7 +114,7 @@ if not messages and "pending" not in st.session_state:
             )
 
 for message in messages:
-    with st.chat_message(message["role"], avatar="⚖️" if message["role"] == "assistant" else "🙂"):
+    with st.chat_message(message["role"], avatar=":material/gavel:" if message["role"] == "assistant" else ":material/person:"):
         if message.get("searched"):
             st.markdown(f'<div class="searched">Searched the laws for: {html.escape(message["searched"])}</div>',
                         unsafe_allow_html=True)
@@ -131,10 +130,10 @@ for message in messages:
 typed = st.chat_input("Describe your situation or ask a question...")
 new = typed or st.session_state.pop("pending", None)
 if new:
-    with st.chat_message("user", avatar="🙂"):
+    with st.chat_message("user", avatar=":material/person:"):
         st.markdown(safe(new))
         st.markdown('<span class="user-msg"></span>', unsafe_allow_html=True)
-    with st.chat_message("assistant", avatar="⚖️"):
+    with st.chat_message("assistant", avatar=":material/gavel:"):
         with st.spinner("Finding the laws that apply..."):
             reply = reply_to(new)
     messages += [{"role": "user", "content": new}, reply]
