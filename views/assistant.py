@@ -12,6 +12,7 @@ from answer import MissingKeyError
 from chat import chat_turn
 from citations import extract_citations
 from search import retrieve
+from summary import build_summary, make_pdf
 from ui import GROUPS, LAWS, current_lookup, footer, law_dates, safe
 
 # A narrower column reads better for a conversation.
@@ -171,6 +172,25 @@ for i, message in enumerate(messages):
             show_laws(message, lookup)
             if not message.get("error"):
                 flag_button(i, messages[i - 1]["content"] if i else "", message)
+
+# ---- "Get ready for a lawyer" ------------------------------------------------
+if any(m["role"] == "assistant" and not m.get("error") for m in messages):
+    with st.container(border=True):
+        st.markdown("**Get ready for a lawyer.** Turn this conversation into a one-page summary to bring to a "
+                    "lawyer, paralegal or legal clinic: what happened, the laws that apply, your options, and "
+                    "questions to ask.")
+        ready = st.session_state.get("lawyer_pdf")
+        if ready and ready[0] == len(messages):
+            st.download_button("Download summary (PDF)", ready[1], file_name="the-bridge-summary.pdf",
+                               mime="application/pdf", icon=":material/download:", type="primary")
+        elif st.button("Make my summary", icon=":material/description:"):
+            with st.spinner("Writing your summary..."):
+                try:
+                    pdf = make_pdf(build_summary(messages, lookup), messages)
+                    st.session_state["lawyer_pdf"] = (len(messages), pdf)
+                    st.rerun()
+                except anthropic.AnthropicError as e:
+                    st.error(f"The summary isn't available right now: {e}")
 
 typed = st.chat_input("Describe your situation or ask a question...")
 new = typed or st.session_state.pop("pending", None)
