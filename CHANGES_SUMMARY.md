@@ -371,3 +371,56 @@ Cost of the whole Iterate: about $1 in API credit.
   that search 3 more times and it was found 3/3, so it was a one-off.
   Search itself is still instant (0.04 s) with 9,444 chunks.
   (`results/eval_2026-11-23_162227_twentyseven-laws`)
+
+## 11. The Bridge (Nov 23)
+
+The Ontario Law Assistant became **The Bridge**: "You deserve justice. We help
+you get there." Same tested tech stack; everything below was added on top.
+
+- **Rebrand:** new name, mission line and subtitle ("Know your rights in
+  Ontario. In plain language, from the real law.") on the Home page. Same dark
+  design with Canadian red.
+- **Warmer tone and the golden rule** (`answer.py`, used by the chat too):
+  one short acknowledgment when a situation sounds stressful; plain language;
+  "The law says..." and "People in this situation can...", never "you should".
+  Replies in the person's language, with a note that the law text and
+  citations are in English and the translation is unofficial. Search queries
+  are always rewritten in English (a French question about unpaid wages
+  missed the right sections until this fix).
+- **Test before and after the tone change (37 questions):** 34/37 with 0 made
+  up, then **35/37 with 1 graded made up**
+  (`results/eval_2026-11-23_181903_warm-tone`). The "made up" one was the
+  landlord's-son question: search missed RTA s. 48.1 (compensation), and the
+  answer said it couldn't find a compensation rule. The judge's reason cites
+  s. 48.1, which the answer was never given, so this looks like a search miss
+  graded too strictly, but the grade is kept as given.
+- **Options people in your situation typically have:** a box under each
+  answer, chosen from the Acts it cites, linking to the right official body
+  (Landlord and Tenant Board, employment standards claim, consumer complaint,
+  Small Claims Court, Human Rights Tribunal, WSIB, Social Benefits Tribunal,
+  and more). It's a fixed list in `help.py`, not written by the AI, and every
+  link was checked on the official site on Nov 23, 2026.
+- **"This one is worth talking to a professional about":** shown for criminal
+  charges, immigration and refugee matters, a court date already set, family
+  and custody answers, and low confidence, with free help links. If someone
+  may be in danger, a box says to call 911 first. Serious situations are
+  spotted by a small extra AI check that runs alongside the search (tested on
+  6 sample messages: 6/6 right).
+- **"How sure is this?"** button: runs the semantic entropy score on that
+  answer (5 answers from the same sections, compared by meaning; the "loose"
+  rule). A low score shows the professional box.
+- **"Get ready for a lawyer":** turns the conversation into a one-page PDF
+  (`summary.py`): what happened (with the person's own words, unchanged), the
+  cited laws with a one-line note each, options the law mentions, and
+  questions to ask a lawyer or clinic. Uses the free DejaVu Sans font
+  (`fonts/`) so accented letters print correctly.
+- **Flag this answer:** a button under each answer that saves the question,
+  answer, sections and an optional comment to `logs/flags.jsonl`. That file
+  is kept off GitHub (it holds what people typed), and on Streamlit Cloud it
+  is erased when the app restarts.
+- **How it works** rewritten as The Bridge story: why it exists, information
+  vs advice, how an answer is made, how it checks itself, both test runs with
+  their dates, keeping the law current, a free legal help directory (Legal Aid
+  Ontario, community clinics, Steps to Justice, CLEO, Pro Bono Ontario, the Law
+  Society Referral Service, JusticeNet, student legal clinics), and the
+  limitations.
