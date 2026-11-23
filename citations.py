@@ -44,11 +44,8 @@ MAX_SECTION_CHARS = 6000
 # How many times the judge is asked; the majority verdict wins.
 VOTES = 3
 
-LAWS = [
-    "Residential Tenancies Act, 2006",
-    "Employment Standards Act, 2000",
-    "Consumer Protection Act, 2002",
-]
+from get_laws import LAWS  # the Acts in the database
+
 LAW_NAME = re.compile("|".join(re.escape(name) for name in LAWS))
 # "s. 116(1)", "ss. 22-23", "section 106": group 1 is the number(s) after it.
 CITATION = re.compile(
@@ -113,9 +110,12 @@ def context_for(text, pos, limit=700):
 
 
 def other_act_mentions(text):
-    """Positions of Acts other than our three, e.g. 'Fighting Delays, Building
+    """Positions of Acts other than ours, e.g. 'Fighting Delays, Building
     Faster Act, 2025', so their section numbers aren't mistaken for ours."""
     generic = ("The", "This", "That", "Each", "Under", "In", "By")
+    # Our own law names, so part of one ("Safety Act" in "Occupational Health
+    # and Safety Act") isn't mistaken for a different Act.
+    ours = [(m.start(), m.end()) for m in LAW_NAME.finditer(text)]
     found = []
     for m in OTHER_ACT.finditer(text):
         name = m.group(1).strip()
@@ -123,6 +123,8 @@ def other_act_mentions(text):
         while words and words[0] in generic:  # "The Fighting Delays ... Act" -> keep the name
             words.pop(0)
         if LAW_NAME.search(name) or len(words) < 2:  # one of our laws, or just "the Act"
+            continue
+        if any(start <= m.start() < end or start < m.end() <= end for start, end in ours):
             continue
         found.append(m.start())
     return found

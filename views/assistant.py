@@ -20,8 +20,8 @@ st.markdown(
 SUGGESTIONS = [
     "My landlord is trying to kick me out",
     "Can my boss make me work 13 hours?",
-    "Can I cancel my gym membership?",
-    "My landlord won't return my deposit",
+    "Can I refuse a job I think is unsafe?",
+    "What happens if I'm caught speeding?",
 ]
 
 
@@ -104,7 +104,7 @@ if not messages and "pending" not in st.session_state:
         st.markdown(
             "Hi! Tell me what's going on in your own words, and I'll find the Ontario laws that "
             "apply and explain what they say, with the exact sections. I can help with "
-            "**renting**, **work** and **buying things**."
+            "**renting**, **work**, **buying things**, **workplace safety** and **driving**."
         )
         st.caption("Or start with one of these:")
         left, right = st.columns(2)

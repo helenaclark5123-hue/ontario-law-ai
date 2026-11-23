@@ -2,7 +2,7 @@
 
 import streamlit as st
 
-from ui import LAWS, STATIC, footer, law_dates, section_counts, start_chat
+from ui import LAWS, STATIC, footer, grid, law_dates, section_counts, start_chat
 
 collected, _ = law_dates()
 sections = sum(section_counts().values())
@@ -14,7 +14,7 @@ st.markdown(
       <div class="flag-line"><img src="{STATIC}/flag-canada.png" alt="Flag of Canada">
         <span>Ontario Law Assistant</span></div>
       <h1>Know your rights in Ontario, straight from the law.</h1>
-      <p class="lead">Describe your problem with your landlord, your job or something you bought.
+      <p class="lead">Describe your problem with your landlord, your job, something you bought, safety at work or driving.
       The assistant finds the Ontario laws that apply and explains them in plain English,
       citing the exact section for every point.</p>
     </div>
@@ -32,7 +32,7 @@ if right.button("How it works", use_container_width=True):
 st.markdown(
     f"""
     <div class="stats">
-      <div class="stat"><b>3</b><span>Ontario laws covered</span></div>
+      <div class="stat"><b>{len(LAWS)}</b><span>Ontario laws covered</span></div>
       <div class="stat"><b>{sections:,}</b><span>sections of law searched</span></div>
       <div class="stat"><b>Every point</b><span>cites the exact section</span></div>
       <div class="stat"><b>{collected}</b><span>law text last updated</span></div>
@@ -45,7 +45,7 @@ st.markdown(
 st.markdown('<div class="eyebrow">What it can help with</div>', unsafe_allow_html=True)
 st.markdown('<h2 class="section-title">Pick a topic, or just describe your situation</h2>', unsafe_allow_html=True)
 st.write("")
-for column, (law, info) in zip(st.columns(3, gap="medium"), LAWS.items()):
+for column, (law, info) in grid(LAWS.items()):
     with column, st.container(border=True, key=f"card-{info['topic'].split()[0].lower()}"):
         st.markdown(
             f"""
@@ -75,7 +75,7 @@ st.markdown(
         It asks a follow-up question if it needs more details.</span></div>
       <div class="step"><div class="step-num">02</div><b>It finds the laws that apply</b>
         <span>Your words are translated into legal terms and matched against every section of
-        the three Acts, so it finds the right rules even if you don't know what they're called.</span></div>
+        the five Acts, so it finds the right rules even if you don't know what they're called.</span></div>
       <div class="step"><div class="step-num">03</div><b>You get a cited answer</b>
         <span>The answer only uses the law it found, cites a section for every point, and says so
         when the law doesn't cover your question. You can read the original text of each section.</span></div>

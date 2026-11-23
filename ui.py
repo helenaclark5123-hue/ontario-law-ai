@@ -42,6 +42,24 @@ LAWS = {
             "A mechanic charged me way more than his estimate. What can I do?",
         ],
     },
+    "Occupational Health and Safety Act": {
+        "topic": "Workplace safety",
+        "photo": f"{STATIC}/safety.jpg",
+        "about": "Refusing unsafe work, safety training, injuries, and workplace harassment and violence.",
+        "examples": [
+            "Can I refuse to do a job I think is dangerous?",
+            "My manager keeps harassing me at work. What does my employer have to do?",
+        ],
+    },
+    "Highway Traffic Act": {
+        "topic": "Driving",
+        "photo": f"{STATIC}/driving.jpg",
+        "about": "Speeding, licences and suspensions, seatbelts, phones while driving, and collisions.",
+        "examples": [
+            "What happens if I get caught speeding 50 km/h over the limit?",
+            "Is it illegal to hold my phone while I'm stopped at a red light?",
+        ],
+    },
 }
 
 STYLE = """
@@ -220,6 +238,15 @@ def _section_counts(version):
 def section_counts():
     """Number of sections with law text in them, per Act (repealed ones excluded)."""
     return _section_counts(CHUNKS_FILE.stat().st_mtime)
+
+
+def grid(items, per_row=3):
+    """Lay items out in rows of `per_row` columns; yields (column, item)."""
+    items = list(items)
+    for start in range(0, len(items), per_row):
+        columns = st.columns(per_row, gap="medium")
+        for column, item in zip(columns, items[start:start + per_row]):
+            yield column, item
 
 
 def start_chat(text):

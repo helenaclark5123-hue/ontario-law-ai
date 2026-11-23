@@ -187,3 +187,28 @@ Cost of the whole Iterate: about $1 in API credit.
 | `compare_checks.py` | Table of what each check caught vs. false alarms |
 | `test_set.csv` | 35 test questions with answer keys |
 | `results/` | Every run, date-stamped, plus the hand review |
+
+## 5. Two more laws and a new look (Nov 22-23)
+
+- **Website redesign:** three pages (Home, Ask the assistant, How it works)
+  with top navigation; dark navy theme with Canadian red, the Canadian flag
+  as the logo, and free-licence photos of Toronto and Queen's Park (credited
+  on the How it works page). No emojis.
+- **Two new laws:** the Occupational Health and Safety Act (workplace safety:
+  115 sections) and the Highway Traffic Act (driving: 362 sections). They were
+  added with the normal self-updating script: 1,123 new chunks embedded, 0
+  changes to the original three laws. The database now holds 5 laws, 1,171
+  sections and 2,312 chunks.
+- Updated for 5 laws: the question rewriter (new legal-term examples, e.g.
+  "unsafe job" becomes "refuse to work where health or safety is in danger"), the
+  citation checker (fixed a bug where "Occupational Health and Safety Act"
+  citations were dropped as "another Act"), the evaluation and the website.
+- **Spot checks:** refusing unsafe work (OHSA s. 43), harassment (OHSA
+  s. 32.0.1-32.0.8) and phones while driving (HTA s. 78.1) were all answered
+  from the right sections. The speeding question got the fine right
+  (s. 128) but missed stunt driving (s. 172), another search gap.
+- The test question "What is the speed limit on Ontario highways?" is now
+  covered, so its answer key was rewritten: the Act says 50/80 km/h; 100 km/h
+  comes from a regulation, a new trap for answering from memory.
+  The 33/35 results are from the original three laws; the new laws haven't
+  had a full evaluation yet.

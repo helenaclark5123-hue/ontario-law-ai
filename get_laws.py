@@ -22,6 +22,8 @@ LAWS = [
     "Residential Tenancies Act, 2006",
     "Employment Standards Act, 2000",
     "Consumer Protection Act, 2002",
+    "Occupational Health and Safety Act",
+    "Highway Traffic Act",
 ]
 
 

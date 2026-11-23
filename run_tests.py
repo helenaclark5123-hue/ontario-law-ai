@@ -30,6 +30,8 @@ SHORT = {
     "Residential Tenancies Act, 2006": "RTA",
     "Employment Standards Act, 2000": "ESA",
     "Consumer Protection Act, 2002": "CPA",
+    "Occupational Health and Safety Act": "OHSA",
+    "Highway Traffic Act": "HTA",
 }
 CITATION = re.compile(
     "(" + "|".join(re.escape(name) for name in SHORT) + r"),?\s*s\.\s*(\d+(?:\.\d+)*)"
@@ -38,7 +40,7 @@ CITATION = re.compile(
 
 def parse_sections(text):
     """'RTA 116; ESA s. 17' -> {'RTA 116', 'ESA 17'}"""
-    return {f"{law.upper()} {num}" for law, num in re.findall(r"(RTA|ESA|CPA)\s*(?:s\.)?\s*([\d.]+)", text, re.I)}
+    return {f"{law.upper()} {num}" for law, num in re.findall(r"\b(RTA|ESA|CPA|OHSA|HTA)\s*(?:s\.)?\s*([\d.]+)", text, re.I)}
 
 
 def main():

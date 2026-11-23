@@ -38,9 +38,9 @@ Write in plain language a non-lawyer can follow. Keep answers short: a direct an
 
 # Instructions for rewriting a question before searching. The rewrite is only
 # used to search; the answer still comes only from the retrieved sections.
-REWRITE_PROMPT = """You turn everyday questions about Ontario law into search queries for a database of three statutes: the Residential Tenancies Act, 2006, the Employment Standards Act, 2000, and the Consumer Protection Act, 2002.
+REWRITE_PROMPT = """You turn everyday questions about Ontario law into search queries for a database of five Ontario statutes: the Residential Tenancies Act, 2006, the Employment Standards Act, 2000, the Consumer Protection Act, 2002, the Occupational Health and Safety Act, and the Highway Traffic Act.
 
-Rewrite the question using the words these statutes themselves would use. For example, "door-to-door sale" becomes "direct agreement", "damage deposit" becomes "security deposit", "fired" becomes "termination of employment", and "pay" becomes "wages".
+Rewrite the question using the words these statutes themselves would use. For example, "door-to-door sale" becomes "direct agreement", "damage deposit" becomes "security deposit", "fired" becomes "termination of employment", "pay" becomes "wages", "unsafe job" becomes "refuse to work where health or safety is in danger", "boss" becomes "employer" or "supervisor", "ticket" becomes "offence" or "fine", and "lose my licence" becomes "driver's licence suspended".
 
 Use legal terms only. Do not add section numbers, amounts, time periods or anything else that would answer the question, because the answer must come from the law text that the search finds.
 

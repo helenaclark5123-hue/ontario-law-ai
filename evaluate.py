@@ -4,7 +4,7 @@ Reads test_set.csv, which has four columns:
   question        - a question a real person might ask
   correct_answer  - the right answer, checked on ontario.ca/laws
   source_section  - where the answer is, e.g. "RTA 116" or "ESA 17; ESA 18"
-                    (RTA / ESA / CPA), or "NONE" if the laws don't cover it
+                    (RTA / ESA / CPA / OHSA / HTA), or "NONE" if the laws don't cover it
   type            - your own label, e.g. easy, tricky, not_covered
 
 Each question goes through the normal assistant (answer.py, unchanged). Then
@@ -55,6 +55,8 @@ LAW_NAMES = {
     "RTA": "Residential Tenancies Act, 2006",
     "ESA": "Employment Standards Act, 2000",
     "CPA": "Consumer Protection Act, 2002",
+    "OHSA": "Occupational Health and Safety Act",
+    "HTA": "Highway Traffic Act",
 }
 GRADES = ("correct", "wrong", "made_up")
 
@@ -81,7 +83,7 @@ def parse_sections(text):
     """'RTA 116; ESA s. 17' -> [('Residential Tenancies Act, 2006', '116'), ...]"""
     return [
         (LAW_NAMES[law.upper()], number)
-        for law, number in re.findall(r"(RTA|ESA|CPA)\s*(?:s\.)?\s*(\d+(?:\.\d+)*)", text, re.I)
+        for law, number in re.findall(r"\b(RTA|ESA|CPA|OHSA|HTA)\s*(?:s\.)?\s*(\d+(?:\.\d+)*)", text, re.I)
     ]
 
 

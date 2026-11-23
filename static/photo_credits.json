@@ -16,7 +16,7 @@
   "renting.jpg": {
     "title": "Apartment buildings in Toronto at night - DSC 0344 (15637124596).jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Apartment_buildings_in_Toronto_at_night_-_DSC_0344_(15637124596).jpg",
-    "artist": "Lord of the Wings\u00a9 from Toronto, Canada",
+    "artist": "Lord of the Wings© from Toronto, Canada",
     "license": "CC BY-SA 2.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
   },
@@ -40,5 +40,19 @@
     "artist": "Original: George F. G. Stanley Modified by: The original uploader was Illegitimate Barrister at Wikimedia Commons. The current SVG encoding is a rewrite performed by MapGrid.",
     "license": "Public domain",
     "license_url": ""
+  },
+  "safety.jpg": {
+    "title": "The Well construction site in February 2019.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Well_construction_site_in_February_2019.jpg",
+    "artist": "Jarek Piórkowski",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "driving.jpg": {
+    "title": "Late Night Gardner Expressway (154691663).jpeg",
+    "page": "https://commons.wikimedia.org/wiki/File:Late_Night_Gardner_Expressway_(154691663).jpeg",
+    "artist": "Jacob Willemsma",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 }

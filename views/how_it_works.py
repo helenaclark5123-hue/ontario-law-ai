@@ -7,7 +7,7 @@ from pathlib import Path
 import streamlit as st
 
 from get_laws import load_saved_laws
-from ui import LAWS, STATIC, footer, nice_date, nice_time, read_status, section_counts
+from ui import LAWS, STATIC, footer, grid, nice_date, nice_time, read_status, section_counts
 from update_laws import update
 
 st.markdown("<style>.block-container { max-width: 960px; }</style>", unsafe_allow_html=True)
@@ -30,7 +30,7 @@ st.markdown(
 st.markdown("### The laws it covers")
 counts = section_counts()
 saved = {law["name"]: law for law in load_saved_laws()}
-for column, (name, info) in zip(st.columns(3, gap="medium"), LAWS.items()):
+for column, (name, info) in grid(LAWS.items()):
     law = saved.get(name, {})
     count = counts.get(name, 0)
     with column, st.container(border=True, key=f"card-{info['topic'].split()[0].lower()}"):
@@ -63,7 +63,7 @@ st.markdown(
         search question, and rewritten in the law's own words (for example, "door-to-door" becomes
         "direct agreement").</span></div>
       <div class="step"><div class="step-num">02</div><b>Find the law</b>
-        <span>Both versions are matched by meaning against every section of the three Acts. The 8 best
+        <span>Both versions are matched by meaning against every section of the five Acts. The 8 best
         sections are pulled in whole, so related rules and exceptions stay together.</span></div>
       <div class="step"><div class="step-num">03</div><b>Answer only from it</b>
         <span>Claude writes the answer using only those sections, cites a section for every point, says
@@ -79,8 +79,10 @@ st.markdown("### How it's tested")
 a, b, c = st.columns(3)
 a.metric("Test questions answered correctly", "33 / 35", help="Final test run, Nov 21, 2026, graded against an answer key written from the law text.")
 b.metric("Answers that made up law", "0", help="No answer stated a rule, number or section that isn't in the law.")
-c.metric("Out-of-scope questions declined", "6 / 6", help="Questions about criminal, family, traffic, tax and other laws it doesn't cover.")
+c.metric("Out-of-scope questions declined", "6 / 6", help="Questions about criminal, family, traffic, tax and other laws it didn't cover at the time.")
 st.markdown(
+    "These results are from the final test run on the original three laws (renting, work and buying), before "
+    "workplace safety and driving were added. "
     "Every answer in the test set is graded by an AI judge against a written answer key, and a "
     "**citation checker** confirms that each cited section exists and says what the answer claims. "
     "When the assistant got something wrong, it was because search missed a section, and the assistant "
@@ -97,7 +99,7 @@ with st.container(border=True):
     with info:
         checked = nice_time(status["last_checked"]) if "last_checked" in status else "never"
         st.markdown(f"**Last checked for updates:** {checked}")
-        st.caption("Checking re-downloads the three laws, compares every section, and updates only the "
+        st.caption("Checking re-downloads the five laws, compares every section, and updates only the "
                    "ones that changed.")
     with action:
         if st.button("Check for updates", icon=":material/refresh:", use_container_width=True):
@@ -123,7 +125,7 @@ st.markdown("### Limitations")
 st.markdown(
     """
 - **Legal information, not legal advice.** It explains what the law says; it can't tell you what to do in your case.
-- **Three laws only**, and only the Acts themselves, not regulations or court decisions.
+- **Five laws only**, and only the Acts themselves, not regulations or court decisions.
 - **Unofficial copy.** The text comes from the A2AJ Canadian Legal Data project and is only as current as their last update.
 - **Search can miss a section**, especially when a problem is described in everyday words. Check the original text, and when it matters, ask a lawyer, paralegal or community legal clinic.
 """
