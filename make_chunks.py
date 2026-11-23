@@ -118,7 +118,10 @@ def chunk_law(law):
         pieces = split_long(text.strip())
 
         for i, piece in enumerate(pieces, start=1):
-            label = f"{law['name']}, s. {number}"
+            # Regulations are labelled with their title and parent Act, e.g.
+            # "O. Reg. 455/07 (Races, Contests and Stunts), a regulation under
+            # the Highway Traffic Act, s. 3", so search knows what they're about.
+            label = f"{law.get('display', law['name'])}, s. {number}"
             if heading:
                 label += f" – {heading}"
             if len(pieces) > 1:

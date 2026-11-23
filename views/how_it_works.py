@@ -6,7 +6,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from get_laws import load_saved_laws
+from get_laws import REGULATIONS, load_saved_laws
 from ui import LAWS, STATIC, footer, grid, nice_date, nice_time, read_status, section_counts
 from update_laws import update
 
@@ -33,6 +33,11 @@ saved = {law["name"]: law for law in load_saved_laws()}
 for column, (name, info) in grid(LAWS.items()):
     law = saved.get(name, {})
     count = counts.get(name, 0)
+    regs = [r for r in REGULATIONS if r["parent"] == name]
+    reg_list = "".join(
+        f'<div class="card-text" style="font-size:.82rem">{r["name"]}: {r["title"]} '
+        f'({counts.get(r["name"], 0)} sections)</div>' for r in regs
+    )
     with column, st.container(border=True, key=f"card-{info['topic'].split()[0].lower()}"):
         st.markdown(
             f"""
@@ -43,14 +48,17 @@ for column, (name, info) in grid(LAWS.items()):
               <div class="card-text">{info['about']}</div>
               <div class="card-text" style="margin:.7rem 0 .8rem"><b>{count}</b> sections ·
               collected {nice_date(law['scraped_timestamp']) if law else '?'}</div>
+              <div class="card-law" style="margin-top:.2rem">Regulations included</div>
+              {reg_list}
             </div>
             """,
             unsafe_allow_html=True,
         )
         if law:
             st.link_button("Official text on ontario.ca", law["url"], icon=":material/open_in_new:", use_container_width=True)
-st.caption("Statutes only. Regulations (like the yearly rent increase guideline amount) and court decisions "
-           "are not included.")
+st.caption("Each Act comes with the main regulations made under it (the detailed rules, amounts and "
+           "definitions). Other regulations, the yearly rent increase guideline amount, and court decisions are "
+           "not included. The speed limits regulation includes its rules but not its lists of highway stretches.")
 
 # ---- How an answer is made --------------------------------------------------
 st.write("")
@@ -125,7 +133,7 @@ st.markdown("### Limitations")
 st.markdown(
     """
 - **Legal information, not legal advice.** It explains what the law says; it can't tell you what to do in your case.
-- **Five laws only**, and only the Acts themselves, not regulations or court decisions.
+- **Five laws and 11 of their regulations only**, not other regulations, city bylaws or court decisions.
 - **Unofficial copy.** The text comes from the A2AJ Canadian Legal Data project and is only as current as their last update.
 - **Search can miss a section**, especially when a problem is described in everyday words. Check the original text, and when it matters, ask a lawyer, paralegal or community legal clinic.
 """

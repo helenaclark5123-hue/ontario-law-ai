@@ -45,7 +45,8 @@ def parse_sections(text):
 
 def main():
     real_sections = {
-        f"{SHORT[law['name']]} {number}" for law in load_saved_laws() for number in law["sections"]
+        f"{SHORT[law['name']]} {number}" for law in load_saved_laws() if law["name"] in SHORT
+        for number in law["sections"]
     }
     with QUESTIONS.open() as f:
         tests = [row for row in csv.DictReader(f) if row["question"].strip()]

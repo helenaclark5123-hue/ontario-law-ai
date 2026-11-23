@@ -212,3 +212,24 @@ Cost of the whole Iterate: about $1 in API credit.
   comes from a regulation, a new trap for answering from memory.
   The 33/35 results are from the original three laws; the new laws haven't
   had a full evaluation yet.
+
+## 6. Ontario regulations (Nov 23)
+
+- Added **11 regulations** made under the five Acts, from the A2AJ
+  REGULATIONS-ON dataset, using the same pipeline and self-updating (825 new
+  chunks; database now 3,137 chunks). Examples: O. Reg. 516/06 (RTA general),
+  O. Reg. 288/01 (ESA termination and severance), O. Reg. 17/05 (CPA general),
+  O. Reg. 297/13 (mandatory safety training), O. Reg. 339/94 (demerit
+  points), O. Reg. 455/07 (stunt driving), Reg. 619 (speed limits: rules
+  only, its 99 schedules of highway stretches skipped to avoid noise).
+- Each regulation is labelled with its title and parent Act for search, and
+  cited by its short name, e.g. (O. Reg. 455/07, s. 3).
+- **New capability:** "How many demerit points for speeding?" is now answered
+  from O. Reg. 339/94 (6 / 4 / 3 points by how far over).
+- **Not fixed:** the stunt-driving rules (O. Reg. 455/07 s. 3, HTA s. 172)
+  and the 100/110 km/h limits (Reg. 619 s. 1) are in the database, but are
+  usually crowded out of the top 8 by the legal-terms rewrite's results
+  (missed in 3 of 3 and 5 of 6 runs). Tested two general fixes, merging
+  searches by rank (made the damage-deposit question worse, #1 -> #8) and
+  giving the AI 10 sections (no improvement), and kept neither. A better
+  search method (e.g. a re-ranking model) is the likely next step.

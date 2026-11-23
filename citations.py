@@ -44,9 +44,9 @@ MAX_SECTION_CHARS = 6000
 # How many times the judge is asked; the majority verdict wins.
 VOTES = 3
 
-from get_laws import LAWS  # the Acts in the database
+from get_laws import ALL_NAMES  # the Acts and regulations in the database
 
-LAW_NAME = re.compile("|".join(re.escape(name) for name in LAWS))
+LAW_NAME = re.compile("|".join(re.escape(name) for name in ALL_NAMES))
 # "s. 116(1)", "ss. 22-23", "section 106": group 1 is the number(s) after it.
 CITATION = re.compile(
     r"\b(?:ss?\.|sections?)\s*"
