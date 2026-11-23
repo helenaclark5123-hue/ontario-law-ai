@@ -11,6 +11,9 @@ import streamlit as st
 from answer import MissingKeyError
 from chat import chat_turn
 from citations import extract_citations
+from entropy import quick_confidence
+from get_laws import REGULATIONS
+from help import ESCALATION, FAMILY_ACTS, NEXT_STEPS
 from search import retrieve
 from summary import build_summary, make_pdf
 from ui import GROUPS, LAWS, current_lookup, footer, law_dates, safe
@@ -20,6 +23,16 @@ st.markdown(
     "<style>.block-container, [data-testid='stBottomBlockContainer'] { max-width: 840px; }</style>",
     unsafe_allow_html=True,
 )
+
+st.markdown(
+    """<style>
+    .st-key-pro-box, [class*="st-key-pro-"] { border-color: var(--red) !important; background: rgba(213,43,30,.07); }
+    [class*="st-key-danger-"] { border: 2px solid var(--red) !important; background: rgba(213,43,30,.16); }
+    </style>""",
+    unsafe_allow_html=True,
+)
+
+PARENT = {r["name"]: r["parent"] for r in REGULATIONS}  # regulation -> its Act
 
 # Topic groups for the welcome message, e.g. "housing", "work", "money".
 TOPICS = [group.lower() for group in GROUPS]
@@ -61,6 +74,69 @@ def show_laws(message, lookup):
             ))
 
 
+def cited_acts(message):
+    """The Acts an answer cites (a regulation counts as its parent Act)."""
+    laws = [c["law"] for c in extract_citations(message["content"], None)]
+    return list(dict.fromkeys(PARENT.get(law, law) for law in laws))
+
+
+def links(items):
+    return " · ".join(f"[{name}]({url})" for name, url in items)
+
+
+def danger_box(i):
+    with st.container(border=True, key=f"danger-{i}"):
+        st.markdown("**If you or someone else is in immediate danger, call 911.** "
+                    "Your safety comes first. The legal information below can wait.")
+
+
+def next_steps(i, message):
+    """The pro box (when needed), then options people typically have."""
+    acts = cited_acts(message)
+    flags = message.get("flags", {})
+    reasons = [key for key in ("criminal", "court_date", "immigration") if flags.get(key)]
+    if FAMILY_ACTS & set(acts):
+        reasons.append("family")
+    if message.get("confidence", (None,))[0] == "low":
+        reasons.append("uncertain")
+    if reasons:
+        with st.container(border=True, key=f"pro-{i}"):
+            st.markdown("**This one is worth talking to a professional about.** " +
+                        " ".join(ESCALATION[r][0] for r in reasons) +
+                        " A lawyer or legal clinic can look at your exact situation, and there is free help:")
+            items = list(dict.fromkeys(item for r in reasons for item in ESCALATION[r][1]))
+            st.markdown(links(items))
+    bodies = list(dict.fromkeys(b for act in acts for b in NEXT_STEPS.get(act, [])))[:3]
+    if bodies:
+        with st.expander("Options people in your situation typically have", icon=":material/signpost:"):
+            for name, what, url in bodies:
+                st.markdown(f"**[{name}]({url})**: {what}")
+            st.caption("This is general information about where people go, not advice about your case. "
+                       "More free and low-cost legal help is listed on the How it works page.")
+
+
+def how_sure(i, message, question):
+    """The "How sure is this?" check: the semantic entropy confidence score."""
+    if "confidence" in message:
+        label, h, sizes = message["confidence"]
+        text = {"high": "All 5 answers agreed, so The Bridge is fairly confident about what these law sections say.",
+                "medium": f"Most answers agreed ({sizes} split), but not all. Read the cited sections carefully.",
+                "low": f"The answers disagreed ({sizes} split), so The Bridge may be guessing. "
+                       "Please check with a professional."}[label]
+        st.caption(f"Confidence: **{label}**. {text}")
+    elif st.button("How sure is this?", key=f"sure-{i}", icon=":material/fact_check:", type="tertiary",
+                   help="The Bridge answers the same question 5 more times from the same law sections. "
+                        "If the answers disagree, it's probably guessing. Takes about 30 seconds."):
+        with st.spinner("Asking itself the same question 5 times and comparing the answers..."):
+            try:
+                message["confidence"] = quick_confidence(anthropic.Anthropic(), message.get("searched") or question,
+                                                         message["sections"])
+            except anthropic.AnthropicError as e:
+                st.error(f"The check isn't available right now: {e}")
+                return
+        st.rerun()
+
+
 def reply_to(message):
     """Get the assistant's reply to a new message, given the conversation so far."""
     history = [
@@ -70,7 +146,7 @@ def reply_to(message):
     try:
         result = chat_turn(history, message)
         return {"role": "assistant", "content": result["reply"], "sections": result["sections"],
-                "searched": result["question"] if history else ""}
+                "searched": result["question"] if history else "", "flags": result["flags"]}
     except MissingKeyError:
         error = ("The AI answer isn't available yet: no API key is set "
                  "(.env on my computer, or the app's Secrets settings online).")
@@ -162,6 +238,8 @@ for i, message in enumerate(messages):
         if message.get("searched"):
             st.markdown(f'<div class="searched">Searched the laws for: {html.escape(message["searched"])}</div>',
                         unsafe_allow_html=True)
+        if message.get("flags", {}).get("danger"):
+            danger_box(i)
         if message.get("error"):
             st.error(message["content"])
         else:
@@ -171,7 +249,13 @@ for i, message in enumerate(messages):
         if message["role"] == "assistant":
             show_laws(message, lookup)
             if not message.get("error"):
-                flag_button(i, messages[i - 1]["content"] if i else "", message)
+                question = messages[i - 1]["content"] if i else ""
+                next_steps(i, message)
+                left, right = st.columns(2)
+                with left:
+                    how_sure(i, message, question)
+                with right:
+                    flag_button(i, question, message)
 
 # ---- "Get ready for a lawyer" ------------------------------------------------
 if any(m["role"] == "assistant" and not m.get("error") for m in messages):

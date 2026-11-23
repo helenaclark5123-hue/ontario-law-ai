@@ -188,6 +188,17 @@ def semantic_entropy(client, question, sections):
     return summary, {"samples": answers, **details}
 
 
+def quick_confidence(client, question, sections):
+    """The version used in the app's "How sure is this?" button: 5 samples,
+    clustered with the loose rule only (fewer judge calls). Returns
+    (label, entropy, cluster sizes like "4-1")."""
+    answers = sample_answers(client, question, sections)
+    clusters, _ = cluster(client, question, answers, same_conclusion)
+    h = entropy_of(clusters, len(answers))
+    sizes = "-".join(str(len(c)) for c in sorted(clusters, key=len, reverse=True))
+    return confidence_label(h, len(clusters)), round(h, 2), sizes
+
+
 def print_report(summary, details, show_answers=True):
     if show_answers:
         for i, a in enumerate(details["samples"], 1):

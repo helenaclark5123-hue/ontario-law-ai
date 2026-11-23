@@ -16,7 +16,10 @@ Each turn:
 answer.py is unchanged; the evaluation still tests it directly.
 """
 
+import json
 import os
+import re
+from concurrent.futures import ThreadPoolExecutor
 
 import anthropic
 from dotenv import load_dotenv
@@ -40,6 +43,36 @@ Given the conversation so far and the person's newest message, write ONE self-co
 Only use facts the person actually said. Do not assume or add details they didn't give (like whether they got a written notice), and don't add facts from the assistant's replies.
 
 Reply with only the question."""
+
+
+FLAGS_PROMPT = """You check messages sent to an Ontario legal information service, to decide whether to show a box pointing the person to a lawyer or to emergency help. Based only on what the person wrote, answer each with true or false:
+
+- "danger": the person (or a child or someone else) seems to be in immediate danger or at risk of harm right now, e.g. violence at home, threats, thoughts of self-harm.
+- "criminal": the person has been charged with, arrested for, or is being investigated for a criminal offence (not a traffic ticket or other provincial offence).
+- "immigration": the question involves immigration, refugee claims, deportation, visas, work or study permits, or citizenship.
+- "court_date": the person says they already have a court date, trial or tribunal hearing scheduled.
+
+Reply with only JSON, like {"danger": false, "criminal": false, "immigration": false, "court_date": false}."""
+
+FLAG_NAMES = ("danger", "criminal", "immigration", "court_date")
+
+
+def check_flags(client, question):
+    """Spot situations where the person should be pointed to a professional
+    (or to 911). Returns a dict of True/False; all False if the check fails."""
+    try:
+        response = client.messages.create(
+            model=MODEL,
+            max_tokens=500,
+            output_config={"effort": "low"},
+            system=FLAGS_PROMPT,
+            messages=[{"role": "user", "content": question}],
+        )
+        text = "".join(b.text for b in response.content if b.type == "text")
+        data = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
+        return {name: data.get(name) is True for name in FLAG_NAMES}
+    except (anthropic.AnthropicError, AttributeError, ValueError):
+        return {name: False for name in FLAG_NAMES}
 
 
 def standalone_question(client, history, message):
@@ -71,7 +104,10 @@ def chat_turn(history, message, k=8):
     client = anthropic.Anthropic()
 
     question = standalone_question(client, history, message)
-    rewrite = rewrite_question(client, question)
+    with ThreadPoolExecutor(max_workers=2) as pool:  # both at once, so it isn't slower
+        flags = pool.submit(check_flags, client, question)
+        rewrite = rewrite_question(client, question)
+        flags = flags.result()
     sections = rerank_retrieve(client, question, [question, rewrite] if rewrite else [question], k)
 
     messages = [{"role": m["role"], "content": m["content"]} for m in history[-HISTORY_MESSAGES:]]
@@ -90,4 +126,4 @@ def chat_turn(history, message, k=8):
         text = f"{NOT_FOUND}\n\n{DISCLAIMER}"
     else:
         text = "".join(b.text for b in response.content if b.type == "text").strip()
-    return {"reply": text, "question": question, "rewrite": rewrite, "sections": sections}
+    return {"reply": text, "question": question, "rewrite": rewrite, "sections": sections, "flags": flags}
