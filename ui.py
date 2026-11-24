@@ -358,8 +358,25 @@ a { color: var(--red-soft) !important; }
 .step span { font-size: .92rem; color: #C3CCD9; line-height: 1.55; }
 
 /* Chat */
-[data-testid="stChatMessage"] { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.15rem; }
-[data-testid="stChatMessage"]:has(.user-msg) { background: #1A2B48; border-color: #2C4166; }
+/* Like Claude: the assistant writes on the page itself, your messages sit in a
+   rounded bubble on the right, and there are no avatars. */
+[data-testid="stChatMessage"] { background: transparent; border: 0; padding: .4rem 0; gap: 0; }
+[data-testid^="stChatMessageAvatar"] { display: none; }
+[data-testid="stChatMessage"]:has(.user-msg) {
+    background: #1E2F4D; border-radius: 20px 20px 6px 20px; padding: .7rem 1.1rem;
+    width: fit-content; max-width: 80%; margin: 1.2rem 0 .6rem auto;
+}
+[data-testid="stChatMessage"]:has(.user-msg) p { margin: 0; }
+[data-testid="stChatMessageContent"] { line-height: 1.7; }
+/* While it works: a pulsing red dot and the current step */
+.thinking { display: flex; align-items: center; gap: .6rem; color: var(--muted); font-size: .92rem;
+            padding: .3rem 0; animation: fade 1.6s ease-in-out infinite; }
+.thinking .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--red);
+                 animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(.7); opacity: .5; } 50% { transform: scale(1.15); opacity: 1; } }
+@keyframes fade { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
+/* Don't grey out the page while an answer is being written */
+[data-stale="true"], .stale-element { opacity: 1 !important; transition: none !important; }
 .searched { color: var(--muted); font-size: .8rem; font-style: italic; margin: 0 0 .5rem; }
 .law-title { font-weight: 600; color: #FFFFFF; margin-top: .6rem; }
 .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }

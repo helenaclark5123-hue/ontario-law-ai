@@ -9,7 +9,7 @@ import anthropic
 import streamlit as st
 
 from answer import MissingKeyError
-from chat import chat_turn
+from chat import prepare_turn, stream_reply
 from citations import extract_citations
 from entropy import quick_confidence
 from get_laws import REGULATIONS
@@ -138,15 +138,34 @@ def how_sure(i, message, question):
 
 
 def reply_to(message):
-    """Get the assistant's reply to a new message, given the conversation so far."""
+    """Answer a new message live: show each step while it searches, then type
+    the answer out as it's written (like Claude). Returns the stored reply."""
     history = [
         {"role": m["role"], "content": m["content"]}
         for m in st.session_state["messages"] if not m.get("error")
     ]
+    status = st.empty()
+
+    def progress(text):
+        status.markdown(f'<div class="thinking"><span class="dot"></span>{html.escape(text)}...</div>',
+                        unsafe_allow_html=True)
+
+    progress("Reading your message")
     try:
-        result = chat_turn(history, message)
-        return {"role": "assistant", "content": result["reply"], "sections": result["sections"],
-                "searched": result["question"] if history else "", "flags": result["flags"]}
+        turn = prepare_turn(history, message, progress=progress)
+        status.empty()
+        if history:
+            st.markdown(f'<div class="searched">Searched the laws for: {html.escape(turn["question"])}</div>',
+                        unsafe_allow_html=True)
+        if turn["flags"].get("danger"):
+            danger_box("live")
+        box, text = st.empty(), ""
+        for piece in stream_reply(turn):
+            text += piece
+            box.markdown(safe(text) + " ▍")
+        box.markdown(safe(turn["reply"]))
+        return {"role": "assistant", "content": turn["reply"], "sections": turn["sections"],
+                "searched": turn["question"] if history else "", "flags": turn["flags"]}
     except MissingKeyError:
         error = ("The AI answer isn't available yet: no API key is set "
                  "(.env on my computer, or the app's Secrets settings online).")
@@ -155,6 +174,7 @@ def reply_to(message):
                  "correctly (.env on my computer, or the app's Secrets settings online).")
     except anthropic.AnthropicError as e:
         error = f"The AI answer isn't available: {e}"
+    status.empty()
     return {"role": "assistant", "content": error, "sections": retrieve([message]), "error": True}
 
 
@@ -218,8 +238,16 @@ with action:
 st.write("")
 
 # ---- Conversation -----------------------------------------------------------
-if not messages and "pending" not in st.session_state:
-    with st.chat_message("assistant", avatar=":material/gavel:"):
+# The chat box is always pinned to the bottom, so reading it here changes nothing
+# on screen, but lets the welcome disappear the moment a message is sent.
+typed = st.chat_input("Describe your situation or ask a question...")
+new = typed or st.session_state.pop("pending", None)
+
+# The welcome lives in a placeholder that is always created, so when a message is
+# sent it is cleared at once instead of lingering under the new message.
+welcome = st.empty()
+if not messages and not new:
+    with welcome.container(), st.chat_message("assistant", avatar=":material/gavel:"):
         st.markdown(
             "Hi! Tell me what's going on in your own words, and I'll find the Ontario laws that "
             "apply and explain what they say, with the exact sections. I can help with "
@@ -257,6 +285,16 @@ for i, message in enumerate(messages):
                 with right:
                     flag_button(i, question, message)
 
+# ---- A new message: show it and type out the answer live --------------------
+if new:
+    with st.chat_message("user", avatar=":material/person:"):
+        st.markdown(safe(new))
+        st.markdown('<span class="user-msg"></span>', unsafe_allow_html=True)
+    with st.chat_message("assistant", avatar=":material/gavel:"):
+        reply = reply_to(new)
+    messages += [{"role": "user", "content": new}, reply]
+    st.rerun()
+
 # ---- "Get ready for a lawyer" ------------------------------------------------
 if any(m["role"] == "assistant" and not m.get("error") for m in messages):
     with st.container(border=True):
@@ -275,17 +313,5 @@ if any(m["role"] == "assistant" and not m.get("error") for m in messages):
                     st.rerun()
                 except anthropic.AnthropicError as e:
                     st.error(f"The summary isn't available right now: {e}")
-
-typed = st.chat_input("Describe your situation or ask a question...")
-new = typed or st.session_state.pop("pending", None)
-if new:
-    with st.chat_message("user", avatar=":material/person:"):
-        st.markdown(safe(new))
-        st.markdown('<span class="user-msg"></span>', unsafe_allow_html=True)
-    with st.chat_message("assistant", avatar=":material/gavel:"):
-        with st.spinner("Finding the laws that apply..."):
-            reply = reply_to(new)
-    messages += [{"role": "user", "content": new}, reply]
-    st.rerun()
 
 footer()

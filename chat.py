@@ -92,22 +92,25 @@ def standalone_question(client, history, message):
     return text or message
 
 
-def chat_turn(history, message, k=8):
-    """Answer the newest message in a conversation.
-
-    history is a list of {"role": "user" | "assistant", "content": text}.
-    Returns a dict with the reply, the search question used, and the sections.
-    """
+def prepare_turn(history, message, k=8, progress=None):
+    """Everything before the answer is written: the standalone question, the
+    safety flags, and the law sections. progress(text) is called at each step,
+    so the website can show what's happening."""
     load_dotenv(override=True)
     if not os.environ.get("ANTHROPIC_API_KEY"):
         raise MissingKeyError("There's no API key in the .env file yet.")
+    progress = progress or (lambda text: None)
     client = anthropic.Anthropic()
 
+    if history:
+        progress("Reading the conversation so far")
     question = standalone_question(client, history, message)
+    progress("Turning your words into legal terms")
     with ThreadPoolExecutor(max_workers=2) as pool:  # both at once, so it isn't slower
         flags = pool.submit(check_flags, client, question)
         rewrite = rewrite_question(client, question)
         flags = flags.result()
+    progress("Searching the laws and picking the sections that apply")
     sections = rerank_retrieve(client, question, [question, rewrite] if rewrite else [question], k)
 
     messages = [{"role": m["role"], "content": m["content"]} for m in history[-HISTORY_MESSAGES:]]
@@ -115,15 +118,37 @@ def chat_turn(history, message, k=8):
         "role": "user",
         "content": f"{format_sections(sections)}\n\n{message}",
     })
-    response = client.messages.create(
+    return {"client": client, "question": question, "rewrite": rewrite, "sections": sections,
+            "flags": flags, "messages": messages}
+
+
+def stream_reply(turn):
+    """Write the answer piece by piece (yields text as it arrives).
+    Afterwards turn["reply"] holds the full, final answer."""
+    with turn["client"].messages.stream(
         model=MODEL,
         max_tokens=4000,
         output_config={"effort": "low"},
         system=CHAT_PROMPT,
-        messages=messages,
-    )
-    if response.stop_reason == "refusal":
-        text = f"{NOT_FOUND}\n\n{DISCLAIMER}"
+        messages=turn["messages"],
+    ) as stream:
+        for text in stream.text_stream:
+            yield text
+        final = stream.get_final_message()
+    if final.stop_reason == "refusal":
+        turn["reply"] = f"{NOT_FOUND}\n\n{DISCLAIMER}"
     else:
-        text = "".join(b.text for b in response.content if b.type == "text").strip()
-    return {"reply": text, "question": question, "rewrite": rewrite, "sections": sections, "flags": flags}
+        turn["reply"] = "".join(b.text for b in final.content if b.type == "text").strip()
+
+
+def chat_turn(history, message, k=8):
+    """Answer the newest message in a conversation (all at once, no streaming).
+
+    history is a list of {"role": "user" | "assistant", "content": text}.
+    Returns a dict with the reply, the search question used, and the sections.
+    """
+    turn = prepare_turn(history, message, k)
+    for _ in stream_reply(turn):
+        pass
+    return {"reply": turn["reply"], "question": turn["question"], "rewrite": turn["rewrite"],
+            "sections": turn["sections"], "flags": turn["flags"]}
