@@ -31,7 +31,14 @@ How it works page and in `get_laws.py`.
    best sections from about 40 matches (`rerank.py`).
 4. **Answer** (`answer.py`, `chat.py`): Claude Haiku answers only from those
    sections, cites a section for every point, and says when it can't find
-   something. Warm tone, information not advice, any language.
+   something. Warm tone, information not advice, any language. Answers type
+   out live, like Claude.
+   - **Your documents** (`evidence.py`): people can attach PDFs, photos and
+     .txt files (letters, notices, leases, pay stubs, screenshots of texts,
+     court or tribunal decisions). Each file is read once into short notes
+     (who, dates, amounts, key wording), which are shown to the person, used to
+     search the laws, and given to the answer. Files are kept only for the
+     browser session.
 5. **Next steps and safety** (`help.py`): verified links to official bodies
    and free legal help; a "talk to a professional" box for serious situations;
    911 first for immediate danger.
@@ -61,5 +68,7 @@ echo "ANTHROPIC_API_KEY=your-key-here" > .env
   The law text is an unofficial copy, only as current as A2AJ's last update.
 - Search can miss the right section when people describe problems in everyday words.
 - Translations into other languages are unofficial.
+- Attached files are sent to Anthropic's API to be read. The Bridge doesn't check
+  whether a document is genuine, and court decisions people upload aren't verified.
 - On Streamlit Community Cloud, "Check for updates" changes and flagged answers
   are lost when the app restarts.

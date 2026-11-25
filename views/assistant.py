@@ -12,6 +12,8 @@ from answer import MissingKeyError
 from chat import prepare_turn, stream_reply
 from citations import extract_citations
 from entropy import quick_confidence
+from evidence import (FILE_TYPES, MAX_FILE_MB, MAX_FILES_PER_MESSAGE, MAX_FILES_TOTAL,
+                      FileProblem, to_block)
 from get_laws import REGULATIONS
 from help import ESCALATION, FAMILY_ACTS, NEXT_STEPS
 from search import retrieve
@@ -137,7 +139,28 @@ def how_sure(i, message, question):
         st.rerun()
 
 
-def reply_to(message):
+def all_documents():
+    """Notes on every file shared so far in this conversation."""
+    return [d for m in st.session_state["messages"] for d in m.get("files", [])]
+
+
+def file_chips(files):
+    chips = "".join(f'<span class="file-chip">{html.escape(f["name"])}</span>' for f in files)
+    st.markdown(f'<div class="file-chips">{chips}</div>', unsafe_allow_html=True)
+
+
+def show_documents(documents):
+    """A drop-down with what The Bridge read in each shared file, so people can check it."""
+    with st.expander(f"Read {len(documents)} document{'s' if len(documents) > 1 else ''}",
+                     icon=":material/description:"):
+        for d in documents:
+            st.markdown(f"**{html.escape(d['name'])}**: {html.escape(d['what'])}")
+            st.markdown(safe(d["notes"]).replace("\n", "  \n"))
+        st.caption("This is what The Bridge took from your files. If something is wrong or missing, "
+                   "tell it in the chat.")
+
+
+def reply_to(message, new_files=()):
     """Answer a new message live: show each step while it searches, then type
     the answer out as it's written (like Claude). Returns the stored reply."""
     history = [
@@ -152,8 +175,11 @@ def reply_to(message):
 
     progress("Reading your message")
     try:
-        turn = prepare_turn(history, message, progress=progress)
+        turn = prepare_turn(history, message, progress=progress, documents=all_documents(),
+                            new_files=new_files)
         status.empty()
+        if turn["new_documents"]:
+            show_documents(turn["new_documents"])
         if history:
             st.markdown(f'<div class="searched">Searched the laws for: {html.escape(turn["question"])}</div>',
                         unsafe_allow_html=True)
@@ -165,7 +191,8 @@ def reply_to(message):
             box.markdown(safe(text) + " ▍")
         box.markdown(safe(turn["reply"]))
         return {"role": "assistant", "content": turn["reply"], "sections": turn["sections"],
-                "searched": turn["question"] if history else "", "flags": turn["flags"]}
+                "searched": turn["question"] if history or new_files else "", "flags": turn["flags"],
+                "documents": turn["new_documents"]}
     except MissingKeyError:
         error = ("The AI answer isn't available yet: no API key is set "
                  "(.env on my computer, or the app's Secrets settings online).")
@@ -240,8 +267,12 @@ st.write("")
 # ---- Conversation -----------------------------------------------------------
 # The chat box is always pinned to the bottom, so reading it here changes nothing
 # on screen, but lets the welcome disappear the moment a message is sent.
-typed = st.chat_input("Describe your situation or ask a question...")
-new = typed or st.session_state.pop("pending", None)
+typed = st.chat_input("Describe your situation, or attach a letter, notice or photo...",
+                      accept_file="multiple", file_type=FILE_TYPES, max_upload_size=MAX_FILE_MB)
+uploads = list(typed.files) if typed else []
+new = (typed.text.strip() if typed else "") or st.session_state.pop("pending", None)
+if uploads and not new:
+    new = "I've attached some documents about my situation. What does the law say?"
 
 # The welcome lives in a placeholder that is always created, so when a message is
 # sent it is cleared at once instead of lingering under the new message.
@@ -252,7 +283,8 @@ if not messages and not new:
             "Hi! Tell me what's going on in your own words, and I'll find the Ontario laws that "
             "apply and explain what they say, with the exact sections. I can help with "
             + ", ".join(f"**{topic}**" for topic in TOPICS[:-1])
-            + f", and **{TOPICS[-1]}**."
+            + f", and **{TOPICS[-1]}**. You can also attach letters, notices, leases, pay stubs, "
+            "photos or screenshots of texts with the paperclip in the chat box, and I'll read them."
         )
         st.caption("Or start with one of these:")
         left, right = st.columns(2)
@@ -266,6 +298,10 @@ for i, message in enumerate(messages):
         if message.get("searched"):
             st.markdown(f'<div class="searched">Searched the laws for: {html.escape(message["searched"])}</div>',
                         unsafe_allow_html=True)
+        for problem in message.get("problems", []):
+            st.warning(problem, icon=":material/attach_file:")
+        if message.get("documents"):
+            show_documents(message["documents"])
         if message.get("flags", {}).get("danger"):
             danger_box(i)
         if message.get("error"):
@@ -273,6 +309,8 @@ for i, message in enumerate(messages):
         else:
             st.markdown(safe(message["content"]))
         if message["role"] == "user":
+            if message.get("files"):
+                file_chips(message["files"])
             st.markdown('<span class="user-msg"></span>', unsafe_allow_html=True)  # tints the bubble
         if message["role"] == "assistant":
             show_laws(message, lookup)
@@ -287,12 +325,30 @@ for i, message in enumerate(messages):
 
 # ---- A new message: show it and type out the answer live --------------------
 if new:
+    # Turn attached files into something the AI can read, and skip any that can't be used.
+    files, problems = [], []
+    room = MAX_FILES_TOTAL - len(all_documents())
+    for upload in uploads:
+        if len(files) >= min(MAX_FILES_PER_MESSAGE, room):
+            problems.append(f"{upload.name} was skipped: up to {MAX_FILES_PER_MESSAGE} files per message and "
+                            f"{MAX_FILES_TOTAL} per conversation.")
+            continue
+        try:
+            files.append((upload.name, to_block(upload.name, upload.getvalue())))
+        except FileProblem as e:
+            problems.append(str(e))
     with st.chat_message("user", avatar=":material/person:"):
         st.markdown(safe(new))
+        if files:
+            file_chips([{"name": name} for name, _ in files])
         st.markdown('<span class="user-msg"></span>', unsafe_allow_html=True)
     with st.chat_message("assistant", avatar=":material/gavel:"):
-        reply = reply_to(new)
-    messages += [{"role": "user", "content": new}, reply]
+        for problem in problems:
+            st.warning(problem, icon=":material/attach_file:")
+        reply = reply_to(new, files)
+    reply["problems"] = problems
+    user = {"role": "user", "content": new, "files": reply.get("documents", [])}
+    messages += [user, reply]
     st.rerun()
 
 # ---- "Get ready for a lawyer" ------------------------------------------------

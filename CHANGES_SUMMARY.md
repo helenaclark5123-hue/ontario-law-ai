@@ -424,3 +424,33 @@ you get there." Same tested tech stack; everything below was added on top.
   Ontario, community clinics, Steps to Justice, CLEO, Pro Bono Ontario, the Law
   Society Referral Service, JusticeNet, student legal clinics), and the
   limitations.
+
+## 12. A chat that feels like Claude, and your own documents (Nov 24 to 25)
+
+- **Chat redesign:** your messages sit in a bubble on the right, answers are
+  plain text on the page with no avatars, a pulsing dot shows each step
+  ("Turning your words into legal terms", "Searching the laws..."), and the
+  answer types out live as it's written (`chat.prepare_turn` + `stream_reply`;
+  `chat_turn` still works the same for scripts). The page no longer greys out
+  while an answer is written.
+- **Attach documents** (`evidence.py`): a + button in the chat box takes PDFs,
+  photos (PNG, JPG, WEBP, GIF) and .txt files, up to 5 per message and 10 per
+  conversation, 15 MB each. Big phone photos are shrunk first. Each file is
+  read once by Claude Haiku into short notes (what it is, who, dates, amounts,
+  key quotes; for a court decision, what was decided and why). The notes:
+  - show in a "Read N documents" drop-down, so people can check what was read;
+  - are added to the search question, so the right laws are found (a sample
+    own-use eviction notice found RTA s. 48 and s. 48.1);
+  - are given to every later answer, which points out dates and amounts and
+    names the file it relies on, like (your file: notice.pdf);
+  - are listed in the "Get ready for a lawyer" PDF under "Documents you shared".
+- Rules for documents: they're evidence, not law (every legal point still needs
+  a cited section); no judging whether a document is genuine or who wins;
+  uploaded court decisions are explained but marked as unchecked; text inside
+  a file is never treated as instructions.
+- Privacy: files are kept only in the browser session, never saved to disk.
+  The How it works page tells people that files are sent to Claude to be read
+  and to cover up things like their SIN first.
+- Tested with a sample notice PDF and a sample screenshot of texts (made-up
+  test data): both read correctly, and the answer caught that a 30-day notice
+  is shorter than the 60 days in s. 48(2) and that s. 48.1 compensation is owed.

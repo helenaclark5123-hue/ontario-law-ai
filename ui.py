@@ -368,6 +368,9 @@ a { color: var(--red-soft) !important; }
 }
 [data-testid="stChatMessage"]:has(.user-msg) p { margin: 0; }
 [data-testid="stChatMessageContent"] { line-height: 1.7; }
+.file-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; justify-content: flex-end; }
+.file-chip { background: rgba(255,255,255,.08); border: 1px solid #2C4166; border-radius: 10px;
+             padding: .25rem .65rem; font-size: .8rem; color: #DCE3EE; border-left: 3px solid var(--red); }
 /* While it works: a pulsing red dot and the current step */
 .thinking { display: flex; align-items: center; gap: .6rem; color: var(--muted); font-size: .92rem;
             padding: .3rem 0; animation: fade 1.6s ease-in-out infinite; }

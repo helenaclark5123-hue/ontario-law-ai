@@ -206,6 +206,7 @@ st.markdown(
 - **Translations are unofficial.** If you write in another language, the answer is translated, but the law text and citations are in English.
 - **{number_word(len(LAWS)).capitalize()} Acts and {len(REGULATIONS)} of their regulations only**, not other laws or regulations, city bylaws or court decisions.
 - **Unofficial copy.** The text comes from the A2AJ Canadian Legal Data project and is only as current as their last update.
+- **Your files are read, not stored.** If you attach a letter, notice or photo, it's sent to Claude (Anthropic's AI) to be read, and kept only while your browser tab is open. Cover up things like your SIN or bank numbers first. The Bridge doesn't check whether a document is genuine, and court decisions you upload aren't verified.
 - **Search can miss a section**, especially when a problem is described in everyday words. Check the original text, and when it matters, ask a lawyer, paralegal or community legal clinic.
 """
 )

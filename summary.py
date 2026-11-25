@@ -27,7 +27,7 @@ MAX_LAWS = 6  # keeps the sheet to about one page
 SUMMARY_PROMPT = """You help someone in Ontario prepare to talk to a lawyer or community legal clinic about their situation. You get a conversation they had with The Bridge (a legal information assistant) and the text of the law sections it cited.
 
 Write a short preparation sheet as JSON with these keys:
-- "situation": 2 to 4 short sentences describing what happened, using only facts the person said. Write it in the first person ("My landlord..."), as the person would tell it.
+- "situation": 2 to 4 short sentences describing what happened, using only facts the person said or that appear in the notes on documents they shared. Write it in the first person ("My landlord..."), as the person would tell it.
 - "laws": a list with one item per law section given to you, in the same order: {"ref": the ref exactly as given, "note": one short plain-language sentence (at most 20 words) saying what that section says, based only on its text}.
 - "options": up to 4 short points describing options the assistant's answers said the law provides, phrased as "The law allows..." or "People in this situation can...". Only include options stated in the answers. Never say what the person should do.
 - "questions": 3 to 5 short questions the person could ask a lawyer or legal clinic about their situation.
@@ -53,6 +53,10 @@ def build_summary(messages, lookup):
     transcript = "\n\n".join(
         f"{m['role'].upper()}: {m['content']}" for m in messages if not m.get("error")
     )
+    documents = [d for m in messages for d in m.get("files", [])]
+    if documents:
+        transcript += "\n\nDOCUMENTS THE PERSON SHARED:\n" + "\n\n".join(
+            f"{d['name']} ({d['what']}):\n{d['notes']}" for d in documents)
     law_text = "\n\n".join(
         f'<section ref="{law}, s. {number}">\n{lookup[(law, number)]["text"][:3000]}\n</section>'
         for law, number in sections
@@ -130,6 +134,12 @@ def make_pdf(summary, messages):
         if m["role"] == "user":
             para(f"“{m['content']}”", size=9, indent=2)
             pdf.ln(0.8)
+
+    documents = [d for m in messages for d in m.get("files", [])]
+    if documents:
+        heading("Documents you shared")
+        bullets(f"{d['name']}: {d['what']}" for d in documents)
+        pdf.ln(0.5)
 
     heading("The laws that apply")
     if not summary["laws"]:
